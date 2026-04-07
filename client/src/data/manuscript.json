@@ -1,5 +1,5 @@
 {
-  "title": "NEXUS 9: THE FRAYING DARK",
+  "title": "Nexus 9: The Fraying Dark",
   "subtitle": "A Cosmic-Opera Tabletop Roleplaying Game",
   "books": [
     {
@@ -7,7 +7,7 @@
       "id": "book-1",
       "chapters": [
         {
-          "title": "Chapter 1: Elevator Pitch",
+          "title": "Chapter 1: Welcome to Nexus 9",
           "id": "book-1-ch-1",
           "sections": [],
           "content": "*Nexus 9: The Fraying Dark* is a cosmic-opera tabletop roleplaying game set aboard a massive, politically volatile space station at the crossroads of four rival civilizations. Players take on the roles of diplomats, soldiers, spies, smugglers, and mystics navigating a fragile peace that is slowly unraveling under the weight of old grudges, new ambitions, and the stirring of an ancient, malevolent force that has not been seen in a thousand years.\n\nThe game is compatible with the Daggerheart system, preserving its story-forward play, emotionally charged consequences, and streamlined mechanics while adding new subsystems for starship combat, diplomatic intrigue, telepathic powers, and galactic-scale mystery. It is designed for campaigns that escalate from local station politics to a galaxy-spanning war, rewarding players who invest in relationships, make hard choices, and accept that every victory comes at a cost.\n\nThe tone is hopeful but pressured. This is not grimdark nihilism \u2014 it is a universe where people fight for something better, even when the odds are impossible. It is a game about the terrible cost of peace and the even greater cost of war.\n\n---"
@@ -328,7 +328,7 @@
           "content": "*Nexus 9* features eight distinct class archetypes, adapted from the Daggerheart core rules to fit the cosmic opera setting. Each class has a specific role in combat, diplomacy, and starship operations."
         },
         {
-          "title": "Phase 4 Deliverable \u2014 The Advancement System",
+          "title": "Chapter 17: The Advancement System",
           "id": "book-3-ch-2",
           "sections": [],
           "content": "**Version:** 1.0 Draft\n**Date:** April 4, 2026\n**Status:** Ready for Playtest\n\n---"
@@ -367,7 +367,7 @@
           "content": "When the GM announces a level-up, every player completes the following four steps:"
         },
         {
-          "title": "3. Class Progression Overview",
+          "title": "3. Class Progression Paths",
           "id": "book-3-ch-5",
           "sections": [
             {
@@ -460,7 +460,7 @@
           "content": ""
         },
         {
-          "title": "Phase 3 Deliverable \u2014 The Domain Library (Complete)",
+          "title": "Chapter 18: The Domain Library",
           "id": "book-3-ch-9",
           "sections": [],
           "content": "**Version:** 1.0 Draft\n**Date:** April 4, 2026\n**Status:** Ready for Playtest\n\n---"
@@ -611,7 +611,7 @@
           "content": "Because the 8 classes share the 9 Domains, players will often find themselves with access to the same pools of abilities. This encourages synergy and allows for diverse builds within the same class.\n\n| Domain | Theme | Shared By |\n| :--- | :--- | :--- |\n| **Arcana** | Telepathy, Technomancy, Spacetime Manipulation | Mystic, Broker |\n| **Blade** | Melee Superiority, Breaching, Physical Resilience | Marine, Engineer |\n| **Bone** | Tactics, Evasion, Battlefield Positioning | Pilot, Marine |\n| **Codex** | Law, Lore, Bureaucracy, System Manipulation | Envoy |\n| **Grace** | Diplomacy, Deception, Social Engineering | Envoy, Operative |\n| **Midnight** | Stealth, Sabotage, Assassination | Operative, Mystic |\n| **Sage** | Survival, Logistics, Environmental Control | Pilot, Broker |\n| **Splendor** | Medicine, Morale, Radiation/Light | Medic |\n| **Valor** | Protection, Heavy Weapons, Holding the Line | Engineer, Medic |\n\n*(Note: In the current 8-class structure, Codex and Splendor are exclusive to the Envoy and Medic, respectively. A future 9th class may share these domains).*\n\n---"
         },
         {
-          "title": "Appendix: Card Count Summary",
+          "title": "Domain Card Summary",
           "id": "book-3-ch-21",
           "sections": [],
           "content": "| Domain | Cards | Shared By |\n| :--- | :---: | :--- |\n| **Arcana** | 21 | Mystic, Broker |\n| **Blade** | 21 | Marine, Engineer |\n| **Bone** | 21 | Pilot, Marine |\n| **Codex** | 21 | Envoy |\n| **Grace** | 21 | Envoy, Operative |\n| **Midnight** | 21 | Operative, Mystic |\n| **Sage** | 21 | Pilot, Broker |\n| **Splendor** | 21 | Medic |\n| **Valor** | 21 | Engineer, Medic |\n| **Total** | **189** | |\n\n---\n\n*End of Phase 3 Deliverable*"
@@ -623,7 +623,7 @@
       "id": "book-4",
       "chapters": [
         {
-          "title": "Phase 1 Deliverable \u2014 Combat Math & Core Mechanical Systems",
+          "title": "Chapter 11: Combat and Core Systems",
           "id": "book-4-ch-1",
           "sections": [],
           "content": "**Version:** 1.0 Draft\n**Date:** April 4, 2026\n**Status:** Ready for Playtest\n\n---"
@@ -778,19 +778,19 @@
           "content": "Starship combat uses the same threshold system as personal combat, but at a larger scale. Ship damage thresholds are determined by the ship's **Frame Class**, not by the crew.\n\n| Frame Class | Hull Points | Minor | Major | Severe | System Stress Slots |\n| :--- | :---: | :---: | :---: | :---: | :---: |\n| **Fighter** | 8-10 | 3 | 6 | 12 | 4 |\n| **Courier** | 15-20 | 5 | 10 | 18 | 6 |\n| **Freighter** | 25-30 | 7 | 14 | 25 | 8 |\n| **Gunship** | 35-40 | 9 | 18 | 32 | 8 |\n| **Cruiser** | 60-80 | 12 | 25 | 44 | 10 |\n| **Capital** | 100-120 | 18 | 36 | 63 | 12 |\n\nWhen a ship's **System Stress** is maxed out, the GM rolls on the **Critical System Failure Table**:\n\n| Roll (1d12) | Critical System Failure |\n| :---: | :--- |\n| 1-2 | **Weapons Offline.** All weapon systems are disabled until an Engineer succeeds on a Knowledge roll (Difficulty 15) to restore them. |\n| 3-4 | **Engines Stall.** The ship cannot move until an Engineer succeeds on a Knowledge roll (Difficulty 13) to restart the engines. The ship is a sitting target. |\n| 5-6 | **Shields Collapse.** The ship's damage thresholds are halved (round down) until an Engineer reroutes power (requires 2 actions). |\n| 7-8 | **Hull Breach.** All characters in the affected section must succeed on an Agility roll (Difficulty 13) or be Exposed. The breach must be sealed (Engineer action, Difficulty 15) or the section is vented to space in 3 rounds. |\n| 9-10 | **Life Support Failing.** All characters on the ship begin marking 1 Stress per round until an Engineer restores life support (Difficulty 17). |\n| 11 | **Navigation Offline.** The ship cannot make hyperspace jumps or use advanced sensors until repaired (Engineer, Difficulty 15). If in hyperspace, the ship drops out at a random location. |\n| 12 | **Catastrophic Failure.** The ship is crippled. All systems go offline simultaneously. The crew has 1d4 rounds to abandon ship or attempt an emergency repair (Engineer, Difficulty 20). Failure means the ship is destroyed. |\n\n---"
         },
         {
-          "title": "Appendix A: Quick Reference \u2014 Damage Resolution",
+          "title": "Quick Reference: Damage Resolution",
           "id": "book-4-ch-10",
           "sections": [],
           "content": "**Step 1:** The attacker rolls their weapon's damage dice (e.g., 1d8+3 for a Plasma Carbine).\n\n**Step 2:** Compare the total damage to the target's Damage Thresholds (from their armor, or their base class thresholds if unarmored).\n\n**Step 3:** Determine the severity:\n\n| Damage Total vs. Thresholds | HP Lost | Stress Marked |\n| :--- | :---: | :---: |\n| Below Minor | 0 HP | 0 Stress |\n| Meets/Exceeds Minor | 1 HP | 0 Stress |\n| Meets/Exceeds Major | 2 HP | 1 Stress |\n| Meets/Exceeds Severe | 3 HP | 2 Stress |\n\n**Step 4:** The target may **mark an Armor Slot** to reduce the severity by one step (e.g., Major becomes Minor: 1 HP instead of 2, no Stress).\n\n**Step 5:** Apply the damage. If the target's last HP is marked, they fall unconscious and begin dying.\n\n---\n\n*End of Phase 1 Deliverable*"
         },
         {
-          "title": "Phase 2 Deliverable \u2014 The Armory (Weapons & Gear)",
+          "title": "Chapter 12: The Armory",
           "id": "book-4-ch-11",
           "sections": [],
           "content": "**Version:** 1.0 Draft\n**Date:** April 4, 2026\n**Status:** Ready for Playtest\n\n---"
         },
         {
-          "title": "1. Weapon Systems Overview",
+          "title": "1. Weapon Systems",
           "id": "book-4-ch-12",
           "sections": [],
           "content": "Weapons in *Nexus 9* are categorized by the primary **Trait** used to wield them effectively. Every weapon also specifies a **Range**, a **Damage** value (rolled on a successful attack), a **Burden** (One-Handed or Two-Handed), and an optional **Feature** that modifies how the weapon behaves in combat.\n\nThe six Traits govern which weapons a character naturally favors:\n\n| Trait | Weapon Archetype | Examples |\n| :--- | :--- | :--- |\n| **Agility** | Precision firearms, balanced melee blades | Mag-Pistol, Vibro-Sword, Sniper Rifle |\n| **Strength** | Heavy ordnance, breaching tools, massive melee weapons | Gravity Hammer, Breaching Axe, Boarding Halberd |\n| **Finesse** | Concealable sidearms, sniper systems, tactical blades | Holdout Blaster, Concealed Shiv, Hand Cannon |\n| **Instinct** | Scatterguns, survival tools, intuitive tech | Scattergun, Survival Staff, Twin Blasters |\n| **Presence** | Officer sidearms, dueling blades, intimidation weapons | Ceremonial Rapier, Officer's Cutlass, Diplomat's Scepter |\n| **Knowledge** | Experimental tech, directed energy weapons, hacking tools | Hacking Wand, Heavy Plasma Caster, Fusion Gloves |\n\nDamage types are broadly categorized as **Kinetic** (slugs, blades, explosives) or **Energy** (plasma, laser, shock, sonic). Some armors or adversaries may have specific resistances or vulnerabilities to one type. When a weapon deals \"kinetic or energy\" damage, the attacker chooses which type to apply on each successful attack.\n\n---"
@@ -931,7 +931,7 @@
           "content": ""
         },
         {
-          "title": "Appendix: Weapon Count Summary",
+          "title": "Weapon Summary Tables",
           "id": "book-4-ch-21",
           "sections": [],
           "content": "| Category | Tier 1 | Tier 2 | Tier 3 | Tier 4 | Total |\n| :--- | :---: | :---: | :---: | :---: | :---: |\n| Primary Weapons | 25 | 15 | 15 | 15 | 70 |\n| Special Weapons | \u2014 | 11 | 12 | 16 | 39 |\n| Secondary Weapons | 7 | 10 | 8 | 10 | 35 |\n| **Total Weapons** | **32** | **36** | **35** | **41** | **144** |\n| Consumables (Medical) | | | | | 10 |\n| Consumables (Tactical) | | | | | 21 |\n| Utility Gear | | | | | 17 |\n| Relics | | | | | 7 |\n| **Grand Total Items** | | | | | **199** |\n\n---\n\n*End of Phase 2 Deliverable*"
@@ -1514,7 +1514,7 @@
       "id": "book-7",
       "chapters": [
         {
-          "title": "The Gathering Storm \u2014 Overview",
+          "title": "The Gathering Storm \u2014 Campaign Introduction",
           "id": "book-7-ch-1",
           "sections": [],
           "content": "**Version:** 1.0\n**Date:** April 4, 2026\n**Status:** Ready for Playtest\n\n---"
