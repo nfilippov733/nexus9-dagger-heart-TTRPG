@@ -1,5 +1,5 @@
 {
-  "title": "Nexus 9: The Crucible of Stars",
+  "title": "NEXUS 9: THE FRAYING DARK",
   "subtitle": "A Cosmic-Opera Tabletop Roleplaying Game",
   "books": [
     {
@@ -10,7 +10,7 @@
           "title": "Chapter 1: Elevator Pitch",
           "id": "book-1-ch-1",
           "sections": [],
-          "content": "*Nexus 9: The Crucible of Stars* is a cosmic-opera tabletop roleplaying game set aboard a massive, politically volatile space station at the crossroads of four rival civilizations. Players take on the roles of diplomats, soldiers, spies, smugglers, and mystics navigating a fragile peace that is slowly unraveling under the weight of old grudges, new ambitions, and the stirring of an ancient, malevolent force that has not been seen in a thousand years.\n\nThe game is compatible with the Daggerheart system, preserving its story-forward play, emotionally charged consequences, and streamlined mechanics while adding new subsystems for starship combat, diplomatic intrigue, telepathic powers, and galactic-scale mystery. It is designed for campaigns that escalate from local station politics to a galaxy-spanning war, rewarding players who invest in relationships, make hard choices, and accept that every victory comes at a cost.\n\nThe tone is hopeful but pressured. This is not grimdark nihilism \u2014 it is a universe where people fight for something better, even when the odds are impossible. It is a game about the terrible cost of peace and the even greater cost of war.\n\n---"
+          "content": "*Nexus 9: The Fraying Dark* is a cosmic-opera tabletop roleplaying game set aboard a massive, politically volatile space station at the crossroads of four rival civilizations. Players take on the roles of diplomats, soldiers, spies, smugglers, and mystics navigating a fragile peace that is slowly unraveling under the weight of old grudges, new ambitions, and the stirring of an ancient, malevolent force that has not been seen in a thousand years.\n\nThe game is compatible with the Daggerheart system, preserving its story-forward play, emotionally charged consequences, and streamlined mechanics while adding new subsystems for starship combat, diplomatic intrigue, telepathic powers, and galactic-scale mystery. It is designed for campaigns that escalate from local station politics to a galaxy-spanning war, rewarding players who invest in relationships, make hard choices, and accept that every victory comes at a cost.\n\nThe tone is hopeful but pressured. This is not grimdark nihilism \u2014 it is a universe where people fight for something better, even when the odds are impossible. It is a game about the terrible cost of peace and the even greater cost of war.\n\n---"
         },
         {
           "title": "Chapter 2: History of the Known Galaxy",
@@ -177,7 +177,7 @@
           "title": "Chapter 8: The Campaign Promise",
           "id": "book-2-ch-1",
           "sections": [],
-          "content": "*Nexus 9: The Crucible of Stars* is a game of cosmic opera, political intrigue, and ancient mysteries. You play as diplomats, smugglers, soldiers, and telepaths navigating the fragile peace of a massive space station. The universe is hopeful but pressured. Diplomacy is as dangerous as a firefight, and the choices you make will ripple across the galaxy.\n\nThis is not a game of simple good versus evil. The factions you interact with have deep histories, legitimate grievances, and conflicting visions for the future. You will be forced to make hard choices, forge unlikely alliances, and decide what you are willing to sacrifice to prevent the galaxy from burning.\n\n---"
+          "content": "*Nexus 9: The Fraying Dark* is a game of cosmic opera, political intrigue, and ancient mysteries. You play as diplomats, smugglers, soldiers, and telepaths navigating the fragile peace of a massive space station. The universe is hopeful but pressured. Diplomacy is as dangerous as a firefight, and the choices you make will ripple across the galaxy.\n\nThis is not a game of simple good versus evil. The factions you interact with have deep histories, legitimate grievances, and conflicting visions for the future. You will be forced to make hard choices, forge unlikely alliances, and decide what you are willing to sacrifice to prevent the galaxy from burning.\n\n---"
         },
         {
           "title": "Chapter 9: Core Mechanics: The Hope/Fear System",
@@ -277,7 +277,7 @@
       ]
     },
     {
-      "title": "BOOK THREE: AGENTS OF THE CRUCIBLE",
+      "title": "BOOK THREE: AGENTS OF THE FRAYING DARK",
       "id": "book-3",
       "chapters": [
         {
@@ -1613,40 +1613,383 @@
       "id": "book-8",
       "chapters": [
         {
-          "title": "Definitions",
-          "id": "book-8-ch-1",
-          "sections": [],
-          "content": "- **Licensed Content**: (a) game rules (but NOT copy/paste of rulebook content), mechanics, systems, toolsets, reference cards, and stat blocks; and (b) the names and attributes of game characters, settings, locations, monsters, classes, subclasses, and races featured in DRP Games. EXCLUDES all Prohibited Content.\n- **Prohibited Content**: (a) trademarks, logos, trade dress, trade names, and service marks; (b) videos, trailers, audio sounds, music, video games, comic books, novels, artwork, visual images, illustrations, drawings, graphics, imagery, plots, storylines, published work titles, and maps; (c) the exact text of manuals, guides, handbooks, Campaign Frames, and rulebooks; and (d) DRP Published Content, unless identified as Public Game Content.\n- **Public Game Content**: Licensed Content AND any additional content explicitly identified by DRP as Public Game Content. Currently: Daggerheart System Reference Document 1.0 (including Domain icons) and Candela Obscura.\n- **Adaptive Content**: content derived from or based on Public Game Content in which the Public Game Content is translated, altered, rearranged, transformed, or otherwise modified."
+          "title": "How to Play: Quickstart Rules",
+          "id": "book-8-ch-new-1",
+          "content": "> *Everything you need to sit down and start playing Nexus 9: The Fraying Dark in fifteen minutes.*\n\n---",
+          "sections": [
+            {
+              "title": "What Is This Game?",
+              "id": "section-1",
+              "content": "Nexus 9: The Fraying Dark is a tabletop roleplaying game for 3\u20136 players and one Game Master (GM). One player runs the world \u2014 its factions, threats, and mysteries \u2014 while the others play a crew of operatives stationed aboard a massive space station at the crossroads of four rival civilizations. You will negotiate, fight, investigate, fly ships, and uncover ancient secrets. Every choice has consequences. Every victory comes at a cost.\n\nThe game uses the Daggerheart-compatible Hope and Fear system: a dual-die mechanic where every roll generates both narrative momentum and escalating tension.\n\n---"
+            },
+            {
+              "title": "What You Need",
+              "id": "section-2",
+              "content": "| Item | Details |\n|:---|:---|\n| **Players** | 3\u20135 players plus 1 Game Master |\n| **Dice** | Two twelve-sided dice (2d12) per player, ideally one light (Hope die) and one dark (Fear die) |\n| **Character Sheets** | One per player (see Appendix) |\n| **Ship Sheet** | One per crew (see Appendix) |\n| **Domain Cards** | Printed or digital cards for each class's domain abilities |\n| **Tokens** | Tokens or coins to track Hope, Fear, Stress, and Hit Points |\n| **Session Length** | 3\u20134 hours recommended |\n\n---"
+            },
+            {
+              "title": "The Core Mechanic: Action Rolls",
+              "id": "section-3",
+              "content": "When your character attempts something risky, the GM calls for an **Action Roll**.\n\n**Step 1: Roll 2d12.** One die is your Hope die (light), the other is your Fear die (dark).\n\n**Step 2: Add your Trait modifier.** The GM tells you which of the six Traits applies: Agility, Strength, Finesse, Instinct, Presence, or Knowledge. Add the relevant modifier to the total of both dice.\n\n**Step 3: Compare to the Difficulty.** If your total meets or exceeds the Difficulty number, you succeed. If it falls short, you fail \u2014 but the story always moves forward.\n\n**Step 4: Check which die rolled higher.**\n\n- **Hope die is higher:** You generate 1 Hope token. The player pool of Hope grows \u2014 spend Hope later to activate powerful abilities, assist allies, or turn the tide.\n- **Fear die is higher:** The GM generates 1 Fear token. The GM's Fear pool grows \u2014 the GM spends Fear to activate enemy abilities, introduce complications, and escalate threats.\n- **Tie:** Both Hope and Fear are generated. The situation intensifies.\n\nThis means every single roll advances the tension economy. Even success can feed the GM's resources, and failure can still give the players tools to fight back.\n\n---"
+            },
+            {
+              "title": "The Six Traits",
+              "id": "section-4",
+              "content": "| Trait | Governs |\n|:---|:---|\n| **Agility** | Dodging, piloting, acrobatics, reflexes |\n| **Strength** | Melee attacks, lifting, endurance, intimidation |\n| **Finesse** | Ranged attacks, lockpicking, sleight of hand, precision |\n| **Instinct** | Perception, intuition, survival, reading people |\n| **Presence** | Diplomacy, deception, leadership, telepathic force |\n| **Knowledge** | Engineering, medicine, history, hacking, science |\n\n---"
+            },
+            {
+              "title": "Hit Points, Stress, and Scars",
+              "id": "section-5",
+              "content": "**Hit Points (HP)** represent your physical resilience. When you take damage, subtract it from your HP. When HP reaches 0, you are **Downed** \u2014 unconscious and dying unless an ally stabilizes you.\n\n**Stress** represents mental and emotional strain. You mark Stress when you push your abilities, resist psychic attacks, or face traumatic events. When your Stress track fills (typically 6 boxes), you gain a **Scar** \u2014 a permanent narrative consequence (a phobia, a grudge, a broken relationship, a physical mark). Scars are not punishments; they are character development.\n\n**Armor** reduces incoming damage. Subtract your Armor value from each hit before applying it to HP.\n\n---"
+            },
+            {
+              "title": "Combat: The Basics",
+              "id": "section-6",
+              "content": "Combat in Nexus 9 is fast, dramatic, and lethal.\n\n**Initiative:** There is no initiative roll. Players and the GM alternate turns in a flexible order. Any player can act on the players' turn, and the GM acts on the GM's turn. This encourages teamwork and tactical coordination.\n\n**On Your Turn, you may:**\n\n- **Move** to a new position (Close, Near, or Far range)\n- **Take an Action** \u2014 attack, use a domain card, interact with the environment, or attempt a skill\n- **Take a Reaction** if triggered (e.g., a defensive ability when attacked)\n\n**Attacking:** Make an Action Roll using the appropriate Trait (Finesse for ranged, Strength for melee). On success, roll your weapon's damage dice. The target subtracts Armor, then applies the remainder to HP.\n\n**Damage Thresholds:** When you deal damage, compare the total to your class's damage thresholds. A Minor hit might deal 1\u20135 damage; a Major hit might deal 6\u201312; a Severe hit deals 13+. Higher thresholds unlock additional effects like knocking enemies prone or breaking their guard.\n\n---"
+            },
+            {
+              "title": "Hope and Fear Economy",
+              "id": "section-7",
+              "content": "**Hope** is the players' shared resource. Spend it to:\n\n- Activate powerful domain card abilities\n- Assist an ally's roll (+1d6 bonus)\n- Resist a consequence or reduce incoming damage\n- Trigger a class feature that requires Hope\n\n**Fear** is the GM's resource. Spend it to:\n\n- Activate enemy special abilities\n- Introduce environmental hazards or complications\n- Escalate a threat clock\n- Trigger a dramatic twist or ambush\n\nThe economy is self-balancing: the more the players succeed, the more Fear the GM accumulates. The more the players struggle, the more Hope they build. This creates a natural dramatic rhythm of rising and falling tension.\n\n---"
+            },
+            {
+              "title": "Starship Combat: Quick Version",
+              "id": "section-8",
+              "content": "When your crew's ship enters combat, each player takes a **Crew Role**:\n\n| Role | Action |\n|:---|:---|\n| **Pilot** | Maneuver the ship, evade attacks, pursue targets |\n| **Gunner** | Fire weapons, target subsystems, manage ordnance |\n| **Engineer** | Repair damage, reroute power, boost systems |\n| **Comms/Ops** | Scan enemies, jam communications, coordinate allies |\n| **Captain** | Issue orders that grant bonuses, make tactical decisions |\n| **Marine** | Prepare for boarding actions, repel boarders |\n\nShip combat uses the same Action Roll system. The ship has its own HP, Armor, and systems. When a system takes a critical hit, it becomes damaged or disabled until repaired.\n\n---"
+            },
+            {
+              "title": "Social Conflict and Diplomacy",
+              "id": "section-9",
+              "content": "Not every conflict is solved with weapons. Nexus 9 features a structured social conflict system:\n\n**Persuasion Rolls** use Presence or Knowledge against a target's **Social Defense** (based on their rank, stubbornness, or faction loyalty).\n\n**Leverage:** If you have information, favors, or threats that give you an advantage, you gain Advantage on the roll (roll an extra d6 and add it).\n\n**Faction Reputation:** Your crew's standing with each major faction affects Difficulty numbers for social interactions. Helping the Aurelians might make the Kaelen Syndicate hostile.\n\n---"
+            },
+            {
+              "title": "Domain Cards",
+              "id": "section-10",
+              "content": "Each class has access to two **Domains** \u2014 thematic ability pools represented by cards. At character creation, you build a **Loadout** of domain cards from your available pool. During play, you can activate these cards by spending actions, Hope, or Stress.\n\nCards come in three types:\n\n- **Action Cards:** Require your action to use (attacks, buffs, special maneuvers)\n- **Reaction Cards:** Trigger in response to specific events (dodging, countering, shielding)\n- **Passive Cards:** Always active once equipped (stat bonuses, auras, resistances)\n\nYou can swap cards between sessions during downtime, allowing you to adapt your loadout to the mission ahead.\n\n---"
+            },
+            {
+              "title": "Your First Session",
+              "id": "section-11",
+              "content": "1. **Create Characters** using Book Two (or use the Pregen Crew in this book)\n2. **Choose a Ship** (or use the Starter Ship, the *Dawnrunner*)\n3. **Run Session Zero** to establish tone, safety tools, and crew bonds\n4. **Start with Chapter 1 of The Gathering Storm** \u2014 or create your own opening scenario\n5. **Play to find out what happens.** The dice, the choices, and the consequences will surprise everyone \u2014 including the GM.\n\n---\n\n> *\"Roll the dice. Hope for the best. Prepare for the worst. That is life on Nexus 9.\"*"
+            }
+          ]
         },
         {
-          "title": "Key Takeaway",
-          "id": "book-8-ch-2",
-          "sections": [],
-          "content": "- We CAN use: game rules, mechanics, systems, stat block formats, Domain names, class structure concepts FROM THE SRD\n- We CANNOT: copy/paste exact rulebook text, use their artwork, use their plots/storylines, use their trade dress\n- We CAN create \"Adaptive Content\" = content derived from the SRD that we alter/transform\n- The SRD text itself is Public Game Content and can be used as a base"
+          "title": "Session Zero: Building Your Campaign",
+          "id": "book-8-ch-new-2",
+          "content": "> *Before the first die is rolled, the crew must be forged. Session Zero is where you build the foundation that every session will stand on.*\n\n---",
+          "sections": [
+            {
+              "title": "Purpose of Session Zero",
+              "id": "section-1",
+              "content": "Session Zero is a dedicated pre-campaign session where the GM and players collaboratively establish the tone, boundaries, characters, crew, and expectations for the campaign ahead. In Nexus 9, this session is not optional \u2014 it is essential. The game's themes of political tension, moral compromise, telepathic violation, and wartime trauma require explicit consent and calibration before play begins.\n\nA well-run Session Zero accomplishes five things: it establishes safety boundaries, calibrates the campaign's tone, creates interconnected characters, builds the crew's shared identity, and generates the first threads of dramatic tension.\n\n---"
+            },
+            {
+              "title": "Step 1: Safety and Consent",
+              "id": "section-2",
+              "content": "Before anything else, the table must agree on safety tools. Nexus 9 deals with themes that can be intense \u2014 authoritarian surveillance, psychic violation, war crimes, betrayal, and sacrifice. Every player must feel empowered to set boundaries.\n\n**Recommended Safety Tools:**\n\nThe **Lines and Veils** system is the baseline. A Line is a hard boundary \u2014 content that will never appear in the game. A Veil is content that may exist in the fiction but will be handled off-screen or abstractly, never described in graphic detail. The GM should provide index cards and ask each player to write down any Lines and Veils anonymously.\n\nThe **X-Card** should be available at every session. Any player can tap or raise the X-Card at any time to indicate that the current content should stop immediately, no questions asked.\n\nThe **Open Door Policy** means any player can step away from the table at any time without needing to explain why.\n\n| Tool | Function |\n|:---|:---|\n| **Lines** | Hard limits \u2014 this content never appears |\n| **Veils** | Exists off-screen only \u2014 never described in detail |\n| **X-Card** | Immediate stop on current content, no questions asked |\n| **Open Door** | Any player may leave at any time without explanation |\n\n---"
+            },
+            {
+              "title": "Step 2: Tone Calibration",
+              "id": "section-3",
+              "content": "Nexus 9 supports a range of tones, from political thriller to military drama to cosmic horror. The table should discuss and agree on where the campaign falls on several spectrums:\n\n**Tone Spectrums (discuss and mark a position):**\n\n| Spectrum | Left End | Right End |\n|:---|:---|:---|\n| **Hope vs. Despair** | Optimistic \u2014 heroes can make a difference | Bleak \u2014 survival is the best you can hope for |\n| **Realism vs. Pulp** | Grounded \u2014 consequences are harsh and realistic | Cinematic \u2014 heroes are larger than life |\n| **Politics vs. Action** | Intrigue-heavy \u2014 most conflicts are social | Combat-heavy \u2014 most conflicts are physical |\n| **Mystery vs. Clarity** | Players discover the truth slowly | Players know the stakes from the start |\n| **Personal vs. Epic** | Focus on individual character arcs | Focus on galaxy-shaking events |\n\nThe default Nexus 9 tone sits at: **Hopeful but pressured, grounded with cinematic moments, balanced between politics and action, mystery-forward, and escalating from personal to epic.**\n\n---"
+            },
+            {
+              "title": "Step 3: Campaign Scope",
+              "id": "section-4",
+              "content": "The GM should present the campaign premise and discuss its expected scope:\n\n**Duration:** How many sessions is the campaign expected to run? The Gathering Storm campaign is designed for 24\u201336 sessions across three arcs.\n\n**Level Range:** Characters begin at Level 1 and can advance to Level 10 over the course of the full campaign.\n\n**Starting Location:** All campaigns begin on Nexus 9 station. The GM should describe the station's five rings and ask players where their characters spend most of their time.\n\n**Faction Focus:** Which factions will be most prominent? The GM does not need to reveal secrets, but should indicate whether the campaign will focus more on Terran politics, Valari mysticism, Aurelian intrigue, Kaelen underworld, or the Eclipse threat.\n\n---"
+            },
+            {
+              "title": "Step 4: Character Creation",
+              "id": "section-5",
+              "content": "Each player creates a character using the rules in Book Two. During Session Zero, character creation should be collaborative \u2014 players should build their characters together, not in isolation.\n\n**The Character Creation Checklist:**\n\n1. Choose an **Ancestry** (Human, Valari, Aurelian, Kaelen, or Mixed Heritage)\n2. Choose a **Community** (where you grew up \u2014 Station-Born, Colony-Raised, Fleet-Bred, Frontier, or Exile)\n3. Choose a **Class** (Envoy, Operative, Pilot, Marine, Engineer, Mystic, Broker, or Medic)\n4. Assign **Trait Scores** using the standard array or point-buy method\n5. Select your starting **Domain Card Loadout** from your class's two domains\n6. Choose an **Experience** \u2014 a defining life event that shaped your character (e.g., \"Survived the Siege of Sol,\" \"Escaped the Mindclave,\" \"Witnessed a Luminary\")\n7. Write a **Secret** \u2014 something your character is hiding from the crew (see below)\n8. Establish **Bonds** with at least two other player characters\n\n---"
+            },
+            {
+              "title": "Step 5: Bonds and Secrets",
+              "id": "section-6",
+              "content": "**Bonds** are the connective tissue of the crew. Each player should establish at least two bonds with other player characters:\n\n- **One Positive Bond:** \"I trust [character] because...\" or \"I owe [character] a debt because...\"\n- **One Complicated Bond:** \"I am suspicious of [character] because...\" or \"[Character] and I disagree about...\"\n\nBonds are not static. They will evolve, strengthen, or break over the course of the campaign. The GM should revisit bonds at the end of each arc.\n\n**Secrets** are private truths that each character carries. The player writes their secret on a card and gives it to the GM. The GM will weave these secrets into the campaign narrative. Examples:\n\n- \"I am an unregistered telepath hiding from the Mindclave.\"\n- \"I was ordered to spy on the crew by Aurelian intelligence.\"\n- \"I saw something in hyperspace that I cannot explain, and it is getting closer.\"\n- \"I killed someone during the war, and their family is looking for me.\"\n\n---"
+            },
+            {
+              "title": "Step 6: Crew Creation",
+              "id": "section-7",
+              "content": "The crew is more than a collection of individuals \u2014 it is a shared identity with its own history, reputation, and resources.\n\n**Step 6a: Choose a Ship.** The crew selects or is assigned a starship. For new campaigns, the Starter Ship (*Dawnrunner*, a modified Terran corvette) is recommended. Record the ship's stats on the Ship Sheet.\n\n**Step 6b: Name the Crew.** Give the crew a collective identity. Are you a registered security contractor? A freelance troubleshooting team? An off-the-books intelligence cell? The crew's public identity affects how NPCs react to them.\n\n**Step 6c: Establish the Debt.** Every crew starts with a Debt \u2014 an obligation that binds them together and to the station. The Debt creates immediate dramatic pressure. Examples:\n\n| Debt | Description |\n|:---|:---|\n| **Financial** | The crew owes a significant sum to a Kaelen Syndicate lender. Payments are due monthly. |\n| **Political** | The crew is indebted to a Terran senator who arranged their docking permits. She will call in favors. |\n| **Criminal** | The crew is being blackmailed by someone who knows one of their secrets. |\n| **Military** | The crew includes a deserter. If discovered, the entire crew faces charges. |\n| **Personal** | A crew member's family member is being held as leverage by a faction. |\n\n**Step 6d: Assign Crew Roles.** Each player chooses a primary role aboard the ship (Pilot, Gunner, Engineer, Comms/Ops, Captain, Marine). These roles determine who does what during starship encounters.\n\n---"
+            },
+            {
+              "title": "Step 7: The First Thread",
+              "id": "section-8",
+              "content": "Before Session Zero ends, the GM should plant the first narrative thread. This is not a full adventure \u2014 it is a hook, a question, or an event that gives the players something to think about before the first proper session.\n\nExamples:\n\n- \"As you settle into your berths on Nexus 9, a priority message arrives on your ship's comm: CARGO PICKUP \u2014 DOCKING BAY 14 \u2014 0200 HOURS \u2014 NO QUESTIONS. The sender is anonymous.\"\n- \"A Valari priest approaches one of you in the Green Ring market and says, without preamble: 'The stars are fraying. You have been chosen to witness.' Then she walks away.\"\n- \"Station security informs you that your docking permit has been flagged for review. Someone with authority does not want you here.\"\n\n---"
+            },
+            {
+              "title": "Session Zero Checklist",
+              "id": "section-9",
+              "content": "| Step | Complete? |\n|:---|:---|\n| Safety tools established (Lines, Veils, X-Card, Open Door) | \u2610 |\n| Tone calibrated across all five spectrums | \u2610 |\n| Campaign scope discussed (duration, level range, faction focus) | \u2610 |\n| All characters created with Ancestry, Community, Class, Traits, and Loadout | \u2610 |\n| Each character has at least two Bonds with other PCs | \u2610 |\n| Each character has a Secret (given to GM) | \u2610 |\n| Ship selected and Ship Sheet filled out | \u2610 |\n| Crew named and public identity established | \u2610 |\n| Crew Debt established | \u2610 |\n| Crew Roles assigned | \u2610 |\n| First narrative thread planted | \u2610 |\n\n---\n\n> *\"A crew that knows each other's strengths will survive. A crew that knows each other's secrets will either become unbreakable \u2014 or tear itself apart.\"*"
+            }
+          ]
         },
         {
-          "title": "Section 2: Scope",
-          "id": "book-8-ch-3",
-          "sections": [],
-          "content": "**2.1 License Grant:** DRP grants a worldwide, royalty-free, non-transferable, non-exclusive license to:\n(a) reproduce and Share the Public Game Content in whole or in part\n(b) produce, reproduce, Share and SELL Adaptive Content using the Public Game Content solely in Permitted Formats\n\n**Key: We CAN sell Adaptive Content.** The SRD is Public Game Content. Our sci-fi adaptations are Adaptive Content."
+          "title": "Pregen Crew: The Dawnrunner Company",
+          "id": "book-8-ch-new-3",
+          "content": "> *Six ready-to-play characters for immediate use. Each pregen includes a full stat block, starting equipment, domain card loadout, bonds, and a secret. These characters are designed to work together as a crew aboard the starter ship Dawnrunner.*\n\n---",
+          "sections": [
+            {
+              "title": "1. COMMANDER KIRA VASQUEZ \u2014 The Envoy",
+              "id": "section-1",
+              "content": "*\"Every word is a weapon. Every silence is a shield. And every handshake is a gamble.\"*\n\n**Ancestry:** Human (Terran Coalition)\n**Community:** Station-Born (Nexus 4 \u2014 before it vanished)\n**Class:** Envoy (Codex and Grace Domains)\n**Level:** 1\n\n| Trait | Score | Modifier |\n|:---|:---|:---|\n| Agility | 8 | +0 |\n| Strength | 6 | -1 |\n| Finesse | 10 | +1 |\n| Instinct | 12 | +2 |\n| Presence | 16 | +4 |\n| Knowledge | 14 | +3 |\n\n| Stat | Value |\n|:---|:---|\n| Hit Points | 18 |\n| Stress Threshold | 6 |\n| Evasion | 10 |\n| Armor | 2 (Diplomatic Vest) |\n| Damage Thresholds | Minor: 1\u20134, Major: 5\u20139, Severe: 10+ |\n\n**Starting Equipment:** Diplomatic credentials, encrypted datapad, concealed hold-out pistol (1d6, Close range), formal attire (Aurelian-cut), Terran Coalition ID (flagged as \"inactive\"), 150 credits.\n\n**Domain Card Loadout:**\n- Bureaucratic Loophole (Codex, Action)\n- Historical Precedent (Codex, Reaction)\n- Silver Tongue (Grace, Action)\n- Read the Room (Grace, Passive)\n\n**Experience:** Survivor of Nexus 4 \u2014 Kira was a child aboard Nexus 4 when it vanished into a temporal anomaly. She was found drifting in an escape pod three days later with no memory of what happened. She has not aged normally since.\n\n**Crew Role:** Captain\n\n**Bonds:**\n- *Positive:* \"I trust Reth. He saved my life during the Frontier Incident, and I have never forgotten.\"\n- *Complicated:* \"Zara is hiding something. I can feel it every time she avoids my questions about her past.\"\n\n**Secret:** *Kira has fragmented memories of Nexus 4 \u2014 and in those memories, she sees the Eclipse. She believes the station did not vanish. It was taken.*\n\n---"
+            },
+            {
+              "title": "2. SERGEANT RETH TAL'VORI \u2014 The Marine",
+              "id": "section-2",
+              "content": "*\"I do not fight because I enjoy it. I fight because someone has to stand between the darkness and everything I love.\"*\n\n**Ancestry:** Valari (Vael'Kari \u2014 Warrior Caste)\n**Community:** Fleet-Bred (Valari Warfleet)\n**Class:** Marine (Blade and Bone Domains)\n**Level:** 1\n\n| Trait | Score | Modifier |\n|:---|:---|:---|\n| Agility | 12 | +2 |\n| Strength | 16 | +4 |\n| Finesse | 10 | +1 |\n| Instinct | 14 | +3 |\n| Presence | 6 | -1 |\n| Knowledge | 8 | +0 |\n\n| Stat | Value |\n|:---|:---|\n| Hit Points | 24 |\n| Stress Threshold | 6 |\n| Evasion | 12 |\n| Armor | 5 (Valari Combat Harness) |\n| Damage Thresholds | Minor: 1\u20133, Major: 4\u20138, Severe: 9\u201314, Critical: 15+ |\n\n**Starting Equipment:** Valari energy spear (2d6+2, Melee/Close), combat knife (1d6, Melee), Valari combat harness (Armor 5), soul-crystal pendant (religious significance), field rations (Valari \u2014 inedible to humans), 80 credits.\n\n**Domain Card Loadout:**\n- Cleaving Strike (Blade, Action)\n- Warrior's Stance (Blade, Passive)\n- Tactical Withdrawal (Bone, Reaction)\n- Battle Sense (Bone, Passive)\n\n**Experience:** Veteran of the Border Skirmishes \u2014 Reth served in the Valari fleet during the border conflicts with the Aurelian Empire. He was decorated for valor but quietly transferred to Nexus 9 after refusing an order he considered dishonorable.\n\n**Crew Role:** Marine / Security\n\n**Bonds:**\n- *Positive:* \"Commander Vasquez earned my respect. She speaks truth even when it is dangerous.\"\n- *Complicated:* \"Mira's telepathy unsettles me. The Valari do not trust those who can read minds without permission.\"\n\n**Secret:** *Reth knows the true reason for the Valari surrender at the Siege of Sol. He learned it from a dying priest during the Border Skirmishes. He has told no one.*\n\n---"
+            },
+            {
+              "title": "3. ZARA \"GHOST\" OKAFOR \u2014 The Operative",
+              "id": "section-3",
+              "content": "*\"I was never here. This conversation never happened. And you definitely did not see me take that datapad.\"*\n\n**Ancestry:** Human (Terran Coalition)\n**Community:** Exile (Grew up in the Warrens of a frontier station)\n**Class:** Operative (Midnight and Grace Domains)\n**Level:** 1\n\n| Trait | Score | Modifier |\n|:---|:---|:---|\n| Agility | 16 | +4 |\n| Strength | 8 | +0 |\n| Finesse | 14 | +3 |\n| Instinct | 12 | +2 |\n| Presence | 10 | +1 |\n| Knowledge | 6 | -1 |\n\n| Stat | Value |\n|:---|:---|\n| Hit Points | 16 |\n| Stress Threshold | 6 |\n| Evasion | 14 |\n| Armor | 3 (Stealth Suit) |\n| Damage Thresholds | Minor: 1\u20134, Major: 5\u201310, Severe: 11+ |\n\n**Starting Equipment:** Suppressed pistol (1d8, Near range, Silent), vibro-knife (1d6+1, Melee), stealth suit (Armor 3, Advantage on stealth), hacking toolkit, forged identity papers (3 sets), 200 credits.\n\n**Domain Card Loadout:**\n- Pick and Pull (Midnight, Action)\n- Uncanny Disguise (Midnight, Action)\n- Midnight Spirit (Midnight, Passive)\n- Silver Tongue (Grace, Action)\n\n**Experience:** Escaped the Mindclave \u2014 Zara is an unregistered P4 telepath who has been running from Mindclave Hounds since she was fourteen. She suppresses her abilities with black-market inhibitor drugs.\n\n**Crew Role:** Comms / Operations\n\n**Bonds:**\n- *Positive:* \"Doc Patel patched me up when no one else would. I owe her my life \u2014 literally.\"\n- *Complicated:* \"Kira asks too many questions. If she finds out what I am, everything falls apart.\"\n\n**Secret:** *Zara is a rogue telepath (P4). She takes black-market inhibitors to suppress her abilities, but they are becoming less effective. The Mindclave has an active warrant for her capture.*\n\n---"
+            },
+            {
+              "title": "4. JACE MORROW \u2014 The Pilot",
+              "id": "section-4",
+              "content": "*\"The ship does not fly itself. Well, technically it could, but where is the fun in that?\"*\n\n**Ancestry:** Human (Terran Coalition)\n**Community:** Colony-Raised (Titan Colony, Sol System)\n**Class:** Pilot (Bone and Sage Domains)\n**Level:** 1\n\n| Trait | Score | Modifier |\n|:---|:---|:---|\n| Agility | 14 | +3 |\n| Strength | 10 | +1 |\n| Finesse | 16 | +4 |\n| Instinct | 12 | +2 |\n| Presence | 8 | +0 |\n| Knowledge | 6 | -1 |\n\n| Stat | Value |\n|:---|:---|\n| Hit Points | 20 |\n| Stress Threshold | 6 |\n| Evasion | 13 |\n| Armor | 3 (Flight Suit) |\n| Damage Thresholds | Minor: 1\u20134, Major: 5\u20139, Severe: 10+ |\n\n**Starting Equipment:** Terran service pistol (1d8, Near range), flight suit (Armor 3), pilot's toolkit, lucky dice (no mechanical effect \u2014 sentimental), star charts (frontier sectors), 120 credits.\n\n**Domain Card Loadout:**\n- Evasive Maneuvers (Bone, Reaction)\n- Tactical Withdrawal (Bone, Reaction)\n- Wayfinder (Sage, Passive)\n- Field Repair (Sage, Action)\n\n**Experience:** Dishonorably Discharged \u2014 Jace was a promising Terran Navy pilot who was court-martialed for disobeying a direct order during a border patrol. He saved a civilian transport that his commanding officer had ordered him to ignore. The Navy called it insubordination. Jace calls it the only good thing he has ever done.\n\n**Crew Role:** Pilot\n\n**Bonds:**\n- *Positive:* \"Kel keeps the ship alive. Without them, we would be floating debris. I respect that more than anything.\"\n- *Complicated:* \"Reth is too rigid. Rules and honor are fine until they get people killed.\"\n\n**Secret:** *The civilian transport Jace saved was carrying Kaelen Syndicate contraband. The Syndicate considers him an asset \u2014 and they have been calling in that debt.*\n\n---"
+            },
+            {
+              "title": "5. DR. MIRA PATEL \u2014 The Medic",
+              "id": "section-5",
+              "content": "*\"I took an oath to do no harm. I did not take an oath to stand by while others do harm.\"*\n\n**Ancestry:** Human (Terran Coalition)\n**Community:** Station-Born (Nexus 9)\n**Class:** Medic (Splendor and Valor Domains)\n**Level:** 1\n\n| Trait | Score | Modifier |\n|:---|:---|:---|\n| Agility | 8 | +0 |\n| Strength | 6 | -1 |\n| Finesse | 10 | +1 |\n| Instinct | 14 | +3 |\n| Presence | 12 | +2 |\n| Knowledge | 16 | +4 |\n\n| Stat | Value |\n|:---|:---|\n| Hit Points | 16 |\n| Stress Threshold | 6 |\n| Evasion | 10 |\n| Armor | 2 (Medical Coat, reinforced) |\n| Damage Thresholds | Minor: 1\u20135, Major: 6\u201310, Severe: 11+ |\n\n**Starting Equipment:** Medical kit (advanced), stim-injector (restores 1d8 HP, 3 uses), light pistol (1d6, Near range), station medical credentials, research datapad, 100 credits.\n\n**Domain Card Loadout:**\n- Emergency Triage (Splendor, Action)\n- Morale Boost (Splendor, Action)\n- Steady Hands (Splendor, Passive)\n- Shield of Faith (Valor, Reaction)\n\n**Experience:** Witnessed a Luminary \u2014 During a late shift in the Gold Ring medical bay, Mira encountered a being of pure light that spoke directly into her mind. It told her that a great darkness was coming and that she would be needed. She has told no one, fearing she would be reported to the Mindclave for telepathic evaluation.\n\n**Crew Role:** Medic / Science Officer\n\n**Bonds:**\n- *Positive:* \"Zara came to me bleeding and desperate. I helped her without asking questions. That is what doctors do.\"\n- *Complicated:* \"Jace is reckless. One day his luck will run out, and I will be the one picking up the pieces.\"\n\n**Secret:** *Mira was contacted by a Luminary. She does not know what it means, but she has been having visions of the Eclipse's return \u2014 visions that are becoming more frequent and more terrifying.*\n\n---"
+            },
+            {
+              "title": "6. KEL-7 \"KEL\" TORVIK \u2014 The Engineer",
+              "id": "section-6",
+              "content": "*\"Give me a wrench, a power cell, and thirty minutes. I will fix anything. Give me an hour, and I will make it better than new.\"*\n\n**Ancestry:** Human (Kaelen-raised)\n**Community:** Frontier (Grew up on a Kaelen salvage vessel)\n**Class:** Engineer (Valor and Blade Domains)\n**Level:** 1\n\n| Trait | Score | Modifier |\n|:---|:---|:---|\n| Agility | 10 | +1 |\n| Strength | 14 | +3 |\n| Finesse | 12 | +2 |\n| Instinct | 8 | +0 |\n| Presence | 6 | -1 |\n| Knowledge | 16 | +4 |\n\n| Stat | Value |\n|:---|:---|\n| Hit Points | 22 |\n| Stress Threshold | 6 |\n| Evasion | 11 |\n| Armor | 4 (Heavy Work Suit) |\n| Damage Thresholds | Minor: 1\u20133, Major: 4\u20138, Severe: 9\u201313, Critical: 14+ |\n\n**Starting Equipment:** Plasma cutter (1d8+1, Melee, can cut through bulkheads), heavy work suit (Armor 4), engineering toolkit (advanced), portable welding rig, salvaged Progenitor component (unknown function), 90 credits.\n\n**Domain Card Loadout:**\n- Shield Wall (Valor, Reaction)\n- Heavy Swing (Blade, Action)\n- Fortify Position (Valor, Action)\n- Warrior's Stance (Blade, Passive)\n\n**Experience:** Salvaged a Progenitor Relic \u2014 While working a deep-space salvage job, Kel found a Progenitor artifact embedded in an asteroid. It hums when they touch it and occasionally displays holographic symbols they cannot read. The Technoseers would kill to get their hands on it.\n\n**Crew Role:** Engineer / Mechanic\n\n**Bonds:**\n- *Positive:* \"Jace trusts me with the ship. That is the highest compliment a pilot can give an engineer.\"\n- *Complicated:* \"Reth does not understand machines. He treats the ship like a beast of burden instead of a living system.\"\n\n**Secret:** *The Progenitor component Kel carries is not inert. It has been slowly interfacing with the Dawnrunner's systems, and Kel has noticed the ship responding to their thoughts. They do not know if this is a gift or a trap.*\n\n---"
+            },
+            {
+              "title": "Crew Summary",
+              "id": "section-7",
+              "content": "| Character | Class | Role | Ancestry | Key Trait |\n|:---|:---|:---|:---|:---|\n| Kira Vasquez | Envoy | Captain | Human | Presence +4 |\n| Reth Tal'Vori | Marine | Security | Valari | Strength +4 |\n| Zara \"Ghost\" Okafor | Operative | Comms/Ops | Human | Agility +4 |\n| Jace Morrow | Pilot | Pilot | Human | Finesse +4 |\n| Dr. Mira Patel | Medic | Science/Medical | Human | Knowledge +4 |\n| Kel-7 Torvik | Engineer | Engineer | Human (Kaelen-raised) | Knowledge +4 |\n\n---\n\n> *\"Six strangers. One ship. A station on the edge of the abyss. This is how legends begin \u2014 or how epitaphs are written.\"*"
+            }
+          ]
         },
         {
-          "title": "Section 2.5: Use of Name Marks",
-          "id": "book-8-ch-4",
-          "sections": [],
-          "content": "- Name Marks CANNOT be used in the title of a work or a chapter title\n- Name Marks CANNOT appear on the front cover of any work\n- Name Marks MUST include \"Compatible\" adjacent to it in marketing and descriptive text\n- So we can say \"Compatible with Daggerheart\" but NOT \"Daggerheart: Nexus 9\" as a title"
+          "title": "Starter Ship: The Dawnrunner",
+          "id": "book-8-ch-new-4",
+          "content": "> *She is not pretty. She is not fast. But she is yours, and she has never let you down \u2014 yet.*\n\n---",
+          "sections": [
+            {
+              "title": "Ship Profile",
+              "id": "section-1",
+              "content": "The **Dawnrunner** is a modified Terran Coalition corvette, originally designated TC-CV-1187. She was built as a patrol vessel for the Terran Navy's frontier fleet, served for twelve years, was decommissioned after sustaining heavy damage during a border skirmish, and was sold at auction to a Kaelen salvage dealer. After passing through three more owners \u2014 each of whom added their own modifications and left their own scars \u2014 she ended up in the crew's hands.\n\nThe Dawnrunner is a workhorse: reliable, tough, and surprisingly versatile. She is not elegant, and her systems occasionally argue with each other due to the patchwork of Terran, Kaelen, and aftermarket components. But she can take a beating, carry a decent cargo load, and outrun most things her size.\n\n---"
+            },
+            {
+              "title": "Ship Statistics",
+              "id": "section-2",
+              "content": "| Attribute | Value |\n|:---|:---|\n| **Ship Class** | Corvette (Light) |\n| **Manufacturer** | Terran Coalition Naval Yards (modified) |\n| **Length** | 48 meters |\n| **Crew Capacity** | 6\u201312 (optimal crew: 6) |\n| **Passenger Capacity** | 8 (in cramped conditions) |\n| **Cargo Capacity** | 40 tons standard; 60 tons with cargo bay modification |\n| **Hull Points** | 30 |\n| **Armor** | 4 |\n| **Evasion** | 12 |\n| **Speed** | 3 (Moderate \u2014 faster than freighters, slower than fighters) |\n| **Hyperspace Rating** | Class 3 (standard \u2014 3 days per sector) |\n| **Sensors** | Standard (Near range detection, passive scan) |\n| **Signature** | Medium (detectable at Near range by military sensors) |\n\n---"
+            },
+            {
+              "title": "Weapons Systems",
+              "id": "section-3",
+              "content": "| Weapon | Damage | Range | Notes |\n|:---|:---|:---|:---|\n| **Twin-Linked Pulse Cannons** | 2d8 | Close\u2013Near | Forward-mounted, requires Gunner action |\n| **Point Defense Array** | 1d6 | Close | Automated, grants +2 to resist boarding and missile attacks |\n| **Torpedo Launcher** | 3d10 | Near\u2013Far | 4 torpedoes loaded; resupply at station (expensive) |\n\n---"
+            },
+            {
+              "title": "Ship Systems",
+              "id": "section-4",
+              "content": "| System | Status | Description |\n|:---|:---|:---|\n| **Engines** | Operational | Terran military-grade sublight drives. Reliable but loud. |\n| **Hyperspace Drive** | Operational | Class 3 jump drive. Requires 10 minutes to calculate and spool. |\n| **Life Support** | Operational | Supports 12 occupants for 30 days without resupply. |\n| **Shields** | Patched | Kaelen aftermarket shield generator. Absorbs first 4 damage per round, then must recharge (1 round). |\n| **Sensors** | Operational | Standard sensor suite. Can be boosted by Comms/Ops crew role. |\n| **Communications** | Operational | Standard comms array with encrypted channel capability. |\n| **Medical Bay** | Basic | A converted storage closet with a surgical table and basic supplies. Grants +1 to medical rolls aboard ship. |\n| **Cargo Bay** | Operational | 40-ton capacity. Contains a hidden compartment (DC 16 to detect) installed by a previous owner. |\n| **Brig** | Improvised | A reinforced storage room with a magnetic lock. Holds 2 prisoners uncomfortably. |\n\n---"
+            },
+            {
+              "title": "Known Quirks",
+              "id": "section-5",
+              "content": "Every ship has personality. The Dawnrunner has more than most.\n\n**The Hum:** The hyperspace drive emits a low, rhythmic hum when the ship is at rest. Long-time crew members find it soothing. New passengers find it unsettling. There is no mechanical explanation.\n\n**Compartment 7:** A small maintenance compartment on the lower deck that is consistently 3 degrees colder than the rest of the ship. Previous owners reported hearing whispers. The current crew has learned to ignore it. (GM Note: This is a narrative hook. It may be connected to the Progenitor component Kel carries, or it may be something else entirely.)\n\n**The Galley Dispenser:** The food synthesizer has a limited menu and an apparent preference. No matter what you order, there is a 1-in-6 chance it produces Kaelen spice porridge instead. The crew has stopped complaining.\n\n**Mismatched Systems:** The Terran nav computer and the Kaelen shield generator occasionally conflict, causing brief system glitches during high-stress maneuvers. When the ship takes a Critical Hit, the GM may rule that one non-essential system temporarily goes offline until the Engineer makes a repair roll.\n\n---"
+            },
+            {
+              "title": "Crew Stations",
+              "id": "section-6",
+              "content": "| Station | Location | Crew Role |\n|:---|:---|:---|\n| **Bridge** | Forward upper deck | Captain, Pilot, Comms/Ops |\n| **Gunnery Console** | Bridge (port side) | Gunner |\n| **Engineering** | Lower deck, aft | Engineer |\n| **Medical Bay** | Lower deck, midship | Medic |\n| **Cargo Bay** | Lower deck, forward | Accessible to all |\n| **Crew Quarters** | Upper deck, midship | 6 bunks, shared common area |\n| **Airlock** | Port and starboard, midship | Boarding / EVA access |\n\n---"
+            },
+            {
+              "title": "Upgrade Slots",
+              "id": "section-7",
+              "content": "The Dawnrunner has **3 Upgrade Slots** available. Upgrades can be purchased at stations or salvaged from wrecks. Each upgrade occupies one slot.\n\n**Example Upgrades:**\n\n| Upgrade | Cost | Effect |\n|:---|:---|:---|\n| **Enhanced Sensors** | 500 credits | Extend sensor range to Far; +2 to scan rolls |\n| **Reinforced Hull Plating** | 800 credits | +4 Hull Points |\n| **Stealth Coating** | 1,200 credits | Reduce Signature to Low (detectable only at Close range) |\n| **Expanded Cargo Bay** | 400 credits | Increase cargo capacity to 60 tons |\n| **Improved Hyperspace Drive** | 1,500 credits | Upgrade to Class 2 (2 days per sector) |\n| **Drone Bay** | 600 credits | Launch and control 1 reconnaissance drone |\n| **Tractor Beam** | 700 credits | Grapple small objects or disabled ships at Close range |\n| **Boarding Ram** | 500 credits | +2 to boarding actions; can force docking with unwilling targets |\n\n---"
+            },
+            {
+              "title": "Ship Sheet Summary",
+              "id": "section-8",
+              "content": "```\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551  SHIP: THE DAWNRUNNER          CLASS: Corvette   \u2551\n\u2560\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2563\n\u2551  Hull Points: [30] \u2610\u2610\u2610\u2610\u2610 \u2610\u2610\u2610\u2610\u2610 \u2610\u2610\u2610\u2610\u2610          \u2551\n\u2551               \u2610\u2610\u2610\u2610\u2610 \u2610\u2610\u2610\u2610\u2610 \u2610\u2610\u2610\u2610\u2610                \u2551\n\u2551  Armor: 4    Evasion: 12    Speed: 3             \u2551\n\u2551  Hyperspace: Class 3    Cargo: 40 tons           \u2551\n\u2560\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2563\n\u2551  WEAPONS                                         \u2551\n\u2551  \u2610 Twin Pulse Cannons  2d8  Close-Near           \u2551\n\u2551  \u2610 Point Defense       1d6  Close (Auto)         \u2551\n\u2551  \u2610 Torpedo Launcher    3d10 Near-Far  [4/4]      \u2551\n\u2560\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2563\n\u2551  SYSTEMS         STATUS                          \u2551\n\u2551  \u2610 Engines       [Operational]                   \u2551\n\u2551  \u2610 Hyperspace    [Operational]                   \u2551\n\u2551  \u2610 Life Support  [Operational]                   \u2551\n\u2551  \u2610 Shields       [Patched]                       \u2551\n\u2551  \u2610 Sensors       [Operational]                   \u2551\n\u2551  \u2610 Comms         [Operational]                   \u2551\n\u2551  \u2610 Medical Bay   [Basic]                         \u2551\n\u2551  \u2610 Cargo Bay     [Operational]                   \u2551\n\u2560\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2563\n\u2551  UPGRADES (3 slots)                              \u2551\n\u2551  1. ________________________________             \u2551\n\u2551  2. ________________________________             \u2551\n\u2551  3. ________________________________             \u2551\n\u2560\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2563\n\u2551  CREW ROLES                                      \u2551\n\u2551  Captain: ____________  Pilot: ____________      \u2551\n\u2551  Gunner: ____________   Engineer: __________     \u2551\n\u2551  Comms: _____________   Marine: ____________     \u2551\n\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d\n```\n\n---\n\n> *\"She has been shot at, boarded, rammed, and left for dead in three different star systems. She always comes back. That is why we call her Dawnrunner \u2014 because no matter how dark the night, she finds the dawn.\"*"
+            }
+          ]
         },
         {
-          "title": "Section 4: Attribution",
-          "id": "book-8-ch-5",
-          "sections": [],
-          "content": "If we Share Public Game Content or Adaptive Content, we must include:\n(a) copyright notice\n(b) attribution statement identifying DRP as creator\n(c) hyperlink to Public Game Content\n(d) statement that content is licensed under DPCGL\n(e) statement indicating whether we modified the Public Game Content"
+          "title": "Character Sheet",
+          "id": "book-8-ch-new-5",
+          "content": "> *Print this sheet or use it as a digital reference during play.*\n\n---",
+          "sections": [
+            {
+              "title": "Character Identity",
+              "id": "section-1",
+              "content": "| Field | Value |\n|:---|:---|\n| **Character Name** | |\n| **Player Name** | |\n| **Ancestry** | |\n| **Community** | |\n| **Class** | |\n| **Subclass** | |\n| **Level** | |\n| **Tier** | |\n| **Experience** | |\n| **Crew Role** | |\n\n---"
+            },
+            {
+              "title": "Traits",
+              "id": "section-2",
+              "content": "| Trait | Score | Modifier |\n|:---|:---|:---|\n| **Agility** | | |\n| **Strength** | | |\n| **Finesse** | | |\n| **Instinct** | | |\n| **Presence** | | |\n| **Knowledge** | | |\n\n---"
+            },
+            {
+              "title": "Combat Statistics",
+              "id": "section-3",
+              "content": "| Stat | Value | Notes |\n|:---|:---|:---|\n| **Hit Points (Max)** | | |\n| **Current HP** | \u2610\u2610\u2610\u2610\u2610 \u2610\u2610\u2610\u2610\u2610 \u2610\u2610\u2610\u2610\u2610 \u2610\u2610\u2610\u2610\u2610 \u2610\u2610\u2610\u2610\u2610 | |\n| **Armor** | | |\n| **Evasion** | | |\n| **Proficiency** | | |\n\n---"
+            },
+            {
+              "title": "Stress and Scars",
+              "id": "section-4",
+              "content": "**Stress Track:** \u2610 \u2610 \u2610 \u2610 \u2610 \u2610\n\n**Scars:**\n\n| Scar | Description | Mechanical Effect |\n|:---|:---|:---|\n| 1. | | |\n| 2. | | |\n| 3. | | |\n\n---"
+            },
+            {
+              "title": "Damage Thresholds",
+              "id": "section-5",
+              "content": "| Threshold | Range | Effect |\n|:---|:---|:---|\n| **Minor** | \u2013 | |\n| **Major** | \u2013 | |\n| **Severe** | \u2013 | |\n| **Critical** | \u2013 | |\n\n---"
+            },
+            {
+              "title": "Weapons",
+              "id": "section-6",
+              "content": "| Weapon | Damage | Range | Properties |\n|:---|:---|:---|:---|\n| | | | |\n| | | | |\n| | | | |\n\n---"
+            },
+            {
+              "title": "Armor and Equipment",
+              "id": "section-7",
+              "content": "| Item | Effect | Notes |\n|:---|:---|:---|\n| | | |\n| | | |\n| | | |\n| | | |\n| | | |\n\n---"
+            },
+            {
+              "title": "Domain Card Loadout",
+              "id": "section-8",
+              "content": "**Primary Domain:** _________________ **Secondary Domain:** _________________\n\n| Slot | Card Name | Level | Type | Cost | Effect Summary |\n|:---|:---|:---|:---|:---|:---|\n| 1 | | | \u2610Action \u2610Reaction \u2610Passive | | |\n| 2 | | | \u2610Action \u2610Reaction \u2610Passive | | |\n| 3 | | | \u2610Action \u2610Reaction \u2610Passive | | |\n| 4 | | | \u2610Action \u2610Reaction \u2610Passive | | |\n| 5 | | | \u2610Action \u2610Reaction \u2610Passive | | |\n| 6 | | | \u2610Action \u2610Reaction \u2610Passive | | |\n\n---"
+            },
+            {
+              "title": "Bonds",
+              "id": "section-9",
+              "content": "| Bond | Character | Description |\n|:---|:---|:---|\n| **Positive** | | |\n| **Complicated** | | |\n| **New Bond** | | |\n\n---"
+            },
+            {
+              "title": "Secret",
+              "id": "section-10",
+              "content": "*(Write your secret here and give a copy to the GM)*\n\n---"
+            },
+            {
+              "title": "Credits and Resources",
+              "id": "section-11",
+              "content": "| Resource | Amount |\n|:---|:---|\n| **Credits** | |\n| **Hope (shared pool)** | |\n| **Special Resources** | |\n\n---"
+            },
+            {
+              "title": "Backstory Notes",
+              "id": "section-12",
+              "content": "| Element | Detail |\n|:---|:---|\n| **Homeworld** | |\n| **Occupation before the crew** | |\n| **Why you came to Nexus 9** | |\n| **What you fear most** | |\n| **What you hope for** | |\n\n---"
+            },
+            {
+              "title": "Advancement Tracker",
+              "id": "section-13",
+              "content": "| Level | Tier | Advancements Taken | Notes |\n|:---|:---|:---|:---|\n| 1 | 1 | Starting | |\n| 2 | 1 | | |\n| 3 | 2 | | |\n| 4 | 2 | | |\n| 5 | 3 | | |\n| 6 | 3 | | |\n| 7 | 3 | | |\n| 8 | 4 | | |\n| 9 | 4 | | |\n| 10 | 4 | | |"
+            }
+          ]
         },
         {
-          "title": "CRITICAL CONCLUSION FOR NEXUS 9:",
-          "id": "book-8-ch-6",
-          "sections": [],
-          "content": "1. We CAN reuse the mechanical STRUCTURE from the SRD (2d12 system, Hope/Fear, Domains, action economy, damage thresholds, leveling structure)\n2. We CAN create Adaptive Content (our own classes, weapons, Domain cards) that follow the SRD's mechanical patterns\n3. We CANNOT copy/paste exact SRD text \u2014 we must rewrite in our own words\n4. We CAN sell the final product\n5. We must include proper attribution\n6. \"Daggerheart\" cannot be in our title or on our cover \u2014 only in \"Compatible with Daggerheart\" descriptive text\n\n---"
+          "title": "Ship Sheet",
+          "id": "book-8-ch-new-6",
+          "content": "> *Your ship is more than a vehicle \u2014 it is your home, your fortress, and your lifeline.*\n\n---",
+          "sections": [
+            {
+              "title": "Ship Identity",
+              "id": "section-1",
+              "content": "| Field | Value |\n|:---|:---|\n| **Ship Name** | |\n| **Ship Class** | |\n| **Manufacturer** | |\n| **Registration** | |\n| **Crew Name** | |\n\n---"
+            },
+            {
+              "title": "Ship Statistics",
+              "id": "section-2",
+              "content": "| Attribute | Base | Modified |\n|:---|:---|:---|\n| **Hull Points (Max)** | | |\n| **Armor** | | |\n| **Evasion** | | |\n| **Speed** | | |\n| **Hyperspace Rating** | | |\n| **Sensor Range** | | |\n| **Signature** | | |\n| **Cargo Capacity** | | |\n| **Crew Capacity** | | |\n| **Passenger Capacity** | | |\n\n---"
+            },
+            {
+              "title": "Hull Damage Track",
+              "id": "section-3",
+              "content": "**Hull Points:** \u2610\u2610\u2610\u2610\u2610 \u2610\u2610\u2610\u2610\u2610 \u2610\u2610\u2610\u2610\u2610 \u2610\u2610\u2610\u2610\u2610 \u2610\u2610\u2610\u2610\u2610 \u2610\u2610\u2610\u2610\u2610\n\n| Threshold | HP Remaining | Effect |\n|:---|:---|:---|\n| **Operational** | 75%+ | No penalties |\n| **Damaged** | 50\u201374% | -1 to all ship rolls |\n| **Critical** | 25\u201349% | -2 to all ship rolls; one random system offline |\n| **Crippled** | 1\u201324% | -3 to all ship rolls; two systems offline; no hyperspace |\n| **Destroyed** | 0 | Hull breach. Abandon ship. |\n\n---"
+            },
+            {
+              "title": "Weapons Systems",
+              "id": "section-4",
+              "content": "| Weapon | Damage | Range | Ammo/Charges | Status |\n|:---|:---|:---|:---|:---|\n| | | | | \u2610Operational \u2610Damaged \u2610Offline |\n| | | | | \u2610Operational \u2610Damaged \u2610Offline |\n| | | | | \u2610Operational \u2610Damaged \u2610Offline |\n\n---"
+            },
+            {
+              "title": "Ship Systems",
+              "id": "section-5",
+              "content": "| System | Status | Notes |\n|:---|:---|:---|\n| **Engines** | \u2610Operational \u2610Damaged \u2610Offline | |\n| **Hyperspace Drive** | \u2610Operational \u2610Damaged \u2610Offline | |\n| **Life Support** | \u2610Operational \u2610Damaged \u2610Offline | |\n| **Shields** | \u2610Operational \u2610Damaged \u2610Offline | |\n| **Sensors** | \u2610Operational \u2610Damaged \u2610Offline | |\n| **Communications** | \u2610Operational \u2610Damaged \u2610Offline | |\n| **Medical Bay** | \u2610Operational \u2610Damaged \u2610Offline | |\n| **Cargo Bay** | \u2610Operational \u2610Damaged \u2610Offline | |\n\n---"
+            },
+            {
+              "title": "Upgrade Slots",
+              "id": "section-6",
+              "content": "| Slot | Upgrade Name | Effect |\n|:---|:---|:---|\n| 1 | | |\n| 2 | | |\n| 3 | | |\n\n---"
+            },
+            {
+              "title": "Crew Roster",
+              "id": "section-7",
+              "content": "| Role | Character | Player | Key Trait |\n|:---|:---|:---|:---|\n| **Captain** | | | |\n| **Pilot** | | | |\n| **Gunner** | | | |\n| **Engineer** | | | |\n| **Comms/Ops** | | | |\n| **Marine** | | | |\n\n---"
+            },
+            {
+              "title": "Cargo Manifest",
+              "id": "section-8",
+              "content": "| Item | Quantity | Value | Legal? | Notes |\n|:---|:---|:---|:---|:---|\n| | | | \u2610Y \u2610N | |\n| | | | \u2610Y \u2610N | |\n| | | | \u2610Y \u2610N | |\n| | | | \u2610Y \u2610N | |\n| | | | \u2610Y \u2610N | |\n\n---"
+            },
+            {
+              "title": "Ship Debt / Obligations",
+              "id": "section-9",
+              "content": "| Creditor | Amount Owed | Payment Schedule | Consequence of Default |\n|:---|:---|:---|:---|\n| | | | |\n\n---"
+            },
+            {
+              "title": "Ship Log",
+              "id": "section-10",
+              "content": "| Session | Event | Damage Taken | Repairs Made | Notes |\n|:---|:---|:---|:---|:---|\n| | | | | |\n| | | | | |\n| | | | | |\n| | | | | |\n\n---"
+            },
+            {
+              "title": "Ship Quirks",
+              "id": "section-11",
+              "content": "| Quirk | Description |\n|:---|:---|\n| | |\n| | |\n| | |"
+            }
+          ]
+        },
+        {
+          "title": "Domain Card Quick Reference",
+          "id": "book-8-ch-new-7",
+          "content": "> *A summary of all nine domains, their thematic focus, which classes use them, and how domain cards work in play.*\n\n---",
+          "sections": [
+            {
+              "title": "How Domain Cards Work",
+              "id": "section-1",
+              "content": "Each class in Nexus 9 has access to two **Domains** \u2014 thematic ability pools that define your character's capabilities. Your full collection of available cards is your **Vault**. Before each session, you select a subset of cards from your Vault to form your **Loadout** \u2014 the abilities you have ready for immediate use.\n\n---"
+            },
+            {
+              "title": "Card Types",
+              "id": "section-2",
+              "content": "| Type | Icon | When Used | Cost |\n|:---|:---|:---|:---|\n| **Action** | \u2694 | On your turn, uses your action | Varies (Hope, Stress, or free) |\n| **Reaction** | \ud83d\udee1 | Triggered by a specific event | Varies (Hope, Stress, or free) |\n| **Passive** | \u2726 | Always active while in your Loadout | None (always on) |\n\n---"
+            },
+            {
+              "title": "Card Costs",
+              "id": "section-3",
+              "content": "| Cost | Description |\n|:---|:---|\n| **Free** | No cost; simply declare use |\n| **1 Hope** | Spend 1 Hope from the shared pool |\n| **2 Hope** | Spend 2 Hope from the shared pool |\n| **1 Stress** | Mark 1 Stress on your character sheet |\n| **2 Stress** | Mark 2 Stress on your character sheet |\n| **Action** | Uses your action for the turn |\n\n---"
+            },
+            {
+              "title": "Loadout Rules",
+              "id": "section-4",
+              "content": "Your maximum Loadout size depends on your level:\n\n| Level | Max Loadout Size |\n|:---|:---|\n| 1\u20132 | 4 cards |\n| 3\u20134 | 5 cards |\n| 5\u20137 | 6 cards |\n| 8\u201310 | 7 cards |\n\nYou may swap cards in your Loadout during a **Short Rest** (swap 1 card) or a **Long Rest** (rebuild your entire Loadout).\n\n---"
+            },
+            {
+              "title": "The Nine Domains",
+              "id": "section-5",
+              "content": "### 1. Arcana (Telepathy and Technomancy)\n\n**Theme:** Psychic power, mind-reading, technomantic manipulation, and forbidden knowledge.\n\n**Used by:** Mystic (Primary), Broker (Secondary)\n\n| Level | Sample Cards |\n|:---|:---|\n| 1 | Psychic Probe, Technomantic Surge, Mind Shield |\n| 2 | Neural Overload, System Hack, Thought Leech |\n| 3+ | Mass Telepathy, Cognitive Override, Technomantic Storm |\n\n---\n\n### 2. Blade (Close Quarters Combat)\n\n**Theme:** Melee mastery, aggressive strikes, and frontline dominance.\n\n**Used by:** Marine (Primary), Engineer (Secondary)\n\n| Level | Sample Cards |\n|:---|:---|\n| 1 | Cleaving Strike, Warrior's Stance, Riposte |\n| 2 | Whirlwind Attack, Armor Breaker, Relentless Advance |\n| 3+ | Executioner's Strike, Unstoppable Charge, Blade Storm |\n\n---\n\n### 3. Bone (Tactics and Evasion)\n\n**Theme:** Battlefield awareness, evasive maneuvers, tactical positioning, and survival instinct.\n\n**Used by:** Pilot (Primary), Marine (Secondary)\n\n| Level | Sample Cards |\n|:---|:---|\n| 1 | Evasive Maneuvers, Battle Sense, Tactical Withdrawal |\n| 2 | Flanking Fire, Danger Sense, Covering Fire |\n| 3+ | Perfect Evasion, Tactical Supremacy, Ghost Run |\n\n---\n\n### 4. Codex (Law, Lore, and Bureaucracy)\n\n**Theme:** Legal expertise, historical knowledge, bureaucratic manipulation, and information warfare.\n\n**Used by:** Envoy (Primary)\n\n| Level | Sample Cards |\n|:---|:---|\n| 1 | Bureaucratic Loophole, Historical Precedent, Diplomatic Immunity |\n| 2 | Red Tape, Legal Precedent, Intelligence Briefing |\n| 3+ | Executive Order, Classified Intel, Political Leverage |\n\n---\n\n### 5. Grace (Diplomacy and Deception)\n\n**Theme:** Persuasion, manipulation, social maneuvering, and reading people.\n\n**Used by:** Envoy (Primary), Operative (Secondary)\n\n| Level | Sample Cards |\n|:---|:---|\n| 1 | Silver Tongue, Read the Room, Charming Deflection |\n| 2 | Honeyed Words, False Flag, Social Chameleon |\n| 3+ | Master Manipulator, Diplomatic Coup, Irresistible Offer |\n\n---\n\n### 6. Midnight (Stealth and Sabotage)\n\n**Theme:** Infiltration, assassination, sabotage, and operating from the shadows.\n\n**Used by:** Operative (Primary), Mystic (Secondary)\n\n| Level | Sample Cards |\n|:---|:---|\n| 1 | Pick and Pull, Uncanny Disguise, Midnight Spirit |\n| 2 | Shadowbind, Saboteur's Touch, Vanishing Act |\n| 3+ | Death from Shadows, Ghost Protocol, Perfect Infiltration |\n\n---\n\n### 7. Sage (Survival and Logistics)\n\n**Theme:** Navigation, resource management, wilderness survival, and supply chain expertise.\n\n**Used by:** Broker (Primary), Pilot (Secondary)\n\n| Level | Sample Cards |\n|:---|:---|\n| 1 | Wayfinder, Field Repair, Scavenger's Eye |\n| 2 | Supply Cache, Astrogation, Emergency Rations |\n| 3+ | Master Navigator, Resource Network, Survival Instinct |\n\n---\n\n### 8. Splendor (Medicine and Morale)\n\n**Theme:** Healing, trauma care, psychological support, and crew morale.\n\n**Used by:** Medic (Primary)\n\n| Level | Sample Cards |\n|:---|:---|\n| 1 | Emergency Triage, Morale Boost, Steady Hands |\n| 2 | Combat Medic, Trauma Surgery, Inspiring Presence |\n| 3+ | Miracle Worker, Mass Heal, Unbreakable Spirit |\n\n---\n\n### 9. Valor (Protection and Heavy Weapons)\n\n**Theme:** Defensive tactics, heavy weapons, shielding allies, and holding the line.\n\n**Used by:** Engineer (Primary), Medic (Secondary)\n\n| Level | Sample Cards |\n|:---|:---|\n| 1 | Shield Wall, Fortify Position, Suppressive Fire |\n| 2 | Overwatch, Hardened Defenses, Heavy Barrage |\n| 3+ | Impenetrable Defense, Orbital Strike, Last Stand |\n\n---"
+            },
+            {
+              "title": "Class Domain Summary",
+              "id": "section-6",
+              "content": "| Class | Primary Domain | Secondary Domain |\n|:---|:---|:---|\n| **Envoy** | Codex | Grace |\n| **Operative** | Midnight | Grace |\n| **Pilot** | Bone | Sage |\n| **Marine** | Blade | Bone |\n| **Engineer** | Valor | Blade |\n| **Mystic** | Arcana | Midnight |\n| **Broker** | Sage | Arcana |\n| **Medic** | Splendor | Valor |\n\n---"
+            },
+            {
+              "title": "Domain Overlap Map",
+              "id": "section-7",
+              "content": "Some domains are shared between classes, creating natural synergies and party composition considerations:\n\n| Domain | Classes |\n|:---|:---|\n| Arcana | Mystic, Broker |\n| Blade | Marine, Engineer |\n| Bone | Pilot, Marine |\n| Codex | Envoy (exclusive) |\n| Grace | Envoy, Operative |\n| Midnight | Operative, Mystic |\n| Sage | Broker, Pilot |\n| Splendor | Medic (exclusive) |\n| Valor | Engineer, Medic |\n\n**Exclusive Domains:** Codex (Envoy only) and Splendor (Medic only) ensure these classes have unique mechanical identities that cannot be replicated by other classes."
+            }
+          ]
         },
         {
           "title": "Appendix B: Telepathy Quick Reference",
@@ -1669,6 +2012,297 @@
             }
           ],
           "content": "Telepathy in *Nexus 9* is not magic; it is a forced evolutionary trait that allows a user to perceive and manipulate the quantum states of other minds. While Mystics and Brokers use the Arcana domain to represent their trained abilities, any character with the \"Telepath\" Experience or a Mindclave background can attempt basic telepathic feats."
+        },
+        {
+          "title": "Glossary and Lexicon",
+          "id": "book-8-ch-new-8",
+          "content": "> *A comprehensive reference of terms, slang, and nomenclature used throughout Nexus 9: The Fraying Dark.*\n\n---",
+          "sections": [
+            {
+              "title": "A",
+              "id": "section-1",
+              "content": "**Action Roll** \u2014 The core mechanic of the game. Roll 2d12 (one Hope die, one Fear die), add the relevant Trait modifier, and compare to the Difficulty. The higher die determines whether Hope or Fear is generated.\n\n**Adaptive Content** \u2014 Under the DPCGL license, original content derived from or based on the Daggerheart System Reference Document that has been translated, altered, or transformed.\n\n**Aethelgard** \u2014 A mysterious figure who emerged from a temporal anomaly approximately one thousand years before the campaign present. Aethelgard united the Valari castes, founded the Vanguard, and led the coalition that drove the Eclipse into hibernation. He vanished after delivering the cryptic warning: *\"The cycle will break, or the cycle will break you.\"*\n\n**Agility** \u2014 One of the six Traits. Governs dodging, piloting, acrobatics, and reflexes.\n\n**Arcana Domain** \u2014 The domain of telepathy and technomancy. Primary domain of the Mystic, secondary domain of the Broker.\n\n**Armor** \u2014 A defensive value that reduces incoming damage before it is applied to Hit Points.\n\n**Aurelian Empire** \u2014 A declining hereditary aristocratic monarchy. Once the center of galactic commerce, now characterized by decaying infrastructure, opulent core worlds, and rebellious outer colonies. Known for ornate aesthetics in rich purples, golds, and crimson.\n\n**Aurelia Prime** \u2014 Capital world of the Aurelian Empire, located in the Gilded Reach.\n\n---"
+            },
+            {
+              "title": "B",
+              "id": "section-2",
+              "content": "**Blade Domain** \u2014 The domain of close quarters combat. Primary domain of the Marine, secondary domain of the Engineer.\n\n**Blue Ring** \u2014 The diplomatic quarter of Nexus 9 station. Houses embassies, council chambers, and formal reception halls. Heavily secured and politically charged.\n\n**Bone Domain** \u2014 The domain of tactics and evasion. Primary domain of the Pilot, secondary domain of the Marine.\n\n**Broker** \u2014 One of the eight playable classes. A black-market dealer, information trader, and backroom negotiator. Operates through the Sage and Arcana domains.\n\n**Burnwire** \u2014 Station slang for an encrypted, single-use communication channel used by smugglers and intelligence operatives.\n\n---"
+            },
+            {
+              "title": "C",
+              "id": "section-3",
+              "content": "**Codex Domain** \u2014 The domain of law, lore, and bureaucracy. Primary domain of the Envoy.\n\n**Communities** \u2014 A character creation element representing the cultural environment in which a character was raised. Provides mechanical bonuses and narrative hooks.\n\n**Crew** \u2014 The collective term for the player characters and their shared ship. Crew creation is a collaborative process during Session Zero.\n\n**Crew Roles** \u2014 Specific positions aboard a starship during ship combat: Pilot, Gunner, Engineer, Comms/Ops, Captain, and Marine.\n\n**Cyclical Wars** \u2014 The recurring pattern of conflict between the Luminaries and the Eclipse, fought through proxy wars among the Younger Races over the course of a million years.\n\n---"
+            },
+            {
+              "title": "D",
+              "id": "section-4",
+              "content": "**Damage Thresholds** \u2014 Tiered breakpoints that determine the severity of a successful attack. Minor, Major, Severe, and Critical thresholds are defined per class and level.\n\n**Devil's Bargain** \u2014 A GM tool offering a player automatic success on a difficult action in exchange for a significant narrative cost, such as marking Stress or gaining a Scar.\n\n**Difficulty** \u2014 The target number for an Action Roll, set by the GM based on the challenge's complexity.\n\n**Director** \u2014 A high-ranking leader within the Mindclave hierarchy, each controlling a sector of operations.\n\n**Domain Cards** \u2014 Ability cards organized by thematic domains. Each class has access to two domains. Cards are categorized as Action, Reaction, or Passive.\n\n**Downed** \u2014 The state a character enters when their Hit Points reach zero. A Downed character is unconscious and dying unless stabilized by an ally.\n\n---"
+            },
+            {
+              "title": "E",
+              "id": "section-5",
+              "content": "**Eclipse, The** \u2014 One of two remaining Elder races. The Eclipse believe that true strength is forged through conflict, hardship, and competition. They periodically awaken from hibernation on their hidden world, The Hollow, to incite galactic war. Their technology is crystalline and organic, favoring deep blacks, violets, and sickly greens.\n\n**Elder Races** \u2014 Species that were uplifted by the Progenitors billions of years ago and built empires of staggering scope. Most departed the galaxy; the Luminaries and the Eclipse remained.\n\n**Engineer** \u2014 One of the eight playable classes. A mechanic, inventor, and systems specialist who keeps the crew alive and the ship running. Operates through the Valor and Blade domains.\n\n**Envoy** \u2014 One of the eight playable classes. A diplomat, spy, and manipulator who navigates the treacherous political waters of Nexus 9. Operates through the Codex and Grace domains.\n\n**Evasion** \u2014 A defensive value representing a character's ability to avoid attacks entirely. Attackers must meet or exceed a target's Evasion to land a hit.\n\n---"
+            },
+            {
+              "title": "F",
+              "id": "section-6",
+              "content": "**Faction Turn** \u2014 A GM-facing subsystem that tracks the actions and ambitions of major factions between sessions. Each faction has ratings for Military, Political, and Economic power.\n\n**Fear** \u2014 The GM's resource currency, generated when the Fear die rolls higher on an Action Roll. Spent to activate enemy abilities, introduce complications, and escalate threats.\n\n**Finesse** \u2014 One of the six Traits. Governs ranged attacks, lockpicking, sleight of hand, and precision work.\n\n**Fraying, The** \u2014 The slow unraveling of galactic stability as ancient forces stir, alliances fracture, and the Eclipse's influence spreads. The central dramatic tension of the campaign.\n\n---"
+            },
+            {
+              "title": "G",
+              "id": "section-7",
+              "content": "**Gold Ring** \u2014 The scientific and medical quarter of Nexus 9 station. Houses research laboratories, xenobiology facilities, and the station hospital.\n\n**Grace Domain** \u2014 The domain of diplomacy and deception. Primary domain of the Envoy, secondary domain of the Operative.\n\n**Green Ring** \u2014 The commercial and residential quarter of Nexus 9 station. The most densely populated ring, featuring markets, habitation blocks, entertainment venues, and the station's economic heart.\n\n**Grey Assembly** \u2014 The tricameral governing council of the Valari, with equal representation from the Warrior, Religious, and Worker castes.\n\n**Grey Ring** \u2014 The industrial and maintenance quarter of Nexus 9 station. Houses engineering bays, recycling plants, power systems, and the station's critical infrastructure. Also contains the entrance to the Warrens.\n\n---"
+            },
+            {
+              "title": "H",
+              "id": "section-8",
+              "content": "**Handler** \u2014 A mid-ranking Mindclave operative who manages teams of Hounds and oversees telepathic operations in a given sector.\n\n**Hit Points (HP)** \u2014 A numerical value representing a character's physical resilience. When HP reaches zero, the character is Downed.\n\n**Hollow, The** \u2014 The hidden stronghold world of the Eclipse, where they enter deep hibernation between their cyclical awakenings. Contains buried caches of crystalline warships.\n\n**Hope** \u2014 The players' shared resource currency, generated when the Hope die rolls higher on an Action Roll. Spent to activate domain cards, assist allies, resist consequences, and trigger class features.\n\n**Hope Die** \u2014 The light-colored d12 rolled as part of every Action Roll. When it rolls higher than the Fear die, 1 Hope is generated.\n\n**Hound** \u2014 A specialized Mindclave enforcement agent tasked with hunting unregistered telepaths (rogues).\n\n**Hyperspace** \u2014 The method of faster-than-light travel in the Known Galaxy. Ships enter hyperspace through calculated jump points. Travel through hyperspace is not instantaneous and carries risks.\n\n---"
+            },
+            {
+              "title": "I",
+              "id": "section-9",
+              "content": "**Imperial Conclave** \u2014 The Noble Court that governs the Aurelian Empire alongside the hereditary monarch.\n\n**Instinct** \u2014 One of the six Traits. Governs perception, intuition, survival, and reading people.\n\n---"
+            },
+            {
+              "title": "K",
+              "id": "section-10",
+              "content": "**Kaelen Syndicate** \u2014 A decentralized criminal empire operating through a network of merchant guilds, pirate fleets, and black-market cartels. Their aesthetic is sleek, angular, and predatory, favoring dark metallics, neon accents, and exposed machinery.\n\n**Knowledge** \u2014 One of the six Traits. Governs engineering, medicine, history, hacking, and science.\n\n---"
+            },
+            {
+              "title": "L",
+              "id": "section-11",
+              "content": "**League of Unaligned Worlds** \u2014 A loose coalition of independent systems, minor species, and frontier colonies that refuse to align with any major power. They seek representation and protection but lack military strength.\n\n**Loadout** \u2014 The set of domain cards a character has equipped for a given session. Loadouts can be adjusted during downtime between sessions.\n\n**Luminaries, The** \u2014 One of two remaining Elder races. The Luminaries believe in order, structure, and guided evolution. They secretly engineered human telepathy as a weapon against the Eclipse.\n\n---"
+            },
+            {
+              "title": "M",
+              "id": "section-12",
+              "content": "**Marine** \u2014 One of the eight playable classes. A frontline soldier, boarding specialist, and heavy weapons expert. Operates through the Blade and Bone domains.\n\n**Medic** \u2014 One of the eight playable classes. A combat physician, trauma surgeon, and morale anchor. Operates through the Splendor and Valor domains.\n\n**Midnight Domain** \u2014 The domain of stealth and sabotage. Primary domain of the Operative, secondary domain of the Mystic.\n\n**Mindclave** \u2014 The authoritarian organization within the Terran Coalition that controls all human telepaths. Led by Directors, staffed by Handlers and Hounds.\n\n**Multiclassing** \u2014 The optional rule allowing a character to gain features from a second class at higher levels, subject to restrictions.\n\n**Mystic** \u2014 One of the eight playable classes. A telepath, technomancer, and wielder of psychic power. Operates through the Arcana and Midnight domains.\n\n---"
+            },
+            {
+              "title": "N",
+              "id": "section-13",
+              "content": "**Nexus 9** \u2014 The massive five-ringed torus space station that serves as the campaign's primary setting. Built as a diplomatic hub after the Terran-Valari War, it is the ninth attempt at the Nexus Project. Operational for approximately one year at campaign start.\n\n**Nexus 4** \u2014 The fourth Nexus station, which was completed and became operational only to vanish without a trace, swallowed by an unexplained temporal anomaly.\n\n---"
+            },
+            {
+              "title": "O",
+              "id": "section-14",
+              "content": "**Operative** \u2014 One of the eight playable classes. A specialist in stealth, sabotage, and targeted elimination. Operates through the Midnight and Grace domains.\n\n**Orenthal** \u2014 The Firstborn of the Progenitors, the first sapient being in the galaxy. Chose to remain when the other Progenitors departed beyond the Rim.\n\n---"
+            },
+            {
+              "title": "P",
+              "id": "section-15",
+              "content": "**P-Rating** \u2014 The Mindclave's twelve-point scale (P1 to P12) for measuring telepathic ability. P1\u2013P3 covers surface empathy; P10\u2013P12 represents complete cognitive override.\n\n**Pilot** \u2014 One of the eight playable classes. An ace flyer, navigator, and tactical specialist. Operates through the Bone and Sage domains.\n\n**Presence** \u2014 One of the six Traits. Governs diplomacy, deception, leadership, and telepathic force.\n\n**Progenitors** \u2014 The first sapient species in the galaxy, naturally immortal. They nurtured the Elder Races before departing beyond the Rim. Only Orenthal remained.\n\n**Psychic Contest** \u2014 The opposed roll triggered when a telepath attempts to read or manipulate an unwilling target.\n\n---"
+            },
+            {
+              "title": "R",
+              "id": "section-16",
+              "content": "**Red Ring** \u2014 The military and security quarter of Nexus 9 station. Houses barracks, armories, the brig, and docking bays for military vessels.\n\n**Rogue Telepath** \u2014 An unregistered telepath operating outside Mindclave control. Hunted by Hounds.\n\n---"
+            },
+            {
+              "title": "S",
+              "id": "section-17",
+              "content": "**Sage Domain** \u2014 The domain of survival and logistics. Primary domain of the Broker, secondary domain of the Pilot.\n\n**Scar** \u2014 A permanent narrative consequence gained when a character's Stress track fills completely. Scars represent lasting physical, psychological, or social changes.\n\n**Session Zero** \u2014 The collaborative pre-campaign session where players establish tone, safety tools, crew bonds, ship selection, and campaign expectations.\n\n**Siege of Sol** \u2014 The climactic battle of the Terran-Valari War, fought in orbit around Earth. The Valari achieved total military victory but surrendered unconditionally upon discovering that human and Valari souls are intrinsically linked.\n\n**Splendor Domain** \u2014 The domain of medicine and morale. Primary domain of the Medic.\n\n**Strength** \u2014 One of the six Traits. Governs melee attacks, lifting, endurance, and intimidation.\n\n**Stress** \u2014 A resource representing mental and emotional strain. Marked when pushing abilities, resisting psychic attacks, or facing trauma. When the Stress track fills, the character gains a Scar.\n\n---"
+            },
+            {
+              "title": "T",
+              "id": "section-18",
+              "content": "**Technoseers** \u2014 A secretive order of scientists and engineers who worship technology as a path to transcendence. They seek to recover and reverse-engineer Progenitor artifacts.\n\n**Temporal Echo** \u2014 The hereditary Aurelian trait that grants brief, unreliable flashes of precognition.\n\n**Terran Coalition** \u2014 The human federal republic. Recovering from the Valari War, it is sliding toward military authoritarianism under Mindclave influence.\n\n**Threat Clock** \u2014 A GM tool for tracking the progress of major faction agendas. When a clock fills, a significant event occurs (invasion, coup, awakening, etc.).\n\n**Tier** \u2014 A grouping of character levels that determines access to equipment, abilities, and domain cards. Tier 1 covers Levels 1\u20132; Tier 2 covers Levels 3\u20134; Tier 3 covers Levels 5\u20137; Tier 4 covers Levels 8\u201310.\n\n---"
+            },
+            {
+              "title": "U",
+              "id": "section-19",
+              "content": "**Umbral Covenant** \u2014 A heretical splinter faction of the Technoseers that has begun experimenting with Eclipse technology, believing it holds the key to ultimate power.\n\n---"
+            },
+            {
+              "title": "V",
+              "id": "section-20",
+              "content": "**Vael'Kari** \u2014 The Warrior Caste of the Valari.\n\n**Vael'Sari** \u2014 The Religious Caste of the Valari.\n\n**Vael'Tari** \u2014 The Worker Caste of the Valari.\n\n**Valari** \u2014 A technologically superior, deeply spiritual alien species organized into three castes and governed by the Grey Assembly. Their biology features cranial ridges of crystalline bone and pale luminescent skin.\n\n**Valor Domain** \u2014 The domain of protection and heavy weapons. Primary domain of the Engineer, secondary domain of the Medic.\n\n**Vanguard** \u2014 A covert, multi-species order founded by Aethelgard, dedicated to watching for the Eclipse's return. Operates in secret across all factions.\n\n**Vault** \u2014 The full collection of domain cards available to a character's class. The Loadout is drawn from the Vault.\n\n---"
+            },
+            {
+              "title": "W",
+              "id": "section-21",
+              "content": "**Warrens, The** \u2014 The lawless, unregulated sub-levels beneath Nexus 9's Grey Ring. A maze of abandoned maintenance corridors, black-market bazaars, and criminal hideouts.\n\n---"
+            },
+            {
+              "title": "Y",
+              "id": "section-22",
+              "content": "**Younger Races** \u2014 The species that evolved after the Elders departed, including humans, Valari, Aurelians, and Kaelen. They were caught between the Luminaries and the Eclipse in the Cyclical Wars.\n\n---"
+            },
+            {
+              "title": "Station Slang",
+              "id": "section-23",
+              "content": "| Term | Meaning |\n|:---|:---|\n| **Burnwire** | An encrypted, single-use communication channel |\n| **Clave-rat** | Derogatory term for a Mindclave loyalist |\n| **Dirtside** | Planetside; anywhere that is not a station or ship |\n| **Dustwalker** | A frontier explorer or prospector |\n| **Fade** | To disappear, especially to avoid Mindclave detection |\n| **Ghosting** | Running dark \u2014 operating without transponder or ID |\n| **Gilt** | Aurelian currency; also slang for anything ostentatious |\n| **Greyback** | A worker or maintenance crew member (from the Grey Ring) |\n| **Hard burn** | Emergency acceleration; also slang for a desperate gamble |\n| **Inkblot** | An Eclipse-touched individual or artifact |\n| **Jumpsick** | Nausea and disorientation from hyperspace travel |\n| **Rattler** | A Kaelen Syndicate enforcer |\n| **Ringside** | On-station; the opposite of dirtside |\n| **Scab** | A patch repair on a ship hull; also slang for a temporary fix |\n| **Skinwalker** | A telepath who can alter their appearance |\n| **Spinward / Rimward** | Directional terms on the station (toward the spin axis / toward the outer hull) |\n| **Voidborn** | Someone born and raised in space, never having lived on a planet |\n| **Warrens rat** | A resident of the Warrens sub-levels |"
+            }
+          ]
+        },
+        {
+          "title": "Index",
+          "id": "book-8-ch-new-9",
+          "content": "> *A comprehensive reference to key terms, rules, factions, characters, and locations in Nexus 9: The Fraying Dark.*\n\n---",
+          "sections": [
+            {
+              "title": "A",
+              "id": "section-1",
+              "content": "- **Action Cards** \u2014 Domain Card Quick Reference\n- **Action Rolls** \u2014 Book Two: Core Mechanics; Quickstart Rules\n- **Advancement System** \u2014 Book Three: The Leveling Structure\n- **Aethelgard** \u2014 Book One: History of the Known Galaxy; Book Seven: Arc 3\n- **Agility (Trait)** \u2014 Book Two: Character Creation; Quickstart Rules\n- **Ancestries** \u2014 Book Two: Character Creation\n- **Arcana Domain** \u2014 Book Three: The Mystic; Domain Card Quick Reference\n- **Armor** \u2014 Book Four: How Damage Works; Quickstart Rules\n- **Aurelian Empire** \u2014 Book One: Factions; Book Six: Adversaries\n- **Aurelian Centurion** \u2014 Book Six: The Aurelian Empire\n- **Aurelian Legionnaire** \u2014 Book Six: The Aurelian Empire\n- **Aurelian Praetorian Guard** \u2014 Book Six: The Aurelian Empire\n- **Aurelia Prime** \u2014 Book One: Factions"
+            },
+            {
+              "title": "B",
+              "id": "section-2",
+              "content": "- **Blade Domain** \u2014 Book Three: The Marine; Domain Card Quick Reference\n- **Blue Ring** \u2014 Book One: Life on Nexus 9; Maps\n- **Boarding Actions** \u2014 Book Four: Starship Combat\n- **Bone Domain** \u2014 Book Three: The Pilot; Domain Card Quick Reference\n- **Bonds** \u2014 Session Zero Guide; Character Sheet\n- **Broker (Class)** \u2014 Book Three: The Broker\n- **Burnwire** \u2014 Glossary"
+            },
+            {
+              "title": "C",
+              "id": "section-3",
+              "content": "- **Campaign Arcs** \u2014 Book Seven: The Gathering Storm\n- **Character Creation** \u2014 Book Two: Character Creation\n- **Character Sheet** \u2014 Appendix: Character Sheet\n- **Codex Domain** \u2014 Book Three: The Envoy; Domain Card Quick Reference\n- **Combat** \u2014 Book Four: The Art of War; Quickstart Rules\n- **Communities** \u2014 Book Two: Character Creation\n- **Crew Creation** \u2014 Session Zero Guide\n- **Crew Roles** \u2014 Quickstart Rules; Ship Sheet\n- **Credits (Currency)** \u2014 Book Four: Gear and Equipment\n- **Cyclical Wars** \u2014 Book One: History of the Known Galaxy"
+            },
+            {
+              "title": "D",
+              "id": "section-4",
+              "content": "- **Damage Thresholds** \u2014 Book Four: Class Damage Thresholds; Quickstart Rules\n- **Dawnrunner (Starter Ship)** \u2014 Appendix: Starter Ship\n- **Devil's Bargain** \u2014 Appendix B: Telepathy Quick Reference\n- **Difficulty** \u2014 Book Two: Core Mechanics\n- **Domain Cards** \u2014 Book Three: Class Adaptation Guide; Domain Card Quick Reference\n- **Downed (Condition)** \u2014 Book Four: How Damage Works"
+            },
+            {
+              "title": "E",
+              "id": "section-5",
+              "content": "- **Eclipse, The** \u2014 Book One: Factions; Book Six: Eclipse-Touched; Book Seven: Arc 3\n- **Eclipse-Corrupted** \u2014 Book Six: The Eclipse-Corrupted\n- **Eclipse-Touched Cultists** \u2014 Book Six: The Eclipse-Touched\n- **Elder Races** \u2014 Book One: History of the Known Galaxy\n- **Encounter Building** \u2014 Book Six: Encounter Building and GM Guidance\n- **Encounter Seeds** \u2014 Book Six: Encounter Seeds\n- **Engineer (Class)** \u2014 Book Three: The Engineer\n- **Envoy (Class)** \u2014 Book Three: The Envoy\n- **Evasion** \u2014 Book Four: How Damage Works\n- **Experience (Character Element)** \u2014 Book Two: Character Creation"
+            },
+            {
+              "title": "F",
+              "id": "section-6",
+              "content": "- **Faction Turn System** \u2014 Book Five: The Faction Turn System\n- **Factions** \u2014 Book One: Factions of the Known Galaxy\n- **Fear (Resource)** \u2014 Book Two: Core Mechanics; Quickstart Rules\n- **Finesse (Trait)** \u2014 Book Two: Character Creation\n- **Fraying, The** \u2014 Glossary; Book Seven: Campaign Overview\n- **Frontier** \u2014 Book One: Factions; Book Six: Frontier and Progenitor Relics"
+            },
+            {
+              "title": "G",
+              "id": "section-7",
+              "content": "- **Gear and Equipment** \u2014 Book Four: Gear, Weapons, and Equipment\n- **Gold Ring** \u2014 Book One: Life on Nexus 9; Maps\n- **Grace Domain** \u2014 Book Three: The Envoy; Domain Card Quick Reference\n- **Green Ring** \u2014 Book One: Life on Nexus 9; Maps\n- **Grey Assembly** \u2014 Book One: Factions (Valari Collective)\n- **Grey Ring** \u2014 Book One: Life on Nexus 9; Maps"
+            },
+            {
+              "title": "H",
+              "id": "section-8",
+              "content": "- **Hollow, The** \u2014 Book One: Factions (The Eclipse)\n- **Hope (Resource)** \u2014 Book Two: Core Mechanics; Quickstart Rules\n- **Hope Die** \u2014 Quickstart Rules\n- **Hyperspace** \u2014 Book Four: Starship Rules; Glossary"
+            },
+            {
+              "title": "I",
+              "id": "section-9",
+              "content": "- **Imperial Dreadnought** \u2014 Book Six: The Aurelian Empire\n- **Independents** \u2014 Book Six: Independents and Station Security\n- **Instinct (Trait)** \u2014 Book Two: Character Creation"
+            },
+            {
+              "title": "K",
+              "id": "section-10",
+              "content": "- **Kaelen Syndicate** \u2014 Book One: Factions; Book Six: Adversaries\n- **Knowledge (Trait)** \u2014 Book Two: Character Creation"
+            },
+            {
+              "title": "L",
+              "id": "section-11",
+              "content": "- **League of Unaligned Worlds** \u2014 Book One: Factions\n- **Legal Notices** \u2014 Appendix: Legal Notices and Attribution\n- **Leveling Structure** \u2014 Book Three: The Leveling Structure\n- **Loadout** \u2014 Domain Card Quick Reference\n- **Luminaries, The** \u2014 Book One: History of the Known Galaxy"
+            },
+            {
+              "title": "M",
+              "id": "section-12",
+              "content": "- **Maps** \u2014 Book One: Star Map; Station Schematic\n- **Marine (Class)** \u2014 Book Three: The Marine\n- **Medic (Class)** \u2014 Book Three: The Medic\n- **Midnight Domain** \u2014 Book Three: The Operative; Domain Card Quick Reference\n- **Mindclave** \u2014 Book One: Factions; Book Six: The Mindclave\n- **Multiclassing** \u2014 Book Three: Class Adaptation Guide\n- **Mystic (Class)** \u2014 Book Three: The Mystic"
+            },
+            {
+              "title": "N",
+              "id": "section-13",
+              "content": "- **Nexus 4** \u2014 Book One: History; Glossary\n- **Nexus 9 (Station)** \u2014 Book One: Life on Nexus 9; Maps"
+            },
+            {
+              "title": "O",
+              "id": "section-14",
+              "content": "- **Operative (Class)** \u2014 Book Three: The Operative\n- **Orenthal** \u2014 Book One: History of the Known Galaxy"
+            },
+            {
+              "title": "P",
+              "id": "section-15",
+              "content": "- **P-Rating Scale** \u2014 Appendix B: Telepathy Quick Reference\n- **Passive Cards** \u2014 Domain Card Quick Reference\n- **Pilot (Class)** \u2014 Book Three: The Pilot\n- **Pregen Characters** \u2014 Appendix: Pregen Crew\n- **Presence (Trait)** \u2014 Book Two: Character Creation\n- **Progenitors** \u2014 Book One: History of the Known Galaxy\n- **Psychic Contest** \u2014 Appendix B: Telepathy Quick Reference"
+            },
+            {
+              "title": "R",
+              "id": "section-16",
+              "content": "- **Reaction Cards** \u2014 Domain Card Quick Reference\n- **Red Ring** \u2014 Book One: Life on Nexus 9; Maps\n- **Rogue Telepaths** \u2014 Glossary; Book One: Factions (Mindclave)"
+            },
+            {
+              "title": "S",
+              "id": "section-17",
+              "content": "- **Safety Tools** \u2014 Session Zero Guide\n- **Sage Domain** \u2014 Book Three: The Broker; Domain Card Quick Reference\n- **Scars** \u2014 Book Two: Core Mechanics; Quickstart Rules\n- **Secrets (Character Element)** \u2014 Session Zero Guide\n- **Session Zero** \u2014 Appendix: Session Zero Guide\n- **Ship Combat** \u2014 Book Four: Starship Combat; Quickstart Rules\n- **Ship Sheet** \u2014 Appendix: Ship Sheet\n- **Ship Upgrades** \u2014 Book Four: Ship Upgrades; Starter Ship\n- **Siege of Sol** \u2014 Book One: History of the Known Galaxy\n- **Splendor Domain** \u2014 Book Three: The Medic; Domain Card Quick Reference\n- **Star Map** \u2014 Book One: The Known Galaxy\n- **Starship Rules** \u2014 Book Four: Starship Rules\n- **Station Event Generator** \u2014 Book Five: The Station Event Generator\n- **Strength (Trait)** \u2014 Book Two: Character Creation\n- **Stress** \u2014 Book Two: Core Mechanics; Quickstart Rules"
+            },
+            {
+              "title": "T",
+              "id": "section-18",
+              "content": "- **Technoseers** \u2014 Book One: Factions; Book Six: The Technoseers\n- **Telepathy** \u2014 Appendix B: Telepathy Quick Reference\n- **Temporal Echo** \u2014 Glossary\n- **Terran Coalition** \u2014 Book One: Factions; Book Six: The Terran Coalition\n- **Threat Clocks** \u2014 Book Six: Threat Clocks and Escalation Tracks\n- **Tier System** \u2014 Book Three: The Leveling Structure"
+            },
+            {
+              "title": "U",
+              "id": "section-19",
+              "content": "- **Umbral Covenant** \u2014 Book One: Factions (Technoseers); Glossary"
+            },
+            {
+              "title": "V",
+              "id": "section-20",
+              "content": "- **Vael'Kari (Warrior Caste)** \u2014 Book One: Factions (Valari)\n- **Vael'Sari (Religious Caste)** \u2014 Book One: Factions (Valari)\n- **Vael'Tari (Worker Caste)** \u2014 Book One: Factions (Valari)\n- **Valari Collective** \u2014 Book One: Factions; Book Six: The Valari Collective\n- **Valor Domain** \u2014 Book Three: The Engineer; Domain Card Quick Reference\n- **Vanguard** \u2014 Book One: Factions; Glossary\n- **Vault (Card Collection)** \u2014 Domain Card Quick Reference\n- **Void Avatar** \u2014 Book Six: The Eclipse-Touched\n- **Void-Spawn** \u2014 Book Six: The Eclipse-Touched"
+            },
+            {
+              "title": "W",
+              "id": "section-21",
+              "content": "- **Warrens, The** \u2014 Book One: Life on Nexus 9; Glossary\n- **Weapons** \u2014 Book Four: Gear, Weapons, and Equipment"
+            },
+            {
+              "title": "Y",
+              "id": "section-22",
+              "content": "- **Younger Races** \u2014 Book One: History of the Known Galaxy; Glossary"
+            }
+          ]
+        },
+        {
+          "title": "Legal Notices and Attribution",
+          "id": "book-8-ch-new-10",
+          "content": "---",
+          "sections": [
+            {
+              "title": "Product Information",
+              "id": "section-1",
+              "content": "**Nexus 9: The Fraying Dark**\nA cosmic-opera tabletop roleplaying game.\n\nThis product is an independent creation and is not affiliated with, sponsored by, or endorsed by Darrington Press or Critical Role.\n\n---"
+            },
+            {
+              "title": "Compatibility Statement",
+              "id": "section-2",
+              "content": "This product is compatible with Daggerheart and is designed for use with the Daggerheart system. \"Daggerheart\" is a trademark of Darrington Press, LLC.\n\n---"
+            },
+            {
+              "title": "License Attribution",
+              "id": "section-3",
+              "content": "This work includes Adaptive Content derived from the Daggerheart System Reference Document 1.0, which is Public Game Content published by Darrington Press, LLC.\n\nThe Daggerheart System Reference Document 1.0 is copyright Darrington Press, LLC, and is used under the terms of the Darrington Press Community Gaming License (DPCGL).\n\nThe original Public Game Content has been modified. The mechanical systems, stat block formats, domain structures, class frameworks, and action economy presented in this work are adaptations of the systems described in the Daggerheart SRD. All setting material, characters, factions, locations, narrative content, artwork, and original game content in this work are the creation of the authors and are not part of the Public Game Content.\n\nThe full text of the Daggerheart System Reference Document is available at: https://darringtonpress.com/daggerheart-srd\n\nThis content is licensed under the Darrington Press Community Gaming License. The full text of the DPCGL is available at: https://darringtonpress.com/license\n\n---"
+            },
+            {
+              "title": "What This Means",
+              "id": "section-4",
+              "content": "- The game mechanics in this book (the 2d12 Hope/Fear system, action economy, domain card structure, damage thresholds, and character advancement framework) are adapted from the publicly available Daggerheart SRD.\n- All original content \u2014 including the Nexus 9 setting, all factions, characters, starships, weapons, locations, campaign narrative, artwork, and supplementary game material \u2014 is the original work of the authors.\n- This product is not official Daggerheart content. It is a third-party work created under the terms of the DPCGL.\n\n---"
+            },
+            {
+              "title": "Intellectual Property Notice",
+              "id": "section-5",
+              "content": "Nexus 9: The Fraying Dark and all original setting material, characters, factions, locations, starships, artwork, and narrative content contained herein are the intellectual property of the authors. All rights reserved.\n\nNo part of this work's original content may be reproduced, distributed, or transmitted in any form without the prior written permission of the authors, except for brief quotations in critical reviews and certain other noncommercial uses permitted by copyright law.\n\n---"
+            },
+            {
+              "title": "Art and Illustration Credits",
+              "id": "section-6",
+              "content": "All illustrations in this work were generated using AI image generation tools and are used in accordance with applicable terms of service. The art direction, prompts, curation, and integration of all visual assets were performed by the authors.\n\n---"
+            },
+            {
+              "title": "Safety and Content Notice",
+              "id": "section-7",
+              "content": "This game contains themes of political conflict, war, espionage, psychic violation, authoritarian surveillance, personal sacrifice, and moral compromise. While the tone is ultimately hopeful, individual sessions may explore intense subject matter. The Session Zero chapter includes recommended safety tools (Lines and Veils, X-Card, Open Door Policy) that should be established before play begins.\n\n---"
+            },
+            {
+              "title": "Acknowledgments",
+              "id": "section-8",
+              "content": "This game was inspired by the tradition of cosmic-opera storytelling \u2014 tales of civilizations in collision, ancient mysteries, and ordinary people caught in extraordinary circumstances. We are grateful to the creators of the Daggerheart system for building a flexible, story-forward mechanical foundation and for establishing a community license that enables independent creators to build upon it.\n\n---"
+            },
+            {
+              "title": "Version",
+              "id": "section-9",
+              "content": "First Digital Edition \u2014 2025\n\n---\n\n> *\"The stars do not care about our treaties, our wars, or our prayers. But we care about each other. That is enough.\"*"
+            }
+          ]
         }
       ]
     }

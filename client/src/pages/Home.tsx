@@ -1,5 +1,5 @@
 /**
- * Nexus 9: The Crucible of Stars — Interactive Book
+ * Nexus 9: The Fraying Dark — Interactive Book
  * Design: off-white content + deep space chrome + teal accents
  * Typography: Rajdhani headings, Source Serif 4 body, JetBrains Mono data
  */
@@ -161,7 +161,7 @@ export default function Home() {
     return (
       <div className="h-screen flex flex-col items-center justify-center relative overflow-hidden bg-[#050d1a]">
         <div className="absolute inset-0">
-          <img src={IMAGES.fullpage.title_page} alt="Nexus 9 Station"
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/104030874/FespuBmXL5Vam8ZoX6zMyg/nexus9_cover_fraying_dark-C6cwuXsuZFJMsAWqJR7daE.webp" alt="Nexus 9 Station — The Fraying Dark"
             className={"w-full h-full object-cover transition-all duration-[2000ms] " + (coverLoaded ? "opacity-100 scale-100" : "opacity-0 scale-105")} />
           <div className="absolute inset-0 bg-gradient-to-b from-[#050d1a]/20 via-[#050d1a]/40 to-[#050d1a]/95" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#050d1a]/30 via-transparent to-[#050d1a]/30" />
@@ -176,7 +176,7 @@ export default function Home() {
           </div>
           <span className="text-[10px] tracking-[0.5em] uppercase text-[#2ec4b6]/60 block mb-3" style={{ fontFamily: "var(--font-mono)" }}>ORBITAL FOUNDRY PRESENTS</span>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-[0.15em] uppercase text-white mb-4" style={{ fontFamily: "var(--font-heading)" }}>Nexus 9</h1>
-          <h2 className="text-xl md:text-2xl tracking-[0.3em] uppercase text-[#2ec4b6] mb-6" style={{ fontFamily: "var(--font-heading)", fontWeight: 400 }}>The Crucible of Stars</h2>
+          <h2 className="text-xl md:text-2xl tracking-[0.3em] uppercase text-[#2ec4b6] mb-6" style={{ fontFamily: "var(--font-heading)", fontWeight: 400 }}>The Fraying Dark</h2>
           <div className="flex items-center justify-center gap-3 mb-6">
             <div className="w-16 h-px bg-gradient-to-r from-transparent to-[#2ec4b6]/50" />
             <div className="w-1.5 h-1.5 rounded-full bg-[#2ec4b6]/60" />
@@ -400,7 +400,7 @@ export default function Home() {
                 </button>
               </div>
               <div className="mt-8 pb-8 text-center text-[10px] text-muted-foreground" style={{ fontFamily: "var(--font-heading)" }}>
-                <p className="tracking-widest uppercase">Nexus 9: The Crucible of Stars</p>
+                <p className="tracking-widest uppercase">Nexus 9: The Fraying Dark</p>
                 <p className="mt-1">Orbital Foundry &mdash; Compatible with Daggerheart</p>
               </div>
             </div>
