@@ -1,29 +1,33 @@
-# Nexus 9: The Fraying Dark — Completion TODO
+# Mechanical Alignment Review — Daggerheart North Star
 
-## Title Rename
-- [ ] Rename all references from "The Crucible of Stars" to "The Fraying Dark"
-- [ ] Update cover page title
-- [ ] Update breadcrumb and header references
-- [ ] Update JSON data
+## Phase 1: Read SRD Baselines
+- [ ] Read Daggerheart SRD Mechanical Baselines document
+- [ ] Extract key mechanical pillars (Hope/Fear, traits, HP, damage, armor, action economy, etc.)
 
-## New Content to Write
-- [ ] Quickstart Rules Summary (2-3 pages, "How to Play" primer)
-- [ ] Comprehensive Glossary / Lexicon (A-Z of setting terms)
-- [ ] Session Zero Guide (structured campaign setup walkthrough)
-- [ ] Pregen Characters (6 ready-to-play characters with backstories)
-- [ ] Starter Ship (pre-built crew vessel with full stats)
-- [ ] Character Sheet (printable template design)
-- [ ] Ship Sheet (printable crew/ship management sheet)
-- [ ] Card Reference (quick-reference for domain cards)
-- [ ] Back-of-Book Index
-- [ ] Legal / License Compliance Page
+## Phase 2: Read Nexus 9 Content
+- [ ] Read Character Creation chapter
+- [ ] Read Combat rules (How Combat Works, Chapter 11)
+- [ ] Read Example of Play
+- [ ] Read Conditions Reference
+- [ ] Read Class chapters for stat blocks
+- [ ] Read Starship Combat
 
-## Website Updates
-- [ ] Integrate all new content into the book data
-- [ ] Add new sidebar sections for new content
-- [ ] Generate updated cover art with "The Fraying Dark" title
+## Phase 3: Cross-Reference Audit
+- [ ] Compare trait system (names, values, generation method)
+- [ ] Compare HP/damage/armor mechanics
+- [ ] Compare action economy (action/reaction/free)
+- [ ] Compare Hope/Fear economy
+- [ ] Compare rest/recovery mechanics
+- [ ] Compare death/dying rules
+- [ ] Compare advancement/leveling
+- [ ] Compare domain card mechanics
+- [ ] Identify all deviations and contradictions
 
-## Final Polish
-- [ ] Test all navigation and content
-- [ ] Save checkpoint
-- [ ] Deliver to user
+## Phase 4: Write Fixes
+- [ ] Correct any misaligned mechanics
+- [ ] Ensure internal consistency across all chapters
+
+## Phase 5: Integrate and Deliver
+- [ ] Rebuild JSON data
+- [ ] Verify website renders correctly
+- [ ] Save checkpoint and deliver
