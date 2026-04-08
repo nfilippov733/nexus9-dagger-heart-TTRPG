@@ -244,10 +244,101 @@
   letter-spacing: 0.03em;
 }
 
-/* Print styles */
+/* ─── Dark Mode ─── */
+.dark {
+  --background: oklch(0.12 0.03 260);
+  --foreground: oklch(0.88 0.01 80);
+  --card: oklch(0.15 0.03 260);
+  --card-foreground: oklch(0.88 0.01 80);
+  --popover: oklch(0.15 0.03 260);
+  --popover-foreground: oklch(0.88 0.01 80);
+  --primary: oklch(0.7 0.15 185);
+  --primary-foreground: oklch(0.12 0.03 260);
+  --secondary: oklch(0.2 0.03 260);
+  --secondary-foreground: oklch(0.85 0.01 80);
+  --muted: oklch(0.18 0.03 260);
+  --muted-foreground: oklch(0.6 0.02 80);
+  --accent: oklch(0.7 0.15 185);
+  --accent-foreground: oklch(0.12 0.03 260);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.25 0.04 260);
+  --input: oklch(0.25 0.04 260);
+  --ring: oklch(0.7 0.15 185);
+}
+
+.dark .prose-nexus {
+  color: oklch(0.82 0.01 80);
+}
+.dark .prose-nexus strong {
+  color: oklch(0.92 0.01 80);
+}
+.dark .prose-nexus blockquote {
+  border-left-color: oklch(0.7 0.15 185);
+  background: oklch(0.18 0.03 260);
+  color: oklch(0.75 0.01 80);
+}
+.dark .prose-nexus table th {
+  background: oklch(0.2 0.04 260);
+  color: oklch(0.9 0.01 80);
+}
+.dark .prose-nexus table td {
+  border-bottom-color: oklch(0.25 0.04 260);
+}
+.dark .prose-nexus table tr:nth-child(even) td {
+  background: oklch(0.16 0.03 260);
+}
+.dark .prose-nexus h4 {
+  color: oklch(0.7 0.12 280);
+}
+.dark .book-two-col {
+  column-rule-color: oklch(0.25 0.04 260);
+}
+
+/* ─── Print styles ─── */
 @media print {
   body {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+    background: white !important;
+    color: black !important;
+  }
+  /* Hide sidebar, breadcrumb, back-to-top, nav buttons */
+  aside, [aria-label="Back to top"], .print\:hidden {
+    display: none !important;
+  }
+  /* Expand main content */
+  main {
+    overflow: visible !important;
+    height: auto !important;
+  }
+  /* Reset prose for print */
+  .prose-nexus {
+    color: black !important;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+  .prose-nexus strong { color: black !important; }
+  .prose-nexus blockquote {
+    border-left-color: #333 !important;
+    background: #f5f5f5 !important;
+    color: #333 !important;
+  }
+  .prose-nexus table th {
+    background: #333 !important;
+    color: white !important;
+  }
+  .prose-nexus table td {
+    border-bottom-color: #ddd !important;
+  }
+  .prose-nexus table tr:nth-child(even) td {
+    background: #f9f9f9 !important;
+  }
+  /* Page breaks */
+  .prose-nexus h2, .prose-nexus h3 {
+    break-after: avoid;
+  }
+  .prose-nexus table, .prose-nexus blockquote {
+    break-inside: avoid;
   }
 }

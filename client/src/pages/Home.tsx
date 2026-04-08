@@ -4,7 +4,8 @@
  * Typography: Rajdhani headings, Source Serif 4 body, JetBrains Mono data
  */
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
-import { ChevronRight, ChevronDown, Menu, X, BookOpen, ArrowUp, Search, Swords } from "lucide-react";
+import { ChevronRight, ChevronDown, Menu, X, BookOpen, ArrowUp, Search, Swords, User, Printer, Moon, Sun } from "lucide-react";
+import { useTheme } from "@/contexts/ThemeContext";
 import { Link } from "wouter";
 import manuscript from "@/data/manuscript.json";
 import { IMAGES, BOOK_IMAGES, FACTION_INSIGNIA_MAP, CLASS_PORTRAIT_MAP, RING_IMAGE_MAP } from "@/data/images";
@@ -81,6 +82,7 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const contentRef = useRef<HTMLDivElement>(null);
   const searchRef = useRef<HTMLInputElement>(null);
+  const { theme, toggleTheme } = useTheme();
 
   const activeBook = data.books[activeBookIdx];
   const activeChapter = activeBook?.chapters[activeChapterIdx];
@@ -249,7 +251,13 @@ export default function Home() {
             </div>
           ))}
         </nav>
-        <div className="px-3 py-2 border-t border-sidebar-border shrink-0">
+        <div className="px-3 py-2 border-t border-sidebar-border shrink-0 space-y-1.5">
+          <Link href="/character-builder">
+            <button className="w-full flex items-center gap-2 px-3 py-2.5 rounded text-left text-[11px] font-semibold tracking-wider uppercase bg-[#2ec4b6]/10 hover:bg-[#2ec4b6]/20 text-[#2ec4b6] border border-[#2ec4b6]/20 hover:border-[#2ec4b6]/40 transition-all duration-200" style={{ fontFamily: "var(--font-heading)" }}>
+              <User className="w-4 h-4 shrink-0" />
+              <span>Character Builder</span>
+            </button>
+          </Link>
           <Link href="/encounter-builder">
             <button className="w-full flex items-center gap-2 px-3 py-2.5 rounded text-left text-[11px] font-semibold tracking-wider uppercase bg-[#2ec4b6]/10 hover:bg-[#2ec4b6]/20 text-[#2ec4b6] border border-[#2ec4b6]/20 hover:border-[#2ec4b6]/40 transition-all duration-200" style={{ fontFamily: "var(--font-heading)" }}>
               <Swords className="w-4 h-4 shrink-0" />
@@ -266,7 +274,7 @@ export default function Home() {
       {/* Main content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Breadcrumb bar */}
-        <div className="shrink-0 bg-[#0a1628] text-white px-4 lg:px-8 py-2 flex items-center justify-between shadow-md">
+        <div className="shrink-0 bg-[#0a1628] text-white px-4 lg:px-8 py-2 flex items-center justify-between shadow-md print:hidden">
           <div className="flex items-center gap-2 text-xs min-w-0" style={{ fontFamily: "var(--font-mono)" }}>
             <span className="text-[#2ec4b6] shrink-0">NEXUS-9://</span>
             <span className="text-white/50 truncate">{activeBook?.title}</span>
@@ -275,9 +283,19 @@ export default function Home() {
               <span className="text-white/80 truncate">{activeChapter.title}</span>
             </>}
           </div>
-          <button onClick={() => setSearchOpen(!searchOpen)} className="p-1.5 hover:bg-white/10 rounded transition-colors ml-2 shrink-0" aria-label="Search">
-            <Search className="w-4 h-4 text-[#2ec4b6]" />
-          </button>
+          <div className="flex items-center gap-1 ml-2 shrink-0">
+            <button onClick={() => { if (activeChapter) { window.print(); } }} className="p-1.5 hover:bg-white/10 rounded transition-colors" aria-label="Print chapter" title="Print this chapter">
+              <Printer className="w-4 h-4 text-white/60 hover:text-[#2ec4b6]" />
+            </button>
+            {toggleTheme && (
+              <button onClick={toggleTheme} className="p-1.5 hover:bg-white/10 rounded transition-colors" aria-label="Toggle dark mode" title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}>
+                {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-white/60 hover:text-[#2ec4b6]" />}
+              </button>
+            )}
+            <button onClick={() => setSearchOpen(!searchOpen)} className="p-1.5 hover:bg-white/10 rounded transition-colors" aria-label="Search">
+              <Search className="w-4 h-4 text-[#2ec4b6]" />
+            </button>
+          </div>
         </div>
 
         {/* Search overlay */}
@@ -373,7 +391,7 @@ export default function Home() {
                   <div key={section.id} className="mb-10" id={section.id}>
                     <div className="flex items-start gap-4 mb-4 border-b-2 border-[#2ec4b6]/30 pb-3">
                       {insignia && <img src={insignia} alt="" className="w-14 h-14 rounded object-cover border border-border shadow-sm shrink-0" />}
-                      <h3 className="text-lg md:text-xl font-semibold tracking-wider uppercase text-[#1a4a7a]" style={{ fontFamily: "var(--font-heading)" }}>{section.title}</h3>
+                      <h3 className="text-lg md:text-xl font-semibold tracking-wider uppercase text-primary dark:text-[#2ec4b6]" style={{ fontFamily: "var(--font-heading)" }}>{section.title}</h3>
                     </div>
                     {portrait && (
                       <div className="float-right ml-4 mb-4 w-40 md:w-48">
@@ -393,7 +411,7 @@ export default function Home() {
               })}
 
               {/* Nav buttons */}
-              <div className="flex items-center justify-between mt-12 pt-6 border-t border-border">
+              <div className="flex items-center justify-between mt-12 pt-6 border-t border-border print:hidden">
                 <button onClick={goPrev} disabled={activeBookIdx === 0 && activeChapterIdx === 0}
                   className="flex items-center gap-2 px-5 py-2.5 text-sm rounded border border-border hover:bg-muted hover:border-[#2ec4b6]/40 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
                   style={{ fontFamily: "var(--font-heading)" }}>
