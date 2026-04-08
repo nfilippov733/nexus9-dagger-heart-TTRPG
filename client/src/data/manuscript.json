@@ -1329,430 +1329,291 @@
       "id": "book-6",
       "chapters": [
         {
-          "title": "Adversaries & Threats Guide",
-          "id": "book-6-ch-1",
-          "sections": [],
-          "content": "\n---"
-        },
-        {
-          "title": "1. The Kaelen Syndicate",
-          "id": "book-6-ch-2",
+          "title": "Adversaries & Threats: GM Guidance",
           "sections": [
             {
+              "title": "Reading Adversary Stat Blocks",
+              "content": "> **GM Note \u2014 Reading Adversary Stat Blocks:** An adversary's **Difficulty** is the target number PCs must meet or exceed on their action roll to hit the adversary \u2014 it functions identically to a PC's Evasion. **Adversary Stress** is a resource pool, not a damage track. Adversaries spend Stress to activate their Features. When an adversary's Stress reaches 0, they can no longer use Stress-costing Features. PCs can force adversaries to mark Stress through certain abilities, reducing the adversary's tactical options. **Advantage and Disadvantage:** When a creature has Advantage, roll an additional d6 and add it to the total. When a creature has Disadvantage, roll an additional d6 and subtract it from the total.\n\n---"
+            }
+          ]
+        },
+        {
+          "title": "The Kaelen Syndicate",
+          "sections": [
+            {
+              "title": "Overview",
+              "content": "The Kaelen Syndicate is a brutal, pragmatic organization born from centuries of Aurelian occupation. They fight with salvaged gear, overwhelming aggression, and a complete disregard for \"honorable\" combat. Their forces are a mix of desperate revolutionaries and hardened criminals."
+            },
+            {
               "title": "Tier 1: Syndicate Enforcer",
-              "id": "book-6-ch-2-s-1",
-              "content": "*The muscle of the Kaelen criminal empire, armed with cheap kinetic weapons and bad attitudes.*\n*   **Type:** Minion\n*   **Difficulty:** 10\n*   **Attack Modifier:** +2\n*   **Damage Thresholds:** Major 6, Severe 12\n*   **Hit Points:** 3\n*   **Stress:** 2\n*   **Experience:** Intimidation (+2)\n*   **Standard Attack:** *Scrap-Pistol* (Close range, 1d8+1 physical damage)\n*   **Feature (Passive):** *Strength in Numbers.* When attacking a target that is engaged in Melee with another Syndicate ally, the Enforcer gains Advantage on the attack roll.\n*   **GM Tactics:** Enforcers are cowards when alone but vicious in packs. They will always try to surround a single PC to trigger their passive feature."
+              "content": "*The muscle of the Kaelen criminal empire, armed with cheap kinetic weapons and bad attitudes.*\n*   **Type:** Minion\n*   **Difficulty:** 10\n*   **Attack Modifier:** +2\n*   **Damage Thresholds:** Minor 3 / Major 6 / Severe 12\n*   **Hit Points:** 3\n*   **Stress:** 2\n*   **Experience:** Intimidation (+2)\n*   **Standard Attack:** *Scrap-Pistol* (Close range, 1d8+1 physical damage)\n*   **Feature (Passive):** *Strength in Numbers.* When attacking a target that is engaged in Melee with another Syndicate ally, the Enforcer gains Advantage on the attack roll.\n*   **GM Tactics:** Enforcers are cowards when alone but vicious in packs. They will always try to surround a single PC to trigger their passive feature."
             },
             {
               "title": "Tier 1: Syndicate Fixer",
-              "id": "book-6-ch-2-s-2",
-              "content": "*The mid-level bosses who coordinate smuggling rings and extortion rackets.*\n*   **Type:** Support\n*   **Difficulty:** 12\n*   **Attack Modifier:** +3\n*   **Damage Thresholds:** Major 7, Severe 14\n*   **Hit Points:** 4\n*   **Stress:** 3\n*   **Experience:** Street Smarts (+3)\n*   **Standard Attack:** *Concealed Blade* (Melee range, 1d6+2 physical damage)\n*   **Feature (Action):** *Mark the Target.* The Fixer spends 1 Stress to designate a PC. All Syndicate allies gain +2 to their attack rolls against that PC until the end of the round.\n*   **GM Tactics:** Fixers stay behind cover, directing Enforcers to focus fire on the party's weakest member."
+              "content": "*The mid-level bosses who coordinate smuggling rings and extortion rackets.*\n*   **Type:** Support\n*   **Difficulty:** 12\n*   **Attack Modifier:** +3\n*   **Damage Thresholds:** Minor 4 / Major 7 / Severe 14\n*   **Hit Points:** 4\n*   **Stress:** 3\n*   **Experience:** Street Smarts (+3)\n*   **Standard Attack:** *Concealed Blade* (Melee range, 1d6+2 physical damage)\n*   **Feature (Action):** *Mark the Target.* The Fixer spends 1 Stress to designate a PC. All Syndicate allies gain +2 to their attack rolls against that PC until the end of the round.\n*   **GM Tactics:** Fixers stay behind cover, directing Enforcers to focus fire on the party's weakest member."
             },
             {
               "title": "Tier 2: Syndicate Breacher",
-              "id": "book-6-ch-2-s-3",
-              "content": "*Heavily armored shock troops used for boarding actions and breaking stalemates.*\n*   **Type:** Bruiser\n*   **Difficulty:** 13\n*   **Attack Modifier:** +5\n*   **Damage Thresholds:** Major 12, Severe 20\n*   **Hit Points:** 6\n*   **Stress:** 4\n*   **Experience:** Close Quarters Combat (+3)\n*   **Standard Attack:** *Heavy Shotgun* (Close range, 2d8+3 physical damage)\n*   **Feature (Action):** *Concussion Grenade.* The Breacher spends 2 Stress to throw a grenade. All PCs within Close range of the target point must make a Difficulty 13 Agility roll or take 2d6 physical damage and be Stunned until the end of their next turn.\n*   **GM Tactics:** Breachers lead the charge, using grenades to disrupt enemy formations before closing in for devastating shotgun blasts."
+              "content": "*Heavily armored shock troops used for boarding actions and breaking stalemates.*\n*   **Type:** Bruiser\n*   **Difficulty:** 13\n*   **Attack Modifier:** +5\n*   **Damage Thresholds:** Minor 6 / Major 12 / Severe 20\n*   **Hit Points:** 6\n*   **Stress:** 4\n*   **Experience:** Close Quarters Combat (+3)\n*   **Standard Attack:** *Heavy Shotgun* (Close range, 2d8+3 physical damage)\n*   **Feature (Action):** *Concussion Grenade.* The Breacher spends 2 Stress to throw a grenade. All PCs within Close range of the target point must make a Difficulty 13 Agility roll or take 2d6 physical damage and become Disoriented until the end of their next turn.\n*   **GM Tactics:** Breachers lead the charge, using grenades to disrupt enemy formations before closing in for devastating shotgun blasts."
             },
             {
               "title": "Tier 3: Syndicate \"Cleaner\"",
-              "id": "book-6-ch-2-s-4",
-              "content": "*A high-end assassin sent to erase problems that the Fixers couldn't handle.*\n*   **Type:** Skulk\n*   **Difficulty:** 17\n*   **Attack Modifier:** +8\n*   **Damage Thresholds:** Major 12, Severe 22\n*   **Hit Points:** 8\n*   **Stress:** 6\n*   **Experience:** Master of Disguise (+4)\n*   **Standard Attack:** *Silenced Sniper Rifle* (Very Far range, 2d12+5 physical damage)\n*   **Feature (Passive):** *Unseen.* The Cleaner cannot be targeted by attacks or spells if they are in cover or darkness, unless a PC first succeeds on a Difficulty 16 Instinct roll to locate them.\n*   **Feature (Action):** *Vanish.* The Cleaner spends 1 Stress to immediately move up to Far range and enter stealth, ending any effects that require line of sight.\n*   **GM Tactics:** Cleaners never fight fair. They shoot from maximum range, use *Vanish* to reposition, and target medics or squishy casters first."
+              "content": "*A high-end assassin sent to erase problems that the Fixers couldn't handle.*\n*   **Type:** Skulk\n*   **Difficulty:** 17\n*   **Attack Modifier:** +8\n*   **Damage Thresholds:** Minor 6 / Major 12 / Severe 22\n*   **Hit Points:** 8\n*   **Stress:** 6\n*   **Experience:** Master of Disguise (+4)\n*   **Standard Attack:** *Silenced Sniper Rifle* (Very Far range, 2d12+5 physical damage)\n*   **Feature (Passive):** *Unseen.* The Cleaner cannot be targeted by attacks or abilities if they are in cover or darkness, unless a PC first succeeds on a Difficulty 16 Instinct roll to locate them.\n*   **Feature (Action):** *Vanish.* The Cleaner spends 1 Stress to immediately move up to Far range and enter stealth, ending any effects that require line of sight.\n*   **GM Tactics:** Cleaners never fight fair. They shoot from maximum range, use *Vanish* to reposition, and target medics or support characters first."
             },
             {
               "title": "Tier 4: Syndicate Crime Lord (Boss)",
-              "id": "book-6-ch-2-s-5",
-              "content": "*The untouchable head of a Kaelen cartel, fighting with expensive tech and disposable bodyguards.*\n*   **Type:** Boss\n*   **Difficulty:** 18\n*   **Attack Modifier:** +8\n*   **Damage Thresholds:** Major 20, Severe 35\n*   **Hit Points:** 12\n*   **Stress:** 8\n*   **Experience:** Always Has an Escape Plan (+5)\n*   **Standard Attack:** *Custom Hand-Cannon* (Far range, 3d10+6 physical damage)\n*   **Feature (Passive):** *Meat Shields.* As long as the Crime Lord has at least one allied Minion or Standard adversary within Close range, the Crime Lord's Evasion increases by +2.\n*   **Feature (Action):** *Call in the Boys.* The GM spends 2 Fear to summon 1d4+1 Syndicate Enforcers (Tier 1 Minions) into empty spaces within Far range.\n*   **Feature (Reaction):** *Rigged to Blow.* When the Crime Lord is reduced to 0 HP, they can spend 1 Fear to detonate hidden explosives. All PCs within Close range take 4d8 physical damage, and the Crime Lord escapes in the chaos.\n*   **GM Tactics:** The Crime Lord never fights fair. They surround themselves with Enforcers to boost their Evasion, shoot from a distance, and use *Rigged to Blow* to ensure they survive to fight another day.\n\n---"
+              "content": "*The untouchable head of a Kaelen cartel, fighting with expensive tech and disposable bodyguards.*\n*   **Type:** Boss\n*   **Difficulty:** 18\n*   **Attack Modifier:** +8\n*   **Damage Thresholds:** Minor 10 / Major 20 / Severe 35\n*   **Hit Points:** 12\n*   **Stress:** 8\n*   **Experience:** Always Has an Escape Plan (+5)\n*   **Standard Attack:** *Custom Hand-Cannon* (Far range, 3d10+6 physical damage)\n*   **Feature (Passive):** *Meat Shields.* As long as the Crime Lord has at least one allied Minion or Standard adversary within Close range, the Crime Lord's Difficulty increases by +2.\n*   **Feature (Action):** *Call in the Boys.* The GM spends 2 Fear to summon 1d4+1 Syndicate Enforcers (Tier 1 Minions) into empty spaces within Far range.\n*   **Feature (Reaction):** *Rigged to Blow.* When the Crime Lord is reduced to 0 HP, they can spend 1 Fear to detonate hidden explosives. All PCs within Close range take 4d8 physical damage, and the Crime Lord escapes in the chaos.\n*   **GM Tactics:** The Crime Lord never fights fair. They surround themselves with Enforcers to boost their Difficulty, shoot from a distance, and use *Rigged to Blow* to ensure they survive to fight another day.\n\n---"
             }
-          ],
-          "content": "The Kaelen Syndicate is a brutal, pragmatic organization born from centuries of Aurelian occupation. They fight with salvaged gear, overwhelming aggression, and a complete disregard for \"honorable\" combat. Their forces are a mix of desperate revolutionaries and hardened criminals."
+          ]
         },
         {
-          "title": "2. The Aurelian Empire",
-          "id": "book-6-ch-3",
+          "title": "The Aurelian Empire",
           "sections": [
             {
+              "title": "Overview",
+              "content": "The Aurelian Empire fights with the arrogance of a civilization that believes it is destined to rule. Their troops are highly disciplined, equipped with top-tier energy weapons, and supported by devastating artillery."
+            },
+            {
               "title": "Tier 1: Aurelian Legionnaire",
-              "id": "book-6-ch-3-s-1",
-              "content": "*Highly disciplined, heavily armored shock troops of the Empire.*\n*   **Type:** Standard\n*   **Difficulty:** 13\n*   **Attack Modifier:** +4\n*   **Damage Thresholds:** Major 9, Severe 16\n*   **Hit Points:** 5\n*   **Stress:** 4\n*   **Experience:** Military Tactics (+2)\n*   **Standard Attack:** *Mag-Rifle* (Far range, 1d10+2 physical damage)\n*   **Feature (Reaction):** *Phalanx Formation.* When an adjacent Aurelian ally is attacked, the Legionnaire can spend 1 Stress to force the attacker to roll with Disadvantage.\n*   **GM Tactics:** Legionnaires fight in tight formations, using *Phalanx Formation* to protect each other while laying down disciplined volley fire."
+              "content": "*Highly disciplined, heavily armored shock troops of the Empire.*\n*   **Type:** Standard\n*   **Difficulty:** 13\n*   **Attack Modifier:** +4\n*   **Damage Thresholds:** Minor 5 / Major 9 / Severe 16\n*   **Hit Points:** 5\n*   **Stress:** 4\n*   **Experience:** Military Tactics (+2)\n*   **Standard Attack:** *Mag-Rifle* (Far range, 1d10+2 physical damage)\n*   **Feature (Reaction):** *Phalanx Formation.* When an adjacent Aurelian ally is attacked, the Legionnaire can spend 1 Stress to force the attacker to roll with Disadvantage.\n*   **GM Tactics:** Legionnaires fight in tight formations, using *Phalanx Formation* to protect each other while laying down disciplined volley fire."
             },
             {
               "title": "Tier 2: Aurelian Centurion",
-              "id": "book-6-ch-3-s-2",
-              "content": "*Veteran squad leaders who inspire their troops and coordinate complex maneuvers.*\n*   **Type:** Leader\n*   **Difficulty:** 14\n*   **Attack Modifier:** +5\n*   **Damage Thresholds:** Major 11, Severe 19\n*   **Hit Points:** 6\n*   **Stress:** 5\n*   **Experience:** Command Presence (+3)\n*   **Standard Attack:** *Plasma Pistol* (Far range, 1d8+3 magic damage)\n*   **Feature (Action):** *Hold the Line.* The Centurion spends 2 Stress. All Aurelian allies within Far range clear 1 Stress and gain +1 to their Evasion until the end of the round.\n*   **GM Tactics:** Centurions prioritize keeping their Legionnaires alive and effective, using *Hold the Line* when the party starts dealing heavy damage."
+              "content": "*Veteran squad leaders who inspire their troops and coordinate complex maneuvers.*\n*   **Type:** Leader\n*   **Difficulty:** 14\n*   **Attack Modifier:** +5\n*   **Damage Thresholds:** Minor 6 / Major 11 / Severe 19\n*   **Hit Points:** 6\n*   **Stress:** 5\n*   **Experience:** Command Presence (+3)\n*   **Standard Attack:** *Plasma Pistol* (Far range, 1d8+3 energy damage)\n*   **Feature (Action):** *Hold the Line.* The Centurion spends 2 Stress. All Aurelian allies within Far range clear 1 Stress and gain +1 to their Difficulty until the end of the round.\n*   **GM Tactics:** Centurions prioritize keeping their Legionnaires alive and effective, using *Hold the Line* when the party starts dealing heavy damage."
             },
             {
               "title": "Tier 2: Imperial Infiltrator",
-              "id": "book-6-ch-3-s-3",
-              "content": "*Aurelian stealth operatives used for political assassinations and sabotage.*\n*   **Type:** Skulk\n*   **Difficulty:** 15\n*   **Attack Modifier:** +6\n*   **Damage Thresholds:** Major 10, Severe 18\n*   **Hit Points:** 6\n*   **Stress:** 5\n*   **Experience:** Shadows and Silence (+3)\n*   **Standard Attack:** *Poisoned Dagger* (Melee range, 1d6+2 physical damage plus 1d6 magic damage)\n*   **Feature (Passive):** *Active Camouflage.* The Infiltrator is invisible while moving. A PC must succeed on a Difficulty 15 Instinct roll to target them with a ranged attack.\n*   **Feature (Action):** *Throat Slit.* The Infiltrator spends 2 Stress to make a Standard Attack against a Vulnerable target. If it hits, the target takes an additional 2d6 physical damage and is Silenced until the end of their next turn.\n*   **GM Tactics:** Infiltrators bypass the frontline entirely, using *Active Camouflage* to reach the party's casters or medics, then using *Throat Slit* to shut them down."
+              "content": "*Aurelian stealth operatives used for political assassinations and sabotage.*\n*   **Type:** Skulk\n*   **Difficulty:** 15\n*   **Attack Modifier:** +6\n*   **Damage Thresholds:** Minor 5 / Major 10 / Severe 18\n*   **Hit Points:** 6\n*   **Stress:** 5\n*   **Experience:** Shadows and Silence (+3)\n*   **Standard Attack:** *Poisoned Dagger* (Melee range, 1d6+2 physical damage plus 1d6 energy damage)\n*   **Feature (Passive):** *Active Camouflage.* The Infiltrator is invisible while moving. A PC must succeed on a Difficulty 15 Instinct roll to target them with a ranged attack.\n*   **Feature (Action):** *Throat Slit.* The Infiltrator spends 2 Stress to make a Standard Attack against an Exposed target. If it hits, the target takes an additional 2d6 physical damage and becomes Disoriented until the end of their next turn.\n*   **GM Tactics:** Infiltrators bypass the frontline entirely, using *Active Camouflage* to reach the party's support characters, then using *Throat Slit* to shut them down."
             },
             {
               "title": "Tier 3: Aurelian Praetorian Guard",
-              "id": "book-6-ch-3-s-4",
-              "content": "*The Emperor's personal guard, clad in powered armor and wielding relic-tech weapons.*\n*   **Type:** Solo\n*   **Difficulty:** 16\n*   **Attack Modifier:** +7\n*   **Damage Thresholds:** Major 18, Severe 32\n*   **Hit Points:** 12\n*   **Stress:** 8\n*   **Experience:** Relentless Pursuit (+4)\n*   **Standard Attack:** *Plasma Halberd* (Melee range, 3d10+6 physical damage)\n*   **Feature (Passive):** *Powered Armor.* The Praetorian reduces all incoming physical damage by 5 before comparing it to their thresholds.\n*   **Feature (Action):** *Overwhelming Strike.* The Praetorian spends 2 Stress to make a Standard Attack. If it hits, the target is knocked prone and must mark 1 Stress.\n*   **Feature (Reaction):** *Deflect.* When targeted by a ranged attack, the Praetorian can spend 1 Fear to roll a d20. On a 15 or higher, the attack is deflected and deals no damage.\n*   **GM Tactics:** A Praetorian is a walking tank. They march straight into the center of the party, relying on their armor and *Deflect* to survive while crushing the biggest threat with their halberd."
+              "content": "*The Emperor's personal guard, clad in powered armor and wielding relic-tech weapons.*\n*   **Type:** Solo\n*   **Difficulty:** 16\n*   **Attack Modifier:** +7\n*   **Damage Thresholds:** Minor 9 / Major 18 / Severe 32\n*   **Hit Points:** 12\n*   **Stress:** 8\n*   **Experience:** Relentless Pursuit (+4)\n*   **Standard Attack:** *Plasma Halberd* (Melee range, 3d10+6 physical damage)\n*   **Feature (Passive):** *Powered Armor.* The Praetorian reduces all incoming physical damage by 5 before comparing it to their thresholds.\n*   **Feature (Action):** *Overwhelming Strike.* The Praetorian spends 2 Stress to make a Standard Attack. If it hits, the target is knocked Prone and must mark 1 Stress.\n*   **Feature (Reaction):** *Deflect.* When targeted by a ranged attack, the Praetorian can spend 1 Fear to roll a d20. On a 15 or higher, the attack is deflected and deals no damage.\n*   **GM Tactics:** A Praetorian is a walking tank. They march straight into the center of the party, relying on their armor and *Deflect* to survive while crushing the biggest threat with their halberd."
             },
             {
               "title": "Tier 4: Imperial Dreadnought (Vehicle/Boss)",
-              "id": "book-6-ch-3-s-5",
-              "content": "*A massive, heavily armed walker deployed only when a settlement needs to be erased.*\n*   **Type:** Solo\n*   **Difficulty:** 18\n*   **Attack Modifier:** +9\n*   **Damage Thresholds:** Major 25, Severe 45\n*   **Hit Points:** 15\n*   **Stress:** 10\n*   **Experience:** Siege Warfare (+5)\n*   **Standard Attack:** *Twin Rotary Cannons* (Far range, 4d8+8 physical damage)\n*   **Feature (Passive):** *Heavy Plating.* The Dreadnought is immune to all physical damage from Tier 1 and Tier 2 weapons.\n*   **Feature (Action):** *Orbital Bombardment.* The GM spends 3 Fear. The Dreadnought paints a target area. At the start of the GM's next turn, all creatures within Far range of that point take 5d10 magic damage.\n*   **GM Tactics:** The Dreadnought is a slow, inevitable force of destruction. It uses *Orbital Bombardment* to force the party out of cover, then mows them down with its cannons.\n\n---"
+              "content": "*A massive, heavily armed walker deployed only when a settlement needs to be erased.*\n*   **Type:** Solo\n*   **Difficulty:** 18\n*   **Attack Modifier:** +9\n*   **Damage Thresholds:** Minor 13 / Major 25 / Severe 45\n*   **Hit Points:** 15\n*   **Stress:** 10\n*   **Experience:** Siege Warfare (+5)\n*   **Standard Attack:** *Twin Rotary Cannons* (Far range, 4d8+8 physical damage)\n*   **Feature (Passive):** *Heavy Plating.* The Dreadnought is immune to all physical damage from Tier 1 and Tier 2 weapons.\n*   **Feature (Action):** *Orbital Bombardment.* The GM spends 3 Fear. The Dreadnought paints a target area. At the start of the GM's next turn, all creatures within Far range of that point take 5d10 energy damage.\n*   **GM Tactics:** The Dreadnought is a slow, inevitable force of destruction. It uses *Orbital Bombardment* to force the party out of cover, then mows them down with its cannons.\n\n---"
             }
-          ],
-          "content": "The Aurelian Empire fights with the arrogance of a civilization that believes it is destined to rule. Their troops are highly disciplined, equipped with top-tier energy weapons, and supported by devastating artillery."
+          ]
         },
         {
-          "title": "3. The Mindclave",
-          "id": "book-6-ch-4",
+          "title": "The Mindclave",
           "sections": [
             {
+              "title": "Overview",
+              "content": "The Mindclave uses psychological warfare, telepathic domination, and specialized enforcement agents to maintain their monopoly on human telepaths. They rarely fight fair, preferring to break their enemies' minds before a single shot is fired."
+            },
+            {
               "title": "Tier 1: Mindclave Hound",
-              "id": "book-6-ch-4-s-1",
-              "content": "*Low-level telepaths (P1-P3) trained to hunt down rogues and dissenters.*\n*   **Type:** Skulk\n*   **Difficulty:** 11\n*   **Attack Modifier:** +3\n*   **Damage Thresholds:** Major 5, Severe 10\n*   **Hit Points:** 3\n*   **Stress:** 3\n*   **Experience:** Tracking (+2)\n*   **Standard Attack:** *Stun Baton* (Melee range, 1d6+1 physical damage)\n*   **Feature (Passive):** *Surface Scan.* The Hound always knows the exact location of any PC within Close range, even if they are invisible or in stealth.\n*   **GM Tactics:** Hounds use their *Surface Scan* to flush out hiding PCs, then close in to stun them for capture."
+              "content": "*Low-level telepaths (P1-P3) trained to hunt down rogues and dissenters.*\n*   **Type:** Skulk\n*   **Difficulty:** 11\n*   **Attack Modifier:** +3\n*   **Damage Thresholds:** Minor 3 / Major 5 / Severe 10\n*   **Hit Points:** 3\n*   **Stress:** 3\n*   **Experience:** Tracking (+2)\n*   **Standard Attack:** *Stun Baton* (Melee range, 1d6+1 physical damage)\n*   **Feature (Passive):** *Surface Scan.* The Hound always knows the exact location of any PC within Close range, even if they are invisible or in stealth.\n*   **GM Tactics:** Hounds use their *Surface Scan* to flush out hiding PCs, then close in to stun them for capture."
             },
             {
               "title": "Tier 2: Mindclave Inquisitor",
-              "id": "book-6-ch-4-s-2",
-              "content": "*Telepathic interrogators who use psychic pressure to break their enemies.*\n*   **Type:** Support\n*   **Difficulty:** 14\n*   **Attack Modifier:** +5\n*   **Damage Thresholds:** Major 10, Severe 18\n*   **Hit Points:** 6\n*   **Stress:** 5\n*   **Experience:** Psychological Warfare (+3)\n*   **Standard Attack:** *Neural Whip* (Close range, 1d8+3 magic damage)\n*   **Feature (Action):** *Mind Spike.* The Inquisitor spends 2 Stress to force a PC within Far range to make a Difficulty 14 Presence roll. On a failure, the PC marks 2 Stress and is Vulnerable until the end of their next turn.\n*   **GM Tactics:** Inquisitors stay out of melee, using *Mind Spike* to soften up targets for their Hounds or allied mercenaries."
+              "content": "*Telepathic interrogators who use psychic pressure to break their enemies.*\n*   **Type:** Support\n*   **Difficulty:** 14\n*   **Attack Modifier:** +5\n*   **Damage Thresholds:** Minor 5 / Major 10 / Severe 18\n*   **Hit Points:** 6\n*   **Stress:** 5\n*   **Experience:** Psychological Warfare (+3)\n*   **Standard Attack:** *Neural Whip* (Close range, 1d8+3 psychic damage)\n*   **Feature (Action):** *Mind Spike.* The Inquisitor spends 2 Stress to force a PC within Far range to make a Difficulty 14 Presence roll. On a failure, the PC marks 2 Stress and becomes Exposed until the end of their next turn.\n*   **GM Tactics:** Inquisitors stay out of melee, using *Mind Spike* to soften up targets for their Hounds or allied mercenaries."
             },
             {
               "title": "Tier 3: Mindclave Handler",
-              "id": "book-6-ch-4-s-3",
-              "content": "*High-level telepaths (P7-P9) who control squads of dominated thralls.*\n*   **Type:** Leader\n*   **Difficulty:** 16\n*   **Attack Modifier:** +7\n*   **Damage Thresholds:** Major 14, Severe 26\n*   **Hit Points:** 9\n*   **Stress:** 7\n*   **Experience:** Puppet Master (+4)\n*   **Standard Attack:** *Psychic Blast* (Far range, 2d10+4 magic damage)\n*   **Feature (Action):** *Command Thrall.* The Handler spends 1 Stress to command an allied Minion or Standard adversary to immediately make a Standard Attack as a Free Action.\n*   **Feature (Reaction):** *Meat Shield.* When the Handler is attacked, they can spend 1 Fear to force an adjacent allied Minion to take the damage instead.\n*   **GM Tactics:** Handlers surround themselves with dominated thugs (use Syndicate Enforcer stats), using them as disposable weapons and shields."
+              "content": "*High-level telepaths (P7-P9) who control squads of dominated thralls.*\n*   **Type:** Leader\n*   **Difficulty:** 16\n*   **Attack Modifier:** +7\n*   **Damage Thresholds:** Minor 7 / Major 14 / Severe 26\n*   **Hit Points:** 9\n*   **Stress:** 7\n*   **Experience:** Puppet Master (+4)\n*   **Standard Attack:** *Psychic Blast* (Far range, 2d10+4 psychic damage)\n*   **Feature (Action):** *Command Thrall.* The Handler spends 1 Stress to command an allied Minion or Standard adversary to immediately make a Standard Attack as a Free Action.\n*   **Feature (Reaction):** *Meat Shield.* When the Handler is attacked, they can spend 1 Fear to force an adjacent allied Minion to take the damage instead.\n*   **GM Tactics:** Handlers surround themselves with dominated thugs (use Syndicate Enforcer stats), using them as disposable weapons and shields."
             },
             {
               "title": "Tier 3: Mindclave Eradicator",
-              "id": "book-6-ch-4-s-4",
-              "content": "*A telekinetic specialist trained to crush armor and throw heavy objects.*\n*   **Type:** Bruiser\n*   **Difficulty:** 16\n*   **Attack Modifier:** +7\n*   **Damage Thresholds:** Major 16, Severe 30\n*   **Hit Points:** 10\n*   **Stress:** 6\n*   **Experience:** Telekinetic Mastery (+4)\n*   **Standard Attack:** *Kinetic Crush* (Close range, 3d8+4 magic damage)\n*   **Feature (Passive):** *Kinetic Shield.* The Eradicator reduces all incoming physical damage by 3.\n*   **Feature (Action):** *Telekinetic Throw.* The Eradicator spends 2 Stress to hurl a heavy object (or a PC) up to Far range. The target takes 2d10 physical damage and is knocked prone.\n*   **GM Tactics:** Eradicators are the Mindclave's heavy hitters. They use *Telekinetic Throw* to disrupt the party's positioning and isolate targets for their Hounds to finish off."
+              "content": "*A telekinetic specialist trained to crush armor and throw heavy objects.*\n*   **Type:** Bruiser\n*   **Difficulty:** 16\n*   **Attack Modifier:** +7\n*   **Damage Thresholds:** Minor 8 / Major 16 / Severe 30\n*   **Hit Points:** 10\n*   **Stress:** 6\n*   **Experience:** Telekinetic Mastery (+4)\n*   **Standard Attack:** *Kinetic Crush* (Close range, 3d8+4 psychic damage)\n*   **Feature (Passive):** *Kinetic Shield.* The Eradicator reduces all incoming physical damage by 3.\n*   **Feature (Action):** *Telekinetic Throw.* The Eradicator spends 2 Stress to hurl a heavy object (or a PC) up to Far range. The target takes 2d10 physical damage and is knocked Prone.\n*   **GM Tactics:** Eradicators are the Mindclave's heavy hitters. They use *Telekinetic Throw* to disrupt the party's positioning and isolate targets for their Hounds to finish off."
             },
             {
               "title": "Tier 4: Mindclave High Councilor (Boss)",
-              "id": "book-6-ch-4-s-5",
-              "content": "*The supreme leader of the telepathic faction, capable of dominating entire crowds.*\n*   **Type:** Solo\n*   **Difficulty:** 19\n*   **Attack Modifier:** +9\n*   **Damage Thresholds:** Major 18, Severe 32\n*   **Hit Points:** 12\n*   **Stress:** 12\n*   **Experience:** Absolute Control (+5)\n*   **Standard Attack:** *Psychic Crush* (Far range, 3d12+6 magic damage)\n*   **Feature (Passive):** *Mental Fortress.* The High Councilor is immune to all magic damage and psychic effects.\n*   **Feature (Action):** *Dominate.* The High Councilor spends 4 Stress to force a PC to make a Difficulty 19 Presence roll. On a failure, the GM controls that PC's next turn.\n*   **Feature (Action):** *Psychic Scream.* The GM spends 3 Fear. All PCs within Very Far range take 4d8 magic damage and are Stunned until the end of their next turn.\n*   **GM Tactics:** The High Councilor is a terrifying opponent who turns the party against itself. They use *Dominate* on the party's heaviest hitter, then unleash *Psychic Scream* when surrounded.\n\n---"
+              "content": "*The supreme leader of the telepathic faction, capable of dominating entire crowds.*\n*   **Type:** Solo\n*   **Difficulty:** 19\n*   **Attack Modifier:** +9\n*   **Damage Thresholds:** Minor 9 / Major 18 / Severe 32\n*   **Hit Points:** 12\n*   **Stress:** 12\n*   **Experience:** Absolute Control (+5)\n*   **Standard Attack:** *Psychic Crush* (Far range, 3d12+6 psychic damage)\n*   **Feature (Passive):** *Mental Fortress.* The High Councilor is immune to all psychic damage and psychic effects.\n*   **Feature (Action):** *Dominate.* The High Councilor spends 4 Stress to force a PC to make a Difficulty 19 Presence roll. On a failure, the GM controls that PC's next turn.\n*   **Feature (Action):** *Psychic Scream.* The GM spends 3 Fear. All PCs within Very Far range take 4d8 psychic damage and become Disoriented until the end of their next turn.\n*   **GM Tactics:** The High Councilor is a terrifying opponent who turns the party against itself. They use *Dominate* on the party's heaviest hitter, then unleash *Psychic Scream* when surrounded."
             }
-          ],
-          "content": "The Mindclave uses psychological warfare, telepathic domination, and specialized enforcement agents to maintain their monopoly on human telepaths. They rarely fight fair, preferring to break their enemies' minds before a single shot is fired."
+          ]
         },
         {
-          "title": "4. The Valari Collective",
-          "id": "book-6-ch-5",
+          "title": "The Valari Collective",
           "sections": [
             {
-              "title": "Tier 1: Valari Initiate",
-              "id": "book-6-ch-5-s-1",
-              "content": "*Young warriors of the Vael'Kari caste, eager to prove their worth in battle.*\n*   **Type:** Standard\n*   **Difficulty:** 12\n*   **Attack Modifier:** +3\n*   **Damage Thresholds:** Major 7, Severe 14\n*   **Hit Points:** 4\n*   **Stress:** 3\n*   **Experience:** Martial Discipline (+2)\n*   **Standard Attack:** *Crystal Blade* (Melee range, 1d8+2 physical damage)\n*   **Feature (Action):** *Flurry of Strikes.* The Initiate spends 1 Stress to make two Standard Attacks against the same target. If both hit, the target is pushed back to Close range.\n*   **GM Tactics:** Initiates are aggressive and fast, using *Flurry of Strikes* to overwhelm opponents and control the battlefield's spacing."
+              "title": "Overview",
+              "content": "The Valari fight with a combination of religious fervor, biological augmentation, and ancient relic-tech. Their warriors are terrifyingly fast, their priests wield devastating energy weapons, and their bio-constructs are nightmarish."
+            },
+            {
+              "title": "Tier 1: Valari Blade-Initiate",
+              "content": "*Young warriors undergoing their first pilgrimage, armed with traditional energy blades.*\n*   **Type:** Standard\n*   **Difficulty:** 12\n*   **Attack Modifier:** +3\n*   **Damage Thresholds:** Minor 4 / Major 7 / Severe 14\n*   **Hit Points:** 4\n*   **Stress:** 3\n*   **Experience:** Ritual Combat (+2)\n*   **Standard Attack:** *Resonance Blade* (Melee range, 1d8+2 energy damage)\n*   **Feature (Passive):** *Zealous Charge.* The Blade-Initiate can move up to 2 range bands as part of a Standard Attack action, instead of the normal 1.\n*   **GM Tactics:** Blade-Initiates close distance immediately, bypassing the party's ranged characters to engage in melee. They fight in pairs, flanking a single target."
+            },
+            {
+              "title": "Tier 2: Valari Blademaster",
+              "content": "*Veteran warriors who have completed their pilgrimage and earned the right to wield a master-crafted blade.*\n*   **Type:** Solo\n*   **Difficulty:** 15\n*   **Attack Modifier:** +6\n*   **Damage Thresholds:** Minor 6 / Major 12 / Severe 22\n*   **Hit Points:** 7\n*   **Stress:** 5\n*   **Experience:** Evasion Mastery (+3)\n*   **Standard Attack:** *Twin Resonance Blades* (Melee range, 2d8+4 energy damage)\n*   **Feature (Passive):** *Evasion Mastery.* The Blademaster's Difficulty increases by +2 against ranged attacks.\n*   **Feature (Action):** *Whirlwind Strike.* The Blademaster spends 2 Stress to attack all PCs within Melee range with a single attack roll.\n*   **GM Tactics:** Blademasters are dueling specialists. They use their enhanced ranged defense to close distance safely, then use *Whirlwind Strike* when surrounded."
             },
             {
               "title": "Tier 2: Valari Bio-Construct",
-              "id": "book-6-ch-5-s-2",
-              "content": "*A hulking, genetically engineered beast used as a living siege engine.*\n*   **Type:** Bruiser\n*   **Difficulty:** 12\n*   **Attack Modifier:** +6\n*   **Damage Thresholds:** Major 14, Severe 24\n*   **Hit Points:** 8\n*   **Stress:** 3\n*   **Experience:** Unstoppable Force (+2)\n*   **Standard Attack:** *Bone-Scythe Arm* (Melee range, 2d8+4 physical damage)\n*   **Feature (Passive):** *Regenerative Tissue.* At the start of the GM's turn, if the Bio-Construct has not taken magic damage since its last turn, it clears 1 HP.\n*   **Feature (Action):** *Frenzied Charge.* The GM spends 1 Fear. The Bio-Construct moves up to Far range in a straight line and makes a Standard Attack against every PC in its path.\n*   **GM Tactics:** The Bio-Construct is a blunt instrument. It charges through the party's lines, forcing them to scatter or be crushed."
+              "content": "*A living weapon grown from Valari biotechnology, part animal, part machine.*\n*   **Type:** Bruiser\n*   **Difficulty:** 13\n*   **Attack Modifier:** +5\n*   **Damage Thresholds:** Minor 5 / Major 10 / Severe 18\n*   **Hit Points:** 8\n*   **Stress:** 4\n*   **Experience:** Relentless (+2)\n*   **Standard Attack:** *Razor Claws* (Melee range, 2d6+3 physical damage)\n*   **Feature (Passive):** *Regenerative Tissue.* At the start of each GM turn, the Bio-Construct restores 1 HP.\n*   **Feature (Passive):** *Mindless.* The Bio-Construct is immune to psychic damage and effects that require Presence rolls.\n*   **GM Tactics:** Bio-Constructs are sent in first to absorb damage and regenerate, tying up the party's melee fighters while ranged Valari attack from behind."
             },
             {
-              "title": "Tier 3: Valari Blademaster",
-              "id": "book-6-ch-5-s-3",
-              "content": "*Elite warriors who have mastered the art of soul-crystal weaponry.*\n*   **Type:** Solo\n*   **Difficulty:** 16\n*   **Attack Modifier:** +8\n*   **Damage Thresholds:** Major 15, Severe 28\n*   **Hit Points:** 10\n*   **Stress:** 6\n*   **Experience:** Perfect Form (+4)\n*   **Standard Attack:** *Soul-Crystal Glaive* (Melee range, 3d8+5 magic damage)\n*   **Feature (Passive):** *Evasion Mastery.* The Blademaster's Difficulty increases by +2 against all ranged attacks.\n*   **Feature (Reaction):** *Riposte.* When a PC misses the Blademaster with a melee attack, the Blademaster can spend 1 Stress to immediately make a Standard Attack against them.\n*   **GM Tactics:** The Blademaster is a nightmare in melee combat. They close the distance quickly, relying on *Evasion Mastery* to survive the approach, and punish any missed attacks with *Riposte*."
+              "title": "Tier 3: Valari High Priest",
+              "content": "*A spiritual leader wielding ancient relic-tech that channels devastating energy.*\n*   **Type:** Leader\n*   **Difficulty:** 16\n*   **Attack Modifier:** +7\n*   **Damage Thresholds:** Minor 7 / Major 14 / Severe 26\n*   **Hit Points:** 10\n*   **Stress:** 8\n*   **Experience:** Ancient Rites (+4)\n*   **Standard Attack:** *Relic Staff* (Far range, 2d10+4 energy damage)\n*   **Feature (Action):** *Blinding Light.* The High Priest spends 2 Stress. All PCs within Close range must make a Difficulty 16 Instinct roll or become Blinded until the end of their next turn. While Blinded, all attacks the PC makes have Disadvantage, and attacks against them have Advantage.\n*   **Feature (Action):** *Blessing of the Ancestors.* The High Priest spends 3 Stress to restore 3 HP to an allied Valari within Far range and clear all conditions from them.\n*   **GM Tactics:** High Priests stay behind their warriors, using *Blinding Light* to disable the party and *Blessing of the Ancestors* to keep their Blademasters in the fight."
             },
             {
-              "title": "Tier 4: Valari High Priest (Leader)",
-              "id": "book-6-ch-5-s-4",
-              "content": "*A spiritual leader who channels the radiant energy of the Valari ancestors.*\n*   **Type:** Leader\n*   **Difficulty:** 19\n*   **Attack Modifier:** +9\n*   **Damage Thresholds:** Major 18, Severe 32\n*   **Hit Points:** 12\n*   **Stress:** 10\n*   **Experience:** Voice of the Ancestors (+5)\n*   **Standard Attack:** *Radiant Blast* (Far range, 3d10+5 magic damage)\n*   **Feature (Action):** *Ancestral Blessing.* The High Priest spends 2 Stress. All Valari allies within Far range clear 2 Stress and gain Advantage on their next attack roll.\n*   **Feature (Action):** *Blinding Light.* The GM spends 2 Fear. All PCs within Far range must make a Difficulty 18 Agility roll or be Blinded until the end of their next turn.\n*   **GM Tactics:** The High Priest stays behind their Blademasters and Bio-Constructs, using *Ancestral Blessing* to keep them fighting at peak efficiency, and *Blinding Light* to protect themselves if the party breaks through the line.\n\n---"
+              "title": "Tier 4: Valari Warlord (Boss)",
+              "content": "*A legendary warrior-priest who commands an entire pilgrimage fleet.*\n*   **Type:** Solo\n*   **Difficulty:** 19\n*   **Attack Modifier:** +9\n*   **Damage Thresholds:** Minor 10 / Major 20 / Severe 36\n*   **Hit Points:** 14\n*   **Stress:** 10\n*   **Experience:** Voice of the Ancestors (+5)\n*   **Standard Attack:** *Ancestral Blade* (Melee range, 3d12+8 energy damage)\n*   **Feature (Passive):** *Ancestral Shield.* The Warlord reduces all incoming energy damage by 5.\n*   **Feature (Action):** *Call to Arms.* The GM spends 2 Fear. All Valari allies within Very Far range immediately make a Standard Attack as a Free Action.\n*   **Feature (Reaction):** *Undying Faith.* The first time the Warlord is reduced to 0 HP, they immediately restore 5 HP and clear all conditions. This feature can only be used once per encounter.\n*   **GM Tactics:** The Warlord leads from the front, using *Call to Arms* to overwhelm the party with coordinated strikes. *Undying Faith* ensures they survive long enough to deliver a devastating final assault.\n\n---"
             }
-          ],
-          "content": "The Valari fight with elegant, devastating energy weapons and genetically engineered bio-constructs. Their warriors are fanatically devoted to their caste and their spiritual beliefs."
+          ]
         },
         {
-          "title": "5. The Eclipse-Touched (Cultists)",
-          "id": "book-6-ch-6",
+          "title": "The Terran Republic",
           "sections": [
             {
-              "title": "Tier 1: Void-Spawn",
-              "id": "book-6-ch-6-s-1",
-              "content": "*Mindless, shadowy creatures summoned from the dark spaces between stars.*\n*   **Type:** Minion\n*   **Difficulty:** 9\n*   **Attack Modifier:** +2\n*   **Damage Thresholds:** Major 5, Severe 10\n*   **Hit Points:** 2\n*   **Stress:** 0 (Immune to Stress)\n*   **Experience:** Relentless Hunger (+1)\n*   **Standard Attack:** *Shadow Claws* (Melee range, 1d6 magic damage)\n*   **Feature (Passive):** *Swarm.* For every two Void-Spawn adjacent to a PC, that PC's Evasion is reduced by 1.\n*   **GM Tactics:** Void-Spawn are cannon fodder. They swarm the party in large numbers, dragging down their Evasion so the cultists can land their spells."
+              "title": "Overview",
+              "content": "The Terran Republic fields the most conventional military force in the Known Galaxy \u2014 disciplined infantry, combined arms tactics, and overwhelming firepower. What they lack in exotic technology, they make up for in training and logistics."
             },
-            {
-              "title": "Tier 2: Void-Caller",
-              "id": "book-6-ch-6-s-2",
-              "content": "*Fanatics who have stared too long into the deep space anomalies and brought something back.*\n*   **Type:** Leader\n*   **Difficulty:** 13\n*   **Attack Modifier:** +4\n*   **Damage Thresholds:** Major 8, Severe 15\n*   **Hit Points:** 5\n*   **Stress:** 6\n*   **Experience:** Occult Rituals (+3)\n*   **Standard Attack:** *Shadow Bolt* (Far range, 1d10+3 magic damage)\n*   **Feature (Action):** *Summon the Dark.* The Void-Caller spends 2 Stress to summon 1d4 Void-Spawns (Tier 1 Minions) into empty spaces within Close range.\n*   **Feature (Reaction):** *Martyrdom.* When the Void-Caller is reduced to 0 HP, the GM can spend 1 Fear to cause them to explode in a burst of dark energy. All PCs within Close range take 2d6 magic damage.\n*   **GM Tactics:** Void-Callers stay in the backline, summoning Void-Spawn to tie up the party while they hurl Shadow Bolts. When cornered, they gladly embrace *Martyrdom*."
-            },
-            {
-              "title": "Tier 3: Void-Channeler",
-              "id": "book-6-ch-6-s-3",
-              "content": "*An Eclipse cultist who sacrifices their own life force to unleash devastating magic.*\n*   **Type:** Artillery\n*   **Difficulty:** 15\n*   **Attack Modifier:** +8\n*   **Damage Thresholds:** Major 12, Severe 22\n*   **Hit Points:** 8\n*   **Stress:** 8\n*   **Experience:** Dark Rituals (+4)\n*   **Standard Attack:** *Void Bolt* (Very Far range, 2d12+4 magic damage)\n*   **Feature (Action):** *Blood Sacrifice.* The Channeler can choose to take 1d6 direct HP damage (bypassing thresholds) to increase the damage of their next *Void Bolt* by 3d12.\n*   **Feature (Reaction):** *Void Step.* When targeted by a melee attack, the Channeler can spend 1 Stress to teleport up to Far range before the attack resolves.\n*   **GM Tactics:** Channelers are glass cannons. They stay at maximum range, using *Void Step* to escape melee, and spam *Blood Sacrifice* to deal massive damage before they are killed."
-            },
-            {
-              "title": "Tier 4: The Void Avatar (Boss)",
-              "id": "book-6-ch-6-s-4",
-              "content": "*A physical manifestation of the dark energy from beyond the galactic rim.*\n*   **Type:** Solo\n*   **Difficulty:** 18\n*   **Attack Modifier:** +10\n*   **Damage Thresholds:** Major 25, Severe 45\n*   **Hit Points:** 15\n*   **Stress:** 10\n*   **Experience:** Cosmic Horror (+5)\n*   **Standard Attack:** *Annihilation Wave* (Far range, 4d10+8 magic damage)\n*   **Feature (Passive):** *Aura of Despair.* Any PC who starts their turn within Close range of the Avatar must mark 1 Stress.\n*   **Feature (Action):** *Reality Tear.* The Avatar spends 3 Stress to tear a hole in space. All PCs within Far range must make a Difficulty 18 Agility roll. On a failure, they take 3d12 magic damage and are teleported to a random location within the room.\n*   **Feature (Reaction):** *Consume Hope.* When a PC spends Hope within Far range, the GM can spend 2 Fear to cancel the effect of the Hope and force the PC to mark 1 Stress instead.\n*   **GM Tactics:** The Void Avatar is a campaign-ending threat. It uses *Reality Tear* to disrupt the party's positioning and *Consume Hope* to drain their resources, all while its *Aura of Despair* slowly breaks their minds.\n\n---"
-            }
-          ],
-          "content": "The Eclipse-Touched are fanatical servants of the ancient void-entities. They use dark magic, sacrificial rituals, and summoned horrors to achieve their inscrutable goals."
-        },
-        {
-          "title": "6. The Frontier and Progenitor Relics",
-          "id": "book-6-ch-7",
-          "sections": [
-            {
-              "title": "Tier 1: Progenitor Swarm-Drone",
-              "id": "book-6-ch-7-s-1",
-              "content": "*Tiny, self-replicating repair drones that overwhelm intruders in ancient ruins.*\n*   **Type:** Minion\n*   **Difficulty:** 10\n*   **Attack Modifier:** +2\n*   **Damage Thresholds:** Major 4, Severe 8\n*   **Hit Points:** 2\n*   **Stress:** 0 (Immune to Stress)\n*   **Experience:** Hive Mind (+1)\n*   **Standard Attack:** *Cutting Laser* (Close range, 1d4 magic damage)\n*   **Feature (Passive):** *Self-Replication.* At the start of the GM's turn, if there are at least two Swarm-Drones adjacent to each other, they spawn one new Swarm-Drone in an empty adjacent space.\n*   **GM Tactics:** Swarm-Drones are weak individually but multiply quickly. The GM should group them together to trigger *Self-Replication*, forcing the party to use area-of-effect attacks to clear them out."
-            },
-            {
-              "title": "Tier 1: Station Security Drone",
-              "id": "book-6-ch-7-s-2",
-              "content": "*Floating, spherical automatons programmed to pacify riots and eliminate intruders.*\n*   **Type:** Ranged\n*   **Difficulty:** 11\n*   **Attack Modifier:** +3\n*   **Damage Thresholds:** Major 5, Severe 10\n*   **Hit Points:** 3\n*   **Stress:** 0 (Immune to Stress)\n*   **Experience:** Targeting Algorithms (+2)\n*   **Standard Attack:** *Stun Laser* (Close range, 1d6 magic damage)\n*   **Feature (Action):** *Pacification Protocol.* The drone spends 1 Fear to overcharge its laser. If the attack hits, the target must mark 1 Stress in addition to taking damage.\n*   **GM Tactics:** Drones operate in squads, hovering out of melee range and using *Pacification Protocol* to subdue targets non-lethally."
-            },
-            {
-              "title": "Tier 2: Void-Stalker (Wildlife)",
-              "id": "book-6-ch-7-s-3",
-              "content": "*A predatory, silicon-based lifeform that hunts in the asteroid fields and derelict ships.*\n*   **Type:** Skulk\n*   **Difficulty:** 13\n*   **Attack Modifier:** +5\n*   **Damage Thresholds:** Major 10, Severe 18\n*   **Hit Points:** 6\n*   **Stress:** 4\n*   **Experience:** Apex Predator (+3)\n*   **Standard Attack:** *Monofilament Claws* (Melee range, 2d6+2 physical damage)\n*   **Feature (Passive):** *Vacuum Adaptation.* The Void-Stalker ignores all penalties for fighting in zero-gravity or vacuum environments.\n*   **Feature (Action):** *Pounce.* The Void-Stalker spends 1 Stress to leap up to Far range and make a Standard Attack. If it hits, the target is knocked prone.\n*   **GM Tactics:** Void-Stalkers are ambush predators. They wait in the dark, use *Pounce* to isolate a single PC, and drag them away from the group."
-            },
-            {
-              "title": "Tier 3: Progenitor Sentinel",
-              "id": "book-6-ch-7-s-4",
-              "content": "*An ancient, crystalline construct awakened from a deep slumber to protect a ruin.*\n*   **Type:** Bruiser\n*   **Difficulty:** 15\n*   **Attack Modifier:** +6\n*   **Damage Thresholds:** Major 20, Severe 35\n*   **Hit Points:** 10\n*   **Stress:** 0 (Immune to Stress)\n*   **Experience:** Ancient Geometry (+3)\n*   **Standard Attack:** *Hard-Light Beam* (Far range, 3d8+4 magic damage)\n*   **Feature (Passive):** *Crystalline Matrix.* The Sentinel is immune to all conditions (Blinded, Restrained, Vulnerable, etc.).\n*   **Feature (Action):** *Gravity Well.* The GM spends 2 Fear. All PCs within Far range must make a Difficulty 15 Strength roll. On a failure, they are pulled into Melee range of the Sentinel and take 2d6 physical damage.\n*   **GM Tactics:** Sentinels are implacable guardians. They use *Gravity Well* to pull ranged attackers into melee, then crush them with their massive bulk."
-            },
-            {
-              "title": "Tier 4: Progenitor Leviathan (Boss/Vehicle)",
-              "id": "book-6-ch-7-s-5",
-              "content": "*A massive, city-sized construct that patrols the deep frontier, destroying anything that approaches its designated sector.*\n*   **Type:** Solo\n*   **Difficulty:** 17\n*   **Attack Modifier:** +8\n*   **Damage Thresholds:** Major 22, Severe 40\n*   **Hit Points:** 14\n*   **Stress:** 0 (Immune to Stress)\n*   **Experience:** Extinction Protocol (+5)\n*   **Standard Attack:** *Antimatter Lance* (Very Far range, 4d10+6 magic damage)\n*   **Feature (Passive):** *Energy Shielding.* The Leviathan reduces all incoming magic damage by 5 before comparing it to its thresholds.\n*   **Feature (Action):** *Launch Drones.* The GM spends 2 Fear to deploy 1d4 Station Security Drones (Tier 1 Ranged) into empty spaces within Far range.\n*   **Feature (Action):** *Core Overload.* The Leviathan spends 3 Fear to unleash a wave of destructive energy. All PCs within Very Far range must make a Difficulty 17 Agility roll. On a failure, they take 4d12 magic damage and their ship/vehicle loses 1d4 Armor Slots.\n*   **GM Tactics:** The Leviathan is a massive set-piece encounter. It uses *Launch Drones* to distract the party while charging its *Core Overload* for a devastating area-of-effect attack.\n\n---"
-            }
-          ],
-          "content": "The space surrounding Nexus 9 is largely uncharted, filled with the ruins of ancient civilizations, hostile wildlife, and automated defenses left behind by the Progenitors."
-        },
-        {
-          "title": "7. The Terran Coalition",
-          "id": "book-6-ch-8",
-          "sections": [
             {
               "title": "Tier 1: Terran Marine",
-              "id": "book-6-ch-8-s-1",
-              "content": "*Standard infantry equipped with reliable kinetic weapons and heavy body armor.*\n*   **Type:** Standard\n*   **Difficulty:** 12\n*   **Attack Modifier:** +3\n*   **Damage Thresholds:** Major 8, Severe 15\n*   **Hit Points:** 5\n*   **Stress:** 3\n*   **Experience:** Breach and Clear (+2)\n*   **Standard Attack:** *Assault Rifle* (Far range, 1d8+2 physical damage)\n*   **Feature (Action):** *Frag Grenade.* The Marine spends 1 Stress to throw a grenade. All PCs within Close range of the target point must make a Difficulty 12 Agility roll or take 2d6 physical damage.\n*   **GM Tactics:** Marines use cover effectively, lay down suppressing fire, and use grenades to flush PCs out of entrenched positions."
+              "content": "*Standard infantry of the Terran Republic Armed Forces.*\n*   **Type:** Standard\n*   **Difficulty:** 12\n*   **Attack Modifier:** +3\n*   **Damage Thresholds:** Minor 4 / Major 8 / Severe 15\n*   **Hit Points:** 4\n*   **Stress:** 3\n*   **Experience:** Combined Arms (+2)\n*   **Standard Attack:** *Assault Rifle* (Far range, 1d10+2 physical damage)\n*   **Feature (Action):** *Suppressing Fire.* The Marine spends 1 Stress. A PC within Far range must make a Difficulty 12 Agility roll or have their movement reduced to 0 until the end of their next turn.\n*   **GM Tactics:** Marines fight in fire teams, using *Suppressing Fire* to pin down targets while their squadmates advance."
             },
             {
               "title": "Tier 1: Terran Combat Medic",
-              "id": "book-6-ch-8-s-2",
-              "content": "*Field medics who keep the Marines fighting long past their breaking point.*\n*   **Type:** Support\n*   **Difficulty:** 11\n*   **Attack Modifier:** +2\n*   **Damage Thresholds:** Major 6, Severe 12\n*   **Hit Points:** 4\n*   **Stress:** 4\n*   **Experience:** Triage (+2)\n*   **Standard Attack:** *Service Pistol* (Close range, 1d6+1 physical damage)\n*   **Feature (Action):** *Combat Stim.* The Medic spends 1 Stress to heal an adjacent ally for 1d6 HP and clear 1 Stress.\n*   **Feature (Action):** *Smoke Grenade.* The Medic spends 1 Stress to create a cloud of smoke (Close range radius). All ranged attacks into or out of the smoke suffer Disadvantage.\n*   **GM Tactics:** Medics stay behind the Marines, using *Smoke Grenade* to cover advances or retreats, and *Combat Stim* to keep the heavy hitters alive."
+              "content": "*Battlefield medics who keep the Marines fighting.*\n*   **Type:** Support\n*   **Difficulty:** 11\n*   **Attack Modifier:** +2\n*   **Damage Thresholds:** Minor 3 / Major 6 / Severe 12\n*   **Hit Points:** 3\n*   **Stress:** 4\n*   **Experience:** Field Medicine (+3)\n*   **Standard Attack:** *Sidearm* (Close range, 1d6+1 physical damage)\n*   **Feature (Action):** *Combat Stim.* The Medic spends 1 Stress to restore 2 HP to an adjacent ally and clear 1 Stress from them.\n*   **Feature (Action):** *Smoke Grenade.* The Medic spends 1 Stress to create a Low Visibility zone within Close range that lasts until the end of the round. All attacks through or into the zone have Disadvantage.\n*   **GM Tactics:** Medics stay behind the front line, healing Marines and using *Smoke Grenade* to cover advances or retreats."
             },
             {
-              "title": "Tier 2: Terran Heavy Gunner",
-              "id": "book-6-ch-8-s-3",
-              "content": "*Support troops carrying massive rotary cannons that tear through armor and cover.*\n*   **Type:** Artillery\n*   **Difficulty:** 13\n*   **Attack Modifier:** +5\n*   **Damage Thresholds:** Major 12, Severe 20\n*   **Hit Points:** 6\n*   **Stress:** 5\n*   **Experience:** Suppressing Fire (+3)\n*   **Standard Attack:** *Rotary Cannon* (Far range, 2d8+3 physical damage)\n*   **Feature (Action):** *Pin Down.* The Gunner spends 2 Stress to target a specific PC. That PC must make a Difficulty 14 Agility roll. On a failure, their movement is reduced to 0 until the end of their next turn, and they take 1d8 physical damage.\n*   **GM Tactics:** Gunners find a good vantage point and use *Pin Down* on the party's most mobile characters, allowing the Marines to close in for the kill."
+              "title": "Tier 2: Terran Shock Trooper",
+              "content": "*Elite assault infantry equipped with powered exoskeletons and heavy weapons.*\n*   **Type:** Bruiser\n*   **Difficulty:** 14\n*   **Attack Modifier:** +5\n*   **Damage Thresholds:** Minor 6 / Major 11 / Severe 20\n*   **Hit Points:** 7\n*   **Stress:** 5\n*   **Experience:** Breach and Clear (+3)\n*   **Standard Attack:** *Heavy Mag-Cannon* (Far range, 2d10+4 physical damage)\n*   **Feature (Passive):** *Exoskeleton.* The Shock Trooper reduces all incoming physical damage by 3.\n*   **Feature (Action):** *Frag Grenade.* The Shock Trooper spends 2 Stress. All PCs within Close range of the target point must make a Difficulty 14 Agility roll or take 2d8 physical damage.\n*   **GM Tactics:** Shock Troopers lead the charge, using their *Exoskeleton* to absorb punishment and *Frag Grenade* to flush PCs out of cover."
             },
             {
-              "title": "Tier 3: Terran \"Goliath\" Mech",
-              "id": "book-6-ch-8-s-4",
-              "content": "*A piloted, bipedal walker deployed for anti-armor and siege operations.*\n*   **Type:** Bruiser\n*   **Difficulty:** 16\n*   **Attack Modifier:** +7\n*   **Damage Thresholds:** Major 18, Severe 32\n*   **Hit Points:** 10\n*   **Stress:** 6\n*   **Experience:** Heavy Armor (+4)\n*   **Standard Attack:** *Anti-Materiel Rockets* (Very Far range, 3d10+5 physical damage)\n*   **Feature (Passive):** *Reinforced Chassis.* The Goliath reduces all incoming physical damage by 4.\n*   **Feature (Action):** *Stomp.* The Goliath spends 2 Stress to make a melee attack against an adjacent PC (3d8+5 physical damage). If it hits, the target is knocked prone and must mark 1 Stress.\n*   **GM Tactics:** The Goliath is a walking tank. It uses its rockets at range, then wades into melee to *Stomp* anyone foolish enough to get close.\n\n---"
+              "title": "Tier 3: Terran Special Forces Operative",
+              "content": "*The best of the best \u2014 covert operatives trained for impossible missions.*\n*   **Type:** Skulk\n*   **Difficulty:** 17\n*   **Attack Modifier:** +8\n*   **Damage Thresholds:** Minor 7 / Major 14 / Severe 26\n*   **Hit Points:** 9\n*   **Stress:** 7\n*   **Experience:** Ghost Protocol (+4)\n*   **Standard Attack:** *Precision Rifle* (Very Far range, 2d12+5 physical damage)\n*   **Feature (Passive):** *Adaptive Camouflage.* The Operative is invisible while stationary. A PC must succeed on a Difficulty 17 Instinct roll to target them.\n*   **Feature (Action):** *Marked for Death.* The Operative spends 2 Stress to designate a PC. All Terran allies gain +3 to attack rolls against that PC until the end of the round.\n*   **GM Tactics:** Special Forces Operatives work alone or in pairs, sniping from extreme range and using *Marked for Death* to coordinate with conventional forces."
+            },
+            {
+              "title": "Tier 4: Terran Battlecruiser (Vehicle/Boss)",
+              "content": "*A capital-class warship bristling with weapons.*\n*   **Type:** Solo\n*   **Difficulty:** 20\n*   **Attack Modifier:** +10\n*   **Damage Thresholds:** Minor 15 / Major 30 / Severe 50\n*   **Hit Points:** 15\n*   **Stress:** 12\n*   **Experience:** Naval Superiority (+5)\n*   **Standard Attack:** *Broadside Batteries* (Very Far range, 4d10+10 physical damage)\n*   **Feature (Passive):** *Capital-Class Armor.* The Battlecruiser is immune to all damage from personal-scale weapons. Only starship weapons, explosives, or relic-tech can harm it.\n*   **Feature (Action):** *Launch Fighters.* The GM spends 2 Fear to deploy 1d4 Terran Fighter Drones (use Tier 1 Minion stats: Difficulty 10, HP 2, Attack +2, 1d8+1 damage).\n*   **Feature (Action):** *MAC Round.* The GM spends 4 Fear. The Battlecruiser fires a single devastating kinetic round at a target within Very Far range. The target takes 6d12+10 physical damage. This attack ignores all damage reduction.\n*   **GM Tactics:** The Battlecruiser is an encounter unto itself. PCs should never fight it head-on \u2014 they need to board it, sabotage its systems, or flee.\n\n---"
             }
-          ],
-          "content": "The military arm of Earth and its colonies. They rely on overwhelming firepower, tactical coordination, and heavy mechanization. They are not subtle, but they are incredibly effective in a stand-up fight."
+          ]
         },
         {
-          "title": "8. The Technoseers",
-          "id": "book-6-ch-9",
+          "title": "Eclipse-Touched",
           "sections": [
             {
-              "title": "Tier 1: Technoseer Acolyte",
-              "id": "book-6-ch-9-s-1",
-              "content": "*Low-level initiates who interface directly with station systems and enemy tech.*\n*   **Type:** Support\n*   **Difficulty:** 12\n*   **Attack Modifier:** +3\n*   **Damage Thresholds:** Major 6, Severe 12\n*   **Hit Points:** 4\n*   **Stress:** 4\n*   **Experience:** System Override (+2)\n*   **Standard Attack:** *Arc-Welder* (Close range, 1d6+2 magic damage)\n*   **Feature (Action):** *Weapon Hack.* The Acolyte spends 1 Stress to target a PC's weapon. The PC must make a Difficulty 12 Knowledge roll. On a failure, their weapon misfires, dealing 1d4 damage to the PC and becoming unusable until the end of their next turn.\n*   **GM Tactics:** Acolytes avoid direct combat, using *Weapon Hack* to disable the party's heaviest hitters while their allies attack."
+              "title": "Overview",
+              "content": "Eclipse-Touched adversaries are warped by the Fraying Dark \u2014 the creeping corruption from beyond the edge of known space. They range from recently infected individuals to fully consumed horrors that barely resemble their original forms."
             },
             {
-              "title": "Tier 2: Umbral Covenant Heretic",
-              "id": "book-6-ch-9-s-2",
-              "content": "*A rogue Technoseer who uses forbidden stealth tech to steal secrets and assassinate rivals.*\n*   **Type:** Skulk\n*   **Difficulty:** 15\n*   **Attack Modifier:** +6\n*   **Damage Thresholds:** Major 10, Severe 18\n*   **Hit Points:** 6\n*   **Stress:** 5\n*   **Experience:** Ghost in the Machine (+3)\n*   **Standard Attack:** *Phase Blade* (Melee range, 2d6+3 magic damage; ignores physical armor)\n*   **Feature (Passive):** *Optical Camouflage.* The Heretic is invisible while standing still. A PC must succeed on a Difficulty 15 Instinct roll to spot them before they attack.\n*   **Feature (Action):** *Data Spike.* The Heretic spends 2 Stress to make a Standard Attack. If it hits, the target takes normal damage and the Heretic steals 1 Hope from the party's pool.\n*   **GM Tactics:** Heretics wait in ambush, using *Optical Camouflage* to get close, then striking with their *Phase Blade* and stealing Hope to fuel the GM's Fear pool."
+              "title": "Tier 1: Eclipse Thrall",
+              "content": "*A recently infected individual, still recognizable but driven by alien impulses.*\n*   **Type:** Minion\n*   **Difficulty:** 10\n*   **Attack Modifier:** +2\n*   **Damage Thresholds:** Minor 3 / Major 5 / Severe 10\n*   **Hit Points:** 2\n*   **Stress:** 1\n*   **Experience:** None\n*   **Standard Attack:** *Corrupted Fists* (Melee range, 1d6+1 psychic damage)\n*   **Feature (Passive):** *Fearless.* Eclipse Thralls are immune to fear effects and Disoriented condition. They never flee.\n*   **GM Tactics:** Thralls attack in waves, overwhelming PCs with numbers. They are expendable and the Eclipse uses them to test defenses."
             },
             {
-              "title": "Tier 3: Technoseer Magus",
-              "id": "book-6-ch-9-s-3",
-              "content": "*High-ranking priests of the machine god, capable of manipulating energy fields.*\n*   **Type:** Leader\n*   **Difficulty:** 16\n*   **Attack Modifier:** +7\n*   **Damage Thresholds:** Major 14, Severe 26\n*   **Hit Points:** 8\n*   **Stress:** 7\n*   **Experience:** Master of the Code (+4)\n*   **Standard Attack:** *Plasma Emitter* (Far range, 3d8+4 magic damage)\n*   **Feature (Action):** *Deploy Forcefield.* The Magus spends 2 Stress to create a shimmering barrier (Close range radius). Allies inside the barrier gain +2 Evasion against ranged attacks.\n*   **Feature (Action):** *EMP Burst.* The GM spends 2 Fear. All PCs within Far range must make a Difficulty 16 Agility roll or take 2d10 magic damage and lose the use of any tech-based items or armor features until the end of their next turn.\n*   **GM Tactics:** The Magus controls the battlefield, using *Deploy Forcefield* to protect their Acolytes and *EMP Burst* to strip the party of their technological advantages.\n\n---"
+              "title": "Tier 2: Eclipse Stalker",
+              "content": "*A fully transformed predator that hunts in the dark spaces between bulkheads.*\n*   **Type:** Skulk\n*   **Difficulty:** 14\n*   **Attack Modifier:** +5\n*   **Damage Thresholds:** Minor 5 / Major 10 / Severe 18\n*   **Hit Points:** 6\n*   **Stress:** 4\n*   **Experience:** Ambush Predator (+3)\n*   **Standard Attack:** *Void Tendrils* (Close range, 2d8+3 psychic damage)\n*   **Feature (Passive):** *Wall Crawler.* The Stalker can move along walls and ceilings, ignoring difficult terrain and gaining Advantage on attacks against targets below it.\n*   **Feature (Action):** *Drag Into Darkness.* The Stalker spends 2 Stress to grapple a PC within Melee range. The PC must make a Difficulty 14 Strength roll or be dragged up to Close range into darkness, becoming Restrained.\n*   **GM Tactics:** Stalkers attack from above, using *Wall Crawler* to bypass the party's formation and *Drag Into Darkness* to isolate a target."
+            },
+            {
+              "title": "Tier 2: Eclipse Whisperer",
+              "content": "*A corrupted telepath who spreads the Eclipse's influence through psychic contact.*\n*   **Type:** Support\n*   **Difficulty:** 14\n*   **Attack Modifier:** +5\n*   **Damage Thresholds:** Minor 5 / Major 9 / Severe 16\n*   **Hit Points:** 5\n*   **Stress:** 6\n*   **Experience:** Psychic Corruption (+3)\n*   **Standard Attack:** *Whisper of the Void* (Far range, 1d10+3 psychic damage)\n*   **Feature (Action):** *Spreading Doubt.* The Whisperer spends 2 Stress to force a PC within Far range to make a Difficulty 14 Presence roll. On a failure, the PC marks 2 Stress and must use their next action to attack the nearest ally (the PC chooses how).\n*   **Feature (Passive):** *Eclipse Aura.* All PCs within Close range of the Whisperer have Disadvantage on Presence rolls.\n*   **GM Tactics:** Whisperers stay at range, using *Spreading Doubt* to turn the party against itself while their *Eclipse Aura* weakens anyone who gets close."
+            },
+            {
+              "title": "Tier 3: Eclipse Void-Caller",
+              "content": "*A powerful entity that tears holes in reality, summoning horrors from the space between stars.*\n*   **Type:** Leader\n*   **Difficulty:** 17\n*   **Attack Modifier:** +7\n*   **Damage Thresholds:** Minor 7 / Major 14 / Severe 26\n*   **Hit Points:** 10\n*   **Stress:** 8\n*   **Experience:** Reality Warper (+4)\n*   **Standard Attack:** *Void Bolt* (Very Far range, 2d10+5 psychic damage)\n*   **Feature (Action):** *Tear Reality.* The Void-Caller spends 3 Stress to open a rift within Far range. The rift summons 1d4 Eclipse Thralls (Tier 1 Minions) and persists for 3 rounds. While open, all PCs within Close range of the rift take 1d6 psychic damage at the start of each GM turn.\n*   **Feature (Reaction):** *Phase Shift.* When the Void-Caller takes damage, they can spend 1 Fear to phase partially out of reality. Until the start of their next turn, all attacks against them have Disadvantage.\n*   **GM Tactics:** Void-Callers create chaos by opening rifts that spawn Thralls and deal persistent damage, forcing the party to choose between killing the Void-Caller and dealing with the rift."
+            },
+            {
+              "title": "Tier 4: Eclipse Avatar (Boss)",
+              "content": "*A fully manifested fragment of the Eclipse \u2014 an entity of pure corruption that warps reality around it.*\n*   **Type:** Solo\n*   **Difficulty:** 20\n*   **Attack Modifier:** +10\n*   **Damage Thresholds:** Minor 12 / Major 22 / Severe 40\n*   **Hit Points:** 15\n*   **Stress:** 12\n*   **Experience:** The Fraying Dark (+5)\n*   **Standard Attack:** *Reality Shatter* (Very Far range, 4d10+8 psychic damage)\n*   **Feature (Passive):** *Aura of Corruption.* All PCs within Far range of the Avatar must mark 1 Stress at the start of each of their turns.\n*   **Feature (Passive):** *Adaptive Form.* The Avatar is immune to the same damage type two rounds in a row. If it takes energy damage in round 1, it is immune to energy damage in round 2.\n*   **Feature (Action):** *Consume.* The Avatar spends 4 Stress to engulf a PC within Close range. The PC must make a Difficulty 20 Strength roll or be Restrained inside the Avatar, taking 3d10 psychic damage at the start of each of their turns until freed. An ally can free them with a Difficulty 18 Strength roll.\n*   **Feature (Reaction):** *Fracture.* When the Avatar is reduced to half HP or below, the GM spends 3 Fear. The Avatar splits into two Eclipse Stalkers (Tier 2) and regenerates 3 HP.\n*   **GM Tactics:** The Avatar is the ultimate Eclipse threat. It warps reality, consumes PCs, and refuses to die cleanly. The party must coordinate damage types to bypass *Adaptive Form* and deal with the Stalkers spawned by *Fracture*."
             }
-          ],
-          "content": "A secretive, monastic order that worships logic and hoards ancient technology. They replace their flesh with cybernetics and view the rest of the galaxy as dangerously irrational."
+          ]
         },
         {
-          "title": "9. Independents and Station Security",
-          "id": "book-6-ch-10",
+          "title": "Pirates and Frontier Threats",
           "sections": [
             {
-              "title": "Tier 1: Nexus 9 Security Officer",
-              "id": "book-6-ch-10-s-1",
-              "content": "*The overworked, underpaid cops who try to keep the peace on the station.*\n*   **Type:** Standard\n*   **Difficulty:** 11\n*   **Attack Modifier:** +2\n*   **Damage Thresholds:** Major 7, Severe 14\n*   **Hit Points:** 4\n*   **Stress:** 3\n*   **Experience:** Crowd Control (+2)\n*   **Standard Attack:** *Stun Baton* (Melee range, 1d6+1 physical damage)\n*   **Feature (Reaction):** *Shield Wall.* When an adjacent ally is attacked, the Officer can spend 1 Stress to grant them +1 Evasion against that attack.\n*   **GM Tactics:** Security Officers fight defensively, using *Shield Wall* to protect each other and relying on their stun batons to subdue rather than kill."
+              "title": "Overview",
+              "content": "The frontier beyond Nexus 9's patrol routes is infested with opportunists, scavengers, and desperate survivors who prey on the weak. These adversaries are unpredictable and fight with salvaged, jury-rigged equipment."
             },
             {
-              "title": "Tier 1: Pirate Boarding Party",
-              "id": "book-6-ch-10-s-2",
-              "content": "*Desperate raiders who attack civilian ships and frontier outposts.*\n*   **Type:** Minion\n*   **Difficulty:** 10\n*   **Attack Modifier:** +2\n*   **Damage Thresholds:** Major 6, Severe 12\n*   **Hit Points:** 3\n*   **Stress:** 2\n*   **Experience:** Boarding Action (+2)\n*   **Standard Attack:** *Boarding Axe* (Melee range, 1d8+1 physical damage)\n*   **Feature (Passive):** *Bloodlust.* When a Pirate attacks a PC who is currently below their Major Damage Threshold, the Pirate deals +2 damage.\n*   **GM Tactics:** Pirates are aggressive and reckless. They swarm the weakest-looking party member, trying to trigger their *Bloodlust* feature as quickly as possible."
+              "title": "Tier 1: Pirate Raider",
+              "content": "*A desperate scavenger armed with whatever they could steal.*\n*   **Type:** Minion\n*   **Difficulty:** 10\n*   **Attack Modifier:** +2\n*   **Damage Thresholds:** Minor 3 / Major 5 / Severe 10\n*   **Hit Points:** 2\n*   **Stress:** 2\n*   **Experience:** Scavenging (+1)\n*   **Standard Attack:** *Salvaged Pistol* (Close range, 1d6+1 physical damage)\n*   **Feature (Passive):** *Bloodlust.* When a Pirate attacks a PC who has marked at least half their maximum HP, the Pirate deals +2 damage.\n*   **GM Tactics:** Pirates swarm weakened targets, using *Bloodlust* to finish off injured PCs. They flee when their leader falls."
             },
             {
-              "title": "Tier 2: Freelance Bounty Hunter",
-              "id": "book-6-ch-10-s-3",
-              "content": "*A heavily armed professional who tracks targets across the galaxy for credits.*\n*   **Type:** Skulk\n*   **Difficulty:** 14\n*   **Attack Modifier:** +5\n*   **Damage Thresholds:** Major 12, Severe 20\n*   **Hit Points:** 6\n*   **Stress:** 5\n*   **Experience:** I Always Get My Mark (+3)\n*   **Standard Attack:** *Sniper Rifle* (Very Far range, 2d10+3 physical damage)\n*   **Feature (Action):** *Tracking Dart.* The Hunter spends 1 Stress to fire a dart at a PC. For the rest of the scene, the Hunter has Advantage on all attacks against that PC, and the PC cannot hide from them.\n*   **Feature (Action):** *Jetpack Escape.* The Hunter spends 1 Stress to immediately move up to Far range, ignoring difficult terrain and obstacles.\n*   **GM Tactics:** Bounty Hunters are pragmatic. They use *Tracking Dart* on their primary target, shoot from maximum range, and use *Jetpack Escape* if the party gets too close.\n\n---"
+              "title": "Tier 2: Pirate Boarding Party Leader",
+              "content": "*A veteran raider who coordinates boarding actions with brutal efficiency.*\n*   **Type:** Leader\n*   **Difficulty:** 14\n*   **Attack Modifier:** +5\n*   **Damage Thresholds:** Minor 5 / Major 10 / Severe 18\n*   **Hit Points:** 6\n*   **Stress:** 5\n*   **Experience:** Boarding Tactics (+3)\n*   **Standard Attack:** *Mag-Shotgun* (Close range, 2d8+3 physical damage)\n*   **Feature (Action):** *Rally the Crew.* The Leader spends 2 Stress. All allied Pirates within Far range immediately move up to 1 range band toward the nearest PC and gain +1 to their next attack roll.\n*   **Feature (Passive):** *Dead Man's Switch.* When the Leader is reduced to 0 HP, all allied Pirates within Close range gain +3 to their attack rolls for the remainder of the encounter.\n*   **GM Tactics:** The Leader stays in the center of their crew, using *Rally the Crew* to coordinate rushes. Killing the Leader triggers *Dead Man's Switch*, making the remaining Pirates more dangerous."
+            },
+            {
+              "title": "Tier 3: Pirate Warlord",
+              "content": "*A legendary pirate captain who commands a small fleet of raiders.*\n*   **Type:** Solo\n*   **Difficulty:** 17\n*   **Attack Modifier:** +7\n*   **Damage Thresholds:** Minor 7 / Major 14 / Severe 26\n*   **Hit Points:** 10\n*   **Stress:** 8\n*   **Experience:** Feared Reputation (+4)\n*   **Standard Attack:** *Relic-Tech Cutlass* (Melee range, 2d12+5 energy damage)\n*   **Feature (Action):** *Intimidating Presence.* The Warlord spends 2 Stress. All PCs within Far range must make a Difficulty 17 Presence roll or become Frightened until the end of their next turn. While Frightened, the PC cannot willingly move closer to the Warlord.\n*   **Feature (Reaction):** *Parry and Riposte.* When a PC misses the Warlord with a melee attack, the Warlord can spend 1 Fear to immediately make a Standard Attack against that PC.\n*   **GM Tactics:** The Warlord is a terrifying melee combatant. They use *Intimidating Presence* to keep ranged PCs at bay, then close in on the party's frontline with *Parry and Riposte*.\n\n---"
             }
-          ],
-          "content": "The people who keep Nexus 9 running, and the scum who prey on its trade routes. These adversaries can be encountered anywhere, working for anyone who pays."
+          ]
         },
         {
-          "title": "10. The Eclipse-Corrupted",
-          "id": "book-6-ch-11",
+          "title": "Rogue Technoseers",
           "sections": [
             {
-              "title": "Tier 2: Corrupted Diplomat",
-              "id": "book-6-ch-11-s-1",
-              "content": "*A once-respected envoy whose mind has been shattered by the Eclipse, now spreading paranoia and violence.*\n*   **Type:** Support\n*   **Difficulty:** 14\n*   **Attack Modifier:** +5\n*   **Damage Thresholds:** Major 10, Severe 18\n*   **Hit Points:** 6\n*   **Stress:** 5\n*   **Experience:** Twisted Words (+3)\n*   **Standard Attack:** *Psychic Dissonance* (Far range, 2d8+3 magic damage)\n*   **Feature (Action):** *Sow Discord.* The Diplomat spends 2 Stress to target a PC. That PC must make a Difficulty 14 Presence roll. On a failure, they must immediately make a Standard Attack against an ally of the GM's choice as a Free Action.\n*   **GM Tactics:** The Diplomat avoids direct combat, using *Sow Discord* to turn the party's heaviest hitters against their own medics and casters."
+              "title": "Overview",
+              "content": "Technoseers who have abandoned the Conclave's ethical guidelines, pursuing forbidden research into Eclipse-touched technology, artificial intelligence, or weapons of mass destruction."
             },
             {
-              "title": "Tier 2: Corrupted Marine",
-              "id": "book-6-ch-11-s-2",
-              "content": "*A Terran soldier whose armor has fused to their mutated flesh, driven by an endless, silent rage.*\n*   **Type:** Bruiser\n*   **Difficulty:** 13\n*   **Attack Modifier:** +6\n*   **Damage Thresholds:** Major 14, Severe 24\n*   **Hit Points:** 8\n*   **Stress:** 4\n*   **Experience:** Unfeeling Flesh (+3)\n*   **Standard Attack:** *Fused Chain-Blade* (Melee range, 2d10+4 physical damage)\n*   **Feature (Passive):** *Void-Hardened.* The Marine is immune to the Stunned and Vulnerable conditions.\n*   **Feature (Reaction):** *Spiteful Blood.* When the Marine takes physical damage from a melee attack, the attacker takes 1d6 magic damage from acidic, void-tainted blood.\n*   **GM Tactics:** The Marine is a relentless juggernaut. They charge the nearest PC and stay in melee, punishing anyone who tries to fight them hand-to-hand with *Spiteful Blood*."
+              "title": "Tier 2: Rogue Technoseer",
+              "content": "*A brilliant but unstable scientist wielding experimental weapons.*\n*   **Type:** Support\n*   **Difficulty:** 14\n*   **Attack Modifier:** +5\n*   **Damage Thresholds:** Minor 5 / Major 9 / Severe 16\n*   **Hit Points:** 5\n*   **Stress:** 6\n*   **Experience:** Experimental Tech (+3)\n*   **Standard Attack:** *Prototype Energy Pistol* (Far range, 1d10+3 energy damage)\n*   **Feature (Action):** *Deploy Drone.* The Technoseer spends 2 Stress to deploy a Combat Drone (Difficulty 10, HP 2, Attack +2, 1d6+1 energy damage, Close range). The drone acts on the GM's turn.\n*   **Feature (Action):** *Overload.* The Technoseer spends 3 Stress to overload their prototype weapon. Their next Standard Attack deals double damage but the weapon is destroyed afterward.\n*   **GM Tactics:** Rogue Technoseers fight from behind their drones, using *Overload* as a desperate last resort when cornered."
             },
             {
-              "title": "Tier 3: Corrupted Valari",
-              "id": "book-6-ch-11-s-3",
-              "content": "*A fallen warrior whose soul-crystal has turned black, draining Hope from the world around them.*\n*   **Type:** Solo\n*   **Difficulty:** 17\n*   **Attack Modifier:** +8\n*   **Damage Thresholds:** Major 18, Severe 32\n*   **Hit Points:** 12\n*   **Stress:** 8\n*   **Experience:** Shattered Honor (+4)\n*   **Standard Attack:** *Dark-Light Glaive* (Melee range, 3d10+5 magic damage)\n*   **Feature (Passive):** *Aura of Despair.* Any PC who starts their turn within Close range of the Corrupted Valari must mark 1 Stress.\n*   **Feature (Action):** *Drain Hope.* The GM spends 2 Fear. The Valari targets a PC within Far range. That PC loses 1 Hope, and the Valari heals 2d6 HP.\n*   **GM Tactics:** The Corrupted Valari is a terrifying solo threat. They use their *Aura of Despair* to slowly break the party's minds, and *Drain Hope* to sustain themselves through a long fight.\n\n---"
+              "title": "Tier 3: Rogue Technoseer Archon",
+              "content": "*A master engineer who has merged with Eclipse-touched technology.*\n*   **Type:** Solo\n*   **Difficulty:** 17\n*   **Attack Modifier:** +8\n*   **Damage Thresholds:** Minor 8 / Major 16 / Severe 30\n*   **Hit Points:** 10\n*   **Stress:** 8\n*   **Experience:** Forbidden Knowledge (+4)\n*   **Standard Attack:** *Eclipse-Infused Beam* (Far range, 2d12+5 energy/psychic damage)\n*   **Feature (Passive):** *Adaptive Shielding.* The Archon reduces all incoming energy damage by 4.\n*   **Feature (Action):** *Summon Constructs.* The Archon spends 3 Stress to summon 2 Combat Drones and 1 Heavy Drone (Difficulty 13, HP 4, Attack +4, 2d6+2 energy damage, Far range).\n*   **Feature (Reaction):** *Emergency Teleport.* When the Archon takes Major or Severe damage, they can spend 1 Fear to teleport up to Very Far range.\n*   **GM Tactics:** The Archon fights from maximum range, surrounding themselves with drones. They use *Emergency Teleport* to escape melee and *Summon Constructs* to replenish their defenses.\n\n---"
             }
-          ],
-          "content": "When the Eclipse touches a mind, it twists the host's original abilities into something dark. These adversaries are tragic figures \u2014 former allies or neutral parties who have been hollowed out and filled with void energy."
+          ]
         },
         {
-          "title": "11. Deep Space Horrors",
-          "id": "book-6-ch-12",
+          "title": "Political Threats",
           "sections": [
             {
-              "title": "Tier 2: Hyperspace Phantom",
-              "id": "book-6-ch-12-s-1",
-              "content": "*A creature that phases in and out of reality, attacking from the blind spots of a ship's sensors.*\n*   **Type:** Skulk\n*   **Difficulty:** 15\n*   **Attack Modifier:** +6\n*   **Damage Thresholds:** Major 8, Severe 15\n*   **Hit Points:** 5\n*   **Stress:** 6\n*   **Experience:** Out of Phase (+3)\n*   **Standard Attack:** *Dimensional Tear* (Close range, 2d8+4 magic damage)\n*   **Feature (Passive):** *Incorporeal.* The Phantom takes half damage from all physical attacks.\n*   **Feature (Action):** *Phase Shift.* The Phantom spends 1 Stress to teleport up to Far range, passing through solid objects and bulkheads.\n*   **GM Tactics:** Phantoms are ambush predators. They use *Phase Shift* to bypass armor and cover, strike with *Dimensional Tear*, and vanish before the party can retaliate."
+              "title": "Overview",
+              "content": "Political threats are social encounter adversaries. Their **Difficulty** applies to social rolls (Presence, Knowledge, Instinct) rather than Evasion. They are not designed for direct combat \u2014 if a fight breaks out, they flee or call for guards."
             },
             {
-              "title": "Tier 3: Silicate Swarm (Hazard)",
-              "id": "book-6-ch-12-s-2",
-              "content": "*A living asteroid field that consumes starship hulls and organic matter with equal hunger.*\n*   **Type:** Hazard / Swarm\n*   **Difficulty:** 14\n*   **Attack Modifier:** +7\n*   **Damage Thresholds:** Major 20, Severe 35\n*   **Hit Points:** 10\n*   **Stress:** 0 (Immune to Stress)\n*   **Experience:** Devouring Cloud (+4)\n*   **Standard Attack:** *Abrasive Cloud* (Close range radius, 3d6+5 physical damage to all targets in area)\n*   **Feature (Passive):** *Amorphous.* The Swarm is immune to all single-target attacks that do not deal area-of-effect damage.\n*   **Feature (Action):** *Consume.* The GM spends 2 Fear. The Swarm targets a vehicle or heavily armored PC. The target's Armor value is permanently reduced by 1.\n*   **GM Tactics:** The Swarm is an environmental puzzle as much as a combat encounter. The party must use explosives, environmental hazards, or ship weapons to destroy it before it *Consumes* their defenses."
+              "title": "Corrupt Senator",
+              "content": "*A self-serving politician who trades favors for power.*\n*   **Type:** Social\n*   **Difficulty:** 15\n*   **Stress:** 6\n*   **Experience:** Political Manipulation (+4)\n*   **Feature (Social):** *Leverage.* The Senator always knows one secret about each PC. They can spend 2 Stress to reveal this secret publicly, forcing the PC to make a Difficulty 15 Presence roll or become Exposed in the social encounter (all future social rolls against them have Disadvantage).\n*   **Feature (Social):** *Call in a Favor.* The Senator spends 3 Stress to summon a powerful ally (a military officer, a corporate executive, or a Mindclave representative) who intervenes on their behalf.\n*   **GM Tactics:** The Senator never fights directly. They use *Leverage* to embarrass PCs in public and *Call in a Favor* to bring overwhelming social pressure."
             },
             {
-              "title": "Tier 4: The Whisperer in the Dark (Boss)",
-              "id": "book-6-ch-12-s-3",
-              "content": "*An ancient entity that traps the party in a shared psychic nightmare, feeding on their deepest fears.*\n*   **Type:** Boss\n*   **Difficulty:** 20\n*   **Attack Modifier:** +10\n*   **Damage Thresholds:** Major 25, Severe 45\n*   **Hit Points:** 15\n*   **Stress:** 12\n*   **Experience:** Architect of Nightmares (+5)\n*   **Standard Attack:** *Mind Flay* (Very Far range, 4d10+8 magic damage)\n*   **Feature (Passive):** *Illusory Terrain.* The battlefield constantly shifts. At the start of each round, the GM can rearrange all cover, hazards, and difficult terrain.\n*   **Feature (Action):** *Manifest Fear.* The Whisperer spends 3 Stress to summon a phantasmal copy of a PC's greatest fear (use Tier 2 Bruiser stats). The phantasm only deals damage to that specific PC.\n*   **Feature (Reaction):** *Shatter Reality.* When the Whisperer takes Severe damage, the GM can spend 3 Fear to force all PCs to make a Difficulty 18 Instinct roll. On a failure, they take 3d12 magic damage and are Stunned.\n*   **GM Tactics:** The Whisperer is a psychological boss fight. It uses *Illusory Terrain* to keep the party disoriented, *Manifest Fear* to isolate individuals, and *Shatter Reality* as a devastating counter-attack.\n\n---"
+              "title": "Fanatical Preacher",
+              "content": "*A charismatic demagogue who whips crowds into a frenzy.*\n*   **Type:** Social\n*   **Difficulty:** 14\n*   **Stress:** 5\n*   **Experience:** Crowd Control (+3)\n*   **Feature (Social):** *Incite Mob.* The Preacher spends 2 Stress to turn a crowd hostile toward the PCs. All social rolls the PCs make in this location have Disadvantage until the crowd is calmed (Difficulty 16 Presence roll).\n*   **Feature (Social):** *Righteous Fury.* If the PCs attack the Preacher, the crowd immediately turns violent. The GM gains 3 Fear and 2d4 Eclipse Thralls (or angry civilians) appear.\n*   **GM Tactics:** The Preacher uses the crowd as a weapon. PCs must out-argue them or discredit them without resorting to violence."
+            },
+            {
+              "title": "Diplomat",
+              "content": "*A smooth-talking representative of a foreign power.*\n*   **Type:** Social\n*   **Difficulty:** 16\n*   **Stress:** 7\n*   **Experience:** Diplomatic Immunity (+4)\n*   **Feature (Social):** *Reframe the Narrative.* The Diplomat spends 2 Stress to reinterpret a PC's previous statement in the worst possible light. The PC must make a Difficulty 16 Knowledge roll to correct the record or lose credibility.\n*   **Feature (Social):** *Backroom Deal.* The Diplomat spends 3 Stress to offer a PC a private deal. If the PC accepts, they gain a significant advantage but owe the Diplomat a future favor (creating a Faction Debt).\n*   **GM Tactics:** The Diplomat is never hostile \u2014 they are always reasonable, always smiling, and always working an angle."
+            },
+            {
+              "title": "Information Broker",
+              "content": "*A shadowy figure who trades in secrets and blackmail.*\n*   **Type:** Social\n*   **Difficulty:** 15\n*   **Stress:** 6\n*   **Experience:** Network of Informants (+4)\n*   **Feature (Social):** *I Know What You Did.* The Broker spends 2 Stress to reveal a damaging secret about a PC or NPC. The target must make a Difficulty 15 Presence roll or have their Reputation with one faction reduced by 1.\n*   **Feature (Social):** *The Price of Information.* The Broker always has the information the PCs need \u2014 but it costs credits, favors, or a dangerous side mission.\n*   **GM Tactics:** The Broker is a necessary evil. PCs will need them, but every interaction comes with strings attached."
+            },
+            {
+              "title": "Smuggler Captain",
+              "content": "*A charming rogue who operates in the grey areas between factions.*\n*   **Type:** Social/Combat\n*   **Difficulty:** 14\n*   **Attack Modifier:** +4\n*   **Damage Thresholds:** Minor 4 / Major 8 / Severe 15\n*   **Hit Points:** 5\n*   **Stress:** 5\n*   **Experience:** Fast Talker (+3)\n*   **Standard Attack:** *Hold-Out Pistol* (Close range, 1d8+2 physical damage)\n*   **Feature (Social):** *Always Has an Angle.* The Smuggler can spend 2 Stress to offer the PCs an alternative solution to any problem \u2014 one that involves smuggling, bribery, or creative rule-breaking.\n*   **Feature (Combat):** *Slippery.* When the Smuggler takes damage, they can spend 1 Stress to immediately move 1 range band and break line of sight.\n*   **GM Tactics:** The Smuggler prefers talking to fighting. If combat breaks out, they use *Slippery* to escape and negotiate from a position of safety.\n\n---"
             }
-          ],
-          "content": "Threats found in the uncharted sectors of the Rimward Marches, where the laws of physics begin to break down."
+          ]
         },
         {
-          "title": "12. Political Threats (Non-Combat / Social)",
-          "id": "book-6-ch-13",
+          "title": "Creatures and Environmental Hazards",
           "sections": [
             {
-              "title": "The Corrupt Senator",
-              "id": "book-6-ch-13-s-1",
-              "content": "*A high-ranking official who uses bureaucratic red tape and legal threats to block the party.*\n*   **Difficulty:** 16 (for Persuasion/Intimidation rolls)\n*   **Hit Points:** 3\n*   **Stress:** 6\n*   **Experience:** Untouchable (+4)\n*   **Feature (Passive):** *Web of Influence.* The Senator cannot be harmed physically without the party immediately becoming Wanted by station security.\n*   **Feature (Action):** *Red Tape.* The Senator spends 2 Stress to impose Disadvantage on the party's next social or investigation roll."
+              "title": "Overview",
+              "content": "These are non-faction threats encountered in the frontier, in derelict stations, or in the uncharted regions beyond Nexus 9's patrol routes."
             },
             {
-              "title": "The Fanatical Preacher",
-              "id": "book-6-ch-13-s-2",
-              "content": "*A charismatic demagogue who incites riots and turns the civilian population against the crew.*\n*   **Difficulty:** 14 (for Presence/Deception rolls)\n*   **Hit Points:** 4\n*   **Stress:** 5\n*   **Experience:** Voice of the Masses (+3)\n*   **Feature (Passive):** *Zealous Following.* The Preacher is always surrounded by a crowd of devoted followers, making it impossible to speak to them privately.\n*   **Feature (Action):** *Incite the Mob.* The Preacher spends 2 Stress to turn the crowd hostile. The party must immediately flee or face a Tier 2 Swarm encounter."
+              "title": "Tier 1: Void Rat Swarm",
+              "content": "*A mass of small, aggressive vermin that infest derelict ships and stations.*\n*   **Type:** Minion (Swarm)\n*   **Difficulty:** 9\n*   **Attack Modifier:** +1\n*   **Damage Thresholds:** Minor 3 / Major 5 / Severe 10\n*   **Hit Points:** 3\n*   **Stress:** 0\n*   **Standard Attack:** *Gnawing Bites* (Melee range, 1d4+1 physical damage)\n*   **Feature (Passive):** *Swarm.* The Void Rat Swarm takes half damage from single-target attacks. Area attacks deal full damage.\n*   **GM Tactics:** Void Rats are a nuisance that forces PCs to waste resources. They attack in waves and retreat into walls when threatened."
             },
             {
-              "title": "The Diplomat",
-              "id": "book-6-ch-13-s-3",
-              "content": "*A representative of one of the major factions, skilled in negotiation and deception.*\n*   **Difficulty:** 14 (for Persuasion/Deception rolls)\n*   **Hit Points:** 3\n*   **Stress:** 4\n*   **Experience:** Silver Tongue (+3)\n*   **Feature (Passive):** *Diplomatic Immunity.* The Diplomat cannot be attacked or detained without severe political consequences for the offending party.\n*   **Feature (Reaction):** *Call Security.* When threatened, the Diplomat spends 1 Stress to summon 1d4 Station Security Drones (Tier 1 Ranged) to their location."
+              "title": "Tier 2: Nebula Leviathan Juvenile",
+              "content": "*A young specimen of the massive creatures that drift through nebulae, feeding on radiation.*\n*   **Type:** Bruiser\n*   **Difficulty:** 14\n*   **Attack Modifier:** +5\n*   **Damage Thresholds:** Minor 6 / Major 12 / Severe 22\n*   **Hit Points:** 8\n*   **Stress:** 3\n*   **Standard Attack:** *Tentacle Lash* (Close range, 2d8+3 physical damage)\n*   **Feature (Passive):** *Radiation Absorption.* The Leviathan is immune to energy damage and restores 1 HP whenever it takes energy damage.\n*   **Feature (Action):** *Constrict.* The Leviathan spends 2 Stress to grapple a PC within Melee range. The PC must make a Difficulty 14 Strength roll each turn to escape or take 2d6 physical damage.\n*   **GM Tactics:** The Leviathan is a territorial creature, not malicious. It attacks anything that enters its feeding ground and uses *Constrict* to drag prey into its maw."
             },
             {
-              "title": "The Information Broker",
-              "id": "book-6-ch-13-s-4",
-              "content": "*A shadowy figure who deals in secrets, rumors, and blackmail.*\n*   **Difficulty:** 15 (for Investigation/Intimidation rolls)\n*   **Hit Points:** 4\n*   **Stress:** 5\n*   **Experience:** A Guy Who Knows A Guy (+4)\n*   **Feature (Passive):** *Eyes Everywhere.* The Broker always knows when they are being followed or surveilled.\n*   **Feature (Action):** *Blackmail.* The Broker spends 2 Stress to reveal a damaging secret about a PC, forcing them to make a Difficulty 15 Presence roll. On a failure, the PC must comply with a reasonable request or mark 2 Stress."
+              "title": "Tier 3: Derelict Station AI",
+              "content": "*A rogue artificial intelligence that has taken control of an abandoned station's defense systems.*\n*   **Type:** Solo (Environmental)\n*   **Difficulty:** 16\n*   **Attack Modifier:** +7\n*   **Damage Thresholds:** Minor 8 / Major 16 / Severe 30\n*   **Hit Points:** 10\n*   **Stress:** 8\n*   **Experience:** Total Station Control (+4)\n*   **Standard Attack:** *Automated Turret* (Far range, 2d10+4 physical damage)\n*   **Feature (Passive):** *Distributed System.* The AI cannot be damaged by conventional attacks. PCs must physically access and destroy 3 server nodes (each with Difficulty 14, HP 3) to shut it down.\n*   **Feature (Action):** *Lockdown.* The AI spends 2 Stress to seal all doors in the current section. PCs must make a Difficulty 16 Knowledge roll to hack a door open.\n*   **Feature (Action):** *Vent Atmosphere.* The AI spends 3 Stress to begin venting atmosphere from the current section. PCs have 3 rounds to seal the breach (Difficulty 14 Knowledge roll) or begin Suffocating (mark 1 HP per round).\n*   **GM Tactics:** The AI is an environmental hazard, not a creature. It uses *Lockdown* to trap PCs and *Vent Atmosphere* to force them into desperate situations. The encounter is a puzzle, not a fight.\n\n---\n\n## Encounter Building\n\nThe following guidelines help GMs build balanced encounters using the adversary stat blocks above."
             },
             {
-              "title": "The Smuggler",
-              "id": "book-6-ch-13-s-5",
-              "content": "*A rogue pilot who moves illicit goods past station security and faction blockades.*\n*   **Difficulty:** 13 (for Piloting/Deception rolls)\n*   **Hit Points:** 5\n*   **Stress:** 4\n*   **Experience:** Evasive Maneuvers (+3)\n*   **Standard Attack:** *Hold-Out Blaster* (Close range, 1d6+2 physical damage)\n*   **Feature (Passive):** *Hidden Compartments.* The Smuggler always has a concealed weapon or escape route.\n*   **Feature (Action):** *Distraction.* The Smuggler spends 1 Stress to create a diversion. All PCs must make a Difficulty 13 Instinct roll or lose their next action.\n\n---"
+              "title": "Fear Budget by Scene Complexity",
+              "content": "| Scene Type | Starting Fear | Recommended Adversaries |\n|:---|:---:|:---|\n| Incidental | 0-1 | 2-3 Minions |\n| Minor | 1-3 | 4-5 Minions or 1-2 Standards |\n| Standard | 2-4 | 2-3 Standards + 1 Support or Leader |\n| Major | 4-8 | 1 Solo + 2-3 Standards or 4-5 Standards + 1 Leader |\n| Climactic | 6-12 | 1 Boss + mixed support, or 2 Solos + Standards |"
+            },
+            {
+              "title": "Tier Matching",
+              "content": "| Party Level | Appropriate Adversary Tier | Notes |\n|:---|:---:|:---|\n| 1-2 | Tier 1 | Minions and Standards only. Avoid Solos. |\n| 3-4 | Tier 2 | Introduce Solos and Leaders. |\n| 5-7 | Tier 3 | Full range of adversary types. |\n| 8-10 | Tier 4 | Boss encounters and multi-tier mixed groups. |"
+            },
+            {
+              "title": "Mixing Tiers",
+              "content": "For the most dynamic encounters, mix adversary tiers within a single scene. A Tier 3 Leader supported by Tier 1 Minions creates a more interesting tactical puzzle than a group of same-tier adversaries. The Minions provide the Leader with resources (Meat Shield, Phalanx Formation) while the PCs must decide whether to eliminate the Minions first or focus fire on the Leader."
+            },
+            {
+              "title": "Adversary Stress as a Pacing Tool",
+              "content": "Adversary Stress is deliberately limited. A Tier 1 Enforcer with 2 Stress can only use their passive feature \u2014 they have no Stress-costing abilities. A Tier 4 Boss with 12 Stress can use their most powerful features 2-3 times before running dry. This creates a natural pacing arc: the Boss is most dangerous in the first few rounds, then becomes increasingly vulnerable as their Stress depletes. GMs should not replenish adversary Stress during an encounter unless a specific Feature allows it."
             }
-          ],
-          "content": "Not every threat on Nexus 9 can be solved with a weapon. These adversaries fight with words, influence, and the weight of bureaucracy. They are used in social encounters and investigation scenes."
-        },
-        {
-          "title": "13. Encounter Building and GM Guidance",
-          "id": "book-6-ch-14",
-          "sections": [
-            {
-              "title": "Encounter Budgets (Fear Costs)",
-              "id": "book-6-ch-14-s-1",
-              "content": "*   **Minor Encounter (0-2 Fear):** A brief skirmish with a few Minions or a single Standard adversary. Easily resolved without expending major resources.\n*   **Standard Encounter (2-4 Fear):** A challenging fight against a mix of Standard, Support, and Bruiser adversaries. Requires tactical coordination and some resource expenditure.\n*   **Major Encounter (4-8 Fear):** A significant battle against elite troops, a Leader, or a Solo adversary. High risk of PC death or severe consequences.\n*   **Climactic Encounter (6-12 Fear):** A campaign-defining confrontation against a Boss or a massive vehicle. Requires the party to use all their abilities, Hope, and tactical ingenuity to survive."
-            },
-            {
-              "title": "Environmental Hazards",
-              "id": "book-6-ch-14-s-2",
-              "content": "The environment of Nexus 9 and the frontier is often as dangerous as the adversaries themselves. The GM can spend Fear to trigger these hazards during combat:\n*   **Zero-Gravity (1 Fear):** All physical attacks made by PCs suffer a -1 penalty to the attack roll, and movement is halved unless the PC has Mag-Boots or a similar ability.\n*   **Hull Breach (2 Fear):** A section of the room depressurizes. All PCs within Close range of the breach must make a Difficulty 14 Strength roll or be pulled toward the breach and take 2d6 physical damage from flying debris.\n*   **Radiation Leak (1 Fear):** A damaged reactor or weapon vents radiation. All PCs in the affected area must mark 1 Stress at the start of their turn.\n\n---"
-            }
-          ],
-          "content": "When building encounters in *Nexus 9*, the GM should consider the faction dynamics, the environment, and the Fear economy."
-        },
-        {
-          "title": "14. Threat Clocks and Escalation Tracks",
-          "id": "book-6-ch-15",
-          "sections": [
-            {
-              "title": "The Aurelian Empire: \"Annexation of the Frontier\"",
-              "id": "book-6-ch-15-s-1",
-              "content": "*The Empire seeks to bring the independent worlds surrounding Nexus 9 under their direct control.*\n*   **Clock Size:** 8 segments\n*   **Trigger:** The crew fails a mission that would have hindered Imperial logistics, or they publicly embarrass an Imperial official.\n*   **Segment 2:** Imperial patrols increase in the sector. Smuggling becomes harder (Difficulty +1 to all Broker rolls).\n*   **Segment 4:** The Empire establishes a blockade around a key independent world. Prices for goods on Nexus 9 double.\n*   **Segment 6:** Imperial warships arrive at Nexus 9, demanding the station's surrender. The crew must navigate a tense diplomatic standoff.\n*   **Segment 8 (Resolution):** The Empire annexes the sector by force. Nexus 9 becomes an occupied military outpost. The crew is declared enemies of the state."
-            },
-            {
-              "title": "The Eclipse-Touched: \"The Awakening\"",
-              "id": "book-6-ch-15-s-2",
-              "content": "*The cultists are attempting to summon a Void Avatar to consume the station.*\n*   **Clock Size:** 6 segments\n*   **Trigger:** The crew ignores rumors of missing persons in the lower decks, or they fail to stop a cult ritual.\n*   **Segment 2:** Strange anomalies begin appearing on the station (flickering lights, sudden drops in temperature).\n*   **Segment 4:** The cultists launch a coordinated attack on the station's security forces, plunging the lower decks into chaos.\n*   **Segment 6 (Resolution):** The Void Avatar is summoned. The crew must face a Tier 4 Boss encounter immediately, or the station is destroyed."
-            },
-            {
-              "title": "The Kaelen Syndicate: \"The Underworld War\"",
-              "id": "book-6-ch-15-s-3",
-              "content": "*The Syndicate attempts to violently seize control of the station's black market from rival gangs.*\n*   **Clock Size:** 4 segments\n*   **Trigger:** The crew interferes with a Syndicate smuggling operation or kills a high-ranking Fixer.\n*   **Segment 1:** Syndicate thugs begin openly extorting merchants in the Promenade.\n*   **Segment 2:** A rival gang leader is assassinated in broad daylight. Station security is overwhelmed.\n*   **Segment 3:** The Syndicate locks down the Underbelly, cutting off access to illegal goods and information brokers.\n*   **Segment 4 (Resolution):** The Syndicate takes full control of the black market. All illicit purchases cost double, and the crew is marked for death by Syndicate assassins.\n\n---"
-            }
-          ],
-          "content": "In *Nexus 9*, the galaxy does not wait for the players. Factions advance their agendas off-screen, and the GM tracks this progress using **Threat Clocks**. These are standard Daggerheart countdowns (usually 4, 6, or 8 segments) that advance when the players fail an action roll with Fear, or when they choose to ignore a faction's activities for too long."
-        },
-        {
-          "title": "15. Encounter Seeds",
-          "id": "book-6-ch-16",
-          "sections": [
-            {
-              "title": "Diplomacy and Intrigue (Social Encounters)",
-              "id": "book-6-ch-16-s-1",
-              "content": "*   **The Defector:** A high-ranking Mindclave telepath wants to defect to the Aurelian Empire and seeks the crew's help to smuggle them off the station. Both factions are hunting them.\n*   **The Trade Dispute:** Two rival merchant guilds are on the verge of a violent turf war in the station's promenade. The crew must mediate a truce before station security intervenes with lethal force.\n*   **The Blackmail:** A Syndicate Fixer has obtained compromising information about a crew member's past and demands they sabotage a rival faction's ship in exchange for silence."
-            },
-            {
-              "title": "Sabotage and Espionage (Skulk Encounters)",
-              "id": "book-6-ch-16-s-2",
-              "content": "*   **The Data Heist:** The crew is hired to infiltrate a secure Aurelian data vault and extract the blueprints for a new weapon system. They must bypass automated defenses and avoid detection by Praetorian Guards.\n*   **The Sabotaged Reactor:** Someone has planted an explosive device on the station's main reactor. The crew must find and disarm it before it detonates, while dealing with the Syndicate thugs hired to protect it.\n*   **The Inside Job:** A mole within the station's administration is leaking sensitive information to the Eclipse-Touched. The crew must identify the traitor without alerting them."
-            },
-            {
-              "title": "War and Survival (Combat Encounters)",
-              "id": "book-6-ch-16-s-3",
-              "content": "*   **The Boarding Party:** While traveling through the frontier, the crew's ship is ambushed and boarded by a Kaelen Syndicate raiding party. They must repel the boarders and repair their ship's engines before they are destroyed.\n*   **The Progenitor Ruin:** The crew explores an ancient alien ruin on a desolate moon, only to awaken its crystalline defenders. They must survive waves of Progenitor Sentinels while trying to extract a valuable artifact.\n*   **The Station Siege:** The Aurelian Empire launches a full-scale assault on Nexus 9. The crew must hold the line alongside station security against waves of Legionnaires and heavy armor."
-            },
-            {
-              "title": "The Terran Coalition (Military Encounters)",
-              "id": "book-6-ch-16-s-4",
-              "content": "*   **The Stranded Patrol:** A squad of Terran Marines and a Combat Medic are pinned down by Kaelen Syndicate forces in the lower decks. The crew must decide whether to intervene and save the Terrans, earning their favor but angering the Syndicate, or leave them to their fate.\n*   **The Rogue Mech:** A Terran \"Goliath\" Mech pilot has suffered a psychological break and is rampaging through the docking bay. The crew must disable the mech without killing the pilot, while avoiding the Heavy Gunner trying to provide covering fire for their squadmate.\n*   **The Checkpoint:** The Terran Coalition has set up an illegal blockade on a major trade route. The crew must negotiate passage with the commanding officer or fight their way through a squad of Marines and a Heavy Gunner."
-            },
-            {
-              "title": "The Technoseers (Tech & Puzzle Encounters)",
-              "id": "book-6-ch-16-s-5",
-              "content": "*   **The Stolen Relic:** A Technoseer Acolyte has stolen a dangerous Progenitor artifact from the station's museum. The crew must track them down and recover the artifact before the Acolyte accidentally triggers a station-wide EMP.\n*   **The Heretic's Lair:** An Umbral Covenant Heretic is using a hidden server farm to siphon credits from the station's accounts. The crew must infiltrate the lair, bypass the Heretic's optical camouflage, and shut down the servers.\n*   **The Logic Puzzle:** A Technoseer Magus challenges the crew to a battle of wits to prove their worthiness. The crew must solve a series of complex logic puzzles while defending themselves from the Magus's deployed forcefields and Acolyte assistants."
-            },
-            {
-              "title": "Independents and Station Security (Urban Encounters)",
-              "id": "book-6-ch-16-s-6",
-              "content": "*   **The Riot:** A protest in the Promenade turns violent. The crew must help Nexus 9 Security Officers pacify the crowd without using lethal force, while dealing with opportunistic Pirate Boarding Parties looting the shops.\n*   **The Bounty:** A Freelance Bounty Hunter has cornered their mark\u2014a sympathetic NPC the crew has worked with before\u2014in a crowded cantina. The crew must defuse the situation or fight the Hunter to protect their friend.\n*   **The Smuggler's Run:** A Smuggler offers the crew a lucrative but highly illegal job. If they accept, they must evade Station Security Drones and navigate a treacherous asteroid field to deliver the goods."
-            },
-            {
-              "title": "The Eclipse-Corrupted (Tragic Encounters)",
-              "id": "book-6-ch-16-s-7",
-              "content": "*   **The Fallen Friend:** A previously friendly NPC (use Corrupted Diplomat stats) has been infected by the Eclipse and is now spreading paranoia among the station's leadership. The crew must subdue them and find a way to cure the corruption.\n*   **The Mutated Squad:** A squad of Terran Marines sent to investigate an anomaly has returned as Corrupted Marines. The crew must stop their rampage through the medical bay before they infect the patients.\n*   **The Shattered Crystal:** A Corrupted Valari is draining the life force from the station's hydroponics bay. The crew must confront the fallen warrior and shatter their corrupted soul-crystal to stop the decay."
-            },
-            {
-              "title": "Deep Space Horrors (Exploration Encounters)",
-              "id": "book-6-ch-16-s-8",
-              "content": "*   **The Ghost Ship:** The crew answers a distress beacon from a derelict freighter, only to find it infested with Hyperspace Phantoms. They must repair the ship's engines and escape before the Phantoms drag them into the void.\n*   **The Living Asteroid:** While navigating a dense asteroid field, the crew's ship is attacked by a Silicate Swarm. They must use their ship's weapons and evasive maneuvers to destroy the swarm before it consumes their hull.\n*   **The Nightmare Realm:** The crew's ship is pulled into a psychic anomaly created by The Whisperer in the Dark. They must navigate a shifting, illusory landscape and confront manifestations of their own fears to escape."
-            },
-            {
-              "title": "Political Threats (Social Encounters)",
-              "id": "book-6-ch-16-s-9",
-              "content": "*   **The Kangaroo Court:** A Corrupt Senator has framed the crew for a crime they didn't commit. The crew must gather evidence to clear their names and expose the Senator's corruption during a highly publicized trial.\n*   **The Demagogue:** A Fanatical Preacher is inciting a mob to attack the Valari embassy. The crew must use diplomacy and intimidation to disperse the crowd and discredit the Preacher before violence erupts.\n*   **The Blackmail Ring:** An Information Broker has obtained sensitive data that could start a war between the Aurelian Empire and the Terran Coalition. The crew must infiltrate the Broker's network and delete the data before it can be sold.\n\n---\n\n*End of Adversaries & Threats Guide v3.1 \u2014 52 Stat Blocks, 27 Encounter Seeds*"
-            }
-          ],
-          "content": "These seeds provide the GM with quick, thematic encounters that can be dropped into any session, categorized by the type of challenge they present."
+          ]
         }
       ]
     },
@@ -1872,7 +1733,7 @@
             {
               "title": "Condition Interactions",
               "id": "condition-interactions",
-              "content": "Some conditions interact with each other in important ways:\n\n- A character who is both **Pinned Down** and **Exposed** is in extreme danger \u2014 they cannot move, their Evasion is reduced, and enemies have Advantage. Allies should prioritize freeing them.\n- A character who is **Restrained** in **Zero Gravity** cannot attempt the Strength roll to break free unless they have something solid to brace against (GM discretion).\n- **Corrupted** characters who also become **Disoriented** hear the Eclipse whispers more clearly. The GM may offer them a dark bargain: clear the Disoriented condition immediately, but mark 1 additional Stress.\n\n---"
+              "content": "Some conditions interact with each other in important ways:\n\n- A character who is both **Pinned Down** and **Exposed** is in extreme danger \u2014 they cannot move, their Evasion is reduced, and enemies have Advantage. Allies should prioritize freeing them.\n- A character who is **Restrained\n\n**Blinded.** You cannot see. All attacks you make have Disadvantage. Attacks against you have Advantage. *Cleared by:* An ally spending an action to assist, a healing ability, or the end of the scene.\n\n**Frightened.** You cannot willingly move closer to the source of your fear. All attack rolls against the source of your fear have Disadvantage. *Cleared by:* A successful Presence roll (Difficulty set by the source), an ally spending an action to encourage you, or the source being removed.\n\n** in **Zero Gravity** cannot attempt the Strength roll to break free unless they have something solid to brace against (GM discretion).\n- **Corrupted** characters who also become **Disoriented** hear the Eclipse whispers more clearly. The GM may offer them a dark bargain: clear the Disoriented condition immediately, but mark 1 additional Stress.\n\n---"
             },
             {
               "title": "Advantage and Disadvantage",
