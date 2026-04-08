@@ -4,7 +4,8 @@
  * Typography: Rajdhani headings, Source Serif 4 body, JetBrains Mono data
  */
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
-import { ChevronRight, ChevronDown, Menu, X, BookOpen, ArrowUp, Search } from "lucide-react";
+import { ChevronRight, ChevronDown, Menu, X, BookOpen, ArrowUp, Search, Swords } from "lucide-react";
+import { Link } from "wouter";
 import manuscript from "@/data/manuscript.json";
 import { IMAGES, BOOK_IMAGES, FACTION_INSIGNIA_MAP, CLASS_PORTRAIT_MAP, RING_IMAGE_MAP } from "@/data/images";
 import MarkdownRenderer from "@/components/MarkdownRenderer";
@@ -248,6 +249,14 @@ export default function Home() {
             </div>
           ))}
         </nav>
+        <div className="px-3 py-2 border-t border-sidebar-border shrink-0">
+          <Link href="/encounter-builder">
+            <button className="w-full flex items-center gap-2 px-3 py-2.5 rounded text-left text-[11px] font-semibold tracking-wider uppercase bg-[#2ec4b6]/10 hover:bg-[#2ec4b6]/20 text-[#2ec4b6] border border-[#2ec4b6]/20 hover:border-[#2ec4b6]/40 transition-all duration-200" style={{ fontFamily: "var(--font-heading)" }}>
+              <Swords className="w-4 h-4 shrink-0" />
+              <span>GM Encounter Builder</span>
+            </button>
+          </Link>
+        </div>
         <div className="p-3 border-t border-sidebar-border text-[10px] text-sidebar-foreground/30 shrink-0" style={{ fontFamily: "var(--font-heading)" }}>
           <p className="tracking-wider uppercase">Orbital Foundry &copy; 2026</p>
           <p className="mt-0.5">Compatible with Daggerheart</p>
