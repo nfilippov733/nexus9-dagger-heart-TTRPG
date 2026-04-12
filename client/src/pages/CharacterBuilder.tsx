@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef, useMemo } from "react";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -32,11 +32,12 @@ const STEPS: { id: Step; label: string; num: number }[] = [
 interface CharacterState {
   name: string;
   pronouns: string;
+  level: number;
   ancestry: Ancestry | null;
   community: Community | null;
   gameClass: GameClass | null;
   subclass: Subclass | null;
-  domainCards: string[]; // selected domain card names (one per class domain)
+  domainCards: string[]; // selected domain card names (one per level per domain)
   traits: Record<TraitName, number>;
   traitsComplete: boolean;
   experiences: string[];
@@ -48,6 +49,7 @@ interface CharacterState {
 const initialCharacter: CharacterState = {
   name: "",
   pronouns: "",
+  level: 1,
   ancestry: null,
   community: null,
   gameClass: null,
@@ -75,8 +77,9 @@ function loadFromStorage(): { character: CharacterState; step: Step } | null {
     if (!raw) return null;
     const parsed = JSON.parse(raw);
     if (parsed?.character && parsed?.step) {
-      // Rehydrate ancestry/community/class/subclass from data arrays
       const c = parsed.character as CharacterState;
+      // Ensure level exists (migration from old saves)
+      if (!c.level) c.level = 1;
       if (c.ancestry) c.ancestry = ANCESTRIES.find(a => a.name === c.ancestry?.name) || null;
       if (c.community) c.community = COMMUNITIES.find(co => co.name === c.community?.name) || null;
       if (c.gameClass) {
@@ -149,6 +152,54 @@ function FeatureBox({ label, name, effect }: { label: string; name: string; effe
   );
 }
 
+/* ─── Domain Card Component ─── */
+function DomainCard({ card, isSelected, isDimmed, onClick }: {
+  card: DomainCardEntry; isSelected: boolean; isDimmed: boolean; onClick: () => void;
+}) {
+  const typeColor = card.type === "Passive" ? "bg-[#22c55e]/15 text-[#4ade80]" :
+    card.type === "Reaction" ? "bg-[#f59e0b]/15 text-[#fbbf24]" :
+    card.type === "Action" ? "bg-[#3b82f6]/15 text-[#60a5fa]" :
+    "bg-[#8b5cf6]/15 text-[#a78bfa]";
+  const costColor = card.cost.includes("Hope") ? "text-[#00D4AA]" :
+    card.cost.includes("Stress") ? "text-[#f87171]" : "text-[#7a9ab8]";
+
+  return (
+    <button
+      onClick={onClick}
+      className={`text-left w-full rounded-xl border-2 transition-all duration-200 overflow-hidden ${
+        isSelected
+          ? "border-[#00D4AA] bg-gradient-to-br from-[#00D4AA]/10 to-[#0d1628] shadow-[0_0_20px_rgba(0,212,170,0.12)]"
+          : isDimmed
+          ? "border-[#1a2744] bg-[#0d1628] opacity-50 hover:opacity-70"
+          : "border-[#1a2744] bg-[#0d1628] hover:border-[#2a4060] hover:bg-[#111d35]"
+      }`}
+    >
+      <div className={`px-4 py-2.5 flex items-center justify-between ${isSelected ? "bg-[#00D4AA]/8" : "bg-[#0a0f1a]/60"}`}>
+        <div className="flex items-center gap-2 flex-wrap">
+          <span className={`text-xs px-2 py-0.5 rounded-full font-semibold ${typeColor}`}>{card.type}</span>
+          <span className="font-['Rajdhani'] font-bold text-[#e0e8f0] text-lg">{card.name}</span>
+        </div>
+        {isSelected && (
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00D4AA" strokeWidth="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+        )}
+      </div>
+      <div className="px-4 py-3">
+        {card.cost !== "\u2014" && (
+          <div className={`text-xs font-semibold mb-1.5 ${costColor}`}>{card.cost}</div>
+        )}
+        <p className="text-sm text-[#8aa0b8] leading-relaxed">{card.effect}</p>
+      </div>
+      <div className="px-4 py-2 bg-[#0a0f1a]/40 border-t border-[#1a2744]/50">
+        <div className="flex items-center justify-between">
+          <span className="text-xs text-[#4a6a8a]">Level {card.level} · {card.domain}</span>
+          {!isSelected && !isDimmed && <span className="text-xs text-[#00D4AA]/60">Click to select</span>}
+          {isSelected && <span className="text-xs text-[#00D4AA]">Click to deselect</span>}
+        </div>
+      </div>
+    </button>
+  );
+}
+
 /* ─── Trait Assignment Component ─── */
 function TraitAssigner({ traits, onChange, onComplete, recommendedTraits }: {
   traits: Record<TraitName, number>;
@@ -157,10 +208,8 @@ function TraitAssigner({ traits, onChange, onComplete, recommendedTraits }: {
   recommendedTraits?: string[];
 }) {
   const [pool, setPool] = useState<number[]>(() => {
-    // Initialize pool from what's NOT yet assigned
     const assigned = Object.values(traits).filter(v => v !== 0);
     if (assigned.length === 0) return [...STANDARD_ARRAY];
-    // Reconstruct pool by removing assigned values from standard array
     const remaining = [...STANDARD_ARRAY];
     for (const t of TRAITS) {
       const val = traits[t];
@@ -180,7 +229,6 @@ function TraitAssigner({ traits, onChange, onComplete, recommendedTraits }: {
   const assignValue = (trait: TraitName, value: number, poolIndex: number) => {
     const newAssigned = { ...assigned };
     const newPool = [...pool];
-    // If trait already has a value, return it to pool
     if (newAssigned[trait] !== null) {
       newPool.push(newAssigned[trait]!);
     }
@@ -188,7 +236,6 @@ function TraitAssigner({ traits, onChange, onComplete, recommendedTraits }: {
     newPool.splice(poolIndex, 1);
     setAssigned(newAssigned);
     setPool(newPool.sort((a, b) => b - a));
-    // Update parent
     const result: Record<TraitName, number> = {} as any;
     TRAITS.forEach(t => { result[t] = newAssigned[t] ?? 0; });
     onChange(result);
@@ -299,6 +346,19 @@ function PrintSheet({ character }: { character: CharacterState }) {
   const armorData = ARMOR_OPTIONS.find(a => a.name === c.armor);
   const weaponData = c.weapons.map(w => WEAPON_OPTIONS.find(o => o.name === w)).filter(Boolean);
 
+  // Group domain cards by level for print
+  const cardsByLevel = useMemo(() => {
+    const grouped: Record<number, DomainCardEntry[]> = {};
+    c.domainCards.forEach(name => {
+      const card = DOMAIN_CARDS.find(dc => dc.name === name);
+      if (card) {
+        if (!grouped[card.level]) grouped[card.level] = [];
+        grouped[card.level].push(card);
+      }
+    });
+    return grouped;
+  }, [c.domainCards]);
+
   return (
     <div id="print-sheet" className="bg-white text-black p-8 max-w-[8.5in] mx-auto" style={{ fontFamily: "'Source Serif 4', serif" }}>
       {/* Header */}
@@ -322,7 +382,7 @@ function PrintSheet({ character }: { character: CharacterState }) {
           <span><strong>Community:</strong> {c.community?.name || "—"}</span>
           <span><strong>Class:</strong> {cls?.name || "—"}</span>
           <span><strong>Subclass:</strong> {c.subclass?.name || "—"}</span>
-          <span><strong>Level:</strong> 1</span>
+          <span><strong>Level:</strong> {c.level}</span>
         </div>
       </div>
 
@@ -410,22 +470,25 @@ function PrintSheet({ character }: { character: CharacterState }) {
       <div className="mb-4">
         <h2 className="text-lg font-bold border-b-2 border-black mb-2" style={{ fontFamily: "'Rajdhani', sans-serif" }}>DOMAIN CARDS (LOADOUT)</h2>
         {c.domainCards.length > 0 ? (
-          <div className="space-y-2">
-            {c.domainCards.map(cardName => {
-              const card = DOMAIN_CARDS.find(dc => dc.name === cardName);
-              if (!card) return <div key={cardName} className="text-sm">{cardName}</div>;
-              return (
-                <div key={cardName} className="border border-black rounded p-2">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold uppercase bg-gray-200 px-1.5 py-0.5 rounded">{card.type}</span>
-                    <span className="font-bold">{card.name}</span>
-                    <span className="text-xs text-gray-500">({card.domain})</span>
-                  </div>
-                  {card.cost !== "\u2014" && <div className="text-xs font-semibold mt-0.5">{card.cost}</div>}
-                  <div className="text-sm mt-0.5">{card.effect}</div>
+          <div className="space-y-3">
+            {Object.keys(cardsByLevel).sort((a, b) => Number(a) - Number(b)).map(lvl => (
+              <div key={lvl}>
+                <div className="text-xs font-bold uppercase text-gray-500 mb-1">Level {lvl}</div>
+                <div className="space-y-1">
+                  {cardsByLevel[Number(lvl)].map(card => (
+                    <div key={card.name} className="border border-black rounded p-2">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-bold uppercase bg-gray-200 px-1.5 py-0.5 rounded">{card.type}</span>
+                        <span className="font-bold">{card.name}</span>
+                        <span className="text-xs text-gray-500">({card.domain})</span>
+                      </div>
+                      {card.cost !== "\u2014" && <div className="text-xs font-semibold mt-0.5">{card.cost}</div>}
+                      <div className="text-sm mt-0.5">{card.effect}</div>
+                    </div>
+                  ))}
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         ) : (
           <div className="text-sm">{cls?.domains.join(", ") || "—"}</div>
@@ -485,6 +548,7 @@ export default function CharacterBuilder() {
   const [showPrint, setShowPrint] = useState(false);
   const [showResumePrompt, setShowResumePrompt] = useState(false);
   const [loaded, setLoaded] = useState(false);
+  const [expandedLevels, setExpandedLevels] = useState<Set<number>>(new Set([1]));
   const contentRef = useRef<HTMLDivElement>(null);
 
   // Load from localStorage on mount
@@ -501,6 +565,14 @@ export default function CharacterBuilder() {
     if (saved) {
       setCharacter(saved.character);
       setStep(saved.step);
+      // Expand all levels that have selections
+      const levels = new Set<number>();
+      saved.character.domainCards.forEach(name => {
+        const card = DOMAIN_CARDS.find(c => c.name === name);
+        if (card) levels.add(card.level);
+      });
+      if (levels.size === 0) levels.add(1);
+      setExpandedLevels(levels);
     }
     setShowResumePrompt(false);
   };
@@ -509,6 +581,7 @@ export default function CharacterBuilder() {
     clearStorage();
     setCharacter({ ...initialCharacter });
     setStep("name");
+    setExpandedLevels(new Set([1]));
     setShowResumePrompt(false);
   };
 
@@ -551,6 +624,31 @@ export default function CharacterBuilder() {
     }
   }, [character.community?.name]);
 
+  // Compute required domain card count based on level
+  // Level 1: 2 cards (1 per domain), Level 2: 4 cards (2 per domain), etc.
+  const requiredCardCount = useMemo(() => character.level * 2, [character.level]);
+
+  // Compute domain card selection status per level per domain
+  const domainCardStatus = useMemo(() => {
+    if (!character.gameClass) return { complete: false, perLevel: {} as Record<number, Record<string, string | null>> };
+    const d1 = character.gameClass.domains[0];
+    const d2 = character.gameClass.domains[1];
+    const perLevel: Record<number, Record<string, string | null>> = {};
+    let complete = true;
+    for (let lvl = 1; lvl <= character.level; lvl++) {
+      perLevel[lvl] = { [d1]: null, [d2]: null };
+      for (const cardName of character.domainCards) {
+        const card = DOMAIN_CARDS.find(c => c.name === cardName);
+        if (card && card.level === lvl) {
+          if (card.domain === d1) perLevel[lvl][d1] = cardName;
+          if (card.domain === d2) perLevel[lvl][d2] = cardName;
+        }
+      }
+      if (!perLevel[lvl][d1] || !perLevel[lvl][d2]) complete = false;
+    }
+    return { complete, perLevel };
+  }, [character.gameClass, character.domainCards, character.level]);
+
   const canProceed = (): boolean => {
     switch (step) {
       case "name": return character.name.trim().length > 0;
@@ -558,16 +656,9 @@ export default function CharacterBuilder() {
       case "community": return character.community !== null;
       case "class": return character.gameClass !== null;
       case "subclass": return character.subclass !== null;
-      case "domainCards": {
-        if (!character.gameClass) return false;
-        const d1 = character.gameClass.domains[0];
-        const d2 = character.gameClass.domains[1];
-        const hasD1 = character.domainCards.some(n => DOMAIN_CARDS.find(c => c.name === n && c.domain === d1));
-        const hasD2 = character.domainCards.some(n => DOMAIN_CARDS.find(c => c.name === n && c.domain === d2));
-        return hasD1 && hasD2;
-      }
+      case "domainCards": return domainCardStatus.complete;
       case "traits": return character.traitsComplete;
-      case "experience": return character.experiences.length >= 3; // community + 2 chosen
+      case "experience": return character.experiences.length >= 3;
       case "gear": return character.armor !== "" && character.weapons.length > 0;
       case "review": return true;
       default: return true;
@@ -580,6 +671,46 @@ export default function CharacterBuilder() {
       window.print();
       setShowPrint(false);
     }, 300);
+  };
+
+  // Toggle a domain card selection
+  const toggleDomainCard = (card: DomainCardEntry) => {
+    const isSelected = character.domainCards.includes(card.name);
+    if (isSelected) {
+      update({ domainCards: character.domainCards.filter(n => n !== card.name) });
+    } else {
+      // Replace any existing selection from this domain at this level
+      const cardsAtThisLevelAndDomain = DOMAIN_CARDS.filter(c => c.domain === card.domain && c.level === card.level);
+      const otherCards = character.domainCards.filter(n =>
+        !cardsAtThisLevelAndDomain.some(dc => dc.name === n)
+      );
+      update({ domainCards: [...otherCards, card.name] });
+    }
+  };
+
+  // Toggle expanded level in domain cards step
+  const toggleLevel = (lvl: number) => {
+    setExpandedLevels(prev => {
+      const next = new Set(prev);
+      if (next.has(lvl)) next.delete(lvl);
+      else next.add(lvl);
+      return next;
+    });
+  };
+
+  // When level changes, prune domain cards above the new level
+  const handleLevelChange = (newLevel: number) => {
+    const pruned = character.domainCards.filter(name => {
+      const card = DOMAIN_CARDS.find(c => c.name === name);
+      return card && card.level <= newLevel;
+    });
+    update({ level: newLevel, domainCards: pruned });
+    // Auto-expand the new highest level
+    setExpandedLevels(prev => {
+      const next = new Set(prev);
+      next.add(newLevel);
+      return next;
+    });
   };
 
   const renderStep = () => {
@@ -611,6 +742,38 @@ export default function CharacterBuilder() {
                 placeholder="e.g., she/her, he/him, they/them..."
                 className="w-full p-3 rounded-lg bg-[#0d1628] border-2 border-[#1a2744] text-[#e0e8f0] placeholder-[#4a6a8a] focus:border-[#00D4AA] focus:outline-none transition-colors"
               />
+            </div>
+            {/* Level Selector */}
+            <div>
+              <label className="block text-sm font-bold text-[#8aa0b8] mb-2">Character Level</label>
+              <p className="text-xs text-[#4a6a8a] mb-3">
+                New characters start at Level 1. If you're leveling up an existing character, select their current level.
+              </p>
+              <div className="flex gap-2 flex-wrap">
+                {Array.from({ length: 10 }, (_, i) => i + 1).map(lvl => (
+                  <button
+                    key={lvl}
+                    onClick={() => handleLevelChange(lvl)}
+                    className={`w-12 h-12 rounded-lg flex items-center justify-center font-bold text-lg border-2 transition-all duration-200 ${
+                      character.level === lvl
+                        ? "border-[#00D4AA] bg-[#00D4AA] text-[#0B1120] shadow-[0_0_12px_rgba(0,212,170,0.3)]"
+                        : "border-[#1a2744] bg-[#0d1628] text-[#7a9ab8] hover:border-[#2a4060] hover:text-[#e0e8f0]"
+                    }`}
+                  >
+                    {lvl}
+                  </button>
+                ))}
+              </div>
+              {character.level > 1 && (
+                <div className="mt-3 p-3 rounded-lg bg-[#6B21A8]/10 border border-[#6B21A8]/30">
+                  <div className="text-sm text-[#c084fc] font-semibold">Level {character.level} Character</div>
+                  <div className="text-xs text-[#8aa0b8] mt-1">
+                    You'll select <strong className="text-[#e0e8f0]">{character.level * 2} domain cards</strong> total ({character.level} from each domain, one per level).
+                    {character.level >= 3 && character.level < 7 && " Your subclass Specialization feature is active."}
+                    {character.level >= 7 && " Your subclass Specialization and Mastery features are both active."}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         );
@@ -715,8 +878,8 @@ export default function CharacterBuilder() {
                   onClick={() => update({ subclass: sc })}
                 >
                   <FeatureBox label="Foundation (Lv 1)" name={sc.foundation.name} effect={sc.foundation.effect} />
-                  <FeatureBox label="Specialization (Lv 3+)" name={sc.specialization.name} effect={sc.specialization.effect} />
-                  <FeatureBox label="Mastery (Lv 7+)" name={sc.mastery.name} effect={sc.mastery.effect} />
+                  <FeatureBox label={`Specialization (Lv 3+)${character.level >= 3 ? " ✓" : ""}`} name={sc.specialization.name} effect={sc.specialization.effect} />
+                  <FeatureBox label={`Mastery (Lv 7+)${character.level >= 7 ? " ✓" : ""}`} name={sc.mastery.name} effect={sc.mastery.effect} />
                 </SelectionCard>
               ))}
             </div>
@@ -725,139 +888,141 @@ export default function CharacterBuilder() {
 
       case "domainCards":
         if (!character.gameClass) return null;
+        const domains = character.gameClass.domains;
         return (
           <div className="space-y-6">
             <div>
               <h2 className="font-['Rajdhani'] text-2xl font-bold text-[#00D4AA] mb-1">Choose Your Domain Cards</h2>
               <p className="text-[#7a9ab8] text-sm">
-                At Level 1, you choose <strong className="text-[#e0e8f0]">one card from each</strong> of your class's two Domains.
-                These form the start of your <strong className="text-[#e0e8f0]">Loadout</strong> — the abilities you can use in play.
+                {character.level === 1 ? (
+                  <>At Level 1, choose <strong className="text-[#e0e8f0]">one card from each</strong> of your class's two Domains.</>
+                ) : (
+                  <>At Level {character.level}, choose <strong className="text-[#e0e8f0]">one card per level per domain</strong> — {requiredCardCount} cards total.</>
+                )}
               </p>
             </div>
 
-            {character.gameClass.domains.map((domainName, domIdx) => {
-              const domainCards = DOMAIN_CARDS.filter(c => c.domain === domainName && c.level === 1);
-              const selectedInDomain = character.domainCards.find(n => domainCards.some(c => c.name === n));
-              const domainTheme = domainCards[0]?.domainTheme || "";
+            {/* Progress summary */}
+            <div className="p-3 rounded-lg bg-[#0d1628] border border-[#1a2744]">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm font-semibold text-[#e0e8f0]">Loadout Progress</span>
+                <span className={`text-sm font-bold ${domainCardStatus.complete ? "text-[#00D4AA]" : "text-[#7a9ab8]"}`}>
+                  {character.domainCards.length} / {requiredCardCount}
+                </span>
+              </div>
+              <div className="h-2 bg-[#1a2744] rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-[#00D4AA] transition-all duration-300 rounded-full"
+                  style={{ width: `${Math.min(100, (character.domainCards.length / requiredCardCount) * 100)}%` }}
+                />
+              </div>
+            </div>
+
+            {/* Level-by-level accordion */}
+            {Array.from({ length: character.level }, (_, i) => i + 1).map(lvl => {
+              const isExpanded = expandedLevels.has(lvl);
+              const levelStatus = domainCardStatus.perLevel[lvl] || {};
+              const d1Selected = levelStatus[domains[0]];
+              const d2Selected = levelStatus[domains[1]];
+              const levelComplete = !!d1Selected && !!d2Selected;
+              const levelCount = (d1Selected ? 1 : 0) + (d2Selected ? 1 : 0);
 
               return (
-                <div key={domainName}>
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold ${
-                      selectedInDomain ? "bg-[#00D4AA] text-[#0B1120]" : "bg-[#6B21A8]/30 text-[#c084fc]"
-                    }`}>
-                      {domIdx + 1}
+                <div key={lvl} className={`rounded-xl border-2 overflow-hidden transition-all ${
+                  levelComplete ? "border-[#00D4AA]/30" : "border-[#1a2744]"
+                }`}>
+                  {/* Level Header — clickable accordion */}
+                  <button
+                    onClick={() => toggleLevel(lvl)}
+                    className={`w-full flex items-center justify-between px-4 py-3 transition-colors ${
+                      levelComplete ? "bg-[#00D4AA]/5" : "bg-[#0a0f1a]/60"
+                    } hover:bg-[#111d35]`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold ${
+                        levelComplete ? "bg-[#00D4AA] text-[#0B1120]" : "bg-[#1a2744] text-[#7a9ab8]"
+                      }`}>
+                        {levelComplete ? "✓" : lvl}
+                      </div>
+                      <div className="text-left">
+                        <div className="font-['Rajdhani'] font-bold text-[#e0e8f0]">Level {lvl} Cards</div>
+                        <div className="text-xs text-[#6a8aa8]">
+                          {levelCount}/2 selected
+                          {d1Selected && <span className="ml-2 text-[#00D4AA]">· {DOMAIN_CARDS.find(c => c.name === d1Selected)?.name}</span>}
+                          {d2Selected && <span className="ml-2 text-[#00D4AA]">· {DOMAIN_CARDS.find(c => c.name === d2Selected)?.name}</span>}
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-['Rajdhani'] text-lg font-bold text-[#e0e8f0]">{domainName} Domain</h3>
-                      <p className="text-xs text-[#6a8aa8]">{domainTheme}</p>
-                    </div>
-                    {selectedInDomain && (
-                      <span className="ml-auto text-xs bg-[#00D4AA]/15 text-[#00D4AA] px-2 py-1 rounded-full font-semibold">1 selected</span>
-                    )}
-                  </div>
+                    <svg
+                      width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7a9ab8" strokeWidth="2"
+                      className={`transition-transform duration-200 ${isExpanded ? "rotate-180" : ""}`}
+                    >
+                      <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                  </button>
 
-                  <div className="grid grid-cols-1 gap-3">
-                    {domainCards.map(card => {
-                      const isSelected = character.domainCards.includes(card.name);
-                      const otherDomainSelected = selectedInDomain && selectedInDomain !== card.name;
+                  {/* Expanded card selection */}
+                  {isExpanded && (
+                    <div className="px-4 py-4 bg-[#0d1628] space-y-5">
+                      {domains.map((domainName, domIdx) => {
+                        const cardsForDomain = DOMAIN_CARDS.filter(c => c.domain === domainName && c.level === lvl);
+                        const selectedInDomain = character.domainCards.find(n => cardsForDomain.some(c => c.name === n));
+                        const domainTheme = cardsForDomain[0]?.domainTheme || "";
 
-                      // Color coding for card type
-                      const typeColor = card.type === "Passive" ? "bg-[#22c55e]/15 text-[#4ade80]" :
-                        card.type === "Reaction" ? "bg-[#f59e0b]/15 text-[#fbbf24]" :
-                        card.type === "Action" ? "bg-[#3b82f6]/15 text-[#60a5fa]" :
-                        "bg-[#8b5cf6]/15 text-[#a78bfa]";
-
-                      const costColor = card.cost.includes("Hope") ? "text-[#00D4AA]" :
-                        card.cost.includes("Stress") ? "text-[#f87171]" : "text-[#7a9ab8]";
-
-                      return (
-                        <button
-                          key={card.name}
-                          onClick={() => {
-                            if (isSelected) {
-                              // Deselect
-                              update({ domainCards: character.domainCards.filter(n => n !== card.name) });
-                            } else {
-                              // Select: replace any existing selection from this domain
-                              const otherDomainCards = character.domainCards.filter(n =>
-                                !domainCards.some(dc => dc.name === n)
-                              );
-                              update({ domainCards: [...otherDomainCards, card.name] });
-                            }
-                          }}
-                          className={`text-left w-full rounded-xl border-2 transition-all duration-200 overflow-hidden ${
-                            isSelected
-                              ? "border-[#00D4AA] bg-gradient-to-br from-[#00D4AA]/10 to-[#0d1628] shadow-[0_0_20px_rgba(0,212,170,0.12)]"
-                              : otherDomainSelected
-                              ? "border-[#1a2744] bg-[#0d1628] opacity-50 hover:opacity-70"
-                              : "border-[#1a2744] bg-[#0d1628] hover:border-[#2a4060] hover:bg-[#111d35]"
-                          }`}
-                        >
-                          {/* Card Header */}
-                          <div className={`px-4 py-2.5 flex items-center justify-between ${
-                            isSelected ? "bg-[#00D4AA]/8" : "bg-[#0a0f1a]/60"
-                          }`}>
-                            <div className="flex items-center gap-2">
-                              <span className={`text-xs px-2 py-0.5 rounded-full font-semibold ${typeColor}`}>{card.type}</span>
-                              <span className="font-['Rajdhani'] font-bold text-[#e0e8f0] text-lg">{card.name}</span>
-                            </div>
-                            {isSelected && (
-                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00D4AA" strokeWidth="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                            )}
-                          </div>
-
-                          {/* Card Body */}
-                          <div className="px-4 py-3">
-                            {card.cost !== "\u2014" && (
-                              <div className={`text-xs font-semibold mb-1.5 ${costColor}`}>
-                                {card.cost}
+                        return (
+                          <div key={domainName}>
+                            <div className="flex items-center gap-3 mb-3">
+                              <div className={`w-6 h-6 rounded flex items-center justify-center text-xs font-bold ${
+                                selectedInDomain ? "bg-[#00D4AA] text-[#0B1120]" : "bg-[#6B21A8]/30 text-[#c084fc]"
+                              }`}>
+                                {domIdx + 1}
                               </div>
-                            )}
-                            <p className="text-sm text-[#8aa0b8] leading-relaxed">{card.effect}</p>
-                          </div>
-
-                          {/* Card Footer */}
-                          <div className="px-4 py-2 bg-[#0a0f1a]/40 border-t border-[#1a2744]/50">
-                            <div className="flex items-center justify-between">
-                              <span className="text-xs text-[#4a6a8a]">Level {card.level} · {domainName}</span>
-                              {!isSelected && !otherDomainSelected && (
-                                <span className="text-xs text-[#00D4AA]/60">Click to select</span>
-                              )}
-                              {isSelected && (
-                                <span className="text-xs text-[#00D4AA]">Click to deselect</span>
+                              <div>
+                                <span className="font-['Rajdhani'] font-bold text-[#e0e8f0]">{domainName}</span>
+                                <span className="text-xs text-[#6a8aa8] ml-2">{domainTheme}</span>
+                              </div>
+                              {selectedInDomain && (
+                                <span className="ml-auto text-xs bg-[#00D4AA]/15 text-[#00D4AA] px-2 py-0.5 rounded-full font-semibold">✓</span>
                               )}
                             </div>
+                            <div className="grid grid-cols-1 gap-3">
+                              {cardsForDomain.map(card => {
+                                const isSelected = character.domainCards.includes(card.name);
+                                const isDimmed = !!selectedInDomain && selectedInDomain !== card.name;
+                                return (
+                                  <DomainCard
+                                    key={card.name}
+                                    card={card}
+                                    isSelected={isSelected}
+                                    isDimmed={isDimmed}
+                                    onClick={() => toggleDomainCard(card)}
+                                  />
+                                );
+                              })}
+                            </div>
                           </div>
-                        </button>
-                      );
-                    })}
-                  </div>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
               );
             })}
 
             {/* Completion indicator */}
-            {character.gameClass && (() => {
-              const d1 = character.gameClass!.domains[0];
-              const d2 = character.gameClass!.domains[1];
-              const hasD1 = character.domainCards.some(n => DOMAIN_CARDS.find(c => c.name === n && c.domain === d1));
-              const hasD2 = character.domainCards.some(n => DOMAIN_CARDS.find(c => c.name === n && c.domain === d2));
-              if (hasD1 && hasD2) {
-                return (
-                  <div className="p-3 rounded-lg bg-[#00D4AA]/10 border border-[#00D4AA]/30 text-center">
-                    <span className="text-sm text-[#00D4AA] font-semibold">Both domain cards selected — proceed to the next step.</span>
-                  </div>
-                );
-              }
-              return (
-                <div className="p-3 rounded-lg bg-[#1a2744]/50 border border-[#1a2744] text-center">
-                  <span className="text-sm text-[#4a6a8a]">
-                    Select {!hasD1 && !hasD2 ? "one card from each domain" : hasD1 ? `one card from ${d2}` : `one card from ${d1}`} to continue.
-                  </span>
-                </div>
-              );
-            })()}
+            {domainCardStatus.complete ? (
+              <div className="p-3 rounded-lg bg-[#00D4AA]/10 border border-[#00D4AA]/30 text-center">
+                <span className="text-sm text-[#00D4AA] font-semibold">
+                  All {requiredCardCount} domain cards selected — proceed to the next step.
+                </span>
+              </div>
+            ) : (
+              <div className="p-3 rounded-lg bg-[#1a2744]/50 border border-[#1a2744] text-center">
+                <span className="text-sm text-[#4a6a8a]">
+                  Select {requiredCardCount - character.domainCards.length} more card{requiredCardCount - character.domainCards.length !== 1 ? "s" : ""} to continue.
+                </span>
+              </div>
+            )}
           </div>
         );
 
@@ -1013,7 +1178,17 @@ export default function CharacterBuilder() {
           </div>
         );
 
-      case "review":
+      case "review": {
+        // Group domain cards by level for review display
+        const reviewCardsByLevel: Record<number, DomainCardEntry[]> = {};
+        character.domainCards.forEach(name => {
+          const card = DOMAIN_CARDS.find(c => c.name === name);
+          if (card) {
+            if (!reviewCardsByLevel[card.level]) reviewCardsByLevel[card.level] = [];
+            reviewCardsByLevel[card.level].push(card);
+          }
+        });
+
         return (
           <div className="space-y-6">
             <div>
@@ -1029,7 +1204,9 @@ export default function CharacterBuilder() {
                   {character.pronouns && <div className="text-sm text-[#6a8aa8]">{character.pronouns}</div>}
                 </div>
                 <div className="text-right">
-                  <div className="text-sm text-[#7a9ab8]">Level 1</div>
+                  <div className="text-sm text-[#7a9ab8]">
+                    Level <span className="text-[#00D4AA] font-bold text-lg">{character.level}</span>
+                  </div>
                   <div className="font-['Rajdhani'] text-lg font-bold text-[#c084fc]">
                     {character.gameClass?.name} — {character.subclass?.name}
                   </div>
@@ -1086,31 +1263,36 @@ export default function CharacterBuilder() {
                 </div>
               </div>
 
-              {/* Domain Cards */}
+              {/* Domain Cards grouped by level */}
               {character.domainCards.length > 0 && (
                 <div className="mb-4">
-                  <span className="text-xs text-[#4a6a8a] uppercase tracking-wider">Domain Cards (Loadout)</span>
-                  <div className="mt-2 space-y-2">
-                    {character.domainCards.map(cardName => {
-                      const card = DOMAIN_CARDS.find(c => c.name === cardName);
-                      if (!card) return null;
-                      const typeColor = card.type === "Passive" ? "bg-[#22c55e]/15 text-[#4ade80]" :
-                        card.type === "Reaction" ? "bg-[#f59e0b]/15 text-[#fbbf24]" :
-                        "bg-[#3b82f6]/15 text-[#60a5fa]";
-                      const costColor = card.cost.includes("Hope") ? "text-[#00D4AA]" :
-                        card.cost.includes("Stress") ? "text-[#f87171]" : "text-[#7a9ab8]";
-                      return (
-                        <div key={cardName} className="p-2.5 rounded-lg bg-[#0B1120]/60 border border-[#1a2744]">
-                          <div className="flex items-center gap-2 mb-1">
-                            <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-semibold ${typeColor}`}>{card.type}</span>
-                            <span className="text-sm font-bold text-[#e0e8f0] font-['Rajdhani']">{card.name}</span>
-                            <span className="text-[10px] text-[#6B21A8] bg-[#6B21A8]/20 px-1.5 py-0.5 rounded">{card.domain}</span>
-                          </div>
-                          {card.cost !== "\u2014" && <div className={`text-xs font-semibold mb-0.5 ${costColor}`}>{card.cost}</div>}
-                          <div className="text-xs text-[#8aa0b8]">{card.effect}</div>
+                  <span className="text-xs text-[#4a6a8a] uppercase tracking-wider">Domain Cards ({character.domainCards.length} total)</span>
+                  <div className="mt-2 space-y-3">
+                    {Object.keys(reviewCardsByLevel).sort((a, b) => Number(a) - Number(b)).map(lvl => (
+                      <div key={lvl}>
+                        <div className="text-xs font-semibold text-[#6a8aa8] mb-1.5 uppercase tracking-wider">Level {lvl}</div>
+                        <div className="space-y-2">
+                          {reviewCardsByLevel[Number(lvl)].map(card => {
+                            const typeColor = card.type === "Passive" ? "bg-[#22c55e]/15 text-[#4ade80]" :
+                              card.type === "Reaction" ? "bg-[#f59e0b]/15 text-[#fbbf24]" :
+                              "bg-[#3b82f6]/15 text-[#60a5fa]";
+                            const costColor = card.cost.includes("Hope") ? "text-[#00D4AA]" :
+                              card.cost.includes("Stress") ? "text-[#f87171]" : "text-[#7a9ab8]";
+                            return (
+                              <div key={card.name} className="p-2.5 rounded-lg bg-[#0B1120]/60 border border-[#1a2744]">
+                                <div className="flex items-center gap-2 mb-1">
+                                  <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-semibold ${typeColor}`}>{card.type}</span>
+                                  <span className="text-sm font-bold text-[#e0e8f0] font-['Rajdhani']">{card.name}</span>
+                                  <span className="text-[10px] text-[#6B21A8] bg-[#6B21A8]/20 px-1.5 py-0.5 rounded">{card.domain}</span>
+                                </div>
+                                {card.cost !== "\u2014" && <div className={`text-xs font-semibold mb-0.5 ${costColor}`}>{card.cost}</div>}
+                                <div className="text-xs text-[#8aa0b8]">{card.effect}</div>
+                              </div>
+                            );
+                          })}
                         </div>
-                      );
-                    })}
+                      </div>
+                    ))}
                   </div>
                 </div>
               )}
@@ -1132,7 +1314,13 @@ export default function CharacterBuilder() {
                 <div className="mt-1 space-y-1 text-xs text-[#8aa0b8]">
                   {character.ancestry && <div><span className="text-[#00D4AA]">{character.ancestry.featureName}:</span> {character.ancestry.featureEffect}</div>}
                   {character.community && <div><span className="text-[#00D4AA]">{character.community.featureName}:</span> {character.community.featureEffect}</div>}
-                  {character.subclass && <div><span className="text-[#00D4AA]">{character.subclass.foundation.name}:</span> {character.subclass.foundation.effect}</div>}
+                  {character.subclass && (
+                    <>
+                      <div><span className="text-[#00D4AA]">{character.subclass.foundation.name}:</span> {character.subclass.foundation.effect}</div>
+                      {character.level >= 3 && <div><span className="text-[#c084fc]">{character.subclass.specialization.name}:</span> {character.subclass.specialization.effect}</div>}
+                      {character.level >= 7 && <div><span className="text-[#c084fc]">{character.subclass.mastery.name}:</span> {character.subclass.mastery.effect}</div>}
+                    </>
+                  )}
                 </div>
               </div>
 
@@ -1172,12 +1360,11 @@ export default function CharacterBuilder() {
               </button>
               <button
                 onClick={() => {
-                  // Build export object with resolved domain cards
                   const exportData = {
                     ...character,
                     domainCards: character.domainCards.map(name => {
                       const card = DOMAIN_CARDS.find(c => c.name === name);
-                      return card ? { name: card.name, domain: card.domain, type: card.type, cost: card.cost, effect: card.effect } : name;
+                      return card ? { name: card.name, domain: card.domain, level: card.level, type: card.type, cost: card.cost, effect: card.effect } : name;
                     })
                   };
                   const json = JSON.stringify(exportData, null, 2);
@@ -1185,7 +1372,7 @@ export default function CharacterBuilder() {
                   const url = URL.createObjectURL(blob);
                   const a = document.createElement("a");
                   a.href = url;
-                  a.download = `${character.name || "character"}_nexus9.json`;
+                  a.download = `${character.name || "character"}_nexus9_lv${character.level}.json`;
                   a.click();
                   URL.revokeObjectURL(url);
                 }}
@@ -1200,6 +1387,7 @@ export default function CharacterBuilder() {
                     clearStorage();
                     setCharacter({ ...initialCharacter });
                     setStep("name");
+                    setExpandedLevels(new Set([1]));
                   }
                 }}
                 className="py-3 px-6 rounded-lg border-2 border-[#ef4444]/40 text-[#f87171] font-['Rajdhani'] font-bold hover:bg-[#ef4444]/10 transition-colors flex items-center justify-center gap-2"
@@ -1210,6 +1398,7 @@ export default function CharacterBuilder() {
             </div>
           </div>
         );
+      }
 
       default:
         return null;
@@ -1230,7 +1419,7 @@ export default function CharacterBuilder() {
             <div className="p-3 rounded bg-[#0B1120] border border-[#1a2744] mb-4">
               <div className="font-bold text-[#e0e8f0]">{saved.character.name || "Unnamed"}</div>
               <div className="text-xs text-[#7a9ab8] mt-1">
-                {saved.character.gameClass?.name || "No class"} · Step: {STEPS.find(s => s.id === saved.step)?.label || saved.step}
+                Level {saved.character.level || 1} {saved.character.gameClass?.name || "No class"} · Step: {STEPS.find(s => s.id === saved.step)?.label || saved.step}
               </div>
             </div>
           )}
