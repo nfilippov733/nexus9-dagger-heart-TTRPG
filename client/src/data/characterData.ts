@@ -496,6 +496,63 @@ export const WEAPON_OPTIONS: Weapon[] = [
   { name: "Stun Gauntlet", type: "Melee", trait: "Finesse", damage: "1d4 energy", range: "Melee", feature: "Non-lethal, target is Disoriented on crit" }
 ];
 
+export interface DomainCardEntry {
+  domain: string;
+  domainTheme: string;
+  level: number;
+  name: string;
+  type: string; // Passive, Action, Reaction, Downtime
+  cost: string; // e.g. "Spend 1 Hope", "Mark 1 Stress", "—"
+  effect: string;
+}
+
+export const DOMAIN_CARDS: DomainCardEntry[] = [
+  // ─── Codex Domain (Law, Lore & Bureaucracy) ───
+  { domain: "Codex", domainTheme: "Law, Lore & Bureaucracy", level: 1, name: "Bureaucratic Loophole", type: "Action", cost: "Spend 1 Hope", effect: "You bypass a minor legal, administrative, or security obstacle by citing an obscure regulation." },
+  { domain: "Codex", domainTheme: "Law, Lore & Bureaucracy", level: 1, name: "Historical Precedent", type: "Reaction", cost: "Mark 1 Stress", effect: "When you make a Knowledge roll to recall lore, you gain Advantage on the roll." },
+  { domain: "Codex", domainTheme: "Law, Lore & Bureaucracy", level: 1, name: "Diplomatic Immunity", type: "Action", cost: "—", effect: "Declare your official status. Until you take a hostile action, adversaries will not target you first in a combat encounter." },
+
+  // ─── Grace Domain (Diplomacy & Deception) ───
+  { domain: "Grace", domainTheme: "Diplomacy & Deception", level: 1, name: "Charming Demeanor", type: "Passive", cost: "—", effect: "You gain Advantage on your first Persuasion roll in any new social scene." },
+  { domain: "Grace", domainTheme: "Diplomacy & Deception", level: 1, name: "Enrapture", type: "Action", cost: "Mark 1 Stress", effect: "Target one NPC within Close range. They are captivated by your presence and will ignore obvious distractions for a few minutes." },
+  { domain: "Grace", domainTheme: "Diplomacy & Deception", level: 1, name: "Inspirational Words", type: "Action", cost: "Spend 1 Hope", effect: "Target one ally within Far range. They clear 1 Stress and gain +1 to their next action roll." },
+
+  // ─── Midnight Domain (Stealth & Sabotage) ───
+  { domain: "Midnight", domainTheme: "Stealth & Sabotage", level: 1, name: "Pick and Pull", type: "Action", cost: "—", effect: "Make a Finesse roll to steal a small item from a target within Melee range without them noticing." },
+  { domain: "Midnight", domainTheme: "Stealth & Sabotage", level: 1, name: "Rain of Blades", type: "Action", cost: "Mark 1 Stress", effect: "Make a ranged attack with a thrown weapon against up to three targets within Close range." },
+  { domain: "Midnight", domainTheme: "Stealth & Sabotage", level: 1, name: "Uncanny Disguise", type: "Action", cost: "Spend 1 Hope", effect: "You quickly alter your appearance using a holo-emitter or physical props, becoming unrecognizable." },
+
+  // ─── Bone Domain (Tactics & Evasion) ───
+  { domain: "Bone", domainTheme: "Tactics & Evasion", level: 1, name: "Deft Maneuvers", type: "Passive", cost: "—", effect: "You gain +1 Evasion against ranged attacks." },
+  { domain: "Bone", domainTheme: "Tactics & Evasion", level: 1, name: "I See It Coming", type: "Reaction", cost: "Mark 1 Stress", effect: "When an enemy attacks you, force them to roll with Disadvantage." },
+  { domain: "Bone", domainTheme: "Tactics & Evasion", level: 1, name: "Untouchable", type: "Action", cost: "Spend 1 Hope", effect: "For the rest of the round, you do not trigger reactions or opportunity attacks when moving through enemy threat zones." },
+
+  // ─── Sage Domain (Survival & Logistics) ───
+  { domain: "Sage", domainTheme: "Survival & Logistics", level: 1, name: "Gifted Tracker", type: "Passive", cost: "—", effect: "You gain Advantage on Instinct rolls to track targets, navigate asteroid fields, or survive in hostile environments." },
+  { domain: "Sage", domainTheme: "Survival & Logistics", level: 1, name: "System Diagnostics", type: "Action", cost: "Spend 1 Hope", effect: "You instantly identify the exact mechanical or software issue with a vehicle, ship, or terminal." },
+  { domain: "Sage", domainTheme: "Survival & Logistics", level: 1, name: "Jury-Rigged Snare", type: "Action", cost: "Mark 1 Stress", effect: "You deploy a quick trap. The next enemy to enter Melee range of you is Restrained for 1 round." },
+
+  // ─── Blade Domain (Close Quarters Combat) ───
+  { domain: "Blade", domainTheme: "Close Quarters Combat", level: 1, name: "Get Back Up", type: "Reaction", cost: "Spend 1 Hope", effect: "When you are reduced to 0 HP, immediately clear 1 HP and stand up." },
+  { domain: "Blade", domainTheme: "Close Quarters Combat", level: 1, name: "Not Good Enough", type: "Reaction", cost: "Mark 1 Stress", effect: "When an enemy hits you with a melee attack, reduce the damage by your Armor Score without marking an Armor Slot." },
+  { domain: "Blade", domainTheme: "Close Quarters Combat", level: 1, name: "Whirlwind", type: "Action", cost: "Mark 1 Stress", effect: "Make a melee attack against every enemy within Melee range." },
+
+  // ─── Valor Domain (Protection & Heavy Weapons) ───
+  { domain: "Valor", domainTheme: "Protection & Heavy Weapons", level: 1, name: "Bare Bones", type: "Passive", cost: "—", effect: "When you are not wearing armor, your Armor Score is equal to your Strength trait." },
+  { domain: "Valor", domainTheme: "Protection & Heavy Weapons", level: 1, name: "Forceful Push", type: "Action", cost: "Mark 1 Stress", effect: "Make a melee attack. If it hits, you push the target back to Close range and knock them prone." },
+  { domain: "Valor", domainTheme: "Protection & Heavy Weapons", level: 1, name: "I Am Your Shield", type: "Reaction", cost: "Spend 1 Hope", effect: "When an ally within Melee range is attacked, become the target of the attack instead." },
+
+  // ─── Arcana Domain (Telepathy & Technomancy) ───
+  { domain: "Arcana", domainTheme: "Telepathy & Technomancy", level: 1, name: "Rune Ward", type: "Action", cost: "Spend 1 Hope", effect: "You place a psychic or energy ward on an ally within Close range, granting them +2 Armor Score for the scene." },
+  { domain: "Arcana", domainTheme: "Telepathy & Technomancy", level: 1, name: "Unleash Chaos", type: "Action", cost: "Mark 1 Stress", effect: "You project a burst of raw telekinetic force. Make an attack against a target within Far range for 1d10 energy damage." },
+  { domain: "Arcana", domainTheme: "Telepathy & Technomancy", level: 1, name: "Wall Walk", type: "Action", cost: "Spend 1 Hope", effect: "You manipulate local gravity fields, allowing you to walk on walls and ceilings for the rest of the scene." },
+
+  // ─── Splendor Domain (Medicine & Morale) ───
+  { domain: "Splendor", domainTheme: "Medicine & Morale", level: 1, name: "Bolt Beacon", type: "Action", cost: "Mark 1 Stress", effect: "You fire a flare or tracer round at a target. The next attack against that target has Advantage." },
+  { domain: "Splendor", domainTheme: "Medicine & Morale", level: 1, name: "Mending Touch", type: "Action", cost: "Spend 1 Hope", effect: "You stabilize a wounded ally within Melee range, clearing 1d6 HP." },
+  { domain: "Splendor", domainTheme: "Medicine & Morale", level: 1, name: "Reassurance", type: "Action", cost: "Spend 1 Hope", effect: "You offer words of comfort or a mild sedative. An ally within Close range clears 1d4 Stress." },
+];
+
 export const STANDARD_KIT = [
   "Commlink (personal communicator, station-wide range)",
   "Datapad (portable computer, can access public networks)",

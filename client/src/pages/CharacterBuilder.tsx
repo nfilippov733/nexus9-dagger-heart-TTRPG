@@ -4,7 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   ANCESTRIES, COMMUNITIES, CLASSES, TRAITS, TRAIT_DESCRIPTIONS,
   STANDARD_ARRAY, EXPERIENCES, ARMOR_OPTIONS, WEAPON_OPTIONS, STANDARD_KIT,
-  type TraitName, type GameClass, type Ancestry, type Community, type Subclass
+  DOMAIN_CARDS,
+  type TraitName, type GameClass, type Ancestry, type Community, type Subclass,
+  type DomainCardEntry
 } from "@/data/characterData";
 
 /* ─── Design: Nexus 9 Station Terminal ─── */
@@ -12,7 +14,7 @@ import {
 // Fonts: Rajdhani headings, Source Serif 4 body
 // Layout: stepped wizard with animated transitions
 
-type Step = "name" | "ancestry" | "community" | "class" | "subclass" | "traits" | "experience" | "gear" | "review";
+type Step = "name" | "ancestry" | "community" | "class" | "subclass" | "domainCards" | "traits" | "experience" | "gear" | "review";
 
 const STEPS: { id: Step; label: string; num: number }[] = [
   { id: "name", label: "Identity", num: 1 },
@@ -20,10 +22,11 @@ const STEPS: { id: Step; label: string; num: number }[] = [
   { id: "community", label: "Community", num: 3 },
   { id: "class", label: "Class", num: 4 },
   { id: "subclass", label: "Subclass", num: 5 },
-  { id: "traits", label: "Traits", num: 6 },
-  { id: "experience", label: "Experience", num: 7 },
-  { id: "gear", label: "Equipment", num: 8 },
-  { id: "review", label: "Review", num: 9 },
+  { id: "domainCards", label: "Domains", num: 6 },
+  { id: "traits", label: "Traits", num: 7 },
+  { id: "experience", label: "Experience", num: 8 },
+  { id: "gear", label: "Equipment", num: 9 },
+  { id: "review", label: "Review", num: 10 },
 ];
 
 interface CharacterState {
@@ -33,6 +36,7 @@ interface CharacterState {
   community: Community | null;
   gameClass: GameClass | null;
   subclass: Subclass | null;
+  domainCards: string[]; // selected domain card names (one per class domain)
   traits: Record<TraitName, number>;
   traitsComplete: boolean;
   experiences: string[];
@@ -48,6 +52,7 @@ const initialCharacter: CharacterState = {
   community: null,
   gameClass: null,
   subclass: null,
+  domainCards: [],
   traits: { Agility: 0, Strength: 0, Finesse: 0, Instinct: 0, Presence: 0, Knowledge: 0 },
   traitsComplete: false,
   experiences: [],
@@ -401,16 +406,36 @@ function PrintSheet({ character }: { character: CharacterState }) {
         </div>
       </div>
 
-      {/* Domains & Experiences */}
-      <div className="grid grid-cols-2 gap-4 mb-4">
-        <div>
-          <h2 className="text-lg font-bold border-b-2 border-black mb-2" style={{ fontFamily: "'Rajdhani', sans-serif" }}>DOMAINS</h2>
+      {/* Domain Cards */}
+      <div className="mb-4">
+        <h2 className="text-lg font-bold border-b-2 border-black mb-2" style={{ fontFamily: "'Rajdhani', sans-serif" }}>DOMAIN CARDS (LOADOUT)</h2>
+        {c.domainCards.length > 0 ? (
+          <div className="space-y-2">
+            {c.domainCards.map(cardName => {
+              const card = DOMAIN_CARDS.find(dc => dc.name === cardName);
+              if (!card) return <div key={cardName} className="text-sm">{cardName}</div>;
+              return (
+                <div key={cardName} className="border border-black rounded p-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-bold uppercase bg-gray-200 px-1.5 py-0.5 rounded">{card.type}</span>
+                    <span className="font-bold">{card.name}</span>
+                    <span className="text-xs text-gray-500">({card.domain})</span>
+                  </div>
+                  {card.cost !== "\u2014" && <div className="text-xs font-semibold mt-0.5">{card.cost}</div>}
+                  <div className="text-sm mt-0.5">{card.effect}</div>
+                </div>
+              );
+            })}
+          </div>
+        ) : (
           <div className="text-sm">{cls?.domains.join(", ") || "—"}</div>
-        </div>
-        <div>
-          <h2 className="text-lg font-bold border-b-2 border-black mb-2" style={{ fontFamily: "'Rajdhani', sans-serif" }}>EXPERIENCES</h2>
-          <div className="text-sm">{c.experiences.length > 0 ? c.experiences.join(", ") : "—"}</div>
-        </div>
+        )}
+      </div>
+
+      {/* Experiences */}
+      <div className="mb-4">
+        <h2 className="text-lg font-bold border-b-2 border-black mb-2" style={{ fontFamily: "'Rajdhani', sans-serif" }}>EXPERIENCES</h2>
+        <div className="text-sm">{c.experiences.length > 0 ? c.experiences.join(", ") : "—"}</div>
       </div>
 
       {/* Equipment */}
@@ -533,6 +558,14 @@ export default function CharacterBuilder() {
       case "community": return character.community !== null;
       case "class": return character.gameClass !== null;
       case "subclass": return character.subclass !== null;
+      case "domainCards": {
+        if (!character.gameClass) return false;
+        const d1 = character.gameClass.domains[0];
+        const d2 = character.gameClass.domains[1];
+        const hasD1 = character.domainCards.some(n => DOMAIN_CARDS.find(c => c.name === n && c.domain === d1));
+        const hasD2 = character.domainCards.some(n => DOMAIN_CARDS.find(c => c.name === n && c.domain === d2));
+        return hasD1 && hasD2;
+      }
       case "traits": return character.traitsComplete;
       case "experience": return character.experiences.length >= 3; // community + 2 chosen
       case "gear": return character.armor !== "" && character.weapons.length > 0;
@@ -645,7 +678,7 @@ export default function CharacterBuilder() {
                   title={`The ${cls.name}`}
                   subtitle={cls.description}
                   selected={character.gameClass?.name === cls.name}
-                  onClick={() => update({ gameClass: cls, subclass: null })}
+                  onClick={() => update({ gameClass: cls, subclass: null, domainCards: [] })}
                 >
                   <div className="flex flex-wrap gap-2 mt-2">
                     <span className="text-xs bg-[#00D4AA]/15 text-[#00D4AA] px-2 py-0.5 rounded">{cls.role}</span>
@@ -687,6 +720,144 @@ export default function CharacterBuilder() {
                 </SelectionCard>
               ))}
             </div>
+          </div>
+        );
+
+      case "domainCards":
+        if (!character.gameClass) return null;
+        return (
+          <div className="space-y-6">
+            <div>
+              <h2 className="font-['Rajdhani'] text-2xl font-bold text-[#00D4AA] mb-1">Choose Your Domain Cards</h2>
+              <p className="text-[#7a9ab8] text-sm">
+                At Level 1, you choose <strong className="text-[#e0e8f0]">one card from each</strong> of your class's two Domains.
+                These form the start of your <strong className="text-[#e0e8f0]">Loadout</strong> — the abilities you can use in play.
+              </p>
+            </div>
+
+            {character.gameClass.domains.map((domainName, domIdx) => {
+              const domainCards = DOMAIN_CARDS.filter(c => c.domain === domainName && c.level === 1);
+              const selectedInDomain = character.domainCards.find(n => domainCards.some(c => c.name === n));
+              const domainTheme = domainCards[0]?.domainTheme || "";
+
+              return (
+                <div key={domainName}>
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold ${
+                      selectedInDomain ? "bg-[#00D4AA] text-[#0B1120]" : "bg-[#6B21A8]/30 text-[#c084fc]"
+                    }`}>
+                      {domIdx + 1}
+                    </div>
+                    <div>
+                      <h3 className="font-['Rajdhani'] text-lg font-bold text-[#e0e8f0]">{domainName} Domain</h3>
+                      <p className="text-xs text-[#6a8aa8]">{domainTheme}</p>
+                    </div>
+                    {selectedInDomain && (
+                      <span className="ml-auto text-xs bg-[#00D4AA]/15 text-[#00D4AA] px-2 py-1 rounded-full font-semibold">1 selected</span>
+                    )}
+                  </div>
+
+                  <div className="grid grid-cols-1 gap-3">
+                    {domainCards.map(card => {
+                      const isSelected = character.domainCards.includes(card.name);
+                      const otherDomainSelected = selectedInDomain && selectedInDomain !== card.name;
+
+                      // Color coding for card type
+                      const typeColor = card.type === "Passive" ? "bg-[#22c55e]/15 text-[#4ade80]" :
+                        card.type === "Reaction" ? "bg-[#f59e0b]/15 text-[#fbbf24]" :
+                        card.type === "Action" ? "bg-[#3b82f6]/15 text-[#60a5fa]" :
+                        "bg-[#8b5cf6]/15 text-[#a78bfa]";
+
+                      const costColor = card.cost.includes("Hope") ? "text-[#00D4AA]" :
+                        card.cost.includes("Stress") ? "text-[#f87171]" : "text-[#7a9ab8]";
+
+                      return (
+                        <button
+                          key={card.name}
+                          onClick={() => {
+                            if (isSelected) {
+                              // Deselect
+                              update({ domainCards: character.domainCards.filter(n => n !== card.name) });
+                            } else {
+                              // Select: replace any existing selection from this domain
+                              const otherDomainCards = character.domainCards.filter(n =>
+                                !domainCards.some(dc => dc.name === n)
+                              );
+                              update({ domainCards: [...otherDomainCards, card.name] });
+                            }
+                          }}
+                          className={`text-left w-full rounded-xl border-2 transition-all duration-200 overflow-hidden ${
+                            isSelected
+                              ? "border-[#00D4AA] bg-gradient-to-br from-[#00D4AA]/10 to-[#0d1628] shadow-[0_0_20px_rgba(0,212,170,0.12)]"
+                              : otherDomainSelected
+                              ? "border-[#1a2744] bg-[#0d1628] opacity-50 hover:opacity-70"
+                              : "border-[#1a2744] bg-[#0d1628] hover:border-[#2a4060] hover:bg-[#111d35]"
+                          }`}
+                        >
+                          {/* Card Header */}
+                          <div className={`px-4 py-2.5 flex items-center justify-between ${
+                            isSelected ? "bg-[#00D4AA]/8" : "bg-[#0a0f1a]/60"
+                          }`}>
+                            <div className="flex items-center gap-2">
+                              <span className={`text-xs px-2 py-0.5 rounded-full font-semibold ${typeColor}`}>{card.type}</span>
+                              <span className="font-['Rajdhani'] font-bold text-[#e0e8f0] text-lg">{card.name}</span>
+                            </div>
+                            {isSelected && (
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00D4AA" strokeWidth="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                            )}
+                          </div>
+
+                          {/* Card Body */}
+                          <div className="px-4 py-3">
+                            {card.cost !== "\u2014" && (
+                              <div className={`text-xs font-semibold mb-1.5 ${costColor}`}>
+                                {card.cost}
+                              </div>
+                            )}
+                            <p className="text-sm text-[#8aa0b8] leading-relaxed">{card.effect}</p>
+                          </div>
+
+                          {/* Card Footer */}
+                          <div className="px-4 py-2 bg-[#0a0f1a]/40 border-t border-[#1a2744]/50">
+                            <div className="flex items-center justify-between">
+                              <span className="text-xs text-[#4a6a8a]">Level {card.level} · {domainName}</span>
+                              {!isSelected && !otherDomainSelected && (
+                                <span className="text-xs text-[#00D4AA]/60">Click to select</span>
+                              )}
+                              {isSelected && (
+                                <span className="text-xs text-[#00D4AA]">Click to deselect</span>
+                              )}
+                            </div>
+                          </div>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+
+            {/* Completion indicator */}
+            {character.gameClass && (() => {
+              const d1 = character.gameClass!.domains[0];
+              const d2 = character.gameClass!.domains[1];
+              const hasD1 = character.domainCards.some(n => DOMAIN_CARDS.find(c => c.name === n && c.domain === d1));
+              const hasD2 = character.domainCards.some(n => DOMAIN_CARDS.find(c => c.name === n && c.domain === d2));
+              if (hasD1 && hasD2) {
+                return (
+                  <div className="p-3 rounded-lg bg-[#00D4AA]/10 border border-[#00D4AA]/30 text-center">
+                    <span className="text-sm text-[#00D4AA] font-semibold">Both domain cards selected — proceed to the next step.</span>
+                  </div>
+                );
+              }
+              return (
+                <div className="p-3 rounded-lg bg-[#1a2744]/50 border border-[#1a2744] text-center">
+                  <span className="text-sm text-[#4a6a8a]">
+                    Select {!hasD1 && !hasD2 ? "one card from each domain" : hasD1 ? `one card from ${d2}` : `one card from ${d1}`} to continue.
+                  </span>
+                </div>
+              );
+            })()}
           </div>
         );
 
@@ -915,6 +1086,35 @@ export default function CharacterBuilder() {
                 </div>
               </div>
 
+              {/* Domain Cards */}
+              {character.domainCards.length > 0 && (
+                <div className="mb-4">
+                  <span className="text-xs text-[#4a6a8a] uppercase tracking-wider">Domain Cards (Loadout)</span>
+                  <div className="mt-2 space-y-2">
+                    {character.domainCards.map(cardName => {
+                      const card = DOMAIN_CARDS.find(c => c.name === cardName);
+                      if (!card) return null;
+                      const typeColor = card.type === "Passive" ? "bg-[#22c55e]/15 text-[#4ade80]" :
+                        card.type === "Reaction" ? "bg-[#f59e0b]/15 text-[#fbbf24]" :
+                        "bg-[#3b82f6]/15 text-[#60a5fa]";
+                      const costColor = card.cost.includes("Hope") ? "text-[#00D4AA]" :
+                        card.cost.includes("Stress") ? "text-[#f87171]" : "text-[#7a9ab8]";
+                      return (
+                        <div key={cardName} className="p-2.5 rounded-lg bg-[#0B1120]/60 border border-[#1a2744]">
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-semibold ${typeColor}`}>{card.type}</span>
+                            <span className="text-sm font-bold text-[#e0e8f0] font-['Rajdhani']">{card.name}</span>
+                            <span className="text-[10px] text-[#6B21A8] bg-[#6B21A8]/20 px-1.5 py-0.5 rounded">{card.domain}</span>
+                          </div>
+                          {card.cost !== "\u2014" && <div className={`text-xs font-semibold mb-0.5 ${costColor}`}>{card.cost}</div>}
+                          <div className="text-xs text-[#8aa0b8]">{card.effect}</div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
               <div className="mb-4">
                 <span className="text-xs text-[#4a6a8a] uppercase tracking-wider">Equipment</span>
                 <div className="text-sm text-[#8aa0b8] mt-1">
@@ -972,7 +1172,15 @@ export default function CharacterBuilder() {
               </button>
               <button
                 onClick={() => {
-                  const json = JSON.stringify(character, null, 2);
+                  // Build export object with resolved domain cards
+                  const exportData = {
+                    ...character,
+                    domainCards: character.domainCards.map(name => {
+                      const card = DOMAIN_CARDS.find(c => c.name === name);
+                      return card ? { name: card.name, domain: card.domain, type: card.type, cost: card.cost, effect: card.effect } : name;
+                    })
+                  };
+                  const json = JSON.stringify(exportData, null, 2);
                   const blob = new Blob([json], { type: "application/json" });
                   const url = URL.createObjectURL(blob);
                   const a = document.createElement("a");
