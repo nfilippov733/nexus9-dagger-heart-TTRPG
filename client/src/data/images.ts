@@ -1,4 +1,4 @@
-// CDN URLs for all Nexus 9 book images
+// CDN URLs for all Nexus 9 book images (original art)
 export const IMAGES = {
   fullpage: {
     title_page: "https://d2xsxph8kpxj0f.cloudfront.net/104030874/FespuBmXL5Vam8ZoX6zMyg/01_title_page_556615f9.jpg",
@@ -53,7 +53,62 @@ export const IMAGES = {
     mystic: "https://d2xsxph8kpxj0f.cloudfront.net/104030874/FespuBmXL5Vam8ZoX6zMyg/07_mystic_5db66f12.jpg",
     broker: "https://d2xsxph8kpxj0f.cloudfront.net/104030874/FespuBmXL5Vam8ZoX6zMyg/08_broker_55ed0a22.jpg",
   },
+  // New locally-hosted images
+  pregen: {
+    sera_voss: "./images/pregen/sera_voss.jpg",
+    kael_renn: "./images/pregen/kael_renn.jpg",
+    zara_nightwind: "./images/pregen/zara_nightwind.jpg",
+    torq_ironhide: "./images/pregen/torq_ironhide.jpg",
+    lira_solenne: "./images/pregen/lira_solenne.jpg",
+    whisper: "./images/pregen/whisper.jpg",
+  },
+  ships: {
+    terran_corvette: "./images/ships/terran_corvette.jpg",
+    aurelian_cruiser: "./images/ships/aurelian_cruiser.jpg",
+    kaelen_smuggler: "./images/ships/kaelen_smuggler.jpg",
+    valari_science_vessel: "./images/ships/valari_science_vessel.jpg",
+    mindclave_frigate: "./images/ships/mindclave_frigate.jpg",
+    eclipse_dreadnought: "./images/ships/eclipse_dreadnought.jpg",
+    frontier_freighter: "./images/ships/frontier_freighter.jpg",
+    nexus9_station: "./images/ships/nexus9_station.jpg",
+  },
+  adversaries: {
+    syndicate_enforcer: "./images/adversaries/syndicate_enforcer.jpg",
+    aurelian_legionnaire: "./images/adversaries/aurelian_legionnaire.jpg",
+    eclipse_corrupted: "./images/adversaries/eclipse_corrupted.jpg",
+    mindclave_operative: "./images/adversaries/mindclave_operative.jpg",
+    void_beast: "./images/adversaries/void_beast.jpg",
+    valari_guardian: "./images/adversaries/valari_guardian.jpg",
+    terran_marine: "./images/adversaries/terran_marine.jpg",
+    station_pirate: "./images/adversaries/station_pirate.jpg",
+    progenitor_sentinel: "./images/adversaries/progenitor_sentinel.jpg",
+    eclipse_herald: "./images/adversaries/eclipse_herald.jpg",
+  },
+  campaign: {
+    ch1_midnight_cargo: "./images/campaign/ch1_midnight_cargo.jpg",
+    ch2_voices_in_dark: "./images/campaign/ch2_voices_in_dark.jpg",
+    ch3_fault_lines: "./images/campaign/ch3_fault_lines.jpg",
+    ch4_shattered_accord: "./images/campaign/ch4_shattered_accord.jpg",
+    ch5_betrayal: "./images/campaign/ch5_betrayal.jpg",
+    ch6_war_begins: "./images/campaign/ch6_war_begins.jpg",
+    ch7_blockade: "./images/campaign/ch7_blockade.jpg",
+    ch8_point_of_no_return: "./images/campaign/ch8_point_of_no_return.jpg",
+    ch9_broken_alliances: "./images/campaign/ch9_broken_alliances.jpg",
+    ch10_ancient_bargain: "./images/campaign/ch10_ancient_bargain.jpg",
+    ch11_descent: "./images/campaign/ch11_descent.jpg",
+    ch12_last_light: "./images/campaign/ch12_last_light.jpg",
+  },
 } as const;
+
+// Base path for GitHub Pages deployment
+const BASE = import.meta.env.BASE_URL || '/';
+
+// Helper to resolve local image paths with base URL
+function resolveImg(src: string): string {
+  if (src.startsWith('http')) return src;
+  if (src.startsWith('./')) return `${BASE}${src.slice(2)}`;
+  return src;
+}
 
 // Book opener images mapping
 export const BOOK_IMAGES: Record<string, string> = {
@@ -102,4 +157,84 @@ export const RING_IMAGE_MAP: Record<string, string> = {
   "red ring": IMAGES.halfpage.red_ring,
   "gold ring": IMAGES.halfpage.gold_ring,
   "grey ring": IMAGES.halfpage.grey_ring,
+};
+
+// Pregen crew portrait mapping (character name -> image)
+export const PREGEN_PORTRAIT_MAP: Record<string, string> = {
+  "sera voss": resolveImg(IMAGES.pregen.sera_voss),
+  "commander sera voss": resolveImg(IMAGES.pregen.sera_voss),
+  "kael renn": resolveImg(IMAGES.pregen.kael_renn),
+  "ghost": resolveImg(IMAGES.pregen.kael_renn),
+  "zara nightwind": resolveImg(IMAGES.pregen.zara_nightwind),
+  "torq ironhide": resolveImg(IMAGES.pregen.torq_ironhide),
+  "torq": resolveImg(IMAGES.pregen.torq_ironhide),
+  "lira solenne": resolveImg(IMAGES.pregen.lira_solenne),
+  "dr. lira solenne": resolveImg(IMAGES.pregen.lira_solenne),
+  "whisper": resolveImg(IMAGES.pregen.whisper),
+};
+
+// Ship image mapping (ship name fragment -> image)
+export const SHIP_IMAGE_MAP: Record<string, string> = {
+  "terran": resolveImg(IMAGES.ships.terran_corvette),
+  "corvette": resolveImg(IMAGES.ships.terran_corvette),
+  "aurelian": resolveImg(IMAGES.ships.aurelian_cruiser),
+  "cruiser": resolveImg(IMAGES.ships.aurelian_cruiser),
+  "kaelen": resolveImg(IMAGES.ships.kaelen_smuggler),
+  "smuggler": resolveImg(IMAGES.ships.kaelen_smuggler),
+  "valari": resolveImg(IMAGES.ships.valari_science_vessel),
+  "science": resolveImg(IMAGES.ships.valari_science_vessel),
+  "mindclave": resolveImg(IMAGES.ships.mindclave_frigate),
+  "frigate": resolveImg(IMAGES.ships.mindclave_frigate),
+  "eclipse": resolveImg(IMAGES.ships.eclipse_dreadnought),
+  "dreadnought": resolveImg(IMAGES.ships.eclipse_dreadnought),
+  "frontier": resolveImg(IMAGES.ships.frontier_freighter),
+  "freighter": resolveImg(IMAGES.ships.frontier_freighter),
+  "nexus": resolveImg(IMAGES.ships.nexus9_station),
+  "station": resolveImg(IMAGES.ships.nexus9_station),
+};
+
+// Adversary image mapping (adversary name fragment -> image)
+export const ADVERSARY_IMAGE_MAP: Record<string, string> = {
+  "syndicate enforcer": resolveImg(IMAGES.adversaries.syndicate_enforcer),
+  "enforcer": resolveImg(IMAGES.adversaries.syndicate_enforcer),
+  "syndicate": resolveImg(IMAGES.adversaries.syndicate_enforcer),
+  "aurelian legionnaire": resolveImg(IMAGES.adversaries.aurelian_legionnaire),
+  "legionnaire": resolveImg(IMAGES.adversaries.aurelian_legionnaire),
+  "eclipse corrupted": resolveImg(IMAGES.adversaries.eclipse_corrupted),
+  "corrupted": resolveImg(IMAGES.adversaries.eclipse_corrupted),
+  "mindclave operative": resolveImg(IMAGES.adversaries.mindclave_operative),
+  "void beast": resolveImg(IMAGES.adversaries.void_beast),
+  "void": resolveImg(IMAGES.adversaries.void_beast),
+  "beast": resolveImg(IMAGES.adversaries.void_beast),
+  "valari guardian": resolveImg(IMAGES.adversaries.valari_guardian),
+  "guardian": resolveImg(IMAGES.adversaries.valari_guardian),
+  "terran marine": resolveImg(IMAGES.adversaries.terran_marine),
+  "marine": resolveImg(IMAGES.adversaries.terran_marine),
+  "station pirate": resolveImg(IMAGES.adversaries.station_pirate),
+  "pirate": resolveImg(IMAGES.adversaries.station_pirate),
+  "progenitor sentinel": resolveImg(IMAGES.adversaries.progenitor_sentinel),
+  "sentinel": resolveImg(IMAGES.adversaries.progenitor_sentinel),
+  "progenitor": resolveImg(IMAGES.adversaries.progenitor_sentinel),
+  "eclipse herald": resolveImg(IMAGES.adversaries.eclipse_herald),
+  "herald": resolveImg(IMAGES.adversaries.eclipse_herald),
+};
+
+// Campaign chapter image mapping (chapter title fragment -> image)
+export const CAMPAIGN_IMAGE_MAP: Record<string, string> = {
+  "midnight cargo": resolveImg(IMAGES.campaign.ch1_midnight_cargo),
+  "voices in the dark": resolveImg(IMAGES.campaign.ch2_voices_in_dark),
+  "fault lines": resolveImg(IMAGES.campaign.ch3_fault_lines),
+  "shattered accord": resolveImg(IMAGES.campaign.ch4_shattered_accord),
+  "knife in the dark": resolveImg(IMAGES.campaign.ch5_betrayal),
+  "betrayal": resolveImg(IMAGES.campaign.ch5_betrayal),
+  "the war begins": resolveImg(IMAGES.campaign.ch6_war_begins),
+  "war begins": resolveImg(IMAGES.campaign.ch6_war_begins),
+  "blockade": resolveImg(IMAGES.campaign.ch7_blockade),
+  "point of no return": resolveImg(IMAGES.campaign.ch8_point_of_no_return),
+  "broken alliances": resolveImg(IMAGES.campaign.ch9_broken_alliances),
+  "ancient bargain": resolveImg(IMAGES.campaign.ch10_ancient_bargain),
+  "descent": resolveImg(IMAGES.campaign.ch11_descent),
+  "into the dark": resolveImg(IMAGES.campaign.ch11_descent),
+  "last light": resolveImg(IMAGES.campaign.ch12_last_light),
+  "the last light": resolveImg(IMAGES.campaign.ch12_last_light),
 };

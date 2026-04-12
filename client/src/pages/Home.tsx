@@ -17,7 +17,7 @@ import { ChevronRight, ChevronDown, Menu, X, BookOpen, ArrowUp, Search, Swords, 
 import { useTheme } from "@/contexts/ThemeContext";
 import { Link, useParams, useLocation } from "wouter";
 import manuscript from "@/data/manuscript.json";
-import { IMAGES, BOOK_IMAGES, FACTION_INSIGNIA_MAP, CLASS_PORTRAIT_MAP, RING_IMAGE_MAP } from "@/data/images";
+import { IMAGES, BOOK_IMAGES, FACTION_INSIGNIA_MAP, CLASS_PORTRAIT_MAP, RING_IMAGE_MAP, CAMPAIGN_IMAGE_MAP, PREGEN_PORTRAIT_MAP, SHIP_IMAGE_MAP } from "@/data/images";
 import MarkdownRenderer from "@/components/MarkdownRenderer";
 
 interface Section { title: string; id: string; content: string; }
@@ -50,6 +50,21 @@ const CHAPTER_IMAGES: Record<string, string> = {
 
 function findChapterImage(t: string): string | null {
   for (const [k, u] of Object.entries(CHAPTER_IMAGES)) { if (t.includes(k)) return u; }
+  return null;
+}
+function findCampaignImage(t: string): string | null {
+  const l = t.toLowerCase();
+  for (const [k, u] of Object.entries(CAMPAIGN_IMAGE_MAP)) { if (l.includes(k)) return u; }
+  return null;
+}
+function findPregenImage(t: string): string | null {
+  const l = t.toLowerCase();
+  for (const [k, u] of Object.entries(PREGEN_PORTRAIT_MAP)) { if (l.includes(k)) return u; }
+  return null;
+}
+function findShipImage(t: string): string | null {
+  const l = t.toLowerCase();
+  for (const [k, u] of Object.entries(SHIP_IMAGE_MAP)) { if (l.includes(k)) return u; }
   return null;
 }
 function findInsignia(t: string): string | null {
@@ -392,7 +407,7 @@ export default function Home() {
     );
   }
 
-  const chapterImage = activeChapter ? findChapterImage(activeChapter.title) : null;
+  const chapterImage = activeChapter ? (findChapterImage(activeChapter.title) || findCampaignImage(activeChapter.title)) : null;
 
   return (
     <div className="flex h-screen overflow-hidden bg-background">
@@ -762,6 +777,7 @@ export default function Home() {
                 const insignia = findInsignia(section.title);
                 const portrait = findPortrait(section.title);
                 const ringImg = findRingImage(section.title);
+                const shipImg = findShipImage(section.title);
                 return (
                   <div key={section.id} className="mb-10" id={section.id}>
                     <div className="flex items-start gap-4 mb-4 border-b-2 border-[#2ec4b6]/30 pb-3">
@@ -771,6 +787,12 @@ export default function Home() {
                     {portrait && (
                       <div className="float-right ml-4 mb-4 w-40 md:w-48">
                         <img src={portrait} alt={section.title} className="w-full rounded border border-border shadow-md" loading="lazy" />
+                        <p className="text-[10px] text-center text-muted-foreground mt-1 italic" style={{ fontFamily: "var(--font-heading)" }}>{section.title}</p>
+                      </div>
+                    )}
+                    {shipImg && !portrait && (
+                      <div className="float-right ml-4 mb-4 w-44 md:w-52">
+                        <img src={shipImg} alt={section.title} className="w-full rounded border border-border shadow-md bg-[#0a0f1a]" loading="lazy" />
                         <p className="text-[10px] text-center text-muted-foreground mt-1 italic" style={{ fontFamily: "var(--font-heading)" }}>{section.title}</p>
                       </div>
                     )}

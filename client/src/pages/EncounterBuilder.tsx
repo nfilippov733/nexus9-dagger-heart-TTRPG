@@ -20,6 +20,16 @@ import {
   Flame, Brain, Crosshair, Copy, X
 } from "lucide-react";
 import { ADVERSARY_DB, ALL_FACTIONS, type Adversary, type AdversaryFeature, type FearMove } from "../data/adversaryData";
+import { ADVERSARY_IMAGE_MAP } from "../data/images";
+
+// Helper to find adversary image by name
+function getAdversaryImage(name: string): string | undefined {
+  const lower = name.toLowerCase();
+  for (const [key, url] of Object.entries(ADVERSARY_IMAGE_MAP)) {
+    if (lower.includes(key)) return url;
+  }
+  return undefined;
+}
 
 // ─── Difficulty Tiers ─────────────────────────────────────────────────────────
 
@@ -105,6 +115,12 @@ function StatBlockModal({ adversary, onClose }: { adversary: Adversary; onClose:
         <div className={`sticky top-0 z-10 bg-[#0d1220] border-b ${tierAccent(adversary.tier)} px-6 py-4`}>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
+              {(() => {
+                const img = getAdversaryImage(adversary.name);
+                return img ? (
+                  <img src={img} alt={adversary.name} className="w-12 h-12 rounded-lg object-cover border border-gray-700" />
+                ) : null;
+              })()}
               <span className={`text-xs font-mono px-2 py-1 rounded border ${tierColor(adversary.tier)}`}>
                 T{adversary.tier}
               </span>
@@ -132,10 +148,22 @@ function StatBlockModal({ adversary, onClose }: { adversary: Adversary; onClose:
         </div>
 
         <div className="px-6 py-5 space-y-5">
-          {/* Lore */}
-          <p className="text-sm text-gray-300 leading-relaxed italic border-l-2 border-gray-700 pl-4">
-            {adversary.description}
-          </p>
+          {/* Portrait + Lore */}
+          {(() => {
+            const img = getAdversaryImage(adversary.name);
+            return img ? (
+              <div className="flex gap-4">
+                <img src={img} alt={adversary.name} className="w-32 h-32 rounded-lg object-cover border border-gray-700 flex-shrink-0" />
+                <p className="text-sm text-gray-300 leading-relaxed italic border-l-2 border-gray-700 pl-4">
+                  {adversary.description}
+                </p>
+              </div>
+            ) : (
+              <p className="text-sm text-gray-300 leading-relaxed italic border-l-2 border-gray-700 pl-4">
+                {adversary.description}
+              </p>
+            );
+          })()}
 
           {/* Core Stats Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -698,6 +726,12 @@ export default function EncounterBuilder() {
                   className={`text-left bg-gray-900/50 border ${tierAccent(a.tier)} rounded-lg px-4 py-3 hover:border-cyan-700/50 hover:bg-cyan-900/10 transition-all group`}
                 >
                   <div className="flex items-center gap-2 mb-1">
+                    {(() => {
+                      const img = getAdversaryImage(a.name);
+                      return img ? (
+                        <img src={img} alt={a.name} className="w-8 h-8 rounded object-cover border border-gray-700 flex-shrink-0" />
+                      ) : null;
+                    })()}
                     <span className={`text-xs font-mono px-1.5 py-0.5 rounded border ${tierColor(a.tier)}`}>
                       T{a.tier}
                     </span>

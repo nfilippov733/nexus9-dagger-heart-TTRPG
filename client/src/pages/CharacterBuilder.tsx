@@ -8,6 +8,24 @@ import {
   type TraitName, type GameClass, type Ancestry, type Community, type Subclass,
   type DomainCardEntry, type ClassTierStats, type Weapon, type Armor
 } from "@/data/characterData";
+import { CLASS_PORTRAIT_MAP, PREGEN_PORTRAIT_MAP } from "@/data/images";
+
+// Helper to find a portrait for a saved character
+function getCharacterPortrait(c: { name: string; gameClass: { name: string } | null }): string | null {
+  // Check pregen portraits first (exact character names)
+  const lowerName = c.name.toLowerCase();
+  for (const [key, url] of Object.entries(PREGEN_PORTRAIT_MAP)) {
+    if (lowerName.includes(key)) return url;
+  }
+  // Fall back to class portraits
+  if (c.gameClass) {
+    const className = c.gameClass.name.toLowerCase();
+    for (const [key, url] of Object.entries(CLASS_PORTRAIT_MAP)) {
+      if (className.includes(key)) return url;
+    }
+  }
+  return null;
+}
 
 /* ─── Design: Nexus 9 Station Terminal ─── */
 // Colors: deep-space navy (#0B1120), teal accent (#00D4AA), nebula purple (#6B21A8)
@@ -353,6 +371,16 @@ function CharacterGallery({ gallery, activeId, onLoad, onDelete, onNew, onClose 
                   }`}
                 >
                   <div className="flex items-start justify-between">
+                    {(() => {
+                      const portrait = getCharacterPortrait(c as any);
+                      return portrait ? (
+                        <img src={portrait} alt={c.name || "Character"} className="w-12 h-12 rounded-lg object-cover border border-[#1a2744] mr-3 flex-shrink-0" />
+                      ) : (
+                        <div className="w-12 h-12 rounded-lg bg-[#1a2744] border border-[#2a4060] mr-3 flex-shrink-0 flex items-center justify-center">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4a6a8a" strokeWidth="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                      );
+                    })()}
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
                         <span className="font-['Rajdhani'] font-bold text-lg text-[#e0e8f0] truncate">{c.name || "Unnamed"}</span>
