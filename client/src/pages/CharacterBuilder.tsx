@@ -4,9 +4,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   ANCESTRIES, COMMUNITIES, CLASSES, TRAITS, TRAIT_DESCRIPTIONS,
   STANDARD_ARRAY, EXPERIENCES, ARMOR_OPTIONS, WEAPON_OPTIONS, STANDARD_KIT,
-  DOMAIN_CARDS,
+  DOMAIN_CARDS, CLASS_TIER_STATS, getTierForLevel, getClassStatsForLevel,
   type TraitName, type GameClass, type Ancestry, type Community, type Subclass,
-  type DomainCardEntry
+  type DomainCardEntry, type ClassTierStats, type Weapon, type Armor
 } from "@/data/characterData";
 
 /* ─── Design: Nexus 9 Station Terminal ─── */
@@ -63,40 +63,79 @@ const initialCharacter: CharacterState = {
   notes: "",
 };
 
-const STORAGE_KEY = "nexus9_character_builder";
-
-function saveToStorage(character: CharacterState, step: Step) {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify({ character, step, savedAt: Date.now() }));
-  } catch { /* ignore quota errors */ }
+/* ─── Multi-Character Storage ─── */
+interface SavedCharacterEntry {
+  id: string;
+  character: CharacterState;
+  step: Step;
+  savedAt: number;
 }
 
-function loadFromStorage(): { character: CharacterState; step: Step } | null {
+const GALLERY_KEY = "nexus9_character_gallery";
+const ACTIVE_KEY = "nexus9_active_character_id";
+const STORAGE_KEY = "nexus9_character_builder"; // legacy single-char key
+
+function generateId(): string {
+  return Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+}
+
+function loadGallery(): SavedCharacterEntry[] {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return null;
-    const parsed = JSON.parse(raw);
-    if (parsed?.character && parsed?.step) {
-      const c = parsed.character as CharacterState;
-      // Ensure level exists (migration from old saves)
-      if (!c.level) c.level = 1;
-      if (c.ancestry) c.ancestry = ANCESTRIES.find(a => a.name === c.ancestry?.name) || null;
-      if (c.community) c.community = COMMUNITIES.find(co => co.name === c.community?.name) || null;
-      if (c.gameClass) {
-        c.gameClass = CLASSES.find(cl => cl.name === c.gameClass?.name) || null;
-        if (c.subclass && c.gameClass) {
-          c.subclass = c.gameClass.subclasses.find(s => s.name === c.subclass?.name) || null;
+    const raw = localStorage.getItem(GALLERY_KEY);
+    if (!raw) {
+      // Migrate legacy single-character save
+      const legacy = localStorage.getItem(STORAGE_KEY);
+      if (legacy) {
+        const parsed = JSON.parse(legacy);
+        if (parsed?.character?.name) {
+          const entry: SavedCharacterEntry = {
+            id: generateId(),
+            character: parsed.character,
+            step: parsed.step || "name",
+            savedAt: parsed.savedAt || Date.now(),
+          };
+          if (!entry.character.level) entry.character.level = 1;
+          localStorage.setItem(GALLERY_KEY, JSON.stringify([entry]));
+          localStorage.setItem(ACTIVE_KEY, entry.id);
+          localStorage.removeItem(STORAGE_KEY);
+          return [entry];
         }
       }
-      return { character: c, step: parsed.step };
+      return [];
     }
-  } catch { /* ignore parse errors */ }
-  return null;
+    return JSON.parse(raw);
+  } catch { return []; }
 }
 
-function clearStorage() {
-  try { localStorage.removeItem(STORAGE_KEY); } catch { /* ignore */ }
+function saveGallery(gallery: SavedCharacterEntry[]) {
+  try { localStorage.setItem(GALLERY_KEY, JSON.stringify(gallery)); } catch { /* quota */ }
 }
+
+function saveActiveId(id: string | null) {
+  try {
+    if (id) localStorage.setItem(ACTIVE_KEY, id);
+    else localStorage.removeItem(ACTIVE_KEY);
+  } catch { /* ignore */ }
+}
+
+function getActiveId(): string | null {
+  try { return localStorage.getItem(ACTIVE_KEY); } catch { return null; }
+}
+
+function hydrateCharacter(c: CharacterState): CharacterState {
+  if (!c.level) c.level = 1;
+  if (c.ancestry) c.ancestry = ANCESTRIES.find(a => a.name === c.ancestry?.name) || null;
+  if (c.community) c.community = COMMUNITIES.find(co => co.name === c.community?.name) || null;
+  if (c.gameClass) {
+    c.gameClass = CLASSES.find(cl => cl.name === c.gameClass?.name) || null;
+    if (c.subclass && c.gameClass) {
+      c.subclass = c.gameClass.subclasses.find(s => s.name === c.subclass?.name) || null;
+    }
+  }
+  return c;
+}
+
+/* ─── Reusable Components ─── */
 
 function StepIndicator({ steps, current }: { steps: typeof STEPS; current: Step }) {
   const idx = steps.findIndex(s => s.id === current);
@@ -153,8 +192,8 @@ function FeatureBox({ label, name, effect }: { label: string; name: string; effe
 }
 
 /* ─── Domain Card Component ─── */
-function DomainCard({ card, isSelected, isDimmed, onClick }: {
-  card: DomainCardEntry; isSelected: boolean; isDimmed: boolean; onClick: () => void;
+function DomainCard({ card, isSelected, isDimmed, onClick, onDetail }: {
+  card: DomainCardEntry; isSelected: boolean; isDimmed: boolean; onClick: () => void; onDetail?: () => void;
 }) {
   const typeColor = card.type === "Passive" ? "bg-[#22c55e]/15 text-[#4ade80]" :
     card.type === "Reaction" ? "bg-[#f59e0b]/15 text-[#fbbf24]" :
@@ -164,39 +203,196 @@ function DomainCard({ card, isSelected, isDimmed, onClick }: {
     card.cost.includes("Stress") ? "text-[#f87171]" : "text-[#7a9ab8]";
 
   return (
-    <button
-      onClick={onClick}
-      className={`text-left w-full rounded-xl border-2 transition-all duration-200 overflow-hidden ${
-        isSelected
-          ? "border-[#00D4AA] bg-gradient-to-br from-[#00D4AA]/10 to-[#0d1628] shadow-[0_0_20px_rgba(0,212,170,0.12)]"
-          : isDimmed
-          ? "border-[#1a2744] bg-[#0d1628] opacity-50 hover:opacity-70"
-          : "border-[#1a2744] bg-[#0d1628] hover:border-[#2a4060] hover:bg-[#111d35]"
-      }`}
-    >
-      <div className={`px-4 py-2.5 flex items-center justify-between ${isSelected ? "bg-[#00D4AA]/8" : "bg-[#0a0f1a]/60"}`}>
-        <div className="flex items-center gap-2 flex-wrap">
-          <span className={`text-xs px-2 py-0.5 rounded-full font-semibold ${typeColor}`}>{card.type}</span>
-          <span className="font-['Rajdhani'] font-bold text-[#e0e8f0] text-lg">{card.name}</span>
+    <div className={`text-left w-full rounded-xl border-2 transition-all duration-200 overflow-hidden ${
+      isSelected
+        ? "border-[#00D4AA] bg-gradient-to-br from-[#00D4AA]/10 to-[#0d1628] shadow-[0_0_20px_rgba(0,212,170,0.12)]"
+        : isDimmed
+        ? "border-[#1a2744] bg-[#0d1628] opacity-50 hover:opacity-70"
+        : "border-[#1a2744] bg-[#0d1628] hover:border-[#2a4060] hover:bg-[#111d35]"
+    }`}>
+      <button onClick={onClick} className="w-full text-left">
+        <div className={`px-4 py-2.5 flex items-center justify-between ${isSelected ? "bg-[#00D4AA]/8" : "bg-[#0a0f1a]/60"}`}>
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className={`text-xs px-2 py-0.5 rounded-full font-semibold ${typeColor}`}>{card.type}</span>
+            <span className="font-['Rajdhani'] font-bold text-[#e0e8f0] text-lg">{card.name}</span>
+          </div>
+          {isSelected && (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00D4AA" strokeWidth="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+          )}
         </div>
-        {isSelected && (
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00D4AA" strokeWidth="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-        )}
-      </div>
-      <div className="px-4 py-3">
-        {card.cost !== "\u2014" && (
-          <div className={`text-xs font-semibold mb-1.5 ${costColor}`}>{card.cost}</div>
-        )}
-        <p className="text-sm text-[#8aa0b8] leading-relaxed">{card.effect}</p>
-      </div>
-      <div className="px-4 py-2 bg-[#0a0f1a]/40 border-t border-[#1a2744]/50">
-        <div className="flex items-center justify-between">
-          <span className="text-xs text-[#4a6a8a]">Level {card.level} · {card.domain}</span>
+        <div className="px-4 py-3">
+          {card.cost !== "\u2014" && (
+            <div className={`text-xs font-semibold mb-1.5 ${costColor}`}>{card.cost}</div>
+          )}
+          <p className="text-sm text-[#8aa0b8] leading-relaxed">{card.effect}</p>
+        </div>
+      </button>
+      <div className="px-4 py-2 bg-[#0a0f1a]/40 border-t border-[#1a2744]/50 flex items-center justify-between">
+        <span className="text-xs text-[#4a6a8a]">Level {card.level} · {card.domain}</span>
+        <div className="flex items-center gap-3">
+          {onDetail && (
+            <button onClick={(e) => { e.stopPropagation(); onDetail(); }} className="text-xs text-[#6B21A8] hover:text-[#c084fc] transition-colors">
+              Details
+            </button>
+          )}
           {!isSelected && !isDimmed && <span className="text-xs text-[#00D4AA]/60">Click to select</span>}
           {isSelected && <span className="text-xs text-[#00D4AA]">Click to deselect</span>}
         </div>
       </div>
-    </button>
+    </div>
+  );
+}
+
+/* ─── Domain Card Detail Modal ─── */
+function DomainCardModal({ card, onClose }: { card: DomainCardEntry | null; onClose: () => void }) {
+  if (!card) return null;
+  const typeColor = card.type === "Passive" ? "bg-[#22c55e]/20 text-[#4ade80] border-[#22c55e]/30" :
+    card.type === "Reaction" ? "bg-[#f59e0b]/20 text-[#fbbf24] border-[#f59e0b]/30" :
+    card.type === "Action" ? "bg-[#3b82f6]/20 text-[#60a5fa] border-[#3b82f6]/30" :
+    "bg-[#8b5cf6]/20 text-[#a78bfa] border-[#8b5cf6]/30";
+  const costColor = card.cost.includes("Hope") ? "text-[#00D4AA]" :
+    card.cost.includes("Stress") ? "text-[#f87171]" : "text-[#7a9ab8]";
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm" onClick={onClose}>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.9, y: 20 }}
+        transition={{ duration: 0.2 }}
+        onClick={e => e.stopPropagation()}
+        className="w-full max-w-lg rounded-2xl border-2 border-[#00D4AA]/30 bg-[#0d1628] shadow-2xl overflow-hidden"
+      >
+        {/* Header */}
+        <div className="px-6 py-4 bg-gradient-to-r from-[#0a0f1a] to-[#0d1628] border-b border-[#1a2744]">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <span className={`text-sm px-3 py-1 rounded-full font-bold border ${typeColor}`}>{card.type}</span>
+              <span className="text-xs bg-[#6B21A8]/30 text-[#c084fc] px-2 py-1 rounded border border-[#6B21A8]/30">{card.domain}</span>
+            </div>
+            <button onClick={onClose} className="text-[#4a6a8a] hover:text-[#e0e8f0] transition-colors p-1">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
+          </div>
+          <h2 className="font-['Rajdhani'] text-2xl font-bold text-[#e0e8f0] mt-3">{card.name}</h2>
+          <div className="text-xs text-[#4a6a8a] mt-1">Level {card.level} · {card.domainTheme}</div>
+        </div>
+
+        {/* Body */}
+        <div className="px-6 py-5 space-y-4">
+          {card.cost !== "\u2014" && (
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-bold text-[#4a6a8a] uppercase tracking-wider">Cost</span>
+              <span className={`text-sm font-bold ${costColor}`}>{card.cost}</span>
+            </div>
+          )}
+          <div>
+            <span className="text-xs font-bold text-[#4a6a8a] uppercase tracking-wider block mb-2">Effect</span>
+            <p className="text-[#c0d0e0] leading-relaxed">{card.effect}</p>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <div className="px-6 py-3 bg-[#0a0f1a]/60 border-t border-[#1a2744] text-center">
+          <button onClick={onClose} className="px-8 py-2 rounded-lg bg-[#00D4AA] text-[#0B1120] font-['Rajdhani'] font-bold hover:bg-[#00e8bb] transition-colors">
+            Close
+          </button>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
+/* ─── Saved Characters Gallery ─── */
+function CharacterGallery({ gallery, activeId, onLoad, onDelete, onNew, onClose }: {
+  gallery: SavedCharacterEntry[];
+  activeId: string | null;
+  onLoad: (entry: SavedCharacterEntry) => void;
+  onDelete: (id: string) => void;
+  onNew: () => void;
+  onClose: () => void;
+}) {
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm" onClick={onClose}>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.95 }}
+        onClick={e => e.stopPropagation()}
+        className="w-full max-w-2xl max-h-[80vh] rounded-2xl border-2 border-[#00D4AA]/30 bg-[#0d1628] shadow-2xl overflow-hidden flex flex-col"
+      >
+        <div className="px-6 py-4 bg-[#0a0f1a] border-b border-[#1a2744] flex items-center justify-between shrink-0">
+          <h2 className="font-['Rajdhani'] text-xl font-bold text-[#e0e8f0]">
+            <span className="text-[#00D4AA]">SAVED</span> Characters ({gallery.length})
+          </h2>
+          <div className="flex items-center gap-3">
+            <button onClick={onNew} className="px-4 py-1.5 rounded-lg bg-[#00D4AA] text-[#0B1120] text-sm font-['Rajdhani'] font-bold hover:bg-[#00e8bb] transition-colors">
+              + New
+            </button>
+            <button onClick={onClose} className="text-[#4a6a8a] hover:text-[#e0e8f0] transition-colors">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div className="flex-1 overflow-y-auto p-4 space-y-3">
+          {gallery.length === 0 ? (
+            <div className="text-center py-12 text-[#4a6a8a]">
+              <div className="text-4xl mb-3">🚀</div>
+              <p className="text-sm">No saved characters yet. Create your first agent!</p>
+            </div>
+          ) : (
+            gallery.sort((a, b) => b.savedAt - a.savedAt).map(entry => {
+              const c = entry.character;
+              const isActive = entry.id === activeId;
+              return (
+                <div
+                  key={entry.id}
+                  className={`p-4 rounded-lg border-2 transition-all ${
+                    isActive ? "border-[#00D4AA]/50 bg-[#00D4AA]/5" : "border-[#1a2744] bg-[#0B1120] hover:border-[#2a4060]"
+                  }`}
+                >
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2">
+                        <span className="font-['Rajdhani'] font-bold text-lg text-[#e0e8f0] truncate">{c.name || "Unnamed"}</span>
+                        {isActive && <span className="text-[10px] bg-[#00D4AA]/20 text-[#00D4AA] px-1.5 py-0.5 rounded font-bold shrink-0">ACTIVE</span>}
+                      </div>
+                      <div className="text-sm text-[#7a9ab8] mt-0.5">
+                        Level {c.level} {c.gameClass?.name || "—"}{c.subclass ? ` · ${c.subclass.name}` : ""}
+                      </div>
+                      <div className="text-xs text-[#4a6a8a] mt-1">
+                        {c.ancestry?.name || "—"} · {c.community?.name || "—"} · Step: {STEPS.find(s => s.id === entry.step)?.label || entry.step}
+                      </div>
+                      <div className="text-xs text-[#4a6a8a] mt-0.5">
+                        Saved {new Date(entry.savedAt).toLocaleDateString()} {new Date(entry.savedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 ml-3 shrink-0">
+                      <button
+                        onClick={() => onLoad(entry)}
+                        className="px-3 py-1.5 rounded-lg bg-[#00D4AA] text-[#0B1120] text-xs font-['Rajdhani'] font-bold hover:bg-[#00e8bb] transition-colors"
+                      >
+                        {isActive ? "Continue" : "Load"}
+                      </button>
+                      <button
+                        onClick={() => {
+                          if (confirm(`Delete "${c.name || "Unnamed"}"?`)) onDelete(entry.id);
+                        }}
+                        className="p-1.5 rounded-lg border border-[#ef4444]/30 text-[#f87171] hover:bg-[#ef4444]/10 transition-colors"
+                        title="Delete character"
+                      >
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              );
+            })
+          )}
+        </div>
+      </motion.div>
+    </div>
   );
 }
 
@@ -262,252 +458,157 @@ function TraitAssigner({ traits, onChange, onComplete, recommendedTraits }: {
         <div className="text-sm text-[#7a9ab8] mb-2">Standard Array — click a value then assign to a trait:</div>
         <div className="flex gap-2 flex-wrap">
           {pool.map((val, i) => (
-            <div key={`pool-${i}`} className={`w-12 h-12 rounded-lg flex items-center justify-center font-bold text-lg border-2 ${
-              val > 0 ? "border-[#00D4AA] text-[#00D4AA] bg-[#00D4AA]/10" :
-              val === 0 ? "border-[#4a6a8a] text-[#4a6a8a] bg-[#1a2744]" :
-              "border-[#ef4444] text-[#ef4444] bg-[#ef4444]/10"
-            }`}>
+            <div
+              key={`pool-${i}`}
+              className="w-12 h-12 rounded-lg bg-[#00D4AA]/15 border-2 border-[#00D4AA]/40 flex items-center justify-center font-bold text-lg text-[#00D4AA] cursor-pointer hover:bg-[#00D4AA]/25 transition-colors"
+            >
               {val > 0 ? `+${val}` : val}
             </div>
           ))}
-          {pool.length === 0 && (
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-[#00D4AA] animate-pulse" />
-              <span className="text-sm text-[#00D4AA] font-semibold">All values assigned!</span>
+          {pool.length === 0 && allAssigned && (
+            <div className="text-sm text-[#00D4AA] flex items-center gap-1">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              All values assigned!
             </div>
           )}
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
         {TRAITS.map(trait => {
           const isRecommended = recommendedTraits?.includes(trait);
           return (
-            <div key={trait} className={`flex items-center gap-3 p-3 rounded-lg bg-[#0d1628] border ${
-              isRecommended && assigned[trait] === null ? "border-[#c084fc]/40" : "border-[#1a2744]"
+            <div key={trait} className={`p-3 rounded-lg border-2 transition-all ${
+              assigned[trait] !== null ? "border-[#00D4AA]/40 bg-[#00D4AA]/5" : "border-[#1a2744] bg-[#0d1628]"
             }`}>
-              <div className="flex-1">
-                <div className="font-['Rajdhani'] font-bold text-[#e0e8f0] flex items-center gap-2">
-                  {trait}
-                  {isRecommended && <span className="text-[9px] bg-[#6B21A8]/30 text-[#c084fc] px-1.5 py-0.5 rounded">REC</span>}
-                </div>
-                <div className="text-xs text-[#6a8aa8]">{TRAIT_DESCRIPTIONS[trait]}</div>
+              <div className="flex items-center justify-between mb-1">
+                <span className="font-['Rajdhani'] font-bold text-[#e0e8f0]">{trait}</span>
+                {isRecommended && <span className="text-[10px] bg-[#6B21A8]/30 text-[#c084fc] px-1 py-0.5 rounded">REC</span>}
               </div>
+              <div className="text-xs text-[#4a6a8a] mb-2">{TRAIT_DESCRIPTIONS[trait]}</div>
               {assigned[trait] !== null ? (
                 <button
                   onClick={() => unassign(trait)}
-                  className={`w-12 h-12 rounded-lg flex items-center justify-center font-bold text-lg border-2 cursor-pointer transition-all hover:scale-105 ${
-                    assigned[trait]! > 0 ? "border-[#00D4AA] text-[#00D4AA] bg-[#00D4AA]/10" :
-                    assigned[trait]! === 0 ? "border-[#4a6a8a] text-[#4a6a8a] bg-[#1a2744]" :
-                    "border-[#ef4444] text-[#ef4444] bg-[#ef4444]/10"
-                  }`}
-                  title="Click to unassign"
+                  className="w-full py-1.5 rounded bg-[#00D4AA]/15 text-[#00D4AA] font-bold text-lg hover:bg-[#00D4AA]/25 transition-colors"
                 >
                   {assigned[trait]! > 0 ? `+${assigned[trait]}` : assigned[trait]}
                 </button>
               ) : (
-                <div className="flex gap-1">
-                  {pool.length > 0 ? Array.from(new Set(pool)).slice(0, 4).map((val) => {
-                    const poolIdx = pool.indexOf(val);
-                    return (
-                      <button
-                        key={`assign-${trait}-${val}`}
-                        onClick={() => assignValue(trait, val, poolIdx)}
-                        className={`w-9 h-9 rounded flex items-center justify-center text-sm font-bold border cursor-pointer transition-all hover:scale-110 ${
-                          val > 0 ? "border-[#00D4AA]/50 text-[#00D4AA] hover:bg-[#00D4AA]/20" :
-                          val === 0 ? "border-[#4a6a8a]/50 text-[#4a6a8a] hover:bg-[#4a6a8a]/20" :
-                          "border-[#ef4444]/50 text-[#ef4444] hover:bg-[#ef4444]/20"
-                        }`}
-                      >
-                        {val > 0 ? `+${val}` : val}
-                      </button>
-                    );
-                  }) : (
-                    <div className="w-12 h-9 rounded bg-[#1a2744] flex items-center justify-center text-xs text-[#4a6a8a]">—</div>
-                  )}
+                <div className="flex gap-1 flex-wrap">
+                  {pool.map((val, i) => (
+                    <button
+                      key={`assign-${trait}-${i}`}
+                      onClick={() => assignValue(trait, val, i)}
+                      className="px-2 py-1 rounded bg-[#1a2744] text-[#7a9ab8] text-sm hover:bg-[#2a4060] hover:text-[#e0e8f0] transition-colors"
+                    >
+                      {val > 0 ? `+${val}` : val}
+                    </button>
+                  ))}
                 </div>
               )}
             </div>
           );
         })}
       </div>
-      {allAssigned && (
-        <div className="mt-3 p-3 rounded-lg bg-[#00D4AA]/10 border border-[#00D4AA]/30 text-center">
-          <span className="text-sm text-[#00D4AA] font-semibold">Trait assignment complete — proceed to the next step.</span>
-        </div>
-      )}
     </div>
   );
 }
 
-/* ─── Print Sheet Component ─── */
+/* ─── Print Sheet ─── */
 function PrintSheet({ character }: { character: CharacterState }) {
   const c = character;
   const cls = c.gameClass;
+  const tier = getTierForLevel(c.level);
+  const tierStats = cls ? getClassStatsForLevel(cls.name, c.level) : null;
   const armorData = ARMOR_OPTIONS.find(a => a.name === c.armor);
   const weaponData = c.weapons.map(w => WEAPON_OPTIONS.find(o => o.name === w)).filter(Boolean);
 
-  // Group domain cards by level for print
-  const cardsByLevel = useMemo(() => {
-    const grouped: Record<number, DomainCardEntry[]> = {};
-    c.domainCards.forEach(name => {
-      const card = DOMAIN_CARDS.find(dc => dc.name === name);
-      if (card) {
-        if (!grouped[card.level]) grouped[card.level] = [];
-        grouped[card.level].push(card);
-      }
-    });
-    return grouped;
-  }, [c.domainCards]);
-
   return (
-    <div id="print-sheet" className="bg-white text-black p-8 max-w-[8.5in] mx-auto" style={{ fontFamily: "'Source Serif 4', serif" }}>
-      {/* Header */}
-      <div className="border-b-4 border-black pb-3 mb-4">
-        <div className="flex justify-between items-start">
-          <div>
-            <h1 className="text-3xl font-bold" style={{ fontFamily: "'Rajdhani', sans-serif" }}>
-              {c.name || "Unnamed Character"}
-            </h1>
-            <div className="text-sm text-gray-600">{c.pronouns}</div>
-          </div>
-          <div className="text-right">
-            <div className="text-xl font-bold" style={{ fontFamily: "'Rajdhani', sans-serif" }}>
-              NEXUS 9
-            </div>
-            <div className="text-xs text-gray-500">The Fraying Dark</div>
-          </div>
+    <div id="print-sheet" className="bg-white text-black p-8 max-w-[800px] mx-auto" style={{ fontFamily: "'Source Serif 4', serif" }}>
+      <div className="text-center mb-6">
+        <h1 className="text-3xl font-bold" style={{ fontFamily: "'Rajdhani', sans-serif" }}>NEXUS 9: THE FRAYING DARK</h1>
+        <div className="text-sm text-gray-500">Character Sheet</div>
+      </div>
+
+      <div className="grid grid-cols-2 gap-6 mb-6">
+        <div>
+          <h2 className="text-2xl font-bold" style={{ fontFamily: "'Rajdhani', sans-serif" }}>{c.name}</h2>
+          {c.pronouns && <div className="text-sm text-gray-500">{c.pronouns}</div>}
         </div>
-        <div className="flex gap-6 mt-2 text-sm">
-          <span><strong>Ancestry:</strong> {c.ancestry?.name || "—"}</span>
-          <span><strong>Community:</strong> {c.community?.name || "—"}</span>
-          <span><strong>Class:</strong> {cls?.name || "—"}</span>
-          <span><strong>Subclass:</strong> {c.subclass?.name || "—"}</span>
-          <span><strong>Level:</strong> {c.level}</span>
+        <div className="text-right">
+          <div className="text-lg font-bold">Level {c.level} {cls?.name}</div>
+          <div className="text-sm">{c.subclass?.name} · Tier {tier}</div>
         </div>
       </div>
 
-      {/* Core Stats */}
-      <div className="grid grid-cols-3 gap-4 mb-4">
-        <div className="border-2 border-black rounded p-3 text-center">
-          <div className="text-xs font-bold uppercase tracking-wider">Hit Points</div>
-          <div className="text-3xl font-bold">{cls?.hp || "—"}</div>
+      <div className="grid grid-cols-4 gap-3 mb-4 text-center">
+        <div className="border-2 border-black rounded p-2">
+          <div className="text-xs font-bold uppercase">HP</div>
+          <div className="text-2xl font-bold">{tierStats?.hp ?? cls?.hp ?? "—"}</div>
         </div>
-        <div className="border-2 border-black rounded p-3 text-center">
-          <div className="text-xs font-bold uppercase tracking-wider">Evasion</div>
-          <div className="text-3xl font-bold">{cls ? cls.evasion + (armorData?.evasionMod || 0) : "—"}</div>
+        <div className="border-2 border-black rounded p-2">
+          <div className="text-xs font-bold uppercase">Evasion</div>
+          <div className="text-2xl font-bold">{tierStats ? tierStats.evasion + (armorData?.evasionMod || 0) : "—"}</div>
         </div>
-        <div className="border-2 border-black rounded p-3 text-center">
-          <div className="text-xs font-bold uppercase tracking-wider">Armor Score</div>
-          <div className="text-3xl font-bold">{armorData?.armorScore || "—"}</div>
+        <div className="border-2 border-black rounded p-2">
+          <div className="text-xs font-bold uppercase">Armor</div>
+          <div className="text-2xl font-bold">{armorData?.armorScore ?? "—"}</div>
         </div>
-      </div>
-
-      {/* Traits */}
-      <div className="mb-4">
-        <h2 className="text-lg font-bold border-b-2 border-black mb-2" style={{ fontFamily: "'Rajdhani', sans-serif" }}>TRAITS</h2>
-        <div className="grid grid-cols-6 gap-2">
-          {TRAITS.map(t => (
-            <div key={t} className="border border-black rounded p-2 text-center">
-              <div className="text-xs font-bold uppercase">{t.slice(0, 3)}</div>
-              <div className="text-xl font-bold">{c.traits[t] > 0 ? `+${c.traits[t]}` : c.traits[t]}</div>
-            </div>
-          ))}
+        <div className="border-2 border-black rounded p-2">
+          <div className="text-xs font-bold uppercase">Stress</div>
+          <div className="text-2xl font-bold">{tierStats?.stressSlots ?? "—"}</div>
         </div>
       </div>
 
       {/* Damage Thresholds */}
-      {armorData && (
-        <div className="mb-4">
-          <h2 className="text-lg font-bold border-b-2 border-black mb-2" style={{ fontFamily: "'Rajdhani', sans-serif" }}>DAMAGE THRESHOLDS</h2>
-          <div className="grid grid-cols-4 gap-2 text-center text-sm">
-            <div className="border border-black rounded p-2">
-              <div className="text-xs font-bold">GLANCING</div>
-              <div>Below {armorData.minor}</div>
-              <div className="text-xs text-gray-600">0 HP lost</div>
-            </div>
-            <div className="border border-black rounded p-2">
-              <div className="text-xs font-bold">MINOR</div>
-              <div>{armorData.minor}–{armorData.major - 1}</div>
-              <div className="text-xs text-gray-600">1 HP lost</div>
-            </div>
-            <div className="border border-black rounded p-2">
-              <div className="text-xs font-bold">MAJOR</div>
-              <div>{armorData.major}–{armorData.severe - 1}</div>
-              <div className="text-xs text-gray-600">2 HP lost</div>
-            </div>
-            <div className="border border-black rounded p-2">
-              <div className="text-xs font-bold">SEVERE</div>
-              <div>{armorData.severe}+</div>
-              <div className="text-xs text-gray-600">3 HP lost</div>
-            </div>
+      {tierStats && (
+        <div className="grid grid-cols-3 gap-3 mb-4 text-center">
+          <div className="border border-gray-400 rounded p-2">
+            <div className="text-xs font-bold uppercase">Minor</div>
+            <div className="text-lg font-bold">{tierStats.minor}+</div>
+          </div>
+          <div className="border border-gray-400 rounded p-2">
+            <div className="text-xs font-bold uppercase">Major</div>
+            <div className="text-lg font-bold">{tierStats.major}+</div>
+          </div>
+          <div className="border border-gray-400 rounded p-2">
+            <div className="text-xs font-bold uppercase">Severe</div>
+            <div className="text-lg font-bold">{tierStats.severe}+</div>
           </div>
         </div>
       )}
 
-      {/* Features */}
-      <div className="mb-4">
-        <h2 className="text-lg font-bold border-b-2 border-black mb-2" style={{ fontFamily: "'Rajdhani', sans-serif" }}>FEATURES</h2>
-        <div className="space-y-2 text-sm">
-          {c.ancestry && (
-            <div><strong>Ancestry — {c.ancestry.featureName}:</strong> {c.ancestry.featureEffect}</div>
-          )}
-          {c.community && (
-            <div><strong>Community — {c.community.featureName}:</strong> {c.community.featureEffect}</div>
-          )}
-          {cls && (
-            <>
-              <div><strong>Hope — {cls.hopeFeatureName}:</strong> {cls.hopeFeatureEffect}</div>
-              <div><strong>Class — {cls.classFeatureName}:</strong> {cls.classFeatureEffect}</div>
-            </>
-          )}
-          {c.subclass && (
-            <div><strong>Foundation — {c.subclass.foundation.name}:</strong> {c.subclass.foundation.effect}</div>
-          )}
+      <div className="grid grid-cols-2 gap-4 mb-4">
+        <div>
+          <div className="text-sm"><strong>Ancestry:</strong> {c.ancestry?.name}</div>
+          <div className="text-xs text-gray-600">{c.ancestry?.featureName}: {c.ancestry?.featureEffect}</div>
+        </div>
+        <div>
+          <div className="text-sm"><strong>Community:</strong> {c.community?.name}</div>
+          <div className="text-xs text-gray-600">{c.community?.featureName}: {c.community?.featureEffect}</div>
         </div>
       </div>
 
-      {/* Domain Cards */}
-      <div className="mb-4">
-        <h2 className="text-lg font-bold border-b-2 border-black mb-2" style={{ fontFamily: "'Rajdhani', sans-serif" }}>DOMAIN CARDS (LOADOUT)</h2>
-        {c.domainCards.length > 0 ? (
-          <div className="space-y-3">
-            {Object.keys(cardsByLevel).sort((a, b) => Number(a) - Number(b)).map(lvl => (
-              <div key={lvl}>
-                <div className="text-xs font-bold uppercase text-gray-500 mb-1">Level {lvl}</div>
-                <div className="space-y-1">
-                  {cardsByLevel[Number(lvl)].map(card => (
-                    <div key={card.name} className="border border-black rounded p-2">
-                      <div className="flex items-center gap-2">
-                        <span className="text-xs font-bold uppercase bg-gray-200 px-1.5 py-0.5 rounded">{card.type}</span>
-                        <span className="font-bold">{card.name}</span>
-                        <span className="text-xs text-gray-500">({card.domain})</span>
-                      </div>
-                      {card.cost !== "\u2014" && <div className="text-xs font-semibold mt-0.5">{card.cost}</div>}
-                      <div className="text-sm mt-0.5">{card.effect}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
+      <div className="grid grid-cols-6 gap-2 mb-4 text-center">
+        {TRAITS.map(t => (
+          <div key={t} className="border border-gray-400 rounded p-2">
+            <div className="text-xs font-bold">{t.slice(0, 3).toUpperCase()}</div>
+            <div className="text-lg font-bold">{c.traits[t] > 0 ? `+${c.traits[t]}` : c.traits[t]}</div>
           </div>
-        ) : (
-          <div className="text-sm">{cls?.domains.join(", ") || "—"}</div>
-        )}
+        ))}
       </div>
 
-      {/* Experiences */}
       <div className="mb-4">
         <h2 className="text-lg font-bold border-b-2 border-black mb-2" style={{ fontFamily: "'Rajdhani', sans-serif" }}>EXPERIENCES</h2>
         <div className="text-sm">{c.experiences.length > 0 ? c.experiences.join(", ") : "—"}</div>
       </div>
 
-      {/* Equipment */}
       <div className="mb-4">
         <h2 className="text-lg font-bold border-b-2 border-black mb-2" style={{ fontFamily: "'Rajdhani', sans-serif" }}>EQUIPMENT</h2>
         <div className="text-sm space-y-1">
           {c.armor && <div><strong>Armor:</strong> {c.armor}</div>}
           {weaponData.map((w, i) => (
-            <div key={i}><strong>{w!.name}:</strong> {w!.damage} ({w!.range}) — {w!.feature}</div>
+            <div key={i}><strong>{w!.name}:</strong> {w!.damage} ({w!.range}) — {w!.feature || "No special feature"}</div>
           ))}
           <div className="mt-2"><strong>Standard Kit:</strong></div>
           <ul className="list-disc list-inside text-xs">
@@ -517,7 +618,6 @@ function PrintSheet({ character }: { character: CharacterState }) {
         </div>
       </div>
 
-      {/* Starship & Diplomacy Roles */}
       <div className="grid grid-cols-2 gap-4 mb-4">
         <div>
           <h2 className="text-lg font-bold border-b-2 border-black mb-2" style={{ fontFamily: "'Rajdhani', sans-serif" }}>STARSHIP ROLE</h2>
@@ -529,7 +629,6 @@ function PrintSheet({ character }: { character: CharacterState }) {
         </div>
       </div>
 
-      {/* Notes */}
       {c.notes && (
         <div>
           <h2 className="text-lg font-bold border-b-2 border-black mb-2" style={{ fontFamily: "'Rajdhani', sans-serif" }}>NOTES</h2>
@@ -546,51 +645,99 @@ export default function CharacterBuilder() {
   const [character, setCharacter] = useState<CharacterState>({ ...initialCharacter });
   const [direction, setDirection] = useState(1);
   const [showPrint, setShowPrint] = useState(false);
-  const [showResumePrompt, setShowResumePrompt] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [expandedLevels, setExpandedLevels] = useState<Set<number>>(new Set([1]));
+  const [showGallery, setShowGallery] = useState(false);
+  const [gallery, setGallery] = useState<SavedCharacterEntry[]>([]);
+  const [activeCharId, setActiveCharId] = useState<string | null>(null);
+  const [detailCard, setDetailCard] = useState<DomainCardEntry | null>(null);
+  const [weaponFilter, setWeaponFilter] = useState<string>("all");
   const contentRef = useRef<HTMLDivElement>(null);
 
-  // Load from localStorage on mount
+  // Load gallery on mount
   useEffect(() => {
-    const saved = loadFromStorage();
-    if (saved && saved.character.name) {
-      setShowResumePrompt(true);
+    const g = loadGallery();
+    setGallery(g);
+    const activeId = getActiveId();
+    if (activeId) {
+      const entry = g.find(e => e.id === activeId);
+      if (entry) {
+        const hydrated = hydrateCharacter({ ...entry.character });
+        setCharacter(hydrated);
+        setStep(entry.step);
+        setActiveCharId(entry.id);
+        const levels = new Set<number>();
+        hydrated.domainCards.forEach(name => {
+          const card = DOMAIN_CARDS.find(c => c.name === name);
+          if (card) levels.add(card.level);
+        });
+        if (levels.size === 0) levels.add(1);
+        setExpandedLevels(levels);
+      }
     }
     setLoaded(true);
   }, []);
 
-  const resumeSaved = () => {
-    const saved = loadFromStorage();
-    if (saved) {
-      setCharacter(saved.character);
-      setStep(saved.step);
-      // Expand all levels that have selections
-      const levels = new Set<number>();
-      saved.character.domainCards.forEach(name => {
-        const card = DOMAIN_CARDS.find(c => c.name === name);
-        if (card) levels.add(card.level);
-      });
-      if (levels.size === 0) levels.add(1);
-      setExpandedLevels(levels);
+  // Auto-save active character to gallery
+  useEffect(() => {
+    if (!loaded) return;
+    if (activeCharId) {
+      const updated = gallery.map(e =>
+        e.id === activeCharId ? { ...e, character, step, savedAt: Date.now() } : e
+      );
+      setGallery(updated);
+      saveGallery(updated);
     }
-    setShowResumePrompt(false);
-  };
+  }, [character, step, loaded, activeCharId]);
 
-  const startFresh = () => {
-    clearStorage();
+  const createNewCharacter = () => {
+    // Save current if exists
+    const newId = generateId();
+    const newEntry: SavedCharacterEntry = {
+      id: newId,
+      character: { ...initialCharacter },
+      step: "name",
+      savedAt: Date.now(),
+    };
+    const newGallery = [...gallery, newEntry];
+    setGallery(newGallery);
+    saveGallery(newGallery);
+    setActiveCharId(newId);
+    saveActiveId(newId);
     setCharacter({ ...initialCharacter });
     setStep("name");
     setExpandedLevels(new Set([1]));
-    setShowResumePrompt(false);
+    setShowGallery(false);
   };
 
-  // Auto-save on every change
-  useEffect(() => {
-    if (loaded && !showResumePrompt) {
-      saveToStorage(character, step);
+  const loadCharacter = (entry: SavedCharacterEntry) => {
+    const hydrated = hydrateCharacter({ ...entry.character });
+    setCharacter(hydrated);
+    setStep(entry.step);
+    setActiveCharId(entry.id);
+    saveActiveId(entry.id);
+    const levels = new Set<number>();
+    hydrated.domainCards.forEach(name => {
+      const card = DOMAIN_CARDS.find(c => c.name === name);
+      if (card) levels.add(card.level);
+    });
+    if (levels.size === 0) levels.add(1);
+    setExpandedLevels(levels);
+    setShowGallery(false);
+  };
+
+  const deleteCharacter = (id: string) => {
+    const newGallery = gallery.filter(e => e.id !== id);
+    setGallery(newGallery);
+    saveGallery(newGallery);
+    if (id === activeCharId) {
+      if (newGallery.length > 0) {
+        loadCharacter(newGallery[0]);
+      } else {
+        createNewCharacter();
+      }
     }
-  }, [character, step, loaded, showResumePrompt]);
+  };
 
   const stepIdx = STEPS.findIndex(s => s.id === step);
 
@@ -625,7 +772,6 @@ export default function CharacterBuilder() {
   }, [character.community?.name]);
 
   // Compute required domain card count based on level
-  // Level 1: 2 cards (1 per domain), Level 2: 4 cards (2 per domain), etc.
   const requiredCardCount = useMemo(() => character.level * 2, [character.level]);
 
   // Compute domain card selection status per level per domain
@@ -648,6 +794,24 @@ export default function CharacterBuilder() {
     }
     return { complete, perLevel };
   }, [character.gameClass, character.domainCards, character.level]);
+
+  // Tier-aware gear filtering
+  const tier = getTierForLevel(character.level);
+  const tierStats = character.gameClass ? getClassStatsForLevel(character.gameClass.name, character.level) : null;
+
+  const filteredArmor = useMemo(() => ARMOR_OPTIONS.filter(a => a.tier === tier), [tier]);
+  const filteredWeapons = useMemo(() => {
+    let weapons = WEAPON_OPTIONS.filter(w => w.tier === tier);
+    if (weaponFilter !== "all") {
+      weapons = weapons.filter(w => w.type === weaponFilter);
+    }
+    return weapons;
+  }, [tier, weaponFilter]);
+
+  const weaponTypes = useMemo(() => {
+    const types = new Set(WEAPON_OPTIONS.filter(w => w.tier === tier).map(w => w.type));
+    return ["all", ...Array.from(types).sort()];
+  }, [tier]);
 
   const canProceed = (): boolean => {
     switch (step) {
@@ -679,7 +843,6 @@ export default function CharacterBuilder() {
     if (isSelected) {
       update({ domainCards: character.domainCards.filter(n => n !== card.name) });
     } else {
-      // Replace any existing selection from this domain at this level
       const cardsAtThisLevelAndDomain = DOMAIN_CARDS.filter(c => c.domain === card.domain && c.level === card.level);
       const otherCards = character.domainCards.filter(n =>
         !cardsAtThisLevelAndDomain.some(dc => dc.name === n)
@@ -688,7 +851,6 @@ export default function CharacterBuilder() {
     }
   };
 
-  // Toggle expanded level in domain cards step
   const toggleLevel = (lvl: number) => {
     setExpandedLevels(prev => {
       const next = new Set(prev);
@@ -698,14 +860,22 @@ export default function CharacterBuilder() {
     });
   };
 
-  // When level changes, prune domain cards above the new level
   const handleLevelChange = (newLevel: number) => {
     const pruned = character.domainCards.filter(name => {
       const card = DOMAIN_CARDS.find(c => c.name === name);
       return card && card.level <= newLevel;
     });
-    update({ level: newLevel, domainCards: pruned });
-    // Auto-expand the new highest level
+    // Also prune gear if tier changed
+    const newTier = getTierForLevel(newLevel);
+    const oldTier = getTierForLevel(character.level);
+    let newArmor = character.armor;
+    let newWeapons = character.weapons;
+    if (newTier !== oldTier) {
+      // Reset gear selections when tier changes
+      newArmor = "";
+      newWeapons = [];
+    }
+    update({ level: newLevel, domainCards: pruned, armor: newArmor, weapons: newWeapons });
     setExpandedLevels(prev => {
       const next = new Set(prev);
       next.add(newLevel);
@@ -747,33 +917,30 @@ export default function CharacterBuilder() {
             <div>
               <label className="block text-sm font-bold text-[#8aa0b8] mb-2">Character Level</label>
               <p className="text-xs text-[#4a6a8a] mb-3">
-                New characters start at Level 1. If you're leveling up an existing character, select their current level.
+                New characters start at Level 1. Higher levels unlock stronger gear and more domain cards.
+                {tier > 1 && <span className="text-[#c084fc] ml-1">Tier {tier} (Levels {tier === 2 ? "3-4" : tier === 3 ? "5-7" : "8-10"})</span>}
               </p>
               <div className="flex gap-2 flex-wrap">
-                {Array.from({ length: 10 }, (_, i) => i + 1).map(lvl => (
-                  <button
-                    key={lvl}
-                    onClick={() => handleLevelChange(lvl)}
-                    className={`w-12 h-12 rounded-lg flex items-center justify-center font-bold text-lg border-2 transition-all duration-200 ${
-                      character.level === lvl
-                        ? "border-[#00D4AA] bg-[#00D4AA] text-[#0B1120] shadow-[0_0_12px_rgba(0,212,170,0.3)]"
-                        : "border-[#1a2744] bg-[#0d1628] text-[#7a9ab8] hover:border-[#2a4060] hover:text-[#e0e8f0]"
-                    }`}
-                  >
-                    {lvl}
-                  </button>
-                ))}
+                {Array.from({ length: 10 }, (_, i) => i + 1).map(lvl => {
+                  const lvlTier = getTierForLevel(lvl);
+                  const tierBorder = lvl === 3 || lvl === 5 || lvl === 8;
+                  return (
+                    <div key={lvl} className={`${tierBorder ? "ml-2 pl-2 border-l-2 border-[#6B21A8]/40" : ""}`}>
+                      <button
+                        onClick={() => handleLevelChange(lvl)}
+                        className={`w-12 h-12 rounded-lg flex flex-col items-center justify-center font-bold border-2 transition-all duration-200 ${
+                          character.level === lvl
+                            ? "border-[#00D4AA] bg-[#00D4AA] text-[#0B1120] shadow-[0_0_12px_rgba(0,212,170,0.3)]"
+                            : "border-[#1a2744] bg-[#0d1628] text-[#7a9ab8] hover:border-[#2a4060] hover:text-[#e0e8f0]"
+                        }`}
+                      >
+                        <span className="text-lg leading-none">{lvl}</span>
+                        <span className="text-[8px] leading-none opacity-60">T{lvlTier}</span>
+                      </button>
+                    </div>
+                  );
+                })}
               </div>
-              {character.level > 1 && (
-                <div className="mt-3 p-3 rounded-lg bg-[#6B21A8]/10 border border-[#6B21A8]/30">
-                  <div className="text-sm text-[#c084fc] font-semibold">Level {character.level} Character</div>
-                  <div className="text-xs text-[#8aa0b8] mt-1">
-                    You'll select <strong className="text-[#e0e8f0]">{character.level * 2} domain cards</strong> total ({character.level} from each domain, one per level).
-                    {character.level >= 3 && character.level < 7 && " Your subclass Specialization feature is active."}
-                    {character.level >= 7 && " Your subclass Specialization and Mastery features are both active."}
-                  </div>
-                </div>
-              )}
             </div>
           </div>
         );
@@ -783,9 +950,9 @@ export default function CharacterBuilder() {
           <div className="space-y-4">
             <div>
               <h2 className="font-['Rajdhani'] text-2xl font-bold text-[#00D4AA] mb-1">Choose Your Ancestry</h2>
-              <p className="text-[#7a9ab8] text-sm">Your ancestry determines your species and grants a unique biological or cultural feature.</p>
+              <p className="text-[#7a9ab8] text-sm">Your species and heritage define your biological capabilities and cultural roots.</p>
             </div>
-            <div className="grid grid-cols-1 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {ANCESTRIES.map(a => (
                 <SelectionCard
                   key={a.name}
@@ -806,21 +973,23 @@ export default function CharacterBuilder() {
           <div className="space-y-4">
             <div>
               <h2 className="font-['Rajdhani'] text-2xl font-bold text-[#00D4AA] mb-1">Choose Your Community</h2>
-              <p className="text-[#7a9ab8] text-sm">Where you grew up shapes your skills and worldview. Your community grants a feature and a bonus Experience.</p>
+              <p className="text-[#7a9ab8] text-sm">Where you grew up shaped your skills and worldview. Your community grants a free Experience.</p>
             </div>
             <div className="grid grid-cols-1 gap-3">
-              {COMMUNITIES.map(c => (
+              {COMMUNITIES.map(co => (
                 <SelectionCard
-                  key={c.name}
-                  title={c.name}
-                  subtitle={c.description}
-                  selected={character.community?.name === c.name}
-                  onClick={() => update({ community: c })}
+                  key={co.name}
+                  title={co.name}
+                  subtitle={co.description}
+                  selected={character.community?.name === co.name}
+                  onClick={() => update({ community: co })}
                 >
-                  <div className="flex gap-3 mt-2">
-                    <span className="text-xs bg-[#6B21A8]/30 text-[#c084fc] px-2 py-0.5 rounded">+{c.experience}</span>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    <span className="text-xs bg-[#6B21A8]/30 text-[#c084fc] px-2 py-0.5 rounded">
+                      Free Experience: {co.experience} (+{co.experienceBonus})
+                    </span>
                   </div>
-                  <FeatureBox label="Feature" name={c.featureName} effect={c.featureEffect} />
+                  <FeatureBox label="Feature" name={co.featureName} effect={co.featureEffect} />
                 </SelectionCard>
               ))}
             </div>
@@ -832,54 +1001,68 @@ export default function CharacterBuilder() {
           <div className="space-y-4">
             <div>
               <h2 className="font-['Rajdhani'] text-2xl font-bold text-[#00D4AA] mb-1">Choose Your Class</h2>
-              <p className="text-[#7a9ab8] text-sm">Your class defines your combat role, starship station, and core abilities.</p>
+              <p className="text-[#7a9ab8] text-sm">Your class defines your combat role, special abilities, and place in the crew.</p>
             </div>
             <div className="grid grid-cols-1 gap-3">
-              {CLASSES.map(cls => (
-                <SelectionCard
-                  key={cls.name}
-                  title={`The ${cls.name}`}
-                  subtitle={cls.description}
-                  selected={character.gameClass?.name === cls.name}
-                  onClick={() => update({ gameClass: cls, subclass: null, domainCards: [] })}
-                >
-                  <div className="flex flex-wrap gap-2 mt-2">
-                    <span className="text-xs bg-[#00D4AA]/15 text-[#00D4AA] px-2 py-0.5 rounded">{cls.role}</span>
-                    <span className="text-xs bg-[#1a2744] text-[#7a9ab8] px-2 py-0.5 rounded">HP {cls.hp}</span>
-                    <span className="text-xs bg-[#1a2744] text-[#7a9ab8] px-2 py-0.5 rounded">Evasion {cls.evasion}</span>
-                    <span className="text-xs bg-[#6B21A8]/30 text-[#c084fc] px-2 py-0.5 rounded">{cls.domains[0]}</span>
-                    <span className="text-xs bg-[#6B21A8]/30 text-[#c084fc] px-2 py-0.5 rounded">{cls.domains[1]}</span>
-                  </div>
-                  <FeatureBox label="Hope" name={cls.hopeFeatureName} effect={cls.hopeFeatureEffect} />
-                  <FeatureBox label="Class" name={cls.classFeatureName} effect={cls.classFeatureEffect} />
-                </SelectionCard>
-              ))}
+              {CLASSES.map(cls => {
+                const clsStats = getClassStatsForLevel(cls.name, character.level);
+                return (
+                  <SelectionCard
+                    key={cls.name}
+                    title={cls.name}
+                    subtitle={cls.role}
+                    selected={character.gameClass?.name === cls.name}
+                    onClick={() => update({
+                      gameClass: cls,
+                      subclass: null,
+                      domainCards: [],
+                      armor: "",
+                      weapons: [],
+                    })}
+                  >
+                    <p className="text-xs text-[#6a8aa8] mt-1">{cls.description}</p>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      <span className="text-xs bg-[#00D4AA]/15 text-[#00D4AA] px-2 py-0.5 rounded">HP {clsStats?.hp ?? cls.hp}</span>
+                      <span className="text-xs bg-[#3b82f6]/15 text-[#60a5fa] px-2 py-0.5 rounded">Evasion {clsStats?.evasion ?? cls.evasion}</span>
+                      <span className="text-xs bg-[#6B21A8]/20 text-[#c084fc] px-2 py-0.5 rounded">{cls.domains[0]}</span>
+                      <span className="text-xs bg-[#6B21A8]/20 text-[#c084fc] px-2 py-0.5 rounded">{cls.domains[1]}</span>
+                      <span className="text-xs bg-[#f59e0b]/15 text-[#fbbf24] px-2 py-0.5 rounded">Stress {clsStats?.stressSlots ?? "6"}</span>
+                    </div>
+                    <FeatureBox label="Hope Feature" name={cls.hopeFeatureName} effect={cls.hopeFeatureEffect} />
+                  </SelectionCard>
+                );
+              })}
             </div>
           </div>
         );
 
       case "subclass":
-        if (!character.gameClass) return null;
+        if (!character.gameClass) return <div className="text-[#7a9ab8]">Please select a class first.</div>;
         return (
           <div className="space-y-4">
             <div>
               <h2 className="font-['Rajdhani'] text-2xl font-bold text-[#00D4AA] mb-1">Choose Your Subclass</h2>
               <p className="text-[#7a9ab8] text-sm">
-                Each {character.gameClass.name} walks one of two paths. You gain the Foundation feature at Level 1.
+                As a <strong className="text-[#e0e8f0]">{character.gameClass.name}</strong>, choose your specialization path.
               </p>
             </div>
             <div className="grid grid-cols-1 gap-4">
-              {character.gameClass.subclasses.map(sc => (
+              {character.gameClass.subclasses.map(sub => (
                 <SelectionCard
-                  key={sc.name}
-                  title={sc.name}
-                  subtitle={sc.description}
-                  selected={character.subclass?.name === sc.name}
-                  onClick={() => update({ subclass: sc })}
+                  key={sub.name}
+                  title={sub.name}
+                  subtitle={sub.description}
+                  selected={character.subclass?.name === sub.name}
+                  onClick={() => update({ subclass: sub })}
                 >
-                  <FeatureBox label="Foundation (Lv 1)" name={sc.foundation.name} effect={sc.foundation.effect} />
-                  <FeatureBox label={`Specialization (Lv 3+)${character.level >= 3 ? " ✓" : ""}`} name={sc.specialization.name} effect={sc.specialization.effect} />
-                  <FeatureBox label={`Mastery (Lv 7+)${character.level >= 7 ? " ✓" : ""}`} name={sc.mastery.name} effect={sc.mastery.effect} />
+                  <div className="mt-3 space-y-2">
+                    <FeatureBox label="Foundation (Lv 1)" name={sub.foundation.name} effect={sub.foundation.effect} />
+                    {character.level >= 3 && <FeatureBox label="Specialization (Lv 3)" name={sub.specialization.name} effect={sub.specialization.effect} />}
+                    {character.level >= 7 && <FeatureBox label="Mastery (Lv 7)" name={sub.mastery.name} effect={sub.mastery.effect} />}
+                    {character.level < 3 && (
+                      <div className="text-xs text-[#4a6a8a] italic mt-1">Specialization unlocks at Level 3 · Mastery at Level 7</div>
+                    )}
+                  </div>
                 </SelectionCard>
               ))}
             </div>
@@ -887,118 +1070,67 @@ export default function CharacterBuilder() {
         );
 
       case "domainCards":
-        if (!character.gameClass) return null;
-        const domains = character.gameClass.domains;
+        if (!character.gameClass) return <div className="text-[#7a9ab8]">Please select a class first.</div>;
+        const [domain1, domain2] = character.gameClass.domains;
         return (
-          <div className="space-y-6">
+          <div className="space-y-4">
             <div>
-              <h2 className="font-['Rajdhani'] text-2xl font-bold text-[#00D4AA] mb-1">Choose Your Domain Cards</h2>
+              <h2 className="font-['Rajdhani'] text-2xl font-bold text-[#00D4AA] mb-1">Select Domain Cards</h2>
               <p className="text-[#7a9ab8] text-sm">
-                {character.level === 1 ? (
-                  <>At Level 1, choose <strong className="text-[#e0e8f0]">one card from each</strong> of your class's two Domains.</>
-                ) : (
-                  <>At Level {character.level}, choose <strong className="text-[#e0e8f0]">one card per level per domain</strong> — {requiredCardCount} cards total.</>
-                )}
+                Choose 1 card from each domain per level. At Level {character.level}, you need {requiredCardCount} cards total.
               </p>
-            </div>
-
-            {/* Progress summary */}
-            <div className="p-3 rounded-lg bg-[#0d1628] border border-[#1a2744]">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-semibold text-[#e0e8f0]">Loadout Progress</span>
-                <span className={`text-sm font-bold ${domainCardStatus.complete ? "text-[#00D4AA]" : "text-[#7a9ab8]"}`}>
-                  {character.domainCards.length} / {requiredCardCount}
-                </span>
-              </div>
-              <div className="h-2 bg-[#1a2744] rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-[#00D4AA] transition-all duration-300 rounded-full"
-                  style={{ width: `${Math.min(100, (character.domainCards.length / requiredCardCount) * 100)}%` }}
-                />
+              <div className="flex gap-3 mt-2">
+                <span className="text-xs bg-[#6B21A8]/30 text-[#c084fc] px-2 py-1 rounded">{domain1}</span>
+                <span className="text-xs bg-[#6B21A8]/30 text-[#c084fc] px-2 py-1 rounded">{domain2}</span>
               </div>
             </div>
 
-            {/* Level-by-level accordion */}
             {Array.from({ length: character.level }, (_, i) => i + 1).map(lvl => {
               const isExpanded = expandedLevels.has(lvl);
-              const levelStatus = domainCardStatus.perLevel[lvl] || {};
-              const d1Selected = levelStatus[domains[0]];
-              const d2Selected = levelStatus[domains[1]];
+              const d1Selected = domainCardStatus.perLevel[lvl]?.[domain1];
+              const d2Selected = domainCardStatus.perLevel[lvl]?.[domain2];
               const levelComplete = !!d1Selected && !!d2Selected;
-              const levelCount = (d1Selected ? 1 : 0) + (d2Selected ? 1 : 0);
 
               return (
-                <div key={lvl} className={`rounded-xl border-2 overflow-hidden transition-all ${
-                  levelComplete ? "border-[#00D4AA]/30" : "border-[#1a2744]"
+                <div key={lvl} className={`rounded-lg border-2 transition-all ${
+                  levelComplete ? "border-[#00D4AA]/30 bg-[#00D4AA]/5" : "border-[#1a2744] bg-[#0d1628]"
                 }`}>
-                  {/* Level Header — clickable accordion */}
-                  <button
-                    onClick={() => toggleLevel(lvl)}
-                    className={`w-full flex items-center justify-between px-4 py-3 transition-colors ${
-                      levelComplete ? "bg-[#00D4AA]/5" : "bg-[#0a0f1a]/60"
-                    } hover:bg-[#111d35]`}
-                  >
+                  <button onClick={() => toggleLevel(lvl)} className="w-full px-4 py-3 flex items-center justify-between text-left">
                     <div className="flex items-center gap-3">
-                      <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold ${
-                        levelComplete ? "bg-[#00D4AA] text-[#0B1120]" : "bg-[#1a2744] text-[#7a9ab8]"
-                      }`}>
-                        {levelComplete ? "✓" : lvl}
-                      </div>
-                      <div className="text-left">
-                        <div className="font-['Rajdhani'] font-bold text-[#e0e8f0]">Level {lvl} Cards</div>
-                        <div className="text-xs text-[#6a8aa8]">
-                          {levelCount}/2 selected
-                          {d1Selected && <span className="ml-2 text-[#00D4AA]">· {DOMAIN_CARDS.find(c => c.name === d1Selected)?.name}</span>}
-                          {d2Selected && <span className="ml-2 text-[#00D4AA]">· {DOMAIN_CARDS.find(c => c.name === d2Selected)?.name}</span>}
-                        </div>
-                      </div>
+                      <span className={`font-['Rajdhani'] font-bold text-lg ${levelComplete ? "text-[#00D4AA]" : "text-[#e0e8f0]"}`}>
+                        Level {lvl}
+                      </span>
+                      {levelComplete && (
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00D4AA" strokeWidth="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                      )}
+                      {d1Selected && <span className="text-xs text-[#8aa0b8] hidden sm:inline">{d1Selected}</span>}
+                      {d2Selected && <span className="text-xs text-[#8aa0b8] hidden sm:inline">+ {d2Selected}</span>}
                     </div>
-                    <svg
-                      width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7a9ab8" strokeWidth="2"
-                      className={`transition-transform duration-200 ${isExpanded ? "rotate-180" : ""}`}
-                    >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7a9ab8" strokeWidth="2"
+                      className={`transition-transform ${isExpanded ? "rotate-180" : ""}`}>
                       <path d="M6 9l6 6 6-6"/>
                     </svg>
                   </button>
 
-                  {/* Expanded card selection */}
                   {isExpanded && (
-                    <div className="px-4 py-4 bg-[#0d1628] space-y-5">
-                      {domains.map((domainName, domIdx) => {
-                        const cardsForDomain = DOMAIN_CARDS.filter(c => c.domain === domainName && c.level === lvl);
-                        const selectedInDomain = character.domainCards.find(n => cardsForDomain.some(c => c.name === n));
-                        const domainTheme = cardsForDomain[0]?.domainTheme || "";
-
+                    <div className="px-4 pb-4 space-y-4">
+                      {[domain1, domain2].map(domain => {
+                        const cards = DOMAIN_CARDS.filter(c => c.domain === domain && c.level === lvl);
+                        const selectedName = domainCardStatus.perLevel[lvl]?.[domain];
                         return (
-                          <div key={domainName}>
-                            <div className="flex items-center gap-3 mb-3">
-                              <div className={`w-6 h-6 rounded flex items-center justify-center text-xs font-bold ${
-                                selectedInDomain ? "bg-[#00D4AA] text-[#0B1120]" : "bg-[#6B21A8]/30 text-[#c084fc]"
-                              }`}>
-                                {domIdx + 1}
-                              </div>
-                              <div>
-                                <span className="font-['Rajdhani'] font-bold text-[#e0e8f0]">{domainName}</span>
-                                <span className="text-xs text-[#6a8aa8] ml-2">{domainTheme}</span>
-                              </div>
-                              {selectedInDomain && (
-                                <span className="ml-auto text-xs bg-[#00D4AA]/15 text-[#00D4AA] px-2 py-0.5 rounded-full font-semibold">✓</span>
-                              )}
-                            </div>
-                            <div className="grid grid-cols-1 gap-3">
-                              {cardsForDomain.map(card => {
-                                const isSelected = character.domainCards.includes(card.name);
-                                const isDimmed = !!selectedInDomain && selectedInDomain !== card.name;
-                                return (
-                                  <DomainCard
-                                    key={card.name}
-                                    card={card}
-                                    isSelected={isSelected}
-                                    isDimmed={isDimmed}
-                                    onClick={() => toggleDomainCard(card)}
-                                  />
-                                );
-                              })}
+                          <div key={domain}>
+                            <div className="text-xs font-bold text-[#6B21A8] uppercase tracking-wider mb-2">{domain}</div>
+                            <div className="space-y-2">
+                              {cards.map(card => (
+                                <DomainCard
+                                  key={card.name}
+                                  card={card}
+                                  isSelected={character.domainCards.includes(card.name)}
+                                  isDimmed={!!selectedName && selectedName !== card.name}
+                                  onClick={() => toggleDomainCard(card)}
+                                  onDetail={() => setDetailCard(card)}
+                                />
+                              ))}
                             </div>
                           </div>
                         );
@@ -1009,7 +1141,6 @@ export default function CharacterBuilder() {
               );
             })}
 
-            {/* Completion indicator */}
             {domainCardStatus.complete ? (
               <div className="p-3 rounded-lg bg-[#00D4AA]/10 border border-[#00D4AA]/30 text-center">
                 <span className="text-sm text-[#00D4AA] font-semibold">
@@ -1102,13 +1233,18 @@ export default function CharacterBuilder() {
           <div className="space-y-6">
             <div>
               <h2 className="font-['Rajdhani'] text-2xl font-bold text-[#00D4AA] mb-1">Choose Your Equipment</h2>
-              <p className="text-[#7a9ab8] text-sm">Select one armor and up to 2 weapons. You also receive the Standard Kit and your class gear.</p>
+              <p className="text-[#7a9ab8] text-sm">
+                Select one armor and up to 2 weapons. Showing <strong className="text-[#c084fc]">Tier {tier}</strong> gear for Level {character.level}.
+              </p>
             </div>
 
+            {/* Armor */}
             <div>
-              <h3 className="font-['Rajdhani'] text-lg font-bold text-[#e0e8f0] mb-2">Armor</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {ARMOR_OPTIONS.map(a => (
+              <h3 className="font-['Rajdhani'] text-lg font-bold text-[#e0e8f0] mb-2">
+                Armor <span className="text-sm font-normal text-[#4a6a8a]">Tier {tier}</span>
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {filteredArmor.map(a => (
                   <SelectionCard
                     key={a.name}
                     title={a.name}
@@ -1117,27 +1253,52 @@ export default function CharacterBuilder() {
                     onClick={() => update({ armor: a.name })}
                   >
                     <div className="flex flex-wrap gap-2 mt-2 text-xs">
-                      <span className="bg-[#1a2744] text-[#7a9ab8] px-2 py-0.5 rounded">Score {a.armorScore}</span>
-                      <span className="bg-[#1a2744] text-[#7a9ab8] px-2 py-0.5 rounded">Evasion {a.evasionMod >= 0 ? `+${a.evasionMod}` : a.evasionMod}</span>
-                      <span className="bg-[#1a2744] text-[#7a9ab8] px-2 py-0.5 rounded">Minor {a.minor}+ | Major {a.major}+ | Severe {a.severe}+</span>
+                      <span className="bg-[#1a2744] text-[#7a9ab8] px-2 py-0.5 rounded">AS {a.armorScore}</span>
+                      <span className="bg-[#1a2744] text-[#7a9ab8] px-2 py-0.5 rounded">
+                        Evasion {a.evasionMod >= 0 ? `+${a.evasionMod}` : a.evasionMod}
+                      </span>
+                    </div>
+                    <div className="flex gap-2 mt-1 text-xs text-[#4a6a8a]">
+                      <span>Minor {a.minor}+</span>
+                      <span>Major {a.major}+</span>
+                      <span>Severe {a.severe}+</span>
                     </div>
                   </SelectionCard>
                 ))}
               </div>
             </div>
 
+            {/* Weapons */}
             <div>
-              <h3 className="font-['Rajdhani'] text-lg font-bold text-[#e0e8f0] mb-2">
-                Weapons <span className="text-sm font-normal text-[#7a9ab8]">(select up to 2)</span>
-              </h3>
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="font-['Rajdhani'] text-lg font-bold text-[#e0e8f0]">
+                  Weapons <span className="text-sm font-normal text-[#7a9ab8]">(select up to 2)</span>
+                  <span className="text-sm font-normal text-[#4a6a8a] ml-2">Tier {tier}</span>
+                </h3>
+                <div className="flex gap-1 flex-wrap">
+                  {weaponTypes.map(t => (
+                    <button
+                      key={t}
+                      onClick={() => setWeaponFilter(t)}
+                      className={`px-2 py-1 rounded text-xs transition-colors ${
+                        weaponFilter === t
+                          ? "bg-[#00D4AA] text-[#0B1120] font-bold"
+                          : "bg-[#1a2744] text-[#7a9ab8] hover:bg-[#2a4060]"
+                      }`}
+                    >
+                      {t === "all" ? "All" : t}
+                    </button>
+                  ))}
+                </div>
+              </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {WEAPON_OPTIONS.map(w => {
+                {filteredWeapons.map(w => {
                   const isSelected = character.weapons.includes(w.name);
                   return (
                     <SelectionCard
                       key={w.name}
                       title={w.name}
-                      subtitle={`${w.type} — ${w.trait}`}
+                      subtitle={`${w.type} · ${w.trait} · ${w.burden}`}
                       selected={isSelected}
                       onClick={() => {
                         if (isSelected) {
@@ -1150,14 +1311,19 @@ export default function CharacterBuilder() {
                       <div className="flex flex-wrap gap-2 mt-2 text-xs">
                         <span className="bg-[#ef4444]/15 text-[#f87171] px-2 py-0.5 rounded">{w.damage}</span>
                         <span className="bg-[#1a2744] text-[#7a9ab8] px-2 py-0.5 rounded">{w.range}</span>
-                        <span className="text-[#6a8aa8]">{w.feature}</span>
+                        {w.origin && <span className="bg-[#6B21A8]/20 text-[#c084fc] px-2 py-0.5 rounded">{w.origin}</span>}
                       </div>
+                      {w.feature && <div className="text-xs text-[#6a8aa8] mt-1">{w.feature}</div>}
                     </SelectionCard>
                   );
                 })}
               </div>
+              {filteredWeapons.length === 0 && (
+                <div className="text-center py-6 text-[#4a6a8a] text-sm">No weapons match this filter.</div>
+              )}
             </div>
 
+            {/* Standard Kit */}
             <div>
               <h3 className="font-['Rajdhani'] text-lg font-bold text-[#e0e8f0] mb-2">Standard Kit (included)</h3>
               <div className="p-3 rounded-lg bg-[#0d1628] border border-[#1a2744]">
@@ -1179,7 +1345,6 @@ export default function CharacterBuilder() {
         );
 
       case "review": {
-        // Group domain cards by level for review display
         const reviewCardsByLevel: Record<number, DomainCardEntry[]> = {};
         character.domainCards.forEach(name => {
           const card = DOMAIN_CARDS.find(c => c.name === name);
@@ -1206,6 +1371,7 @@ export default function CharacterBuilder() {
                 <div className="text-right">
                   <div className="text-sm text-[#7a9ab8]">
                     Level <span className="text-[#00D4AA] font-bold text-lg">{character.level}</span>
+                    <span className="text-xs text-[#4a6a8a] ml-1">Tier {tier}</span>
                   </div>
                   <div className="font-['Rajdhani'] text-lg font-bold text-[#c084fc]">
                     {character.gameClass?.name} — {character.subclass?.name}
@@ -1224,15 +1390,16 @@ export default function CharacterBuilder() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-3 gap-3 mb-4">
+              {/* Combat Stats with tier-aware values */}
+              <div className="grid grid-cols-4 gap-3 mb-3">
                 <div className="text-center p-3 rounded bg-[#0B1120] border border-[#1a2744]">
                   <div className="text-xs text-[#4a6a8a] uppercase">HP</div>
-                  <div className="text-2xl font-bold text-[#00D4AA]">{character.gameClass?.hp}</div>
+                  <div className="text-2xl font-bold text-[#00D4AA]">{tierStats?.hp ?? character.gameClass?.hp ?? "—"}</div>
                 </div>
                 <div className="text-center p-3 rounded bg-[#0B1120] border border-[#1a2744]">
                   <div className="text-xs text-[#4a6a8a] uppercase">Evasion</div>
                   <div className="text-2xl font-bold text-[#00D4AA]">
-                    {character.gameClass ? character.gameClass.evasion + (ARMOR_OPTIONS.find(a => a.name === character.armor)?.evasionMod || 0) : "—"}
+                    {tierStats ? tierStats.evasion + (ARMOR_OPTIONS.find(a => a.name === character.armor)?.evasionMod || 0) : "—"}
                   </div>
                 </div>
                 <div className="text-center p-3 rounded bg-[#0B1120] border border-[#1a2744]">
@@ -1241,7 +1408,29 @@ export default function CharacterBuilder() {
                     {ARMOR_OPTIONS.find(a => a.name === character.armor)?.armorScore || "—"}
                   </div>
                 </div>
+                <div className="text-center p-3 rounded bg-[#0B1120] border border-[#1a2744]">
+                  <div className="text-xs text-[#4a6a8a] uppercase">Stress</div>
+                  <div className="text-2xl font-bold text-[#f59e0b]">{tierStats?.stressSlots ?? "—"}</div>
+                </div>
               </div>
+
+              {/* Damage Thresholds */}
+              {tierStats && (
+                <div className="grid grid-cols-3 gap-3 mb-4">
+                  <div className="text-center p-2 rounded bg-[#0B1120] border border-[#f59e0b]/20">
+                    <div className="text-[10px] text-[#f59e0b] uppercase font-bold">Minor</div>
+                    <div className="text-lg font-bold text-[#fbbf24]">{tierStats.minor}+</div>
+                  </div>
+                  <div className="text-center p-2 rounded bg-[#0B1120] border border-[#ef4444]/20">
+                    <div className="text-[10px] text-[#ef4444] uppercase font-bold">Major</div>
+                    <div className="text-lg font-bold text-[#f87171]">{tierStats.major}+</div>
+                  </div>
+                  <div className="text-center p-2 rounded bg-[#0B1120] border border-[#dc2626]/30">
+                    <div className="text-[10px] text-[#dc2626] uppercase font-bold">Severe</div>
+                    <div className="text-lg font-bold text-[#ef4444]">{tierStats.severe}+</div>
+                  </div>
+                </div>
+              )}
 
               <div className="grid grid-cols-6 gap-2 mb-4">
                 {TRAITS.map(t => (
@@ -1279,15 +1468,20 @@ export default function CharacterBuilder() {
                             const costColor = card.cost.includes("Hope") ? "text-[#00D4AA]" :
                               card.cost.includes("Stress") ? "text-[#f87171]" : "text-[#7a9ab8]";
                             return (
-                              <div key={card.name} className="p-2.5 rounded-lg bg-[#0B1120]/60 border border-[#1a2744]">
+                              <button
+                                key={card.name}
+                                onClick={() => setDetailCard(card)}
+                                className="w-full text-left p-2.5 rounded-lg bg-[#0B1120]/60 border border-[#1a2744] hover:border-[#2a4060] transition-colors"
+                              >
                                 <div className="flex items-center gap-2 mb-1">
                                   <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-semibold ${typeColor}`}>{card.type}</span>
                                   <span className="text-sm font-bold text-[#e0e8f0] font-['Rajdhani']">{card.name}</span>
                                   <span className="text-[10px] text-[#6B21A8] bg-[#6B21A8]/20 px-1.5 py-0.5 rounded">{card.domain}</span>
+                                  <span className="text-[10px] text-[#4a6a8a] ml-auto">tap for details</span>
                                 </div>
                                 {card.cost !== "\u2014" && <div className={`text-xs font-semibold mb-0.5 ${costColor}`}>{card.cost}</div>}
-                                <div className="text-xs text-[#8aa0b8]">{card.effect}</div>
-                              </div>
+                                <div className="text-xs text-[#8aa0b8] line-clamp-2">{card.effect}</div>
+                              </button>
                             );
                           })}
                         </div>
@@ -1362,6 +1556,8 @@ export default function CharacterBuilder() {
                 onClick={() => {
                   const exportData = {
                     ...character,
+                    tier,
+                    tierStats,
                     domainCards: character.domainCards.map(name => {
                       const card = DOMAIN_CARDS.find(c => c.name === name);
                       return card ? { name: card.name, domain: card.domain, level: card.level, type: card.type, cost: card.cost, effect: card.effect } : name;
@@ -1382,18 +1578,11 @@ export default function CharacterBuilder() {
                 Export JSON
               </button>
               <button
-                onClick={() => {
-                  if (confirm("Start a new character? This will clear your current progress.")) {
-                    clearStorage();
-                    setCharacter({ ...initialCharacter });
-                    setStep("name");
-                    setExpandedLevels(new Set([1]));
-                  }
-                }}
-                className="py-3 px-6 rounded-lg border-2 border-[#ef4444]/40 text-[#f87171] font-['Rajdhani'] font-bold hover:bg-[#ef4444]/10 transition-colors flex items-center justify-center gap-2"
+                onClick={() => setShowGallery(true)}
+                className="py-3 px-6 rounded-lg border-2 border-[#6B21A8]/40 text-[#c084fc] font-['Rajdhani'] font-bold hover:bg-[#6B21A8]/10 transition-colors flex items-center justify-center gap-2"
               >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></svg>
-                New Character
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                Gallery
               </button>
             </div>
           </div>
@@ -1404,37 +1593,6 @@ export default function CharacterBuilder() {
         return null;
     }
   };
-
-  // Resume prompt modal
-  if (showResumePrompt) {
-    const saved = loadFromStorage();
-    return (
-      <div className="min-h-screen bg-[#0B1120] text-[#e0e8f0] flex items-center justify-center p-4">
-        <div className="max-w-md w-full p-6 rounded-lg bg-[#0d1628] border-2 border-[#00D4AA]/30 shadow-2xl">
-          <h2 className="font-['Rajdhani'] text-2xl font-bold text-[#00D4AA] mb-3">Resume Character?</h2>
-          <p className="text-[#7a9ab8] text-sm mb-4">
-            You have a saved character in progress:
-          </p>
-          {saved && (
-            <div className="p-3 rounded bg-[#0B1120] border border-[#1a2744] mb-4">
-              <div className="font-bold text-[#e0e8f0]">{saved.character.name || "Unnamed"}</div>
-              <div className="text-xs text-[#7a9ab8] mt-1">
-                Level {saved.character.level || 1} {saved.character.gameClass?.name || "No class"} · Step: {STEPS.find(s => s.id === saved.step)?.label || saved.step}
-              </div>
-            </div>
-          )}
-          <div className="flex gap-3">
-            <button onClick={resumeSaved} className="flex-1 py-2.5 rounded-lg bg-[#00D4AA] text-[#0B1120] font-['Rajdhani'] font-bold hover:bg-[#00e8bb] transition-colors">
-              Resume
-            </button>
-            <button onClick={startFresh} className="flex-1 py-2.5 rounded-lg border-2 border-[#1a2744] text-[#7a9ab8] font-['Rajdhani'] font-bold hover:border-[#2a4060] transition-colors">
-              Start Fresh
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   if (showPrint) {
     return <PrintSheet character={character} />;
@@ -1452,7 +1610,14 @@ export default function CharacterBuilder() {
           <h1 className="font-['Rajdhani'] text-lg font-bold text-[#e0e8f0]">
             <span className="text-[#00D4AA]">NEXUS 9</span> Character Builder
           </h1>
-          <div className="w-24" />
+          <button
+            onClick={() => setShowGallery(true)}
+            className="flex items-center gap-1.5 text-[#7a9ab8] hover:text-[#c084fc] transition-colors text-sm"
+            title="Saved Characters"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            <span className="hidden sm:inline">{gallery.length} Saved</span>
+          </button>
         </div>
       </header>
 
@@ -1468,7 +1633,7 @@ export default function CharacterBuilder() {
         <div className="h-full bg-[#00D4AA] transition-all duration-300" style={{ width: `${((stepIdx + 1) / STEPS.length) * 100}%` }} />
       </div>
 
-      {/* Content — takes remaining space minus footer */}
+      {/* Content */}
       <main ref={contentRef} className="flex-1 overflow-y-auto pb-20">
         <div className="max-w-4xl mx-auto px-4 py-8">
           <AnimatePresence mode="wait">
@@ -1485,7 +1650,7 @@ export default function CharacterBuilder() {
         </div>
       </main>
 
-      {/* Footer Nav — fixed at bottom */}
+      {/* Footer Nav */}
       <footer className="shrink-0 bg-[#0a0f1a] border-t border-[#1a2744] px-4 py-3">
         <div className="max-w-4xl mx-auto flex justify-between items-center">
           <button
@@ -1511,6 +1676,23 @@ export default function CharacterBuilder() {
           )}
         </div>
       </footer>
+
+      {/* Modals */}
+      <AnimatePresence>
+        {showGallery && (
+          <CharacterGallery
+            gallery={gallery}
+            activeId={activeCharId}
+            onLoad={loadCharacter}
+            onDelete={deleteCharacter}
+            onNew={createNewCharacter}
+            onClose={() => setShowGallery(false)}
+          />
+        )}
+        {detailCard && (
+          <DomainCardModal card={detailCard} onClose={() => setDetailCard(null)} />
+        )}
+      </AnimatePresence>
 
       {/* Print styles */}
       <style>{`

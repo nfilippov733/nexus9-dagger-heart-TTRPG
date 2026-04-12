@@ -52,6 +52,7 @@ export interface GameClass {
 export interface Armor {
   name: string;
   type: string;
+  tier: number;
   minor: number;
   major: number;
   severe: number;
@@ -63,10 +64,14 @@ export interface Armor {
 export interface Weapon {
   name: string;
   type: string;
+  tier: number;
   trait: string;
   damage: string;
   range: string;
+  burden: string;
   feature: string;
+  origin?: string;
+  category?: string; // 'Standard' | 'Special'
 }
 
 export interface Experience {
@@ -477,23 +482,79 @@ export const CLASSES: GameClass[] = [
 ];
 
 export const ARMOR_OPTIONS: Armor[] = [
-  { name: "Flight Suit", type: "Light", minor: 5, major: 11, severe: 20, armorScore: 3, evasionMod: 1, agilityMod: 0 },
-  { name: "Light Combat Rig", type: "Medium", minor: 6, major: 13, severe: 23, armorScore: 3, evasionMod: 0, agilityMod: 0 },
-  { name: "Marine Hardsuit", type: "Heavy", minor: 7, major: 15, severe: 26, armorScore: 4, evasionMod: -1, agilityMod: 0 },
-  { name: "Assault Exoskeleton", type: "Powered", minor: 8, major: 17, severe: 29, armorScore: 4, evasionMod: -2, agilityMod: -1 }
+  // Tier 1 (Levels 1-2)
+  { name: "Flight Suit", type: "Light", tier: 1, minor: 5, major: 11, severe: 20, armorScore: 3, evasionMod: 1, agilityMod: 0 },
+  { name: "Light Combat Rig", type: "Medium", tier: 1, minor: 6, major: 13, severe: 23, armorScore: 3, evasionMod: 0, agilityMod: 0 },
+  { name: "Marine Hardsuit", type: "Heavy", tier: 1, minor: 7, major: 15, severe: 26, armorScore: 4, evasionMod: -1, agilityMod: 0 },
+  // Tier 2 (Levels 3-4)
+  { name: "Reinforced Flight Suit", type: "Light", tier: 2, minor: 7, major: 16, severe: 28, armorScore: 4, evasionMod: 1, agilityMod: 0 },
+  { name: "Tactical Combat Rig", type: "Medium", tier: 2, minor: 9, major: 20, severe: 35, armorScore: 4, evasionMod: 0, agilityMod: 0 },
+  { name: "Mk.II Marine Hardsuit", type: "Heavy", tier: 2, minor: 11, major: 24, severe: 42, armorScore: 5, evasionMod: -1, agilityMod: 0 },
+  // Tier 3 (Levels 5-7)
+  { name: "Advanced Flight Suit", type: "Light", tier: 3, minor: 9, major: 23, severe: 40, armorScore: 5, evasionMod: 1, agilityMod: 0 },
+  { name: "Advanced Combat Rig", type: "Medium", tier: 3, minor: 11, major: 27, severe: 47, armorScore: 5, evasionMod: 0, agilityMod: 0 },
+  { name: "Mk.III Marine Hardsuit", type: "Heavy", tier: 3, minor: 13, major: 31, severe: 54, armorScore: 6, evasionMod: -1, agilityMod: 0 },
+  // Tier 4 (Levels 8-10)
+  { name: "Legendary Flight Suit", type: "Light", tier: 4, minor: 11, major: 32, severe: 56, armorScore: 6, evasionMod: 1, agilityMod: 0 },
+  { name: "Legendary Combat Rig", type: "Medium", tier: 4, minor: 13, major: 36, severe: 63, armorScore: 6, evasionMod: 0, agilityMod: 0 },
+  { name: "Legendary Marine Hardsuit", type: "Heavy", tier: 4, minor: 15, major: 40, severe: 70, armorScore: 7, evasionMod: -1, agilityMod: 0 },
 ];
 
 export const WEAPON_OPTIONS: Weapon[] = [
-  { name: "Pulse Pistol", type: "Sidearm", trait: "Agility", damage: "1d6 energy", range: "Close", feature: "Light, reliable" },
-  { name: "Kinetic Revolver", type: "Sidearm", trait: "Agility", damage: "1d8 kinetic", range: "Close", feature: "Loud, high stopping power" },
-  { name: "Vibro-Blade", type: "Melee", trait: "Strength", damage: "1d8 kinetic", range: "Melee", feature: "Can cut through light armor" },
-  { name: "Combat Knife", type: "Melee", trait: "Finesse", damage: "1d6 kinetic", range: "Melee", feature: "Concealable, throwable (Close)" },
-  { name: "Assault Carbine", type: "Carbine", trait: "Agility", damage: "1d8 kinetic", range: "Far", feature: "Versatile, standard military issue" },
-  { name: "Plasma Caster", type: "Carbine", trait: "Agility", damage: "1d8 energy", range: "Far", feature: "Ignores 1 point of Armor Score" },
-  { name: "Shotcaster", type: "Carbine", trait: "Strength", damage: "1d10 kinetic", range: "Close", feature: "Devastating at close range, -2 at Far" },
-  { name: "Shock Baton", type: "Melee", trait: "Strength", damage: "1d6 energy", range: "Melee", feature: "On hit, target marks 1 Stress" },
-  { name: "Sniper Lens", type: "Rifle", trait: "Agility", damage: "1d10 kinetic", range: "Very Far", feature: "Requires setup (1 action), +2 damage from Hidden" },
-  { name: "Stun Gauntlet", type: "Melee", trait: "Finesse", damage: "1d4 energy", range: "Melee", feature: "Non-lethal, target is Disoriented on crit" }
+  // ─── Tier 1 Primary Weapons (Levels 1-2) ───
+  { name: "Coalition Combat Knife", type: "Melee", tier: 1, trait: "Agility", damage: "d8 kinetic", range: "Melee", burden: "One-Handed", feature: "Reliable: +1 to attack rolls" },
+  { name: "Vibro-Sword", type: "Melee", tier: 1, trait: "Agility", damage: "d10+3 kinetic", range: "Melee", burden: "Two-Handed", feature: "" },
+  { name: "Breaching Axe", type: "Melee", tier: 1, trait: "Strength", damage: "d10+3 kinetic", range: "Melee", burden: "Two-Handed", feature: "" },
+  { name: "Heavy Shock-Pike", type: "Melee", tier: 1, trait: "Strength", damage: "d10+3 energy", range: "Melee", burden: "Two-Handed", feature: "Massive: -1 Evasion; roll extra damage die, discard lowest" },
+  { name: "Stun Baton", type: "Melee", tier: 1, trait: "Strength", damage: "d8+1 energy", range: "Melee", burden: "One-Handed", feature: "" },
+  { name: "Gravity Hammer", type: "Melee", tier: 1, trait: "Strength", damage: "d12+3 kinetic", range: "Melee", burden: "Two-Handed", feature: "Heavy: -1 to Evasion" },
+  { name: "Concealed Shiv", type: "Melee", tier: 1, trait: "Finesse", damage: "d8+1 kinetic", range: "Melee", burden: "One-Handed", feature: "Concealable: Cannot be detected by casual searches" },
+  { name: "Pulse Pistol", type: "Sidearm", tier: 1, trait: "Agility", damage: "d8 energy", range: "Close", burden: "One-Handed", feature: "Reliable: +1 to attack rolls" },
+  { name: "Kinetic Revolver", type: "Sidearm", tier: 1, trait: "Agility", damage: "d10+3 kinetic", range: "Close", burden: "One-Handed", feature: "" },
+  { name: "Holdout Blaster", type: "Sidearm", tier: 1, trait: "Finesse", damage: "d8+1 energy", range: "Close", burden: "One-Handed", feature: "Concealable" },
+  { name: "Assault Carbine", type: "Carbine", tier: 1, trait: "Agility", damage: "d8 kinetic", range: "Far", burden: "Two-Handed", feature: "Reliable: +1 to attack rolls" },
+  { name: "Plasma Caster", type: "Carbine", tier: 1, trait: "Agility", damage: "d10+3 energy", range: "Far", burden: "Two-Handed", feature: "" },
+  { name: "Shotcaster", type: "Carbine", tier: 1, trait: "Strength", damage: "d10+3 kinetic", range: "Close", burden: "Two-Handed", feature: "Spread: +2 damage at Melee range, -2 at Far" },
+  { name: "Sniper Lens", type: "Rifle", tier: 1, trait: "Agility", damage: "d10+3 kinetic", range: "Very Far", burden: "Two-Handed", feature: "Scoped: +2 damage from Hidden" },
+  // ─── Tier 1 Secondary Weapons ───
+  { name: "Combat Shortsword", type: "Secondary", tier: 1, trait: "Agility", damage: "d8 kinetic", range: "Melee", burden: "One-Handed", feature: "Paired: +2 to primary weapon damage at Melee" },
+  { name: "Ballistic Shield", type: "Secondary", tier: 1, trait: "Strength", damage: "d4 kinetic", range: "Melee", burden: "One-Handed", feature: "Protective: +1 to Armor Score" },
+  { name: "Utility Knife", type: "Secondary", tier: 1, trait: "Finesse", damage: "d8 kinetic", range: "Melee", burden: "One-Handed", feature: "Paired: +2 to primary weapon damage at Melee" },
+  // ─── Tier 2 Primary Weapons (Levels 3-4) ───
+  { name: "Mk.II Combat Knife", type: "Melee", tier: 2, trait: "Agility", damage: "d8+3 kinetic", range: "Melee", burden: "One-Handed", feature: "Reliable: +1 to attack rolls" },
+  { name: "Mk.II Vibro-Sword", type: "Melee", tier: 2, trait: "Agility", damage: "d10+6 kinetic", range: "Melee", burden: "Two-Handed", feature: "" },
+  { name: "Mk.II Breaching Axe", type: "Melee", tier: 2, trait: "Strength", damage: "d10+6 kinetic", range: "Melee", burden: "Two-Handed", feature: "" },
+  { name: "Mk.II Pulse Pistol", type: "Sidearm", tier: 2, trait: "Agility", damage: "d8+3 energy", range: "Close", burden: "One-Handed", feature: "Reliable: +1 to attack rolls" },
+  { name: "Mk.II Kinetic Revolver", type: "Sidearm", tier: 2, trait: "Agility", damage: "d10+6 kinetic", range: "Close", burden: "One-Handed", feature: "" },
+  { name: "Mk.II Assault Carbine", type: "Carbine", tier: 2, trait: "Agility", damage: "d8+3 kinetic", range: "Far", burden: "Two-Handed", feature: "Reliable: +1 to attack rolls" },
+  { name: "Mk.II Plasma Caster", type: "Carbine", tier: 2, trait: "Agility", damage: "d10+6 energy", range: "Far", burden: "Two-Handed", feature: "" },
+  { name: "Mk.II Shotcaster", type: "Carbine", tier: 2, trait: "Strength", damage: "d10+6 kinetic", range: "Close", burden: "Two-Handed", feature: "Spread: +2 damage at Melee, -2 at Far" },
+  { name: "Mk.II Sniper Lens", type: "Rifle", tier: 2, trait: "Agility", damage: "d10+6 kinetic", range: "Very Far", burden: "Two-Handed", feature: "Scoped: +2 damage from Hidden" },
+  // ─── Tier 2 Special Weapons ───
+  { name: "Aurelian Gilded Falchion", type: "Melee", tier: 2, trait: "Strength", damage: "d10+4 kinetic", range: "Melee", burden: "One-Handed", feature: "Powerful: Roll extra damage die, discard lowest", origin: "Aurelian Empire", category: "Special" },
+  { name: "Kaelen Knuckle Blades", type: "Melee", tier: 2, trait: "Strength", damage: "d10+6 kinetic", range: "Melee", burden: "Two-Handed", feature: "Brutal: Max damage die rolls an additional die", origin: "Kaelen Syndicate", category: "Special" },
+  { name: "Mindclave Ego Blade", type: "Melee", tier: 2, trait: "Agility", damage: "d12+4 energy", range: "Melee", burden: "One-Handed", feature: "Requires Presence 0 or lower", origin: "Mindclave", category: "Special" },
+  // ─── Tier 3 Primary Weapons (Levels 5-7) ───
+  { name: "Advanced Combat Knife", type: "Melee", tier: 3, trait: "Agility", damage: "d8+6 kinetic", range: "Melee", burden: "One-Handed", feature: "Reliable: +1 to attack rolls" },
+  { name: "Advanced Vibro-Sword", type: "Melee", tier: 3, trait: "Agility", damage: "d10+9 kinetic", range: "Melee", burden: "Two-Handed", feature: "" },
+  { name: "Advanced Pulse Pistol", type: "Sidearm", tier: 3, trait: "Agility", damage: "d8+6 energy", range: "Close", burden: "One-Handed", feature: "Reliable: +1 to attack rolls" },
+  { name: "Advanced Assault Carbine", type: "Carbine", tier: 3, trait: "Agility", damage: "d8+6 kinetic", range: "Far", burden: "Two-Handed", feature: "Reliable: +1 to attack rolls" },
+  { name: "Advanced Plasma Caster", type: "Carbine", tier: 3, trait: "Agility", damage: "d10+9 energy", range: "Far", burden: "Two-Handed", feature: "" },
+  { name: "Advanced Sniper Lens", type: "Rifle", tier: 3, trait: "Agility", damage: "d10+9 kinetic", range: "Very Far", burden: "Two-Handed", feature: "Scoped: +2 damage from Hidden" },
+  // ─── Tier 3 Special Weapons ───
+  { name: "Flickerfly Blade", type: "Melee", tier: 3, trait: "Agility", damage: "d8+5 kinetic", range: "Melee", burden: "One-Handed", feature: "Sharpwing: +Agility to damage", origin: "Valari Collective", category: "Special" },
+  { name: "Bravesword", type: "Melee", tier: 3, trait: "Strength", damage: "d12+7 kinetic", range: "Melee", burden: "Two-Handed", feature: "-1 Evasion; +3 to Severe threshold", origin: "Terran Coalition", category: "Special" },
+  { name: "Hammer of Wrath", type: "Melee", tier: 3, trait: "Strength", damage: "d10+7 kinetic", range: "Melee", burden: "Two-Handed", feature: "Mark Stress to use d20 as damage die", origin: "Aurelian Empire", category: "Special" },
+  // ─── Tier 4 Primary Weapons (Levels 8-10) ───
+  { name: "Legendary Combat Knife", type: "Melee", tier: 4, trait: "Agility", damage: "d8+9 kinetic", range: "Melee", burden: "One-Handed", feature: "Reliable: +1 to attack rolls" },
+  { name: "Legendary Vibro-Sword", type: "Melee", tier: 4, trait: "Agility", damage: "d10+12 kinetic", range: "Melee", burden: "Two-Handed", feature: "" },
+  { name: "Legendary Pulse Pistol", type: "Sidearm", tier: 4, trait: "Agility", damage: "d8+9 energy", range: "Close", burden: "One-Handed", feature: "Reliable: +1 to attack rolls" },
+  { name: "Legendary Assault Carbine", type: "Carbine", tier: 4, trait: "Agility", damage: "d8+9 kinetic", range: "Far", burden: "Two-Handed", feature: "Reliable: +1 to attack rolls" },
+  { name: "Legendary Plasma Caster", type: "Carbine", tier: 4, trait: "Agility", damage: "d10+12 energy", range: "Far", burden: "Two-Handed", feature: "" },
+  { name: "Legendary Sniper Lens", type: "Rifle", tier: 4, trait: "Agility", damage: "d10+12 kinetic", range: "Very Far", burden: "Two-Handed", feature: "Scoped: +2 damage from Hidden" },
+  // ─── Tier 4 Special Weapons ───
+  { name: "Eclipse Shard Blade", type: "Melee", tier: 4, trait: "Presence", damage: "d12+10 void", range: "Melee", burden: "One-Handed", feature: "Corrupting: On hit, target marks 1 Stress", origin: "Eclipse", category: "Special" },
+  { name: "Progenitor Arc Cannon", type: "Carbine", tier: 4, trait: "Knowledge", damage: "d12+10 energy", range: "Far", burden: "Two-Handed", feature: "Ancient: Ignores all Armor Score", origin: "Progenitor", category: "Special" },
 ];
 
 export interface DomainCardEntry {
@@ -714,6 +775,39 @@ export const DOMAIN_CARDS: DomainCardEntry[] = [
   { domain: "Valor", domainTheme: "Protection & Heavy Weapons", level: 10, name: "Unbreakable", type: "Passive", cost: "—", effect: "When you are reduced to 0 HP, you do not fall unconscious. You can continue fighting for 3 rounds before collapsing." },
   { domain: "Valor", domainTheme: "Protection & Heavy Weapons", level: 10, name: "Unyielding Armor", type: "Action", cost: "Spend 5 Hope", effect: "For the rest of the scene, you reduce all incoming damage by half (rounded down) before applying Armor." },
 ];
+
+// ─── Class Stats by Tier (HP/Evasion scaling) ───
+export interface ClassTierStats {
+  hp: number;
+  evasion: number;
+  minor: number;
+  major: number;
+  severe: number;
+  stressSlots: number;
+}
+
+export const CLASS_TIER_STATS: Record<string, Record<number, ClassTierStats>> = {
+  Marine:    { 1: { hp: 6, evasion: 11, minor: 4, major: 8, severe: 15, stressSlots: 6 }, 2: { hp: 7, evasion: 12, minor: 6, major: 12, severe: 22, stressSlots: 7 }, 3: { hp: 8, evasion: 13, minor: 9, major: 18, severe: 32, stressSlots: 8 }, 4: { hp: 9, evasion: 14, minor: 12, major: 25, severe: 44, stressSlots: 9 } },
+  Engineer:  { 1: { hp: 7, evasion: 9, minor: 5, major: 9, severe: 16, stressSlots: 5 }, 2: { hp: 8, evasion: 10, minor: 7, major: 13, severe: 24, stressSlots: 6 }, 3: { hp: 9, evasion: 11, minor: 10, major: 20, severe: 35, stressSlots: 7 }, 4: { hp: 10, evasion: 12, minor: 13, major: 27, severe: 47, stressSlots: 8 } },
+  Medic:     { 1: { hp: 7, evasion: 9, minor: 4, major: 8, severe: 14, stressSlots: 5 }, 2: { hp: 8, evasion: 10, minor: 6, major: 12, severe: 21, stressSlots: 6 }, 3: { hp: 9, evasion: 11, minor: 9, major: 18, severe: 31, stressSlots: 7 }, 4: { hp: 10, evasion: 12, minor: 12, major: 25, severe: 43, stressSlots: 8 } },
+  Operative: { 1: { hp: 6, evasion: 12, minor: 3, major: 6, severe: 12, stressSlots: 6 }, 2: { hp: 7, evasion: 13, minor: 5, major: 10, severe: 19, stressSlots: 7 }, 3: { hp: 8, evasion: 14, minor: 7, major: 15, severe: 28, stressSlots: 8 }, 4: { hp: 9, evasion: 15, minor: 10, major: 21, severe: 39, stressSlots: 9 } },
+  Pilot:     { 1: { hp: 6, evasion: 12, minor: 3, major: 7, severe: 13, stressSlots: 6 }, 2: { hp: 7, evasion: 13, minor: 5, major: 11, severe: 20, stressSlots: 7 }, 3: { hp: 8, evasion: 14, minor: 7, major: 16, severe: 29, stressSlots: 8 }, 4: { hp: 9, evasion: 15, minor: 10, major: 22, severe: 40, stressSlots: 9 } },
+  Broker:    { 1: { hp: 6, evasion: 10, minor: 3, major: 7, severe: 13, stressSlots: 6 }, 2: { hp: 7, evasion: 11, minor: 5, major: 11, severe: 20, stressSlots: 7 }, 3: { hp: 8, evasion: 12, minor: 7, major: 16, severe: 29, stressSlots: 8 }, 4: { hp: 9, evasion: 13, minor: 10, major: 22, severe: 40, stressSlots: 9 } },
+  Mystic:    { 1: { hp: 6, evasion: 10, minor: 2, major: 5, severe: 11, stressSlots: 7 }, 2: { hp: 7, evasion: 11, minor: 4, major: 8, severe: 17, stressSlots: 8 }, 3: { hp: 8, evasion: 12, minor: 6, major: 12, severe: 25, stressSlots: 9 }, 4: { hp: 9, evasion: 13, minor: 8, major: 17, severe: 35, stressSlots: 10 } },
+  Envoy:     { 1: { hp: 6, evasion: 10, minor: 2, major: 5, severe: 11, stressSlots: 7 }, 2: { hp: 6, evasion: 11, minor: 4, major: 9, severe: 17, stressSlots: 8 }, 3: { hp: 7, evasion: 12, minor: 6, major: 13, severe: 25, stressSlots: 9 }, 4: { hp: 8, evasion: 13, minor: 8, major: 18, severe: 35, stressSlots: 10 } },
+};
+
+export function getTierForLevel(level: number): number {
+  if (level <= 2) return 1;
+  if (level <= 4) return 2;
+  if (level <= 7) return 3;
+  return 4;
+}
+
+export function getClassStatsForLevel(className: string, level: number): ClassTierStats | null {
+  const tier = getTierForLevel(level);
+  return CLASS_TIER_STATS[className]?.[tier] ?? null;
+}
 
 export const STANDARD_KIT = [
   "Commlink (personal communicator, station-wide range)",

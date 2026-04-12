@@ -295,6 +295,59 @@
   column-rule-color: oklch(0.25 0.04 260);
 }
 
+/* ─── Mobile Touch Targets ─── */
+@media (max-width: 768px) {
+  .prose-nexus {
+    font-size: 0.9rem;
+    column-count: 1 !important;
+  }
+  .prose-nexus table {
+    font-size: 0.75rem;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ─── Focus Visible for Accessibility ─── */
+:focus-visible {
+  outline: 2px solid oklch(0.7 0.15 185);
+  outline-offset: 2px;
+}
+
+/* ─── Dark Mode Additional Fixes ─── */
+.dark .prose-nexus a {
+  color: oklch(0.7 0.15 185);
+}
+.dark .prose-nexus a:hover {
+  color: oklch(0.8 0.15 185);
+}
+.dark .prose-nexus code {
+  background: oklch(0.2 0.03 260);
+  color: oklch(0.7 0.15 185);
+  padding: 0.1em 0.3em;
+  border-radius: 0.2em;
+  font-size: 0.85em;
+}
+.dark .prose-nexus hr {
+  border-top-color: oklch(0.3 0.04 260);
+}
+
+/* ─── Smooth Scrolling ─── */
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* ─── Print styles ─── */
 @media print {
   body {
