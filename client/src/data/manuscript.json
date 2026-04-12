@@ -1902,84 +1902,426 @@
         },
         {
           "title": "ARC 1: THE FRAGILE PEACE (Levels 1-3)",
-          "id": "book-7-ch-3",
+          "content": "The first arc introduces the crew to the political tensions of Nexus 9 and the looming threat of the Eclipse. The crew must navigate smuggling disputes, telepathic murders, labor riots, and ancient mysteries before discovering the terrible truth about the station they call home.",
+          "sections": []
+        },
+        {
+          "title": "Chapter 1: The Midnight Cargo",
+          "content": "**Level:** 1\n**Featured Factions:** Terran Coalition, Kaelen Syndicate, The Underbelly\n**Locations:** Red Ring (Docking Bay Alpha), The Warrens",
           "sections": [
             {
-              "title": "Chapter 1: The Midnight Cargo",
-              "id": "book-7-ch-3-s-1",
-              "content": "**Level:** 1\n**Featured Factions:** Terran Coalition, Kaelen Syndicate, The Underbelly\n\n**The Hook:**\nA routine customs inspection in the Red Ring turns deadly when a Kaelen freighter is found carrying a dormant Eclipse artifact. The crew is hired by Commander Vance to investigate the artifact's origin before the Kaelen Syndicate claims it as a weapon of war.\n\n> *\"The Red Ring smells of ozone, gun oil, and cheap antiseptic. Docking Bay Alpha is currently locked down behind a wall of Terran Coalition riot shields. Beyond the barricade, a Kaelen freighter sits dark and silent. Commander Vance stands at the edge of the cordon, rubbing his temples. 'I need people who don't wear a uniform,' he says, looking at your crew. 'There's something on that ship that killed my customs team without firing a shot. Find out what it is, and keep it out of Syndicate hands.'\"*\n\n**Encounter 1: The Silent Ship (Exploration)**\nThe crew must board the Kaelen freighter, the *Rust-Bucket*. The ship is dark, cold, and gravity is offline.\n*   **Hazard:** Zero-Gravity (Agility rolls to maneuver).\n*   **Discovery:** The customs team is dead, their bodies perfectly preserved but their eyes turned solid black. A Difficulty 12 Knowledge roll reveals this is not a known biological or chemical weapon.\n*   **The Artifact:** In the shielded cargo hold, the crew finds a geometric, crystalline void-shape (an Eclipse artifact) humming with dark energy.\n\n**Encounter 2: The Syndicate Ambush (Combat)**\nAs the crew secures the artifact, a Kaelen Syndicate boarding party breaches the airlock, intending to reclaim their cargo.\n*   **Adversaries:** 3x **Syndicate Enforcers** (Tier 1 Minions), 1x **Syndicate Fixer** (Tier 1 Support).\n*   **Tactics:** The Fixer stays in the corridor, using *Mark the Target* while the Enforcers push into the zero-G cargo hold.\n\n**The Choice & Consequences:**\nThe crew has the artifact. Who gets it?\n*   **Give it to Vance (Terran Coalition):** Gain +1 Reputation with the Coalition. Vance pays the crew 2,000 Credits. The Coalition begins secretly studying the artifact, which will have disastrous consequences in Arc 2.\n*   **Sell it to the Syndicate:** Gain +1 Reputation with the Kaelen Syndicate, lose -1 with the Coalition. The Syndicate pays 4,000 Credits. The Syndicate weaponizes the artifact, making their ships deadlier in Arc 2.\n*   **Destroy it:** The artifact explodes, dealing 2d8 psychic damage to anyone in Close range. The crew gains no money, but the Vanguard operative Lyra contacts them, impressed by their wisdom.\n\n---"
+              "title": "The Hook",
+              "content": "A routine customs inspection in the Red Ring turns deadly when a Kaelen freighter is found carrying a dormant Eclipse artifact. The crew is hired by Commander Vance to investigate the artifact's origin before the Kaelen Syndicate claims it as a weapon of war.\n\n> *\"The Red Ring smells of ozone, gun oil, and cheap antiseptic. Docking Bay Alpha is currently locked down behind a wall of Terran Coalition riot shields. Beyond them, a Kaelen freighter vents coolant into the artificial atmosphere. Something inside that ship just killed three customs inspectors without firing a shot.\"*"
             },
             {
-              "title": "Chapter 2: The Mind's Eye",
-              "id": "book-7-ch-3-s-2",
-              "content": "**Level:** 2\n**Featured Factions:** The Mindclave, Aurelian Empire, The Vanguard\n\n**The Hook:**\nA prominent Aurelian diplomat is found murdered in the Blue Ring, his mind wiped clean. The Mindclave immediately takes jurisdiction, but the Vanguard suspects a deeper conspiracy involving rogue telepaths and Aurelian precognition.\n\n> *\"The Grand Assembly Hall is a masterpiece of Aurelian architecture\u2014sweeping arches of gold and crimson. Today, it is a crime scene. Ambassador Valerius lies on the marble floor, untouched by any physical weapon, but his eyes are vacant, his mind entirely erased. A Mindclave Hound stands over the body, a telepathic dampener humming on their belt. From the shadows of a nearby pillar, a woman with a Star-Sword pin catches your eye and gestures for you to follow her.\"*\n\n**Encounter 1: The Vanguard's Plea (Social)**\nThe woman is Lyra, a Vanguard operative. She explains that Valerius was having precognitive visions of the Eclipse returning, and the Mindclave silenced him to prevent a panic. She needs the crew to break into the Xenobiology Lab to retrieve Valerius's personal data-pad before the Mindclave destroys it.\n*   **Challenge:** Difficulty 14 Presence or Deception roll to bypass the Aurelian guards outside the lab without causing an incident.\n\n**Encounter 2: The Mindclave Intercept (Combat/Skulk)**\nInside the lab, the crew finds the data-pad, but they are ambushed by a Mindclave hit squad sent to scrub the evidence.\n*   **Adversaries:** 2x **Mindclave Hounds** (Tier 1 Skulks), 1x **Mindclave Inquisitor** (Tier 2 Support).\n*   **Tactics:** The Hounds use *Surface Scan* to prevent the crew from hiding, while the Inquisitor uses *Mind Spike* to break the crew's heaviest hitter.\n\n**The Choice & Consequences:**\nThe data-pad contains Valerius's visions: a massive, crystalline fleet destroying Nexus 9.\n*   **Give the data to Lyra (Vanguard):** Gain +1 Reputation with the Vanguard. Lyra uses the data to begin preparing a defense. The Mindclave marks the crew as enemies.\n*   **Give the data to Director Thorne (Mindclave):** Gain +1 Reputation with the Mindclave, lose -1 with the Vanguard. Thorne pays the crew handsomely (3,000 Credits) and assures them the \"rogue telepath problem\" is handled.\n\n---"
+              "title": "GM Summary",
+              "content": "This chapter introduces the players to the political tension of Nexus 9 and the looming threat of the Eclipse. The crew must navigate a tense standoff between Terran Security and Kaelen smugglers, board the freighter, and secure the artifact. They will discover that the artifact is not a weapon, but a beacon\u2014and it has just been activated."
             },
             {
-              "title": "Chapter 3: The Siege of the Warrens",
-              "id": "book-7-ch-3-s-3",
-              "content": "**Level:** 2\n**Featured Factions:** Terran Coalition, Kaelen Syndicate\n\n**The Hook:**\nA labor dispute in the Grey Ring escalates into a full-blown riot, fueled by Kaelen agitators and Terran Coalition heavy-handedness. The crew is trapped in the Warrens and must negotiate a ceasefire before Coalition Security deploys lethal force.\n\n> *\"The Grey Ring is burning. The air scrubbers have failed, and the smell of smoke and sweat is suffocating. Barricades of scrap metal and overturned cargo haulers block the main transit spoke. On one side, hundreds of desperate workers, armed with mining lasers and Kaelen-supplied scrap-pistols. On the other, a phalanx of Terran Coalition riot police, weapons drawn. You are caught in the middle, and the countdown to a massacre has begun.\"*\n\n**Encounter 1: The Agitator (Social/Investigation)**\nThe crew must find the Kaelen agitator who is whipping the crowd into a frenzy. A Difficulty 13 Investigation or Instinct roll locates him: a Syndicate Breacher named Kaelen-Tor.\n*   **Challenge:** The crew must convince Kaelen-Tor to stand down (Difficulty 15 Presence) or quietly neutralize him without the crowd seeing (Difficulty 14 Agility/Stealth).\n\n**Encounter 2: The Breach (Combat)**\nRegardless of the crew's success with the agitator, a squad of automated security drones malfunctions (or is hacked) and opens fire on the crowd. The crew must destroy the drones to prevent a slaughter.\n*   **Adversaries:** 4x **Station Security Drones** (Tier 1 Ranged).\n*   **Hazard:** Panicking Crowd. At the start of each round, the GM rolls 1d6. On a 1-2, a PC is jostled by the crowd and suffers Disadvantage on their next attack.\n\n**The Choice & Consequences:**\n*   **Side with the Workers:** The crew helps the workers hold the barricade. Gain +1 Reputation with the Underbelly/Syndicate. Coalition Security is humiliated, and Commander Vance is furious (-1 Coalition Rep).\n*   **Assist Coalition Security:** The crew helps dismantle the barricades and arrest the ringleaders. Gain +1 Reputation with the Coalition. The workers are crushed, and the Grey Ring becomes a powder keg of resentment.\n\n---"
+              "title": "Core Conflict",
+              "content": "The Kaelen Syndicate wants their cargo back, claiming diplomatic immunity. The Terran Coalition wants to confiscate it as contraband. The artifact itself is beginning to emit a low-frequency psychic hum that is driving the dockworkers violent."
             },
             {
-              "title": "Chapter 4: The Emissary's Warning",
-              "id": "book-7-ch-3-s-4",
-              "content": "**Level:** 3\n**Featured Factions:** The Luminaries, The Valari\n\n**The Hook:**\nThe Luminary ambassador, The Emissary, requests a private meeting with the crew. It speaks in riddles, warning of a \"shadow that falls across the stars\" and tasking the players with finding a lost Valari soul-crystal that holds the key to the coming war.\n\n> *\"The Emissary's chamber is blindingly bright. The Luminary ambassador is a projection of hard-light, a geometric angel that hurts to look at directly. Its voice echoes in your minds rather than your ears. 'The cycle turns,' it says. 'The dark shapes awaken. The Valari hide a truth in their sanctum, a crystal that remembers the last war. Bring it to the Core. The Nexus must be primed.'\"*\n\n**Encounter 1: The Valari Sanctum (Skulk/Social)**\nThe crew must infiltrate the Valari embassy in the Blue Ring to steal the soul-crystal. They can attempt a stealthy heist (Difficulty 15 Agility) or try to talk their way past the guards by claiming a religious pilgrimage (Difficulty 16 Presence).\n\n**Encounter 2: The Blademaster's Test (Combat)**\nAs they secure the crystal, they are confronted by the embassy's protector.\n*   **Adversary:** 1x **Valari Blademaster** (Tier 3 Solo).\n*   **Tactics:** The Blademaster does not want to kill the crew, only test their worthiness. If the crew reduces the Blademaster to half HP, he yields, recognizing that destiny is at work.\n\n**The Choice & Consequences:**\nThe crystal pulses with a warm, blue light. When touched, it grants a vision of the Nexus Core activating as a massive weapon.\n*   **Take the crystal to the Nexus Core:** The crew plugs the crystal into the station's central hub. The station shudders, and a massive energy shield briefly flickers to life around Nexus 9. The Emissary nods. The station is now fortified for Arc 2.\n*   **Return the crystal to the Valari:** The crew respects Valari sovereignty and returns the artifact. Gain +2 Reputation with the Valari. The Valari promise their fleet's aid in the coming war, but Nexus 9 remains unshielded.\n\n*(End of Arc 1)*\n\n---"
+              "title": "Encounter Sequence",
+              "content": "**Scene 1: The Standoff at Bay Alpha**\nThe crew arrives at the docks to find Commander Vance (Terran Coalition) in a shouting match with a Kaelen Enforcer. \n- **Diplomacy:** The crew can use Hope to de-escalate the situation and gain access to the ship.\n- **Stealth:** They can bypass the argument entirely by navigating the maintenance shafts (Agility roll).\n- **Failure:** A riot breaks out. The crew must fight 3x **Syndicate Thugs** (Tier 1) to reach the airlock.\n\n**Scene 2: The Dead Ship**\nInside the freighter, the gravity is off and the lights are dead. The crew finds the Kaelen crew dead\u2014not from violence, but from extreme psychic trauma.\n- **Investigation:** A successful Knowledge roll reveals the ship's logs were wiped, but the nav-computer shows they came from the deep frontier, near the Dead Zone.\n- **Hazard:** The artifact's hum requires a Presence roll. On a failure, take 1 Stress as paranoia sets in.\n\n**Scene 3: The Artifact Awakens**\nIn the cargo hold, the artifact\u2014a jagged obelisk of black glass\u2014is pulsing. As the crew approaches, the ship's automated defenses activate, corrupted by the artifact's energy.\n- **Combat:** The crew must defeat 2x **Corrupted Security Drones** (Tier 1) while the artifact pulses. Every round, the GM gains 1 Fear."
+            },
+            {
+              "title": "Key Choices",
+              "content": "- **Who gets the artifact?** Handing it to the Terrans earns Commander Vance's trust but makes an enemy of the Kaelen Syndicate. Giving it to the Kaelens earns a massive bribe but puts a dangerous object in criminal hands. Keeping it paints a target on the crew's back."
+            },
+            {
+              "title": "Chapter-End Consequences",
+              "content": "Regardless of who takes the artifact, it sends a tight-beam transmission into deep space before powering down. The signal is received. The Eclipse knows where Nexus 9 is."
+            },
+            {
+              "title": "Cliffhanger",
+              "content": "As the crew leaves the docks, the station's proximity alarms blare. A massive, unidentified energy signature has just appeared on the edge of the system.\n\n---"
             }
-          ],
-          "content": "The first arc establishes the setting, introduces the major factions, and hints at the deeper mysteries of the galaxy. The players are drawn into the political web of Nexus 9, dealing with smugglers, rogue telepaths, and the simmering tensions between the Aurelian Empire and the Kaelen Syndicate."
+          ]
+        },
+        {
+          "title": "Chapter 2: The Mind's Eye",
+          "content": "**Level:** 2\n**Featured Factions:** The Mindclave, Aurelian Empire, The Vanguard\n**Locations:** Blue Ring (Grand Assembly Hall), Mindclave Embassy",
+          "sections": [
+            {
+              "title": "The Hook",
+              "content": "A prominent Aurelian diplomat is found murdered in the Blue Ring, his mind wiped clean. The Mindclave immediately takes jurisdiction, but the Vanguard suspects a deeper conspiracy involving rogue telepaths and Aurelian precognition.\n\n> *\"The Grand Assembly Hall is a masterpiece of Aurelian architecture\u2014sweeping arches of gold and crimson. Today, it is a crime scene. Ambassador Valerius lies on the marble floor, untouched by physical violence, but his eyes are wide with a terror that burned out his neural pathways.\"*"
+            },
+            {
+              "title": "GM Summary",
+              "content": "The crew is hired by the Aurelian Empire to conduct an independent investigation, as they do not trust the Mindclave's internal policing. The crew will uncover a rogue faction within the Mindclave called the \"Unbound,\" who believe the Eclipse's return is a necessary cleansing of the galaxy."
+            },
+            {
+              "title": "Core Conflict",
+              "content": "The Mindclave refuses to allow non-telepaths to investigate telepathic crimes. The Aurelians threaten to blockade the station if justice isn't served. The crew must navigate this diplomatic minefield while hunting a killer who can erase memories."
+            },
+            {
+              "title": "Encounter Sequence",
+              "content": "**Scene 1: The Crime Scene**\nThe crew must investigate the Assembly Hall before Mindclave \"Cleaners\" sanitize the area.\n- **Investigation:** A successful Instinct roll finds a microscopic data-sliver hidden in the Ambassador's ceremonial robes.\n- **Conflict:** 2x **Mindclave Cleaners** (Tier 1) arrive and demand the crew leave. The crew can talk their way out or engage in non-lethal combat.\n\n**Scene 2: Decrypting the Sliver**\nThe data-sliver is heavily encrypted with Aurelian cipher-locks. The crew must find a slicer in the Underbelly or use their own skills.\n- **Revelation:** The sliver contains the Ambassador's final vision\u2014a precognitive flash of Nexus 9 burning, and a Mindclave elder opening the gates.\n\n**Scene 3: The Unbound Cell**\nThe crew tracks the killer to a meditation chamber in the lower rings.\n- **Combat:** The killer, an **Unbound Zealot** (Tier 1 Boss), attacks using telepathic illusions. The GM can spend Fear to make the crew attack each other (Fear Move: *Fractured Reality*)."
+            },
+            {
+              "title": "Key Choices",
+              "content": "- **Expose the Unbound?** Revealing the rogue faction to the public damages the Mindclave's reputation severely, potentially sparking anti-telepath riots. Keeping it quiet earns a major favor from the Mindclave leadership."
+            },
+            {
+              "title": "Chapter-End Consequences",
+              "content": "The crew learns that the Eclipse is not just an external threat\u2014they have agents already aboard the station, preparing the way."
+            },
+            {
+              "title": "Cliffhanger",
+              "content": "The Unbound Zealot, with their dying breath, smiles and says, \"The shadow is already inside the house.\" The station's lights flicker and die across three entire rings.\n\n---"
+            }
+          ]
+        },
+        {
+          "title": "Chapter 3: The Siege of the Warrens",
+          "content": "**Level:** 2\n**Featured Factions:** Terran Coalition, Kaelen Syndicate, Station Rats\n**Locations:** Grey Ring (The Warrens)",
+          "sections": [
+            {
+              "title": "The Hook",
+              "content": "A labor dispute in the Grey Ring escalates into a full-blown riot, fueled by Kaelen agitators and Terran Coalition heavy-handedness. The crew is trapped in the Warrens and must negotiate a ceasefire before Coalition Security deploys lethal force.\n\n> *\"The Grey Ring is burning. The air scrubbers have failed, and the smell of smoke and sweat is suffocating. Barricades of scrap metal and overturned cargo haulers block the main thoroughfares. On one side, desperate dockworkers with plasma torches. On the other, Terran riot police with orders to shoot.\"*"
+            },
+            {
+              "title": "GM Summary",
+              "content": "The power outage from Chapter 2 has caused life support systems in the poorest sectors to fail. The Kaelen Syndicate is using the chaos to move illegal weapons, arming the populace to keep the Terrans busy. The crew must restore power, disarm the rioters, and expose the Kaelen plot."
+            },
+            {
+              "title": "Core Conflict",
+              "content": "The Station Rats are genuinely suffering and need help. The Terrans view them as a violent mob. The Kaelens are profiting from the bloodshed."
+            },
+            {
+              "title": "Encounter Sequence",
+              "content": "**Scene 1: Crossing the No-Man's Land**\nThe crew must navigate the active riot zone to reach the primary life-support junction.\n- **Hazard:** Sniper fire and tear gas. The crew must make Agility or Finesse rolls to avoid taking 1d8 kinetic damage.\n- **Roleplay:** They encounter a group of wounded Station Rats. Healing them earns the trust of the local community.\n\n**Scene 2: The Kaelen Cache**\nThe crew discovers a Kaelen Syndicate weapons cache hidden near the life-support junction.\n- **Combat:** 4x **Syndicate Thugs** (Tier 1) and 1x **Syndicate Enforcer** (Tier 1) are guarding the cache. The Enforcer uses the *Strength in Numbers* feature to boost the thugs.\n\n**Scene 3: Restarting the Scrubbers**\nThe life-support junction has been sabotaged.\n- **Skill Challenge:** The crew must accumulate 5 successful Knowledge or Finesse rolls before the GM accumulates 3 Fear. If the GM wins, the sector takes permanent damage and the Terrans breach the barricades."
+            },
+            {
+              "title": "Key Choices",
+              "content": "- **What to do with the weapons?** Give them to the Station Rats so they can defend themselves? Turn them over to the Terrans? Or sell them back to the Kaelens?"
+            },
+            {
+              "title": "Chapter-End Consequences",
+              "content": "Restoring power saves thousands of lives, but the political damage is done. The Terran Coalition declares martial law in the lower rings."
+            },
+            {
+              "title": "Cliffhanger",
+              "content": "As the air scrubbers kick back on, clearing the smoke, the crew finds a Terran Coalition dropship that was shot down during the riot. Inside, the pilot is dead, but the cargo is missing\u2014a high-yield tactical warhead.\n\n---"
+            }
+          ]
+        },
+        {
+          "title": "Chapter 4: The Emissary's Warning",
+          "content": "**Level:** 3\n**Featured Factions:** The Luminaries, The Valari Collective\n**Locations:** The Spire (Luminary Embassy), Deep Space",
+          "sections": [
+            {
+              "title": "The Hook",
+              "content": "The Luminary ambassador, The Emissary, requests a private meeting with the crew. It speaks in riddles, warning of a \"shadow that falls across the stars\" and tasking the players with finding a lost Valari soul-crystal that holds the key to the coming war.\n\n> *\"The Emissary's chamber is blindingly bright. The Luminary ambassador is a projection of hard-light, a geometric angel that hurts to look at directly. Its voice echoes in your minds rather than your ears: 'The thread frays. The dark hungers. You must find what was lost before the silence returns.'\"*"
+            },
+            {
+              "title": "GM Summary",
+              "content": "This chapter concludes Arc 1. The crew must leave the station for the first time, traveling to a derelict Valari generation ship drifting in the Dead Zone. They must recover a soul-crystal that contains the memories of the last time the Eclipse attacked the galaxy."
+            },
+            {
+              "title": "Core Conflict",
+              "content": "The derelict ship is not empty. It has been claimed by Void-Scavengers, and the ship's ancient automated defenses are still active. Furthermore, the Eclipse artifact from Chapter 1 has drawn something terrible to the area."
+            },
+            {
+              "title": "Encounter Sequence",
+              "content": "**Scene 1: The Derelict**\nThe crew takes a shuttle to the Dead Zone and boards the *Song of the Ancestors*, a massive, silent Valari ship.\n- **Exploration:** Zero-G environment. The crew must navigate the frozen corridors. A failed Agility roll results in floating adrift, requiring a teammate to spend an action to tether them.\n\n**Scene 2: The Scavengers**\nA crew of ruthless Void-Scavengers is already aboard, trying to cut the soul-crystal from the ship's core.\n- **Combat:** 3x **Void-Scavengers** (Tier 1) and 1x **Scavenger Captain** (Tier 1). The Captain uses a heavy plasma cutter (2d8 energy damage).\n\n**Scene 3: The Shadow Arrives**\nAs the crew secures the soul-crystal, the ship shudders. An Eclipse Vanguard ship drops out of hyperspace right on top of them.\n- **Escape Sequence:** The crew cannot fight the Eclipse ship. They must flee back to their shuttle while the derelict is torn apart. The GM rolls 1d12 every round; on a 10+, a section of the ship collapses, requiring Presence or Agility saves to avoid 2d10 damage."
+            },
+            {
+              "title": "Key Choices",
+              "content": "- **Save the Scavengers?** The scavengers' ship is destroyed by the Eclipse. The crew can leave them to die or risk their own escape to bring them aboard the shuttle."
+            },
+            {
+              "title": "Chapter-End Consequences",
+              "content": "The crew returns to Nexus 9 with the soul-crystal. When activated, it projects a holographic map of the galaxy, showing the Eclipse's invasion routes from a thousand years ago. The routes align perfectly with current shipping lane disappearances."
+            },
+            {
+              "title": "Cliffhanger",
+              "content": "The holographic map zooms in on Nexus 9. The station isn't just a crossroads\u2014it was built directly on top of the Eclipse's primary hyperspace gate. And the gate is opening.\n\n---\n*(End of Arc 1)*"
+            }
+          ]
         },
         {
           "title": "ARC 2: THE SHADOWS LENGTHEN (Levels 4-6)",
-          "id": "book-7-ch-4",
+          "content": "The second arc escalates the conflict from local station politics to system-wide war. The Eclipse reveals itself as a direct, physical threat, and the factions of Nexus 9 must decide whether to fight each other or unite against the true enemy.",
+          "sections": []
+        },
+        {
+          "title": "Chapter 5: The Gilded Trap",
+          "content": "**Level:** 4\n**Featured Factions:** Aurelian Empire, Kaelen Syndicate, The Vanguard\n**Locations:** The Promenade, Aurelian Embassy, The Gilded Cage Casino",
           "sections": [
             {
-              "title": "Chapter 5: The Gilded Trap",
-              "id": "book-7-ch-4-s-1",
-              "content": "**Level:** 4\n**Featured Factions:** Aurelian Empire, The Eclipse\n\n**The Hook:**\nThe crew is invited to a lavish gala on an Aurelian core world, ostensibly to negotiate a trade agreement. In reality, they are walking into a trap set by The Whisperer, who seeks to corrupt or eliminate them.\n\n> *\"Aurelia Prime is a world of impossible wealth. The Imperial Conclave is a floating palace of gold and glass, suspended above a sapphire ocean. You are dressed in your finest, surrounded by nobles in silk and bioluminescent jewelry. But the music is too loud, the smiles are too sharp, and standing by the Emperor's throne is a man in a perfectly tailored black suit. He catches your eye, raises a glass, and mouths a single word: 'Welcome.'\"*\n\n**Encounter 1: The Whisperer's Offer (Social)**\nThe man in black is The Whisperer, the primary agent of the Eclipse. He approaches the crew during the gala and offers them power, wealth, or the fulfillment of their deepest desires if they agree to sabotage Nexus 9's defenses.\n*   **Challenge:** The crew must resist his telepathic manipulation (Difficulty 16 Presence) while maintaining their composure in front of the Imperial Court.\n\n**Encounter 2: The Assassination Attempt (Combat)**\nWhen the crew refuses (or if they accept but The Whisperer decides they are too dangerous), the trap is sprung. The gala's entertainment\u2014a troupe of acrobats\u2014reveals themselves as Eclipse-Touched assassins.\n*   **Adversaries:** 4x **Void-Callers** (Tier 2 Leaders), 1x **Aurelian Centurion** (Tier 2 Leader, corrupted by the Eclipse).\n*   **Hazard:** Panicking Nobles. The room is filled with screaming aristocrats. Any ranged attack that misses its target by 5 or more hits a bystander, causing a massive diplomatic incident (-2 Aurelian Rep).\n\n**The Choice & Consequences:**\nThe crew escapes the gala, but they have proof that the Emperor is being manipulated by the Eclipse.\n*   **Expose the Emperor:** The crew broadcasts the evidence to the Aurelian nobility. The Empire falls into a brutal civil war, removing them as a threat but plunging a third of the galaxy into chaos.\n*   **Keep the Secret:** The crew uses the evidence to blackmail the Emperor into withdrawing his fleet from the frontier. The Empire remains intact, but The Whisperer's influence grows stronger in the shadows.\n\n---"
+              "title": "The Hook",
+              "content": "The Aurelian Empire hosts a lavish gala to celebrate the signing of a new trade agreement with the Terran Coalition. The crew is invited as guests of honor (or hired as security), but the gala is a trap. The Kaelen Syndicate plans to assassinate the Aurelian Emperor's nephew, and the Vanguard intends to let it happen to spark a war.\n\n> *\"The Promenade is draped in Aurelian silk, crimson and gold catching the light of a thousand floating luminaries. The music is a slow, hypnotic waltz. The wine costs more than a freighter. And somewhere in this room of smiling diplomats and laughing aristocrats, an assassin is waiting for the music to stop.\"*"
             },
             {
-              "title": "Chapter 6: The Blood Oath",
-              "id": "book-7-ch-4-s-2",
-              "content": "**Level:** 5\n**Featured Factions:** Kaelen Syndicate, Aurelian Empire\n\n**The Hook:**\nThe Kaelen Syndicate, provoked by Aurelian aggression, declares a Ven'Kari (blood oath) against the entire Aurelian royal family. The crew must intervene to prevent a massacre that would plunge the galaxy into total war.\n\n> *\"The Scorch is a dead world, its atmosphere burned away by centuries of Aurelian orbital bombardment. The Kaelen Revolutionary Council meets in a subterranean bunker, lit by the harsh glare of forge-fires. Warlord Kael stands before the assembly, a jagged scar across his face. He raises a rusted blade and slices his own palm. 'The Ven'Kari is sworn,' he roars. 'The Aurelian bloodline ends today.' The crowd erupts in a deafening chant of war.\"*\n\n**Encounter 1: The Trial by Combat (Combat)**\nTo stop the Kaelen fleet from launching, the crew must invoke an ancient Syndicate law and challenge Warlord Kael's champion to a duel in the fighting pits.\n*   **Adversary:** 1x **Syndicate \"Cleaner\"** (Tier 3 Skulk) or 1x **Syndicate Breacher** (Tier 2 Bruiser) depending on the party's composition.\n*   **Rules of the Pit:** No energy weapons, no telepathy. Only kinetic weapons and blades. The fight is to the death, or until one side yields.\n\n**Encounter 2: The Aurelian Retaliation (Ship Combat)**\nWhile the crew is in the pits, an Aurelian strike force arrives in orbit to preemptively glass the Kaelen bunker. The crew must rush to their ship and hold off the Aurelians long enough for the Kaelen planetary shields to activate.\n*   **Adversaries:** 2x Aurelian Frigates (use Tier 2 Ship stats).\n*   **Objective:** Survive for 4 rounds while the Kaelen shields power up.\n\n**The Choice & Consequences:**\nThe crew has stopped the immediate massacre, but the Ven'Kari remains.\n*   **Broker a Truce:** The crew convinces Kael to target only the Emperor, not the entire bloodline. The Kaelen fleet launches a surgical strike, weakening the Empire but avoiding total war.\n*   **Let the Kaelen Burn:** The crew abandons the Kaelen to the Aurelian bombardment. The Syndicate is crippled, but the Aurelian Empire becomes an unstoppable juggernaut, fully controlled by the Eclipse.\n\n---"
+              "title": "GM Summary",
+              "content": "This chapter shifts the focus from the lower rings to the high-society politics of Nexus 9. The crew must navigate a complex social encounter, identify the assassin without causing a panic, and prevent the murder of Prince Valerius. The Vanguard's involvement complicates matters, as they are actively sabotaging the crew's efforts."
             },
             {
-              "title": "Chapter 7: The Silent Fleet",
-              "id": "book-7-ch-4-s-3",
-              "content": "**Level:** 5\n**Featured Factions:** The Vanguard, Terran Coalition\n\n**The Hook:**\nThe crew discovers a derelict fleet of ancient Vanguard warships hidden in a nebula near the Valari border. They must reactivate the ships and secure them before the Eclipse or the Terran Coalition can claim them.\n\n> *\"The nebula is a swirling mass of violet and bruised purple gas. Your sensors are blind, relying entirely on visual feeds. And then, you see them. Dozens of massive, angular warships, their hulls scarred by weapons fire from a war fought a thousand years ago. They are dead, silent, and drifting. But as your ship approaches, a single, faint beacon pulses from the flagship. Someone\u2014or something\u2014is still alive in there.\"*\n\n**Encounter 1: The Ghost Ship (Exploration/Skulk)**\nThe crew boards the Vanguard flagship, the *Aethelgard*. The ship is a labyrinth of dead corridors and failing life support.\n*   **Hazard:** Radiation Leaks (1 Fear to trigger, 1 Stress per turn).\n*   **Discovery:** The crew finds the ship's AI core, which contains the coordinates of the Eclipse stronghold, The Hollow.\n\n**Encounter 2: The Coalition Boarding Party (Combat)**\nA Terran Coalition stealth cruiser, tracking the crew's warp signature, arrives and deploys a boarding party to seize the ancient technology.\n*   **Adversaries:** 1x **Aurelian Praetorian Guard** (Tier 3 Solo, reskinned as a Terran Special Forces Heavy), 3x **Aurelian Legionnaires** (Tier 1 Standards, reskinned as Terran Marines).\n*   **Tactics:** The Terrans use heavy armor and disciplined fire to push the crew away from the AI core.\n\n**The Choice & Consequences:**\nThe crew has the coordinates to The Hollow and control of the derelict fleet.\n*   **Give the Fleet to the Coalition:** The Terrans gain a massive technological advantage. They promise to lead the assault on The Hollow, but their authoritarian government uses the ships to oppress the frontier first.\n*   **Give the Fleet to the Vanguard:** Lyra and her hidden operatives take command of the ships. The Vanguard becomes a major military power, ready to strike at the Eclipse, but the Coalition brands the crew as traitors.\n\n---"
+              "title": "Core Conflict",
+              "content": "The Kaelen Syndicate wants the Prince dead to destabilize the Aurelian succession. The Vanguard wants the assassination to succeed so the Aurelians will declare war on the Kaelens, weakening both factions. The crew must protect the Prince while maintaining diplomatic decorum."
             },
             {
-              "title": "Chapter 8: The Fall of Nexus 9",
-              "id": "book-7-ch-4-s-4",
-              "content": "**Level:** 6\n**Featured Factions:** All major factions, The Eclipse\n\n**The Hook:**\nThe Eclipse launch a devastating surprise attack on Nexus 9, seeking to destroy the diplomatic hub and claim the Nexus Core. The crew must coordinate the station's defense, evacuate civilians, and face The Whisperer in a final showdown.\n\n> *\"The klaxons are screaming. Red emergency lighting bathes the Promenade in a bloody glow. Outside the massive viewport, the stars are blotted out by geometric, crystalline shapes\u2014Eclipse void-ships, tearing through the station's defensive perimeter. Commander Vance's voice crackles over the comms, barely audible over the sound of hull breaches. 'They're inside the perimeter. They're going for the Core. God help us all.'\"*\n\n**Encounter 1: The Evacuation of the Warrens (Skill Challenge)**\nThe lower decks are venting atmosphere. The crew must guide hundreds of panicking civilians to the escape pods while fighting off Eclipse boarding parties.\n*   **Challenge:** A 6-segment progress clock. The crew must accumulate 6 successful skill checks (Agility, Presence, Strength) before the GM accumulates 4 Fear tokens. Failure means massive civilian casualties.\n\n**Encounter 2: The Whisperer at the Core (Boss Combat)**\nThe crew reaches the central hub just as The Whisperer breaches the Nexus Core chamber. He is attempting to corrupt the station's power source.\n*   **Adversary:** 1x **The Whisperer** (use **Mindclave High Councilor** stats, Tier 4 Boss, reskinned with void magic).\n*   **Hazard:** Core Overload. At the end of every round, the room pulses with raw energy. All PCs must make a Difficulty 15 Agility roll or take 2d8 psychic damage.\n\n**The Choice & Consequences:**\nThe Whisperer is defeated, but the station is critically damaged. The Eclipse fleet is still outside.\n*   **Activate the Core's Defense Grid:** The crew uses the Valari soul-crystal (from Chapter 4) to trigger a massive EMP. The Eclipse fleet is disabled, but Nexus 9's life support is fried. The station must be abandoned, becoming a dead monument.\n*   **Flee and Let the Station Fall:** The crew escapes with the station's leadership and the Core's data. Nexus 9 is destroyed by the Eclipse, but the crew's ship is fully loaded with refugees and critical intelligence for the final war.\n\n*(End of Arc 2)*\n\n---"
+              "title": "Encounter Sequence",
+              "content": "**Scene 1: The Gala**\nThe crew must mingle, gather information, and identify threats without drawing attention.\n- **Social Challenge:** The crew must accumulate 4 successful Presence or Instinct rolls before the GM accumulates 3 Fear. Success reveals the assassin's identity (a Kaelen operative disguised as a sommelier). Failure means the assassin strikes first.\n- **Roleplay:** The crew can interact with major faction leaders, gaining valuable insights or making powerful enemies.\n\n**Scene 2: The Interception**\nThe assassin makes their move as the Prince steps onto the balcony.\n- **Combat:** The crew must stop the **Kaelen Assassin** (Tier 2 Boss) and 2x **Syndicate Thugs** (Tier 2). The Assassin uses the *Shadow Step* feature to teleport between shadows, making them difficult to pin down.\n\n**Scene 3: The Vanguard's Interference**\nAs the crew subdues the assassin, Vanguard operatives attempt to silence the assassin before they can talk.\n- **Combat:** 3x **Vanguard Operatives** (Tier 2) attack the crew. They use *Coordinated Strike* to focus fire on a single target."
+            },
+            {
+              "title": "Key Choices",
+              "content": "- **Who gets the assassin?** Handing the assassin to the Aurelians ensures a brutal interrogation and a declaration of war against the Kaelens. Handing them to the Terrans keeps the peace but angers the Aurelians. Letting the Vanguard silence them keeps the crew's hands clean but leaves the conspiracy intact."
+            },
+            {
+              "title": "Chapter-End Consequences",
+              "content": "The assassination attempt forces the Aurelian Empire to recall their fleet to Nexus 9, escalating tensions. The Vanguard's involvement is exposed, leading to a shadow war between the factions."
+            },
+            {
+              "title": "Cliffhanger",
+              "content": "As the gala ends, the station's long-range sensors detect a massive Aurelian armada dropping out of hyperspace, their weapons armed and targeting the Kaelen sector of the station.\n\n---"
             }
-          ],
-          "content": "The second arc escalates the conflict. The Eclipse begin to move openly, manipulating the Aurelian Empire into a war of expansion. The players must forge alliances, uncover ancient secrets, and survive the growing chaos."
+          ]
+        },
+        {
+          "title": "Chapter 6: The Blood Oath",
+          "content": "**Level:** 4\n**Featured Factions:** Valari Collective, Mindclave, Terran Coalition\n**Locations:** The Deep Core, Valari Enclave",
+          "sections": [
+            {
+              "title": "The Hook",
+              "content": "A Valari spiritual leader, the High Speaker, is kidnapped from the Enclave. The Valari demand immediate action, threatening to sever their telepathic network that connects the station's communication relays. The crew must descend into the Deep Core to rescue the High Speaker before the station goes dark.\n\n> *\"The Valari Enclave is usually a place of serene silence, the air thick with the scent of burning incense and the hum of telepathic communion. Today, it is chaotic. The High Speaker's meditation chamber is empty, the crystal focus shattered. The silence has been broken by violence.\"*"
+            },
+            {
+              "title": "GM Summary",
+              "content": "The crew must navigate the treacherous Deep Core, a lawless sector of the station controlled by rogue AI and forgotten experiments. They will discover that the Mindclave is behind the kidnapping, attempting to extract ancient Progenitor secrets from the High Speaker's mind."
+            },
+            {
+              "title": "Core Conflict",
+              "content": "The Valari need their leader back to maintain their spiritual and technological network. The Mindclave believes the High Speaker holds the key to understanding the Eclipse artifact. The Terran Coalition is paralyzed by bureaucratic red tape."
+            },
+            {
+              "title": "Encounter Sequence",
+              "content": "**Scene 1: Descent into the Core**\nThe crew must navigate the hazardous environment of the Deep Core.\n- **Hazard:** The Core is filled with toxic gas and unstable gravity plating. The crew must make Agility or Finesse rolls to avoid taking 2d8 kinetic damage from falling debris.\n- **Exploration:** They encounter a rogue **Maintenance Drone** (Tier 2) that can be hacked (Knowledge roll) to provide a map of the area.\n\n**Scene 2: The Mindclave Interrogation**\nThe crew locates the Mindclave's hidden facility where the High Speaker is being held.\n- **Combat:** 2x **Mindclave Interrogators** (Tier 2) and 1x **Mindclave Warden** (Tier 2 Boss). The Warden uses *Psychic Backlash* to inflict Stress on anyone who attacks them.\n\n**Scene 3: The Extraction**\nThe High Speaker is catatonic, their mind trapped in a psychic loop.\n- **Skill Challenge:** The crew must accumulate 3 successful Presence or Knowledge rolls to break the loop and guide the High Speaker back to consciousness. The GM gains 1 Fear for every failed roll, representing the Mindclave's psychic defenses tightening."
+            },
+            {
+              "title": "Key Choices",
+              "content": "- **What to do with the Mindclave secrets?** The crew discovers data detailing the Mindclave's research into the Eclipse. They can give it to the Valari, the Terrans, or keep it for themselves."
+            },
+            {
+              "title": "Chapter-End Consequences",
+              "content": "Rescuing the High Speaker restores the Valari network, but the Mindclave's actions spark a bitter feud between the two telepathic factions. The data reveals that the Eclipse is not just an alien race, but a corrupted offshoot of the Progenitors."
+            },
+            {
+              "title": "Cliffhanger",
+              "content": "The High Speaker awakens, their eyes glowing with unnatural light. They grab a crew member and whisper, \"The gate is open. The first of the dark ones has crossed the threshold.\"\n\n---"
+            }
+          ]
+        },
+        {
+          "title": "Chapter 7: The Silent Fleet",
+          "content": "**Level:** 5\n**Featured Factions:** Eclipse, Terran Coalition, Aurelian Empire\n**Locations:** Deep Space (The Dead Zone), Terran Command Center",
+          "sections": [
+            {
+              "title": "The Hook",
+              "content": "A Terran patrol fleet goes missing in the Dead Zone. The crew is drafted to lead a search and rescue mission, only to discover the fleet hasn't been destroyed\u2014it's been assimilated. The Eclipse has arrived, and they are using Terran ships as their vanguard.\n\n> *\"The Dead Zone is aptly named. No stars shine here, only the cold void. The distress beacon from the TCS *Vanguard* is a weak, repeating pulse. As your ship drops out of hyperspace, the sensor screen lights up. The Terran fleet is here, drifting silently. But their engine signatures are wrong. They're burning cold.\"*"
+            },
+            {
+              "title": "GM Summary",
+              "content": "This chapter introduces the Eclipse as a direct, physical threat. The crew must engage in starship combat, board the assimilated Terran flagship, and retrieve the fleet's black box data before the Eclipse can use the ships to attack Nexus 9."
+            },
+            {
+              "title": "Core Conflict",
+              "content": "The Terran Coalition wants their ships back or destroyed. The Aurelian Empire wants to study the assimilation technology. The Eclipse wants to consume everything."
+            },
+            {
+              "title": "Encounter Sequence",
+              "content": "**Scene 1: The Ghost Fleet**\nThe crew's ship is ambushed by assimilated Terran fighters.\n- **Starship Combat:** The crew must pilot their ship against 3x **Eclipse Swarm Fighters** (Tier 2). The crew must use their ship's weapons and evasive maneuvers to survive.\n\n**Scene 2: Boarding the Vanguard**\nThe crew docks with the Terran flagship to retrieve the black box.\n- **Exploration:** The interior of the ship is covered in a biomechanical growth. The crew must make Presence rolls to resist the psychic static (take 1 Stress on failure).\n- **Combat:** They encounter the assimilated crew\u2014now **Eclipse Husks** (Tier 2). The crew must fight 4x Husks to reach the bridge.\n\n**Scene 3: The Black Box**\nThe black box is integrated into the ship's corrupted mainframe.\n- **Skill Challenge:** The crew must accumulate 4 successful Knowledge or Finesse rolls to extract the data while defending against an **Eclipse Overseer** (Tier 2 Boss). The Overseer uses *Assimilation Tendrils* to grapple and damage the crew."
+            },
+            {
+              "title": "Key Choices",
+              "content": "- **Destroy the fleet?** The crew can set the flagship's reactor to overload, destroying the assimilated fleet but losing any chance to save the remaining Terran crew. Or they can flee with the data, leaving the fleet intact for the Eclipse to use."
+            },
+            {
+              "title": "Chapter-End Consequences",
+              "content": "The black box data confirms the worst: the Eclipse assimilation process is rapid and irreversible. The Terran Coalition realizes their military might is useless if their own ships can be turned against them."
+            },
+            {
+              "title": "Cliffhanger",
+              "content": "As the crew returns to Nexus 9, the station's defense grid activates. The Aurelian armada, tired of waiting, has opened fire on the Kaelen sector. The station is at war with itself just as the true enemy arrives.\n\n---"
+            }
+          ]
+        },
+        {
+          "title": "Chapter 8: The Shattered Peace",
+          "content": "**Level:** 6\n**Featured Factions:** All Factions\n**Locations:** Nexus 9 (Multiple Rings)",
+          "sections": [
+            {
+              "title": "The Hook",
+              "content": "Full-scale war breaks out on Nexus 9. The Aurelians and Kaelens are fighting in the corridors, the Terrans are struggling to maintain order, and the Mindclave has sealed their embassy. Amidst the chaos, the Eclipse artifact in the Red Ring activates, opening a localized hyperspace tear inside the station.\n\n> *\"Nexus 9 is tearing itself apart. Plasma fire illuminates the Promenade, shattering the reinforced glass and venting atmosphere into the void. The screams of the dying are drowned out by the station's automated warning klaxons. And then, a sound that shakes the very bulkheads\u2014a deep, resonant tear in the fabric of space. The dark has come inside.\"*"
+            },
+            {
+              "title": "GM Summary",
+              "content": "This chapter is a massive, station-wide crisis. The crew must navigate the warzone, forge temporary alliances, and reach the Red Ring to shut down the artifact before the tear expands and consumes the station. This is the climax of Arc 2."
+            },
+            {
+              "title": "Core Conflict",
+              "content": "The factions are too busy fighting each other to realize the true threat. The crew must act as the only unifying force, convincing the warring parties to stand down and focus on the Eclipse tear."
+            },
+            {
+              "title": "Encounter Sequence",
+              "content": "**Scene 1: The Warzone**\nThe crew must cross the Promenade, which is currently a battlefield between Aurelian and Kaelen forces.\n- **Hazard:** Crossfire and explosions. The crew must make Agility or Presence rolls to navigate the chaos without taking 3d8 kinetic damage.\n- **Roleplay:** They encounter Commander Vance, pinned down by Aurelian fire. Helping him secures Terran support for the final push.\n\n**Scene 2: The Diplomatic Push**\nThe crew must convince the faction leaders to cease fire.\n- **Social Challenge:** The crew must accumulate 5 successful Presence or Instinct rolls to broadcast a station-wide message, revealing the Eclipse threat and the black box data from Chapter 7. The GM gains 1 Fear for every failed roll, representing the factions ignoring the plea.\n\n**Scene 3: Closing the Tear**\nThe crew reaches the Red Ring. The artifact has created a swirling vortex of dark energy, and Eclipse forces are pouring through.\n- **Combat:** The crew must fight 2x **Eclipse Vanguards** (Tier 3) and 1x **Eclipse Rift-Caller** (Tier 3 Boss). The Rift-Caller uses *Void Eruption* to deal massive area-of-effect damage.\n- **Objective:** The crew must use the Valari soul-crystal (from Chapter 4) to disrupt the artifact's frequency and close the tear."
+            },
+            {
+              "title": "Key Choices",
+              "content": "- **Who sacrifices themselves?** Closing the tear requires someone to manually align the crystal within the vortex, exposing them to lethal radiation. A crew member can do it (taking a permanent scar or severe consequence), or they can convince an NPC (like Commander Vance) to make the sacrifice."
+            },
+            {
+              "title": "Chapter-End Consequences",
+              "content": "The tear is closed, and the immediate Eclipse threat is neutralized. The factions, shocked by the revelation, agree to a fragile ceasefire. Nexus 9 is battered, bleeding, but united against the true enemy."
+            },
+            {
+              "title": "Cliffhanger",
+              "content": "The station's sensors clear as the vortex collapses. The localized tear was just a distraction. The main Eclipse armada, thousands of ships strong, has just entered the system. The Crucible of Stars has begun.\n\n---\n*(End of Arc 2)*"
+            }
+          ]
         },
         {
           "title": "ARC 3: THE CRUCIBLE OF STARS (Levels 7-10)",
-          "id": "book-7-ch-5",
+          "content": "The final arc brings the campaign to its epic conclusion. The crew must hold the alliance together, uncover the horrifying truth of the Eclipse, and lead the final assault on the Eclipse gate. The fate of the galaxy hangs in the balance.",
+          "sections": []
+        },
+        {
+          "title": "Chapter 9: The Broken Alliance",
+          "content": "**Level:** 7\n**Featured Factions:** All Factions, The Eclipse\n**Locations:** Nexus 9 (Grand Assembly Hall), Deep Space",
           "sections": [
             {
-              "title": "Chapter 9: The Broken Alliance",
-              "id": "book-7-ch-5-s-1",
-              "content": "**Level:** 7\n**Featured Factions:** Terran Coalition, The Mindclave, The Valari\n\n**The Hook:**\nIn the aftermath of the attack on Nexus 9, the Terran Coalition and the Valari are on the brink of war, blaming each other for the station's vulnerability. The crew must mediate a desperate peace summit while fending off Mindclave assassins.\n\n> *\"Earth is a fortress world, its skies choked with orbital defense platforms. The peace summit is held in the Geneva Spire, a towering monument to Terran bureaucracy. The Valari delegation sits on one side of the circular table, their armor gleaming. The Terran generals sit on the other, their faces hard. The air is thick with accusations. And then, the lights flicker, and the Mindclave makes its move.\"*\n\n**Encounter 1: The Summit Ambush (Combat)**\nDirector Thorne of the Mindclave, having secretly allied with the Eclipse, sends a hit squad to assassinate both delegations and plunge the galaxy into chaos.\n*   **Adversaries:** 2x **Mindclave Handlers** (Tier 3 Leaders), 4x **Mindclave Hounds** (Tier 2 Skulks).\n*   **Tactics:** The Handlers use *Dominate* to turn the Terran and Valari guards against each other, creating a chaotic, three-way firefight.\n\n**Encounter 2: The Revelation (Social/Investigation)**\nAfter the assassins are defeated, the crew finds a data-spike on one of the Handlers. A Difficulty 16 Knowledge roll decrypts it, revealing Thorne's treason and a shocking secret: the Valari surrendered in the last war because their souls resonate with the Eclipse.\n*   **Challenge:** The crew must present this evidence to the Terran generals (Difficulty 17 Presence) without causing the Valari to walk out in shame.\n\n**The Choice & Consequences:**\nThe crew has exposed Thorne and the Valari secret.\n*   **Execute Thorne:** The crew tracks down Thorne and kills him. The Mindclave fractures, removing them as a threat but also losing their telepathic support for the final battle.\n*   **Blackmail Thorne:** The crew uses the evidence to force Thorne to commit the Mindclave's telepaths to the war effort. The alliance holds, but Thorne remains a dangerous wildcard.\n\n---"
+              "title": "The Hook",
+              "content": "The Eclipse armada has arrived, but they do not attack immediately. Instead, they broadcast a psychic ultimatum across the entire system: surrender the Valari soul-crystal and the station, or be consumed. The fragile alliance forged in Chapter 8 begins to crack as the Kaelen Syndicate and elements of the Terran Coalition consider taking the deal.\n\n> *\"The sky outside the observation deck is no longer black. It is a writhing mass of biomechanical ships, blotting out the stars. The silence is deafening, broken only by the psychic static that grates against the minds of every living soul on Nexus 9. The Eclipse is waiting. And inside the Grand Assembly Hall, the screaming has already begun.\"*"
             },
             {
-              "title": "Chapter 10: The Technoseer's Bargain",
-              "id": "book-7-ch-5-s-2",
-              "content": "**Level:** 8\n**Featured Factions:** The Technoseers, The Umbral Covenant\n\n**The Hook:**\nTo defeat the Eclipse, the crew needs the knowledge of the Technoseers. They must travel to the uncharted Rimward Marches and negotiate with the secretive order, offering something of equal value in exchange for the secrets of Eclipse technology.\n\n> *\"The Rimward Marches are a graveyard of dead stars and rogue planets. The Technoseer enclave is built into the hollowed-out core of a shattered moon. The air hums with the sound of a billion calculations per second. The Grand Magus, a being more machine than flesh, floats down from a web of fiber-optic cables. 'You seek the key to The Hollow,' it says, its voice a chorus of synthetic tones. 'But what are you willing to trade for the survival of your species?'\"*\n\n**Encounter 1: The Trial of Logic (Puzzle/Social)**\nThe Technoseers do not value money or political power. They value unique data, rare technology, or profound secrets.\n*   **Challenge:** The crew must offer something of immense value (e.g., the Valari soul-crystal, the Vanguard AI core, or a PC's most guarded secret). The GM sets the Difficulty based on the narrative weight of the offering (Difficulty 14-18 Presence or Knowledge).\n\n**Encounter 2: The Umbral Ambush (Combat)**\nA splinter faction of Technoseers, the Umbral Covenant, believes the Eclipse should be allowed to cleanse the galaxy. They attack the crew to prevent the exchange.\n*   **Adversaries:** 1x **Progenitor Sentinel** (Tier 3 Bruiser, controlled by the Covenant), 3x **Void-Stalkers** (Tier 2 Skulks).\n*   **Hazard:** Gravity Fluctuations. The moon's artificial gravity fails randomly. At the start of each round, roll 1d6. On a 1-3, all movement is halved.\n\n**The Choice & Consequences:**\nThe crew secures the schematics for an Eclipse-breaching weapon, but the cost is high.\n*   **Sacrifice a Secret:** A PC gives up a vital piece of their backstory or a powerful artifact. The Technoseers provide the weapon, and the PC permanently loses access to that narrative or mechanical advantage.\n*   **Sacrifice a Ship:** The crew trades their own starship (or a significant portion of their fleet). They gain the weapon, but their mobility and firepower are severely reduced for the final assault.\n\n---"
+              "title": "GM Summary",
+              "content": "This chapter focuses on high-stakes diplomacy and the desperate need to hold the alliance together. The crew must act as the primary negotiators, preventing the factions from turning on each other out of fear. They will discover that the Eclipse's ultimatum is a stalling tactic while they construct a massive hyperspace gate to bring in their world-killer ships."
             },
             {
-              "title": "Chapter 11: The Descent into Darkness",
-              "id": "book-7-ch-5-s-3",
-              "content": "**Level:** 9\n**Featured Factions:** All major factions, The Eclipse\n\n**The Hook:**\nThe grand coalition fleet, led by the players, launches a desperate assault on The Hollow. The crew must navigate the treacherous hyperspace currents, breach the Eclipse defenses, and deliver the Nexus Core to the heart of the enemy stronghold.\n\n> *\"The Hollow is not a planet. It is a Dyson sphere made of black, jagged crystal, pulsing with a sickly violet light. Around it, the Eclipse fleet swarms like angry hornets. Your coalition fleet\u2014Terran dreadnoughts, Valari cruisers, Kaelen raiders, and Vanguard stealth ships\u2014drops out of hyperspace. The comms channel is a cacophony of battle cries and terrified screams. 'This is it,' Commander Vance's voice cuts through the static. 'Punch a hole. We'll hold the line.'\"*\n\n**Encounter 1: The Fleet Engagement (Ship Combat)**\nThe crew's ship must lead the spearhead through the Eclipse defensive perimeter.\n*   **Adversaries:** 1x **Progenitor Leviathan** (Tier 4 Boss, reskinned as an Eclipse Capital Ship), 4x Eclipse Fighters (use Tier 2 Ship stats).\n*   **Objective:** The crew must survive for 5 rounds and destroy the Leviathan to create a breach in the sphere's outer shell.\n\n**Encounter 2: The Boarding Action (Combat)**\nThe crew's ship crashes through the breach and lands inside The Hollow. They must fight their way to the central chamber carrying the Nexus Core (or the Technoseer weapon).\n*   **Adversaries:** 2x **Void Avatars** (Tier 4 Bosses, acting as gatekeepers).\n*   **Hazard:** Psychic Onslaught. The Eclipse hive-mind attacks the crew's sanity. Every round, all PCs must make a Difficulty 16 Instinct roll or take 1d8 Stress.\n\n**The Choice & Consequences:**\nThe crew has breached the inner sanctum, but the coalition fleet outside is being decimated.\n*   **Call for Reinforcements:** The crew orders the fleet to push inside the sphere to support them. The crew gains Advantage on all rolls in the final chapter, but the coalition fleet suffers catastrophic, irreplaceable losses.\n*   **Hold the Line:** The crew orders the fleet to stay outside and draw fire. The fleet survives, but the crew must face the final boss alone, with no backup and Disadvantage on their first round of attacks.\n\n---"
+              "title": "Core Conflict",
+              "content": "The Kaelen Syndicate wants to sell out the station to save themselves. The Terran Coalition is divided between fighting and fleeing. The Aurelians demand a preemptive strike. The crew must find a way to unite them and formulate a plan to destroy the Eclipse gate."
             },
             {
-              "title": "Chapter 12: The Dawn of a New Age",
-              "id": "book-7-ch-5-s-4",
-              "content": "**Level:** 10\n**Featured Factions:** The Eclipse, The Luminaries\n\n**The Hook:**\nThe final confrontation. The crew must detonate the Nexus Core while holding off the Eclipse leadership and their Keepers. The fate of the galaxy rests on their actions, and survival is not guaranteed.\n\n> *\"The Inner Sanctum is a vast, echoing chamber of obsidian and starlight. At its center floats the Eclipse Overmind\u2014a swirling vortex of dark energy and screaming souls. The Whisperer stands before it, his physical form burning away as he channels the Overmind's power. 'You are too late,' he hisses, his voice echoing in your skulls. 'The cycle ends. The silence begins.' You drop the Nexus Core onto the dais. The countdown starts. You have three minutes to save the galaxy.\"*\n\n**Encounter 1: The Overmind (Final Boss Combat)**\nThis is the ultimate battle. The crew must survive while the Nexus Core charges for detonation.\n*   **Adversary:** 1x **The Eclipse Overmind** (Tier 4 Legendary Boss).\n    *   *HP:* 50 | *Evasion:* 16 | *Armor:* 5\n    *   *Major Threshold:* 25 | *Severe Threshold:* 45\n    *   *Attacks:* Void Tendril (Presence, Far, 3d10+5 Magic), Reality Tear (Instinct, Close, 4d8+5 Physical).\n    *   *Fear Moves:* **Consume Hope (2 Fear):** The Overmind drains 1 Hope from every PC and heals 1d10 HP. **Summon the Swarm (3 Fear):** Spawns 4x Void-Spawn minions.\n\n**Encounter 2: The Detonation (Skill Challenge/Sacrifice)**\nThe Core reaches critical mass, but the automated trigger is damaged by the Overmind's attacks. Someone must stay behind to manually detonate it.\n*   **Challenge:** A Difficulty 20 Knowledge or Agility roll to repair the trigger remotely. If the roll fails, a PC (or a beloved NPC) must sacrifice themselves to trigger the blast.\n\n**The Choice & Consequences:**\nThe Core detonates, shattering The Hollow and banishing the Eclipse back into the void.\n*   **The Ultimate Sacrifice:** A PC stays behind. They die a hero's death, their name etched into the stars. The rest of the crew escapes as The Hollow collapses.\n*   **The Miraculous Escape:** The crew manages to repair the trigger and flee. They survive, but the galaxy is forever changed by the war.\n\n**Epilogue:**\nThe GM narrates the aftermath based on the crew's choices throughout the campaign. Did the Aurelian Empire fall? Did the Kaelen Syndicate find legitimacy? Is Nexus 9 a rebuilt beacon of hope, or a floating graveyard? The players describe what their surviving characters do next in the new, fragile peace they have forged.\n\n*(End of Campaign)*"
+              "title": "Encounter Sequence",
+              "content": "**Scene 1: The Council of Despair**\nThe crew must mediate the heated debate in the Grand Assembly Hall.\n- **Social Challenge:** The crew must accumulate 6 successful Presence or Knowledge rolls to convince the factions to stand and fight. The GM gains 1 Fear for every failed roll, representing the factions losing hope.\n- **Roleplay:** The crew can use the black box data (Chapter 7) and the soul-crystal (Chapter 4) to prove that the Eclipse cannot be reasoned with.\n\n**Scene 2: The Kaelen Betrayal**\nThe Kaelen Syndicate attempts to steal the soul-crystal and deliver it to the Eclipse.\n- **Combat:** The crew must stop 4x **Syndicate Enforcers** (Tier 3) and 1x **Syndicate Boss** (Tier 3 Boss) from breaching the secure vault. The Boss uses *Dirty Tactics* to blind and disorient the crew.\n\n**Scene 3: The Preemptive Strike**\nThe Aurelians launch a desperate attack on the Eclipse gate construction site. The crew must join the assault to ensure its success.\n- **Starship Combat:** The crew pilots their ship alongside the Aurelian fleet, engaging 4x **Eclipse Interceptors** (Tier 3). The crew must use their ship's advanced systems to survive the dogfight."
+            },
+            {
+              "title": "Key Choices",
+              "content": "- **Who leads the fleet?** The crew can choose to let the Aurelians lead the assault (risking heavy casualties but dealing massive damage) or take command themselves (requiring difficult piloting checks but minimizing losses)."
+            },
+            {
+              "title": "Chapter-End Consequences",
+              "content": "The preemptive strike damages the Eclipse gate, delaying the arrival of their world-killers. However, the Aurelian fleet is decimated, leaving Nexus 9 vulnerable to a direct assault."
+            },
+            {
+              "title": "Cliffhanger",
+              "content": "The Eclipse armada, realizing their stalling tactic has failed, begins their advance on Nexus 9. The station's shields flare to life as the first wave of biomechanical boarding pods impacts the hull.\n\n---"
             }
-          ],
-          "content": "The final arc brings the campaign to its climax. The galaxy is at war, the Eclipse are fully awakened, and the players must unite the fractured factions to make a final stand at The Hollow."
+          ]
+        },
+        {
+          "title": "Chapter 10: The Technoseer's Bargain",
+          "content": "**Level:** 8\n**Featured Factions:** The Technoseers, The Mindclave, The Eclipse\n**Locations:** The Deep Core (Technoseer Sanctum), Nexus 9 Exterior",
+          "sections": [
+            {
+              "title": "The Hook",
+              "content": "With the station under siege, the defense grid is failing. The only way to repel the Eclipse boarding parties is to activate the station's dormant Progenitor weapon systems. The crew must descend into the deepest, most dangerous part of the Core to strike a bargain with the reclusive Technoseers, who hold the keys to the ancient technology.\n\n> *\"The station groans under the impact of Eclipse boarding pods. The lights flicker, and the artificial gravity stutters. Below you, in the lightless depths of the Core, the Technoseers wait. They have ignored the politics of the upper rings for centuries, communing only with the machine spirits. Now, you must ask them to wake the sleeping gods of Nexus 9.\"*"
+            },
+            {
+              "title": "GM Summary",
+              "content": "The crew must navigate the bizarre, machine-worshipping culture of the Technoseers and convince them to activate the Progenitor weapons. The Mindclave, however, warns that the weapons are powered by the same dark energy as the Eclipse, and using them might corrupt the station itself."
+            },
+            {
+              "title": "Core Conflict",
+              "content": "The Technoseers demand a heavy price for their aid: the Valari soul-crystal, which they believe contains the ultimate machine code. The Mindclave opposes this, fearing the crystal's power will be misused. The crew must negotiate this technological and spiritual minefield while the station burns above them."
+            },
+            {
+              "title": "Encounter Sequence",
+              "content": "**Scene 1: The Descent**\nThe crew must navigate the treacherous, shifting architecture of the Deep Core.\n- **Hazard:** The Core is actively reconfiguring itself. The crew must make Agility or Finesse rolls to avoid being crushed by moving bulkheads (taking 3d10 kinetic damage on failure).\n- **Exploration:** They encounter ancient, dormant Progenitor machines that react to the soul-crystal's presence.\n\n**Scene 2: The Technoseer Sanctum**\nThe crew meets the Prime Architect, the leader of the Technoseers.\n- **Social Challenge:** The crew must accumulate 5 successful Presence or Knowledge rolls to convince the Prime Architect to activate the weapons without surrendering the soul-crystal. The GM gains 1 Fear for every failed roll, representing the Technoseers' growing impatience.\n\n**Scene 3: The Eclipse Breach**\nEclipse boarding parties breach the Core, attempting to destroy the Progenitor weapons before they can be activated.\n- **Combat:** The crew must defend the Prime Architect from 3x **Eclipse Vanguards** (Tier 3) and 1x **Eclipse Assimilator** (Tier 3 Boss). The Assimilator uses *Techno-Virus* to corrupt the crew's gear and weapons."
+            },
+            {
+              "title": "Key Choices",
+              "content": "- **Use the Progenitor Weapons?** Activating the weapons repels the Eclipse boarding parties but permanently alters the station's architecture, merging it with the dark energy of the Eclipse. Refusing to use them forces the crew to fight a desperate, losing battle to manually seal the breaches."
+            },
+            {
+              "title": "Chapter-End Consequences",
+              "content": "The Progenitor weapons are activated, unleashing a devastating wave of energy that obliterates the Eclipse boarding pods. However, the station's systems are now erratic, and the crew realizes that Nexus 9 itself is a dormant Progenitor war machine."
+            },
+            {
+              "title": "Cliffhanger",
+              "content": "The Prime Architect, their eyes glowing with the same dark energy as the Eclipse, turns to the crew and says, \"The machine is awake. But it hungers. It needs a pilot.\"\n\n---"
+            }
+          ]
+        },
+        {
+          "title": "Chapter 11: The Descent into Darkness",
+          "content": "**Level:** 9\n**Featured Factions:** The Eclipse, The Valari Collective\n**Locations:** Nexus 9 (The Bridge), The Eclipse Flagship",
+          "sections": [
+            {
+              "title": "The Hook",
+              "content": "The Eclipse flagship, a massive, moon-sized leviathan, positions itself directly above Nexus 9. It begins a psychic bombardment that paralyzes the station's defenders. The crew must board the flagship and destroy its psychic amplifier, or the station will be consumed from within.\n\n> *\"The sky is gone, replaced by the undulating, fleshy hull of the Eclipse flagship. A low, agonizing hum vibrates through your teeth and bones. Around you, soldiers drop their weapons, clutching their heads and screaming. The psychic bombardment has begun. If you don't silence that ship, there won't be anyone left to save.\"*"
+            },
+            {
+              "title": "GM Summary",
+              "content": "This is a high-stakes infiltration mission. The crew must use the Valari soul-crystal to shield their minds from the bombardment, board the flagship, and navigate its nightmarish, biomechanical interior to reach the psychic amplifier."
+            },
+            {
+              "title": "Core Conflict",
+              "content": "The interior of the flagship is a living, hostile environment. The crew must fight through the ship's immune system and confront the horrifying truth of the Eclipse: they are not aliens, but the assimilated remnants of the Progenitors themselves."
+            },
+            {
+              "title": "Encounter Sequence",
+              "content": "**Scene 1: The Living Ship**\nThe crew boards the flagship and must navigate its fleshy, pulsing corridors.\n- **Hazard:** The ship's immune system attacks them with acidic enzymes and grasping tendrils. The crew must make Agility or Presence rolls to avoid taking 4d8 acid damage and 1 Stress.\n- **Exploration:** They discover chambers filled with assimilated beings from countless worlds, trapped in a state of eternal torment.\n\n**Scene 2: The Progenitor Truth**\nThe crew reaches the central nervous system of the ship and uncovers the Eclipse's origin.\n- **Revelation:** The Eclipse are the Progenitors, corrupted by their own pursuit of immortality. They consume other races to sustain their decaying forms.\n- **Combat:** The crew is ambushed by 4x **Progenitor Echoes** (Tier 4). These enemies use *Psychic Scream* to inflict massive Stress and damage.\n\n**Scene 3: The Psychic Amplifier**\nThe crew reaches the amplifier, a massive, beating heart of dark energy.\n- **Skill Challenge:** The crew must accumulate 6 successful Knowledge or Finesse rolls to overload the amplifier while defending against an **Eclipse Hive-Mind** (Tier 4 Boss). The Hive-Mind uses *Mental Domination* to force the crew to attack each other."
+            },
+            {
+              "title": "Key Choices",
+              "content": "- **Destroy or Control?** The crew can destroy the amplifier, crippling the flagship but risking a catastrophic explosion. Or, if they have a telepath (Mystic or Valari), they can attempt to control the amplifier, turning the psychic bombardment back on the Eclipse fleet (requiring a massive sacrifice of Hope and Stress)."
+            },
+            {
+              "title": "Chapter-End Consequences",
+              "content": "The psychic bombardment is silenced, freeing the station's defenders. The flagship is crippled, but the Eclipse armada remains. The final battle is imminent."
+            },
+            {
+              "title": "Cliffhanger",
+              "content": "As the crew escapes the crippled flagship, they receive a transmission from Commander Vance. \"The gate... they finished the gate. The world-killers are coming through.\"\n\n---"
+            }
+          ]
+        },
+        {
+          "title": "Chapter 12: The Fraying Dark",
+          "content": "**Level:** 10\n**Featured Factions:** All Factions, The Eclipse\n**Locations:** Deep Space (The Eclipse Gate), Nexus 9",
+          "sections": [
+            {
+              "title": "The Hook",
+              "content": "The Eclipse gate is open, and massive world-killer ships are emerging. The combined fleets of the Terran Coalition, Aurelian Empire, Kaelen Syndicate, and Valari Collective launch a desperate, all-out assault on the gate. The crew must lead the charge, using the awakened Nexus 9 station itself as a weapon to destroy the gate and end the Eclipse threat once and for all.\n\n> *\"This is it. The sky is a chaotic tapestry of plasma fire, exploding ships, and the terrifying, silent bulk of the Eclipse world-killers. The comms channel is a cacophony of desperate orders and dying screams. But beneath it all, you feel the hum of Nexus 9. The station is ready. The galaxy is watching. It's time to close the door.\"*"
+            },
+            {
+              "title": "GM Summary",
+              "content": "This is the epic conclusion to the campaign. The crew must coordinate the massive fleet battle, pilot Nexus 9 into position, and unleash the station's full Progenitor arsenal to destroy the Eclipse gate. This chapter requires high-level tactical thinking, massive sacrifices, and the culmination of all the choices the crew has made throughout the campaign."
+            },
+            {
+              "title": "Core Conflict",
+              "content": "The Eclipse world-killers are too powerful for the conventional fleets to destroy. The crew must use Nexus 9 to ram or fire upon the gate, but doing so will likely destroy the station and everyone on it. They must find a way to evacuate the civilian population while holding the line."
+            },
+            {
+              "title": "Encounter Sequence",
+              "content": "**Scene 1: The Fleet Engagement**\nThe crew must coordinate the allied fleets to punch a hole through the Eclipse defensive line.\n- **Starship Combat:** The crew pilots their ship (or commands a capital ship) against 5x **Eclipse Dreadnoughts** (Tier 4). The crew can use the *Command* action to direct allied ships to focus fire or provide cover.\n\n**Scene 2: The Evacuation**\nThe crew must ensure the civilian population of Nexus 9 is evacuated before the station is used as a weapon.\n- **Social Challenge:** The crew must accumulate 6 successful Presence or Instinct rolls to coordinate the chaotic evacuation. The GM gains 1 Fear for every failed roll, representing civilian transports being destroyed by Eclipse fighters.\n\n**Scene 3: The Final Strike**\nThe crew takes control of Nexus 9's Progenitor systems and targets the Eclipse gate.\n- **Combat:** The crew must defend the station's control room from the **Eclipse Prime** (Tier 4 Legendary Boss), the physical manifestation of the Eclipse hive-mind. The Prime uses *Reality Tear* to alter the battlefield and inflict massive damage.\n- **Objective:** The crew must accumulate 8 successful Knowledge or Finesse rolls to align the station's weapons and fire on the gate."
+            },
+            {
+              "title": "Key Choices",
+              "content": "- **The Ultimate Sacrifice:** Firing the station's weapons will destroy the gate, but the feedback will shatter Nexus 9. The crew must decide who stays behind to manually trigger the firing sequence. This is a guaranteed lethal action. A crew member can volunteer, or they can convince a major NPC (like Commander Vance or the Prime Architect) to do it."
+            },
+            {
+              "title": "Chapter-End Consequences",
+              "content": "The Eclipse gate is destroyed, and the world-killers are severed from their power source, rendering them inert. The Eclipse armada is broken, and the galaxy is saved. However, Nexus 9 is destroyed, and the political landscape of the galaxy is forever changed."
+            },
+            {
+              "title": "Epilogue",
+              "content": "The surviving factions gather in the debris field of Nexus 9. The fragile peace has been shattered, but a new, stronger alliance has been forged in the crucible of stars. The crew are hailed as heroes, their names etched into the history of the known galaxy. The Fraying Dark has been held back, for now.\n\n---\n*(End of Campaign)*"
+            }
+          ]
         }
       ]
     },
