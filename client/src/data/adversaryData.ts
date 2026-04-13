@@ -458,14 +458,14 @@ const VALARI_COLLECTIVE: Adversary[] = [
   },
 ];
 
-// ─── Terran Republic ─────────────────────────────────────────────────────────
+// ─── Terran Coalition ─────────────────────────────────────────────────────────
 // Faction identity: Democratic military power. Combined arms, tech advantage, by-the-book tactics.
 // Combat feel: Ranged-focused, tactical, uses cover and suppression.
 
-const TERRAN_REPUBLIC: Adversary[] = [
+const TERRAN_COALITION: Adversary[] = [
   {
     name: "Terran Marine",
-    faction: "Terran Republic",
+    faction: "Terran Coalition",
     tier: 1,
     type: "Standard",
     difficulty: 13,
@@ -477,7 +477,7 @@ const TERRAN_REPUBLIC: Adversary[] = [
     evasion: 11,
     fearCost: 1,
     signature: "Reliable ranged soldier using cover and suppression",
-    description: "Terran Marines are the Republic's standard infantry — well-trained, well-equipped, and fighting by the book. They use cover effectively and coordinate fire with squad-mates.",
+    description: "Terran Marines are the Coalition's standard infantry — well-trained, well-equipped, and fighting by the book. They use cover effectively and coordinate fire with squad-mates.",
     stressInflict: 0,
     features: [
       { name: "Suppressive Fire", type: "Action", description: "The Marine fires a sustained burst at a zone within Far range. All creatures in that zone must succeed on a Difficulty 13 Agility roll or become Slowed until the end of their next turn. Creatures that move through the zone before the Marine's next turn take 1d6 damage." },
@@ -487,7 +487,7 @@ const TERRAN_REPUBLIC: Adversary[] = [
   },
   {
     name: "Terran Special Forces Operative",
-    faction: "Terran Republic",
+    faction: "Terran Coalition",
     tier: 2,
     type: "Skulk",
     difficulty: 15,
@@ -499,7 +499,7 @@ const TERRAN_REPUBLIC: Adversary[] = [
     evasion: 14,
     fearCost: 2,
     signature: "Stealth specialist and ambush expert",
-    description: "SpecOps operatives are the Republic's black-ops soldiers — trained in infiltration, sabotage, and precision elimination. They operate in small teams behind enemy lines.",
+    description: "SpecOps operatives are the Coalition's black-ops soldiers — trained in infiltration, sabotage, and precision elimination. They operate in small teams behind enemy lines.",
     stressInflict: 1,
     features: [
       { name: "Ambush", type: "Passive", description: "If the Operative attacks from Hidden, they deal an additional 1d8 damage and the target must mark 1 Stress." },
@@ -512,7 +512,7 @@ const TERRAN_REPUBLIC: Adversary[] = [
   },
   {
     name: "Terran Heavy Assault Trooper",
-    faction: "Terran Republic",
+    faction: "Terran Coalition",
     tier: 3,
     type: "Solo",
     difficulty: 16,
@@ -524,7 +524,7 @@ const TERRAN_REPUBLIC: Adversary[] = [
     evasion: 12,
     fearCost: 4,
     signature: "Powered exoskeleton with missile barrage",
-    description: "Heavy Assault Troopers wear the Republic's most advanced powered exoskeletons — walking tanks armed with rotary cannons and micro-missile pods. They are deployed when the Republic needs to make a statement.",
+    description: "Heavy Assault Troopers wear the Coalition's most advanced powered exoskeletons — walking tanks armed with rotary cannons and micro-missile pods. They are deployed when the Coalition needs to make a statement.",
     stressInflict: 1,
     features: [
       { name: "Powered Exoskeleton", type: "Passive", description: "The Trooper has an Armor Score of 4 and 4 Armor Slots. They are immune to the Slowed condition and cannot be pushed or knocked prone." },
@@ -956,7 +956,7 @@ export const ADVERSARY_DB: Adversary[] = [
   ...AURELIAN_EMPIRE,
   ...MINDCLAVE,
   ...VALARI_COLLECTIVE,
-  ...TERRAN_REPUBLIC,
+  ...TERRAN_COALITION,
   ...ECLIPSE,
   ...STATION,
   ...NAMED_VILLAINS,

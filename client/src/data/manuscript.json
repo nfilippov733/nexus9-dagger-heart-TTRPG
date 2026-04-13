@@ -1592,15 +1592,15 @@
           ]
         },
         {
-          "title": "The Terran Republic",
+          "title": "The Terran Coalition",
           "sections": [
             {
               "title": "Overview",
-              "content": "The Terran Republic fields the most conventional military force in the Known Galaxy \u2014 disciplined infantry, combined arms tactics, and overwhelming firepower. What they lack in exotic technology, they make up for in training and logistics."
+              "content": "The Terran Coalition fields the most conventional military force in the Known Galaxy \u2014 disciplined infantry, combined arms tactics, and overwhelming firepower. What they lack in exotic technology, they make up for in training and logistics."
             },
             {
               "title": "Tier 1: Terran Marine",
-              "content": "*Standard infantry of the Terran Republic Armed Forces.*\n*   **Type:** Standard\n*   **Difficulty:** 12\n*   **Attack Modifier:** +3\n*   **Damage Thresholds:** Minor 4 / Major 8 / Severe 15\n*   **Hit Points:** 4\n*   **Stress:** 3\n*   **Experience:** Combined Arms (+2)\n*   **Standard Attack:** *Assault Rifle* (Far range, 1d10+2 physical damage)\n*   **Feature (Action):** *Suppressing Fire.* The Marine spends 1 Stress. A PC within Far range must make a Difficulty 12 Agility roll or have their movement reduced to 0 until the end of their next turn.\n*   **GM Tactics:** Marines fight in fire teams, using *Suppressing Fire* to pin down targets while their squadmates advance."
+              "content": "*Standard infantry of the Terran Coalition Armed Forces.*\n*   **Type:** Standard\n*   **Difficulty:** 12\n*   **Attack Modifier:** +3\n*   **Damage Thresholds:** Minor 4 / Major 8 / Severe 15\n*   **Hit Points:** 4\n*   **Stress:** 3\n*   **Experience:** Combined Arms (+2)\n*   **Standard Attack:** *Assault Rifle* (Far range, 1d10+2 physical damage)\n*   **Feature (Action):** *Suppressing Fire.* The Marine spends 1 Stress. A PC within Far range must make a Difficulty 12 Agility roll or have their movement reduced to 0 until the end of their next turn.\n*   **GM Tactics:** Marines fight in fire teams, using *Suppressing Fire* to pin down targets while their squadmates advance."
             },
             {
               "title": "Tier 1: Terran Combat Medic",
@@ -1621,7 +1621,7 @@
             {
               "title": "Terran Heavy Assault Trooper",
               "id": "terran-heavy-1",
-              "content": "*The Terran Republic's answer to the Aurelian Praetorian Guard \u2014 a soldier in a powered exoskeleton carrying enough firepower to level a city block. Deployed only for high-value targets and siege operations.*\n\n| Attribute | Value |\n|:---|:---|\n| **Type** | Solo |\n| **Tier** | 3 |\n| **Difficulty** | 16 |\n| **Attack Modifier** | +7 |\n| **Damage Thresholds** | Minor 8 / Major 16 / Severe 28 |\n| **Hit Points** | 10 |\n| **Stress** | 6 |\n| **Experience** | Siege Warfare (+4) |\n| **Standard Attack** | *Rotary Autocannon* (Far range, 2d10+5 physical damage) |\n\n**Powered Exoskeleton (Passive).** Reduces all incoming physical damage by 3 before comparing to thresholds. Immune to the Prone condition.\n\n**Missile Barrage (Action, 2 Stress).** Fire a salvo of micro-missiles. All creatures within Close range of a target point must make a Difficulty 15 Agility roll or take 3d8 physical damage. Limited to 3 uses per encounter.\n\n**Brace for Impact (Reaction, 1 Stress).** When targeted by a ranged attack, increase Difficulty by +3 until the start of next turn.\n\n**GM Tactics:** The Trooper is a walking fortress. Advance slowly, use *Missile Barrage* to flush PCs out of cover, then mow them down with the autocannon. Prioritize the biggest visible threat."
+              "content": "*The Terran Coalition's answer to the Aurelian Praetorian Guard \u2014 a soldier in a powered exoskeleton carrying enough firepower to level a city block. Deployed only for high-value targets and siege operations.*\n\n| Attribute | Value |\n|:---|:---|\n| **Type** | Solo |\n| **Tier** | 3 |\n| **Difficulty** | 16 |\n| **Attack Modifier** | +7 |\n| **Damage Thresholds** | Minor 8 / Major 16 / Severe 28 |\n| **Hit Points** | 10 |\n| **Stress** | 6 |\n| **Experience** | Siege Warfare (+4) |\n| **Standard Attack** | *Rotary Autocannon* (Far range, 2d10+5 physical damage) |\n\n**Powered Exoskeleton (Passive).** Reduces all incoming physical damage by 3 before comparing to thresholds. Immune to the Prone condition.\n\n**Missile Barrage (Action, 2 Stress).** Fire a salvo of micro-missiles. All creatures within Close range of a target point must make a Difficulty 15 Agility roll or take 3d8 physical damage. Limited to 3 uses per encounter.\n\n**Brace for Impact (Reaction, 1 Stress).** When targeted by a ranged attack, increase Difficulty by +3 until the start of next turn.\n\n**GM Tactics:** The Trooper is a walking fortress. Advance slowly, use *Missile Barrage* to flush PCs out of cover, then mow them down with the autocannon. Prioritize the biggest visible threat."
             }
           ]
         },
