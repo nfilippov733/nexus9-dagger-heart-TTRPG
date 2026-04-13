@@ -233,6 +233,28 @@
 .prose-nexus table tr:nth-child(even) td {
   background: oklch(0.95 0.004 80);
 }
+.prose-nexus h2 {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: oklch(0.2 0.1 280);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 2px solid oklch(0.7 0.15 185 / 0.3);
+  padding-bottom: 0.4rem;
+}
+.prose-nexus h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: oklch(0.25 0.1 280);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
 .prose-nexus h4 {
   font-family: var(--font-heading);
   font-size: 1rem;
@@ -242,6 +264,11 @@
   margin-bottom: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 0.03em;
+}
+.prose-nexus .table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1rem 0;
 }
 
 /* ─── Dark Mode ─── */
@@ -287,6 +314,13 @@
 }
 .dark .prose-nexus table tr:nth-child(even) td {
   background: oklch(0.16 0.03 260);
+}
+.dark .prose-nexus h2 {
+  color: oklch(0.75 0.15 280);
+  border-bottom-color: oklch(0.7 0.15 185 / 0.4);
+}
+.dark .prose-nexus h3 {
+  color: oklch(0.7 0.12 280);
 }
 .dark .prose-nexus h4 {
   color: oklch(0.7 0.12 280);

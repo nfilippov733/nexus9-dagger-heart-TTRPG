@@ -31,7 +31,7 @@ function convertMarkdown(md: string): string {
 
   const flushTable = () => {
     if (tableRows.length > 0) {
-      htmlParts.push(`<table>${tableRows.join("\n")}</table>`);
+      htmlParts.push(`<div class="table-responsive"><table>${tableRows.join("\n")}</table></div>`);
       tableRows = [];
     }
     inTable = false;
@@ -73,10 +73,31 @@ function convertMarkdown(md: string): string {
       continue;
     }
 
-    // H4 headers
+    // H2 headers (##)
+    if (stripped.startsWith("## ") && !stripped.startsWith("### ")) {
+      if (inTable) flushTable();
+      if (inList) flushList();
+      if (inBlockquote) flushBlockquote();
+      const title = stripped.slice(3);
+      htmlParts.push(`<h2>${formatInline(title)}</h2>`);
+      continue;
+    }
+
+    // H3 headers (###)
+    if (stripped.startsWith("### ") && !stripped.startsWith("#### ")) {
+      if (inTable) flushTable();
+      if (inList) flushList();
+      if (inBlockquote) flushBlockquote();
+      const title = stripped.slice(4);
+      htmlParts.push(`<h3>${formatInline(title)}</h3>`);
+      continue;
+    }
+
+    // H4 headers (####)
     if (stripped.startsWith("#### ")) {
       if (inTable) flushTable();
       if (inList) flushList();
+      if (inBlockquote) flushBlockquote();
       const title = stripped.slice(5);
       htmlParts.push(`<h4>${formatInline(title)}</h4>`);
       continue;
