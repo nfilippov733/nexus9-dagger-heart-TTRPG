@@ -432,42 +432,42 @@
           "id": "book-3-ch-1",
           "sections": [
             {
-              "title": "The Envoy (Adapted from Bard)",
+              "title": "The Envoy",
               "id": "book-3-ch-1-s-1",
               "content": "The Envoy is a master of diplomacy, espionage, and manipulation. They are the face of the crew, navigating the treacherous political waters of Nexus 9.\n*   **Domains:** Grace & Codex\n*   **Evasion:** 10 | **HP:** 5\n*   **Hope Feature (Silver Tongue):** Spend 1 Hope to gain Advantage on any Presence roll during a negotiation.\n*   **Class Feature (Web of Contacts):** Once per session, you can declare that you know an NPC in your current location who owes you a favor.\n*   **Subclasses:**\n    *   *Ambassador:* Focuses on de-escalation and building alliances.\n    *   *Infiltrator:* Focuses on deception, disguise, and extracting secrets.\n*   **Starship Role:** Communications Officer (Jamming, Intercepting Transmissions).\n*   **Diplomacy/Investigation Role:** Primary negotiator; reading motives and uncovering political leverage."
             },
             {
-              "title": "The Operative (Adapted from Rogue)",
+              "title": "The Operative",
               "id": "book-3-ch-1-s-2",
               "content": "The Operative is a specialist in stealth, sabotage, and targeted elimination. They operate in the shadows, dealing with problems before they become public.\n*   **Domains:** Midnight & Grace\n*   **Evasion:** 12 | **HP:** 6\n*   **Hope Feature (Vanish):** Spend 1 Hope to immediately enter stealth, even if you are being observed.\n*   **Class Feature (Sneak Attack):** If you attack an enemy who is unaware of your presence, you deal an additional 1d8 damage.\n*   **Subclasses:**\n    *   *Phantom:* Focuses on absolute stealth and bypassing security systems.\n    *   *Saboteur:* Focuses on explosives, traps, and disabling enemy technology.\n*   **Starship Role:** Electronic Warfare (Hacking enemy systems, spoofing sensors).\n*   **Diplomacy/Investigation Role:** Breaking and entering; acquiring physical evidence; intimidation."
             },
             {
-              "title": "The Pilot (Adapted from Ranger)",
+              "title": "The Pilot",
               "id": "book-3-ch-1-s-3",
               "content": "The Pilot is an ace flyer and navigator, most comfortable behind the stick of a starship or a support vehicle.\n*   **Domains:** Bone & Sage\n*   **Evasion:** 12 | **HP:** 6\n*   **Hope Feature (Evasive Action):** Spend 1 Hope to force an enemy to reroll a successful attack against you or your vehicle.\n*   **Class Feature (Ace in the Hole):** You gain Advantage on all Agility rolls related to piloting or driving.\n*   **Subclasses:**\n    *   *Ace:* Focuses on dogfighting and pushing vehicles beyond their limits.\n    *   *Navigator:* Focuses on hyperspace calculation and surviving environmental hazards.\n*   **Starship Role:** Helm (Evasive Maneuvers, Pursuit).\n*   **Diplomacy/Investigation Role:** Extraction planning; analyzing flight logs and navigation data."
             },
             {
-              "title": "The Marine (Adapted from Warrior)",
+              "title": "The Marine",
               "id": "book-3-ch-1-s-4",
               "content": "The Marine is a shock trooper, trained for zero-G boarding actions and heavy firefights. They are the crew's primary physical deterrent.\n*   **Domains:** Blade & Bone\n*   **Evasion:** 11 | **HP:** 6\n*   **Hope Feature (Adrenaline Surge):** Spend 1 Hope to immediately clear 2 Stress or heal 1d4 HP.\n*   **Class Feature (Combat Veteran):** You ignore the \"Pinned Down\" condition from suppressive fire.\n*   **Subclasses:**\n    *   *Shock Trooper:* Focuses on close-quarters combat and breaching tactics.\n    *   *Heavy Gunner:* Focuses on suppressive fire and area-of-effect weapons.\n*   **Starship Role:** Tactical Officer (Firing weapons, Target Lock).\n*   **Diplomacy/Investigation Role:** Physical intimidation; analyzing combat scenes and ballistics."
             },
             {
-              "title": "The Engineer (Adapted from Guardian)",
+              "title": "The Engineer",
               "id": "book-3-ch-1-s-5",
               "content": "The Engineer is a technical savant, capable of keeping a crippled ship flying or turning scavenged parts into a deadly weapon.\n*   **Domains:** Valor & Blade\n*   **Evasion:** 9 | **HP:** 7\n*   **Hope Feature (Jury-Rig):** Spend 1 Hope to temporarily repair a broken piece of equipment or bypass a locked door.\n*   **Class Feature (Shield-Bearer):** You can use your action to grant an ally in cover an additional +2 to their Evasion.\n*   **Subclasses:**\n    *   *Tech-Savant:* Focuses on hacking, drones, and modifying weapons.\n    *   *Shield-Bearer:* Focuses on personal armor and protecting allies.\n*   **Starship Role:** Chief Engineer (Rerouting power, Emergency Repairs).\n*   **Diplomacy/Investigation Role:** Analyzing technology; recovering corrupted data; bypassing security."
             },
             {
-              "title": "The Mystic (Adapted from Sorcerer)",
+              "title": "The Mystic",
               "id": "book-3-ch-1-s-6",
               "content": "The Mystic is a telepath or a spiritual adept, capable of manipulating the minds of others or sensing the metaphysical currents of the universe.\n*   **Domains:** Arcana & Midnight\n*   **Evasion:** 10 | **HP:** 6\n*   **Hope Feature (Mind Trick):** Spend 1 Hope to plant a brief, harmless suggestion in an NPC's mind.\n*   **Class Feature (Psychic Resonance):** You can communicate telepathically with any willing ally within line of sight.\n*   **Subclasses:**\n    *   *Seer:* Focuses on precognition, sensing danger, and reading emotional residue.\n    *   *Channeler:* Focuses on telekinetic force and offensive psychic attacks.\n*   **Starship Role:** Sensor Operator (Sensor Sweeps, detecting cloaked ships).\n*   **Diplomacy/Investigation Role:** Reading surface thoughts; detecting lies; sensing emotional imprints."
             },
             {
-              "title": "The Broker (Adapted from Druid)",
+              "title": "The Broker",
               "id": "book-3-ch-1-s-7",
               "content": "The Broker is a fixer, a smuggler, and a master of logistics. They know how to acquire rare goods and move them without attracting attention.\n*   **Domains:** Sage & Arcana\n*   **Evasion:** 10 | **HP:** 6\n*   **Hope Feature (Hidden Cache):** Spend 1 Hope to produce a common item (e.g., a med-kit, a tool, a bribe) that you \"happened\" to have on you.\n*   **Class Feature (Black Market Ties):** You can always find a buyer or a seller for illegal goods, regardless of your location.\n*   **Subclasses:**\n    *   *Fixer:* Focuses on acquiring information, forging documents, and bribery.\n    *   *Smuggler:* Focuses on hiding contraband and bypassing customs inspections.\n*   **Starship Role:** Quartermaster (Managing cargo, optimizing fuel consumption).\n*   **Diplomacy/Investigation Role:** Following the money; identifying black-market origins; bribery."
             },
             {
-              "title": "The Medic (Adapted from Seraph)",
+              "title": "The Medic",
               "id": "book-3-ch-1-s-8",
               "content": "The Medic is a trauma surgeon and xenobiologist, essential for keeping the crew alive in a hostile galaxy.\n*   **Domains:** Splendor & Valor\n*   **Evasion:** 9 | **HP:** 7\n*   **Hope Feature (Combat Triage):** Spend 1 Hope to heal an ally for 1d8 HP as a free action.\n*   **Class Feature (Xenobiology):** You gain Advantage on rolls to identify alien toxins, diseases, or biological weaknesses.\n*   **Subclasses:**\n    *   *Trauma Surgeon:* Focuses on rapid healing and stabilizing critically injured allies.\n    *   *Xenobiologist:* Focuses on analyzing alien lifeforms and synthesizing antidotes.\n*   **Starship Role:** Chief Medical Officer (Treating injuries during combat, managing life support).\n*   **Diplomacy/Investigation Role:** Autopsies; identifying toxins; analyzing biological evidence.\n\n---"
             }
@@ -535,42 +535,42 @@
           "id": "book-3-ch-6",
           "sections": [
             {
-              "title": "The Marine (Warrior)",
+              "title": "The Marine",
               "id": "book-3-ch-6-s-1",
               "content": "*The frontline combatant, specializing in heavy weapons and breaching tactics.*\n\n**Subclass 1: Shock Trooper**\n*   **Foundation (Breach & Clear):** When you move into Melee range of an enemy, your first attack against them deals an additional 1d6 kinetic damage.\n*   **Specialization (Unstoppable Momentum):** When you reduce an enemy to 0 HP, you can immediately move up to Close range without triggering reactions.\n*   **Mastery (Juggernaut):** Once per Long Rest, you can spend 3 Hope to ignore all damage from a single attack, regardless of its severity.\n\n**Subclass 2: Heavy Gunner**\n*   **Foundation (Suppressive Fire):** When you attack with a two-handed ranged weapon, you can mark 1 Stress to force the target and all enemies within Very Close range of them to roll their next attack with Disadvantage.\n*   **Specialization (Overcharge):** When you roll maximum damage on any damage die with a ranged weapon, you can reroll that die and add the new result to the total.\n*   **Mastery (Walking Artillery):** You can wield two-handed heavy weapons with one hand, allowing you to carry a shield or a secondary weapon without penalty."
             },
             {
-              "title": "The Engineer (Guardian)",
+              "title": "The Engineer",
               "id": "book-3-ch-6-s-2",
               "content": "*The protector and technical savant, keeping the crew and the ship in one piece.*\n\n**Subclass 1: Void Warden**\n*   **Foundation (Defensive Grid):** You can project a localized energy shield. Allies within Melee range of you gain +1 to their Armor Score.\n*   **Specialization (Reactive Shielding):** When an ally within Close range takes damage, you can mark 1 Stress to reduce that damage by your Armor Score.\n*   **Mastery (Aegis Protocol):** Once per Long Rest, you can spend 4 Hope to make yourself and all allies within Close range immune to all damage for 1 round.\n\n**Subclass 2: Combat Technician**\n*   **Foundation (Jury-Rig):** During a Short Rest, you can repair one broken piece of equipment or restore 1 Armor Slot to an ally for free.\n*   **Specialization (Drone Swarm):** You deploy a permanent companion drone. It can take the Help action once per round without consuming your action economy.\n*   **Mastery (System Overload):** You can spend 2 Hope to force any technological device, weapon, or vehicle within Far range to immediately shut down or malfunction for 1d4 rounds."
             },
             {
-              "title": "The Medic (Seraph)",
+              "title": "The Medic",
               "id": "book-3-ch-6-s-3",
               "content": "*The trauma surgeon and xenobiologist, essential for survival in deep space.*\n\n**Subclass 1: Combat Surgeon**\n*   **Foundation (Triage):** When you heal an ally who is at 0 HP, they clear an additional 1d6 HP.\n*   **Specialization (Stim-Pack):** When you heal an ally, you can mark 1 Stress to also grant them Advantage on their next action roll.\n*   **Mastery (Miracle Worker):** Once per Long Rest, you can spend 5 Hope to completely restore an ally to full HP and clear all their Stress, even if they have just died (within the last minute).\n\n**Subclass 2: Xenobiologist**\n*   **Foundation (Anatomical Insight):** You gain Advantage on all Knowledge rolls related to alien biology, toxins, and diseases.\n*   **Specialization (Targeted Strike):** When you attack an organic enemy, you can mark 1 Stress to ignore their Armor Score by striking a vital nerve cluster or organ.\n*   **Mastery (Bio-Manipulation):** You can spend 3 Hope to alter the biology of a willing ally for the scene, granting them immunity to a specific damage type (e.g., acid, radiation, poison)."
             },
             {
-              "title": "The Operative (Rogue)",
+              "title": "The Operative",
               "id": "book-3-ch-6-s-4",
               "content": "*The stealth specialist, assassin, and infiltrator.*\n\n**Subclass 1: Ghost**\n*   **Foundation (Active Camouflage):** When you are in dim light or darkness, you can spend 1 Hope to become completely invisible until you attack or take damage.\n*   **Specialization (Silent Takedown):** When you attack an unaware target from Melee range, you deal an additional 2d6 damage.\n*   **Mastery (Phase Walk):** You can teleport between areas of shadow or darkness up to Far range as a Free Action once per turn.\n\n**Subclass 2: Saboteur**\n*   **Foundation (Data Spike):** You gain Advantage on all Finesse rolls to hack terminals, bypass security doors, or disable alarms.\n*   **Specialization (Rigged to Blow):** You can turn any small electronic device into an explosive. It deals 3d6 energy damage to anyone within Very Close range when triggered.\n*   **Mastery (Systemic Collapse):** Once per Long Rest, you can spend 4 Hope to completely disable the security grid, lighting, and automated defenses of an entire facility or ship for the duration of the scene."
             },
             {
-              "title": "The Pilot (Ranger)",
+              "title": "The Pilot",
               "id": "book-3-ch-6-s-5",
               "content": "*The ace flyer, vehicle specialist, and skirmisher.*\n\n**Subclass 1: Ace**\n*   **Foundation (Evasive Maneuvers):** When you are piloting a vehicle or ship, its Evasion increases by +2.\n*   **Specialization (Target Lock):** When you attack with a vehicle weapon, you can mark 1 Stress to gain Advantage on the roll.\n*   **Mastery (The Needle Threader):** You can navigate your ship or vehicle through impossible hazards (asteroid fields, closing blast doors) without needing to make a roll.\n\n**Subclass 2: Frontier Scout**\n*   **Foundation (Survivalist):** You gain Advantage on all Instinct rolls to track targets, find safe paths, or survive in hostile environments.\n*   **Specialization (Ambush Predator):** In the first round of combat, your movement speed is doubled, and your first attack deals an additional 1d8 damage.\n*   **Mastery (Unseen Observer):** You can spend 2 Hope to perfectly blend into any natural or urban environment, becoming undetectable by sight, sound, or thermal sensors as long as you remain motionless."
             },
             {
-              "title": "The Broker (Druid)",
+              "title": "The Broker",
               "id": "book-3-ch-6-s-6",
               "content": "*The fixer, smuggler, and master of logistics and black-market connections.*\n\n**Subclass 1: Smuggler**\n*   **Foundation (Hidden Compartments):** You can conceal up to 3 small items on your person or in your ship that cannot be found by standard security scans or physical searches.\n*   **Specialization (The Right Price):** You can spend 1 Hope to automatically succeed on a Persuasion roll to bribe a guard, official, or informant.\n*   **Mastery (Untraceable):** Your ship and your personal comms cannot be tracked, intercepted, or recorded by any faction, regardless of their technological superiority.\n\n**Subclass 2: Information Broker**\n*   **Foundation (A Guy Who Knows A Guy):** Once per session, you can declare that you have a contact in your current location who owes you a favor.\n*   **Specialization (Blackmail):** When you interact with a named NPC, you can mark 2 Stress to reveal a piece of damaging information you hold over them, forcing them to comply with a reasonable request.\n*   **Mastery (The Spider's Web):** You can spend 3 Hope to instantly know the location, current status, and immediate plans of any single individual in the galaxy, provided you have met them before."
             },
             {
-              "title": "The Mystic (Sorcerer)",
+              "title": "The Mystic",
               "id": "book-3-ch-6-s-7",
               "content": "*The telepath, technomancer, and manipulator of metaphysical forces.*\n\n**Subclass 1: Telepath**\n*   **Foundation (Mind Reading):** You can spend 1 Hope to read the surface thoughts of a target within Close range for one minute.\n*   **Specialization (Psychic Assault):** When you deal energy damage with a Domain Card, you can mark 1 Stress to change the damage type to psychic and force the target to mark 1 Stress.\n*   **Mastery (Mind Control):** Once per Long Rest, you can spend 5 Hope to take complete control of an NPC's actions for the duration of the scene.\n\n**Subclass 2: Technomancer**\n*   **Foundation (Machine Whisperer):** You can interface with computers and droids using your mind, requiring no physical connection or terminal.\n*   **Specialization (Construct Override):** You can spend 2 Hope to take control of an enemy drone, turret, or synthetic for 1d4 rounds.\n*   **Mastery (Ghost in the Machine):** You can permanently transfer your consciousness into a ship's mainframe or a secure network, allowing you to operate its systems as if they were your own body."
             },
             {
-              "title": "The Envoy (Bard)",
+              "title": "The Envoy",
               "id": "book-3-ch-6-s-8",
               "content": "*The diplomat, politician, and face of the crew.*\n\n**Subclass 1: Ambassador**\n*   **Foundation (Silver Tongue):** You gain Advantage on all Presence rolls made to negotiate, de-escalate conflict, or forge alliances.\n*   **Specialization (Diplomatic Weight):** When you or an ally within Close range fails a social roll, you can mark 1 Stress to reroll the dice.\n*   **Mastery (Galactic Treaty):** Once per Long Rest, you can spend 4 Hope to force two warring factions or hostile groups in your presence to immediately cease hostilities and agree to a temporary truce.\n\n**Subclass 2: Provocateur**\n*   **Foundation (Sow Discord):** You can spend 1 Hope to plant a rumor or lie that will be believed by the general public within a specific sector or station.\n*   **Specialization (Incite Rebellion):** You can mark 2 Stress to turn a crowd of civilians or low-level guards against their superiors for the duration of the scene.\n*   **Mastery (Character Assassination):** You can spend 3 Hope to completely destroy the reputation of a named NPC, stripping them of their rank, resources, and allies within their faction.\n\n"
             }
